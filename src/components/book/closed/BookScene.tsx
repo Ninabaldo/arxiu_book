@@ -81,26 +81,22 @@ function DraggableBook({
     g.position.set(0, 0, 0);
 
     if (!drag.current?.active) {
-      vel.current.x *= 0.88;
-      vel.current.y *= 0.88;
+      vel.current.x *= 0.92;
+      vel.current.y *= 0.92;
       const coasting =
         Math.abs(vel.current.x) > 0.00008 || Math.abs(vel.current.y) > 0.00008;
       if (coasting) {
+        /* Free orbit — pitch limited so the book does not flip through the camera */
         rot.current.x = THREE.MathUtils.clamp(
           rot.current.x + vel.current.x,
-          -0.75,
-          0.75,
+          -1.15,
+          1.15,
         );
         rot.current.y += vel.current.y;
       } else {
         vel.current.x = 0;
         vel.current.y = 0;
-        /* Unwrap yaw to [-π, π] then settle face-on */
-        const y =
-          THREE.MathUtils.euclideanModulo(rot.current.y + Math.PI, Math.PI * 2) -
-          Math.PI;
-        rot.current.x = THREE.MathUtils.damp(rot.current.x, REST_X, 5, dt);
-        rot.current.y = THREE.MathUtils.damp(y, REST_Y, 5, dt);
+        /* Stay where the user left it (full 360° yaw) — no snap back to face-on */
       }
     }
 
@@ -119,8 +115,8 @@ function DraggableBook({
 
       const nextX = THREE.MathUtils.clamp(
         drag.current.ox + dy * 0.004,
-        -0.75,
-        0.75,
+        -1.15,
+        1.15,
       );
       const nextY = drag.current.oy + dx * 0.0075;
 

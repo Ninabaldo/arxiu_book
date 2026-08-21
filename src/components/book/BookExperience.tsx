@@ -44,15 +44,19 @@ export function BookExperience({ reflections }: BookExperienceProps) {
     [reflections],
   );
 
-  const coverImages = useMemo(
-    () => [
-      ...published
-        .map((r) => r.image)
-        .filter((src): src is string => Boolean(src)),
+  const coverImages = useMemo(() => {
+    const seen = new Set<string>();
+    const images: string[] = [];
+    for (const src of [
+      ...published.map((r) => r.image).filter((s): s is string => Boolean(s)),
       ...COVER_EXTRA_IMAGES,
-    ],
-    [published],
-  );
+    ]) {
+      if (seen.has(src)) continue;
+      seen.add(src);
+      images.push(src);
+    }
+    return images;
+  }, [published]);
 
   const openBook = useCallback(() => {
     if (phase !== "closed") return;

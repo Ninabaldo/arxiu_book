@@ -86,7 +86,7 @@
 
 @media (max-width: 720px) {
   :root {
-    --book-height: min(52vh, 440px);
+    --book-height: min(42vh, 340px);
     /* Single-page mobile: one leaf, centered */
     --spread-width: min(calc(100vw - 1.75rem), 400px);
     --spread-height: min(calc(100dvh - 8.5rem), 580px);
@@ -95,7 +95,7 @@
 
 @media (max-width: 480px) {
   :root {
-    --book-height: min(48vh, 380px);
+    --book-height: min(38vh, 300px);
     --spread-width: min(calc(100vw - 1.5rem), 360px);
     --spread-height: min(calc(100dvh - 8rem), 520px);
   }

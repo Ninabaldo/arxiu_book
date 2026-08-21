@@ -59,12 +59,6 @@ export const COVER_OPENING_LAYOUT: Record<string, CoverPhotoSlot> = {
   },
 
   /* —— Right —— */
-  "/cover/extra-02.jpg": {
-    top: 10,
-    left: 76,
-    width: W.md,
-    rotate: -5,
-  },
   "/chapters/07.jpg": {
     top: 12,
     left: 90,
@@ -78,10 +72,10 @@ export const COVER_OPENING_LAYOUT: Record<string, CoverPhotoSlot> = {
     rotate: 5,
   },
   "/chapters/06.jpg": {
-    top: 48,
-    left: 80,
+    top: 10,
+    left: 76,
     width: W.md,
-    rotate: 4,
+    rotate: -5,
   },
   "/cover/extra-03.jpg": {
     top: 58,

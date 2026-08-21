@@ -132,8 +132,9 @@
   }
 }
 
-@media (max-width: 600px) {
-  .cover-photos__item:nth-child(n + 7) {
+@media (max-width: 720px) {
+  /* Polaroids only clutter the phone cover — book alone */
+  .cover-photos {
     display: none;
   }
 }

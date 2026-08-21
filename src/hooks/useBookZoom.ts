@@ -7,8 +7,10 @@ export const ZOOM_MAX = 1.28;
 export const ZOOM_STEP = 0.06;
 /** Reading default — cover passes its own initial (82%). */
 export const ZOOM_DEFAULT = 1;
-/** Closed cover — fixed at max zoom (no controls on landing). */
+/** Closed cover — desktop max; mobile uses COVER_ZOOM_MOBILE. */
 export const COVER_ZOOM_DEFAULT = ZOOM_MAX;
+/** Closed cover on narrow screens — leave room around the book */
+export const COVER_ZOOM_MOBILE = 0.78;
 
 function clampZoom(value: number) {
   return Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, value));

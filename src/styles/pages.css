@@ -257,6 +257,31 @@
   font-size: 1.2rem;
 }
 
+.page-beginning-image {
+  justify-content: center;
+  align-items: center;
+  padding: 2.75rem 2.5rem 2.75rem 3rem;
+}
+
+.page-beginning-image__figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+}
+
+.page-beginning-image__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 35%;
+  user-select: none;
+  pointer-events: none;
+}
+
 .page-moment {
   height: 100%;
   display: flex;
@@ -317,6 +342,14 @@
 
   .page-beginning__paragraph {
     font-size: 0.98rem;
+  }
+
+  .page-beginning-image {
+    padding: 2rem 1.75rem;
+  }
+
+  .page-beginning-image__figure {
+    max-width: 300px;
   }
 
   .page-title-block__title,

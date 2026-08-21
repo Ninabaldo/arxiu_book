@@ -3,6 +3,8 @@ import type { Locale } from "@/types";
 /** Front matter before chapters — right leaf only, no on-page title. */
 export const BEGINNING_ID = "beginning";
 
+export const BEGINNING_IMAGE = "/chapters/beginning.jpg";
+
 export const beginningIndexTitle: Record<Locale, string> = {
   ca: "Començament",
   es: "Comienzo",

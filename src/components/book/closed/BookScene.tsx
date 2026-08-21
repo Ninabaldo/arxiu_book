@@ -327,7 +327,7 @@ export function BookScene({ copy, onOpen, zoom = 1 }: BookSceneProps) {
     >
       <Canvas
         shadows
-        dpr={[1, 1.75]}
+        dpr={[1, 2]}
         style={{ background: "transparent" }}
         gl={{
           antialias: true,

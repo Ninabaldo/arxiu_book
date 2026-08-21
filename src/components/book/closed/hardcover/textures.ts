@@ -218,7 +218,22 @@ function paintHinge(ctx: CanvasRenderingContext2D, w: number, h: number) {
 function toTexture(canvas: HTMLCanvasElement): THREE.CanvasTexture {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
-  texture.anisotropy = 8;
+  texture.anisotropy = 16;
+  texture.generateMipmaps = true;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+/** Cover artwork — no mip fade so letterforms stay crisp when zoomed. */
+function toCoverAlbedoTexture(canvas: HTMLCanvasElement): THREE.CanvasTexture {
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = 16;
+  texture.generateMipmaps = false;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
   texture.needsUpdate = true;
   return texture;
 }
@@ -262,8 +277,8 @@ function coverLayout(copy: CoverTextureCopy, w: number, h: number): CoverLayout 
   const hand = handStack();
   const sans = sansStack();
   const cx = w / 2;
-  const titleSize = Math.round(h * 0.095);
-  const subSize = Math.round(h * 0.028);
+  const titleSize = Math.round(h * 0.1);
+  const subSize = Math.round(h * 0.032);
   const ruleGap = titleSize * 0.28;
   const subGap = subSize * 1.55;
   const clusterHeight = titleSize + ruleGap + 2 + subGap;
@@ -274,11 +289,11 @@ function coverLayout(copy: CoverTextureCopy, w: number, h: number): CoverLayout 
   const year = copy.year.trim();
 
   const measure = document.createElement("canvas").getContext("2d")!;
-  measure.font = `400 ${titleSize}px ${hand}`;
+  measure.font = `500 ${titleSize}px ${hand}`;
   const titleWidth = measure.measureText(title).width;
   const ruleW = titleWidth * 0.65;
   const ruleY = clusterTop + ruleGap;
-  const ruleH = Math.max(1.5, h * 0.0012);
+  const ruleH = Math.max(2, h * 0.0015);
 
   return {
     hand,
@@ -290,8 +305,8 @@ function coverLayout(copy: CoverTextureCopy, w: number, h: number): CoverLayout 
     year,
     titleSize,
     subSize,
-    authorSize: Math.round(h * 0.018),
-    yearSize: Math.round(h * 0.014),
+    authorSize: Math.round(h * 0.022),
+    yearSize: Math.round(h * 0.017),
     clusterTop,
     ruleGap,
     subGap,
@@ -335,23 +350,26 @@ function paintCoverGlyphs(
   ctx.globalAlpha = alpha;
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";
+  // Prefer crisp glyph edges over soft canvas AA
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
 
-  ctx.font = `400 ${titleSize}px ${hand}`;
+  ctx.font = `500 ${titleSize}px ${hand}`;
   ctx.fillText(title, cx, clusterTop);
 
   ctx.fillRect(cx - ruleW / 2, ruleY, ruleW, ruleH);
 
-  ctx.font = `400 ${subSize}px ${hand}`;
+  ctx.font = `500 ${subSize}px ${hand}`;
   ctx.fillText(subtitle, cx, ruleY + subGap);
 
   // Author — elegant, no letter-spacing monogram / no dedication phrase
   ctx.font = `500 ${authorSize}px ${sans}`;
-  ctx.globalAlpha = alpha * 0.92;
+  ctx.globalAlpha = alpha * 0.95;
   ctx.fillText(author, cx, authorY);
 
   if (year) {
-    ctx.font = `400 ${yearSize}px ${sans}`;
-    ctx.globalAlpha = alpha * 0.72;
+    ctx.font = `500 ${yearSize}px ${sans}`;
+    ctx.globalAlpha = alpha * 0.82;
     ctx.fillText(year, cx, yearY);
   }
   ctx.restore();
@@ -385,9 +403,9 @@ function buildDebossHeight(
     ctx.globalAlpha = 1;
   }
 
-  ctx.filter = "blur(1.25px)";
+  ctx.filter = `blur(${Math.max(1.2, w / 900)}px)`;
   paintCoverGlyphs(ctx, layout, "#2a2a2a", 1);
-  ctx.font = `400 ${layout.titleSize}px ${layout.hand}`;
+  ctx.font = `500 ${layout.titleSize}px ${layout.hand}`;
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = "#1a1a1a";
@@ -395,15 +413,15 @@ function buildDebossHeight(
   ctx.fillText(layout.title, layout.cx, layout.clusterTop);
   ctx.globalAlpha = 1;
 
-  ctx.filter = "blur(1.6px)";
+  ctx.filter = `blur(${Math.max(1.4, w / 750)}px)`;
   ctx.globalCompositeOperation = "lighter";
-  ctx.font = `400 ${layout.subSize}px ${layout.hand}`;
+  ctx.font = `500 ${layout.subSize}px ${layout.hand}`;
   ctx.fillStyle = "rgba(255,255,255,0.28)";
   ctx.fillText(layout.subtitle, layout.cx, layout.ruleY + layout.subGap);
   ctx.font = `500 ${layout.authorSize}px ${layout.sans}`;
   ctx.fillStyle = "rgba(255,255,255,0.4)";
   ctx.fillText(layout.author, layout.cx, layout.authorY);
-  ctx.font = `400 ${layout.yearSize}px ${layout.sans}`;
+  ctx.font = `500 ${layout.yearSize}px ${layout.sans}`;
   ctx.fillStyle = "rgba(255,255,255,0.48)";
   ctx.fillText(layout.year, layout.cx, layout.yearY);
   ctx.globalCompositeOperation = "source-over";
@@ -471,12 +489,13 @@ export async function createFrontCoverMaps(
 ): Promise<CoverMaps> {
   await fontsReady();
 
-  const w = 1024;
-  const h = 1408;
+  // 2× previous resolution so glyphs stay sharp at 128% cover zoom / retina
+  const w = 2048;
+  const h = 2816;
   const canvas = document.createElement("canvas");
   canvas.width = w;
   canvas.height = h;
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext("2d", { alpha: false })!;
 
   await clothBase(ctx, w, h);
   paintHinge(ctx, w, h);
@@ -485,9 +504,10 @@ export async function createFrontCoverMaps(
   const linen = await withTimeout(loadLinenImage(), 2000);
   const height = buildDebossHeight(w, h, layout, linen);
 
+  // Soft cloth shading only — keep ink glyphs out of this multiply so they stay crisp
   ctx.save();
   ctx.globalCompositeOperation = "multiply";
-  ctx.globalAlpha = 0.16;
+  ctx.globalAlpha = 0.1;
   ctx.drawImage(height, 0, 0);
   ctx.restore();
 
@@ -496,8 +516,9 @@ export async function createFrontCoverMaps(
   paintCoverGlyphs(ctx, layout, INK_BLUE, 1);
   ctx.restore();
 
-  const map = toTexture(canvas);
-  const normalMap = heightToNormalMap(height, 3.6);
+  const map = toCoverAlbedoTexture(canvas);
+  const normalMap = heightToNormalMap(height, 2.4);
+  normalMap.anisotropy = 16;
 
   return { map, normalMap };
 }

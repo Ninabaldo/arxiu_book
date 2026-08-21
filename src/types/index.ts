@@ -79,7 +79,8 @@ export interface BookPageModel {
     | "letter"
     | "fragment"
     | "moment"
-    | "beginning";
+    | "beginning"
+    | "beginning-image";
   /** Paragraph index when a reflection spans multiple body pages */
   bodyChunk?: number;
 }

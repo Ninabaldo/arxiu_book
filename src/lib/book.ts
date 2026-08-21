@@ -87,9 +87,11 @@ function beginningSpread(): BookSpread {
   return {
     id: "spread-beginning",
     left: {
-      id: "beginning-blank",
-      kind: "blank",
+      id: "beginning-image",
+      kind: "content",
       side: "left",
+      role: "beginning-image",
+      reflectionId: BEGINNING_ID,
     },
     right: {
       id: "beginning-page",
@@ -105,7 +107,7 @@ function beginningSpread(): BookSpread {
  * Builds book spreads from published reflections.
  *
  * Front matter:
- *   [ blank | beginning ]     ← before chapters
+ *   [ image | beginning text ]
  *
  * Double-page sheet:
  *   [ title | body ]           ← first open spread

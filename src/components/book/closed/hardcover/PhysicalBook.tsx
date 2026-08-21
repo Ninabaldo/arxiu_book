@@ -54,7 +54,7 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
 
   const [frontMaps, setFrontMaps] = useState<CoverMaps | null>(null);
   const [spineMap, setSpineMap] = useState<THREE.CanvasTexture | null>(null);
-  const coverNormalScale = useMemo(() => new THREE.Vector2(1.15, 1.15), []);
+  const coverNormalScale = useMemo(() => new THREE.Vector2(0.55, 0.55), []);
 
   const pageMaps = useMemo(() => {
     const pageSide = createPageEdgeTexture("side");
@@ -286,8 +286,6 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
                 color="#ffffff"
                 roughness={0.93}
                 metalness={0}
-                bumpMap={linen}
-                bumpScale={0.028}
               />
             </mesh>
           ) : null}

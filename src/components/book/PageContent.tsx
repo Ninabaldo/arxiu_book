@@ -1,7 +1,7 @@
 "use client";
 
 import type { BookPageModel, Locale, Reflection } from "@/types";
-import { beginningBody } from "@/content/beginning";
+import { beginningBody, BEGINNING_IMAGE } from "@/content/beginning";
 import { chunkContent, getLocalized, padOrder } from "@/lib/book";
 
 interface PageContentProps {
@@ -19,6 +19,23 @@ export function PageContent({
   locale,
   pageLabel,
 }: PageContentProps) {
+  if (page.role === "beginning-image") {
+    return (
+      <div className="page-inner page-beginning-image">
+        <figure className="page-beginning-image__figure">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={BEGINNING_IMAGE}
+            alt=""
+            className="page-beginning-image__img"
+            draggable={false}
+          />
+        </figure>
+        {pageLabel && <p className="page-folio">{pageLabel}</p>}
+      </div>
+    );
+  }
+
   if (page.role === "beginning") {
     const text = beginningBody[locale] || beginningBody.ca;
     const paragraphs = text
@@ -50,7 +67,6 @@ export function PageContent({
             );
           })}
         </div>
-        {pageLabel && <p className="page-folio">{pageLabel}</p>}
       </div>
     );
   }

@@ -6,9 +6,10 @@
   --color-paper-shadow: #e6e0d4;
   --color-beige: #d4cbb9;
   --color-warm-gray: #6e675c;
-  --color-ink: #2a2620;
-  --color-ink-soft: #4a453c;
-  --color-muted: #9a9286;
+  /* Editorial ink — same navy as favicon / chapter numbers (trial: one ink everywhere) */
+  --color-ink: #143158;
+  --color-ink-soft: #143158;
+  --color-muted: #3a5a82;
 
   /* Brand navy — same as favicon mark */
   --color-ink-blue: #143158;

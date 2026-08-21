@@ -89,6 +89,18 @@ export const COVER_OPENING_LAYOUT: Record<string, CoverPhotoSlot> = {
     width: W.lg,
     rotate: 6,
   },
+  "/chapters/11.jpg": {
+    top: 42,
+    left: 88,
+    width: W.md,
+    rotate: -4,
+  },
+  "/chapters/12.jpg": {
+    top: 68,
+    left: 74,
+    width: W.sm,
+    rotate: 5,
+  },
 };
 
 /** Fallback ring if a new image is added without a slot yet */

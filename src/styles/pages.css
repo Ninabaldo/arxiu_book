@@ -228,10 +228,10 @@
 .page-beginning {
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 4.75rem;
+  padding-top: 4.25rem;
   padding-left: 4.5rem;
   padding-right: 3.25rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 .page-beginning__text {
@@ -240,21 +240,21 @@
 
 .page-beginning__paragraph {
   font-family: var(--font-hand);
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  line-height: 1.42;
+  line-height: 1.36;
   letter-spacing: 0.01em;
   color: var(--color-ink-blue);
   margin: 0;
 }
 
 .page-beginning__paragraph + .page-beginning__paragraph {
-  margin-top: 1.05em;
+  margin-top: 0.85em;
 }
 
 .page-beginning__signature {
-  margin-top: 1.75em;
-  font-size: 1.2rem;
+  margin-top: 1.35em;
+  font-size: 1.05rem;
 }
 
 .page-beginning-image {
@@ -335,13 +335,24 @@
   }
 
   .page-beginning {
-    padding-top: 3.5rem;
-    padding-left: 2.5rem;
-    padding-right: 2rem;
+    padding-top: 2.75rem;
+    padding-left: 2.25rem;
+    padding-right: 1.75rem;
+    padding-bottom: 2rem;
   }
 
   .page-beginning__paragraph {
-    font-size: 0.98rem;
+    font-size: 0.82rem;
+    line-height: 1.34;
+  }
+
+  .page-beginning__paragraph + .page-beginning__paragraph {
+    margin-top: 0.7em;
+  }
+
+  .page-beginning__signature {
+    margin-top: 1.1em;
+    font-size: 0.95rem;
   }
 
   .page-beginning-image {

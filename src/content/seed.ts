@@ -90,6 +90,22 @@ export const reflectionRecords: ReflectionRecord[] = [
     status: "published",
     image: "/chapters/10.jpg",
   },
+  {
+    id: "11",
+    slug: "la-part-de-tu-que-ja-no-existeix",
+    order: 11,
+    type: "reflection",
+    status: "published",
+    image: "/chapters/11.jpg",
+  },
+  {
+    id: "12",
+    slug: "lexit",
+    order: 12,
+    type: "reflection",
+    status: "published",
+    image: "/chapters/12.jpg",
+  },
 ];
 
 type TranslationSeed = {
@@ -105,81 +121,77 @@ const translations: TranslationSeed[] = [
     reflection_id: "1",
     language: "ca",
     title: "La vida et posa a prova",
-    content: `La vida et posa a prova constantment.
+    content: `Quan decideixes que vols ser més pacient, més resilient, posar més límits, deixar anar o simplement reaccionar d'una altra manera, sovint apareixen situacions que et posen just davant d'allò que estàs intentant treballar.
 
-En el moment que dius que vols ser més pacient, més resilient o més fort, et posa davant de les pitjors situacions perquè aprenguis a ser-ho.
+I quan aconsegueixes gestionar-ho d'una manera diferent, penses:
 
-I un cop passes la prova, inconscientment et preguntes:
+«Ostres, crec que ara sí que tinc més paciència.»
+«Potser ara sí que sé posar límits.»
+«Crec que ja no em costa tant deixar anar.»
+«Això abans m'hauria afectat molt més.»
 
-«Ostres, crec que ara sí que he guanyat paciència.»
+I durant un moment penses que ja ho has après.
 
-Doncs la vida, l'Univers, t'escolta i et torna a posar a prova.
+Però llavors arriba una altra situació. Potser més petita, potser completament diferent, però que torna a tocar exactament el mateix punt.
 
-Amb petites coses que sap que podrien fer-te perdre la paciència.
-
-Perquè sempre t'està observant.
-
-Pren-t'ho com una prova i veuràs com la superes abans del que pensaves.`,
+I és aquí on entens que no es tracta de superar una prova i ja està. Potser es tracta d'anar veient, a poc a poc, si realment has canviat la manera de reaccionar.`,
   },
   {
     reflection_id: "1",
     language: "es",
     title: "La vida te pone a prueba",
-    content: `La vida te pone a prueba constantemente.
+    content: `Cuando decides que quieres ser más paciente, más resiliente, poner más límites, soltar o simplemente reaccionar de otra manera, a menudo aparecen situaciones que te ponen justo delante de aquello que estás intentando trabajar.
 
-En el momento en que dices que quieres ser más paciente, más resiliente o más fuerte, te pone delante de las peores situaciones para que aprendas a serlo.
+Y cuando consigues gestionarlo de una manera diferente, piensas:
 
-Y una vez pasas la prueba, inconscientemente te preguntas:
+«Ostras, creo que ahora sí que tengo más paciencia.»
+«Quizá ahora sí que sé poner límites.»
+«Creo que ya no me cuesta tanto soltar.»
+«Esto antes me habría afectado mucho más.»
 
-«Ostras, creo que ahora sí que he ganado paciencia.»
+Y durante un momento piensas que ya lo has aprendido.
 
-Pues la vida, el Universo, te escucha y vuelve a ponerte a prueba.
+Pero entonces llega otra situación. Quizá más pequeña, quizá completamente distinta, pero que vuelve a tocar exactamente el mismo punto.
 
-Con pequeñas cosas que sabe que podrían hacerte perder la paciencia.
-
-Porque siempre te está observando.
-
-Tómatelo como una prueba y verás cómo la superas antes de lo que pensabas.`,
+Y es ahí donde entiendes que no se trata de superar una prueba y ya está. Quizá se trata de ir viendo, poco a poco, si de verdad has cambiado la manera de reaccionar.`,
   },
   {
     reflection_id: "1",
     language: "en",
     title: "Life puts you to the test",
-    content: `Life puts you to the test constantly.
+    content: `When you decide you want to be more patient, more resilient, set clearer boundaries, let go, or simply react differently, situations often appear that place you right in front of what you are trying to work on.
 
-The moment you say you want to be more patient, more resilient or stronger, it places you in front of the hardest situations so you can learn to become that.
+And when you manage to handle it differently, you think:
 
-And once you pass the test, you unconsciously ask yourself:
+«Wow, I think I really am more patient now.»
+«Maybe I finally know how to set boundaries.»
+«I think letting go doesn’t cost me as much anymore.»
+«This would have affected me much more before.»
 
-«Wow, I think I’ve finally gained some patience.»
+And for a moment you think you have already learned it.
 
-Then life — the Universe — hears you, and puts you to the test again.
+But then another situation arrives. Maybe smaller, maybe completely different, yet it touches exactly the same point again.
 
-With small things it knows could make you lose your patience.
-
-Because it is always watching you.
-
-Take it as a test, and you’ll see how you rise through it sooner than you thought.`,
+And that is where you understand it is not about passing a test and being done. Maybe it is about slowly noticing whether you have truly changed the way you react.`,
   },
   {
     reflection_id: "1",
     language: "fr",
     title: "La vie te met à l’épreuve",
-    content: `La vie te met à l’épreuve en permanence.
+    content: `Quand tu décides que tu veux être plus patient, plus résilient, poser plus de limites, lâcher prise ou simplement réagir autrement, des situations apparaissent souvent qui te placent juste face à ce que tu essaies de travailler.
 
-Au moment où tu dis que tu veux être plus patient, plus résilient ou plus fort, elle te place face aux pires situations pour que tu apprennes à le devenir.
+Et quand tu parviens à le gérer autrement, tu penses :
 
-Et une fois l’épreuve passée, tu te demandes inconsciemment :
+« Tiens, je crois que j’ai vraiment plus de patience maintenant. »
+« Peut-être que je sais enfin poser des limites. »
+« Je crois que lâcher prise me coûte moins qu’avant. »
+« Avant, cela m’aurait beaucoup plus affecté. »
 
-« Tiens, je crois que j’ai enfin gagné en patience. »
+Et pendant un moment, tu penses que tu as déjà appris.
 
-Alors la vie, l’Univers, t’entend et te remet à l’épreuve.
+Mais alors arrive une autre situation. Peut-être plus petite, peut-être complètement différente, mais qui touche à nouveau exactement le même point.
 
-Avec de petites choses dont elle sait qu’elles pourraient te faire perdre patience.
-
-Parce qu’elle t’observe toujours.
-
-Prends-le comme une épreuve, et tu verras que tu la surmontes plus tôt que tu ne le pensais.`,
+Et c’est là que tu comprends qu’il ne s’agit pas de passer une épreuve et que ce soit réglé. Peut-être s’agit-il de voir, peu à peu, si tu as vraiment changé ta manière de réagir.`,
   },
 
   // ─── 02 ───
@@ -547,81 +559,73 @@ Quand nous commençons à goûter cette solitude —une qui n’a plus besoin de
     reflection_id: "6",
     language: "ca",
     title: "Deixar anar",
-    content: `No pots tenir allò que encara no tens.
+    content: `No pots viure com si ja tinguessis allò que encara no tens.
 
-Però si ho tinguessis, per a tu seria una normalitat.
+Però imagina que ho tinguessis. Probablement, per a tu, seria una normalitat.
 
-Ja no ho voldries de la mateixa manera.
+Ja no hi pensaries constantment. No ho buscaries a tot arreu. No t'hi obsessionaries.
 
-No hi pensaries constantment.
+I potser aquí hi ha una cosa interessant: quan deixes de viure allò que vols com una carència i comences a imaginar com seria si això que anheles formés part de la teva vida, alguna cosa canvia.
 
-No t'hi obsessionaries.
+No perquè de sobte l'Univers t'ho hagi de posar davant, sinó perquè tu també comences a actuar d'una altra manera i a observar detalls que abans no observaves.
 
-Quan deixes de pensar-hi com una carència i comences a integrar-ho com alguna cosa que ja forma part de tu, alguna cosa canvia.
+Potser deixes de perseguir-ho. Potser prens decisions diferents. Potser deixes espai perquè arribi.
 
-L'Univers es posa al teu favor.
-
-I, inevitablement, acabes aconseguint-ho.`,
+I, sense adonar-te'n, deixes d'estar tan pendent d'aconseguir-ho i, d'alguna manera, acaba presentant-se a la teva vida.`,
   },
   {
     reflection_id: "6",
     language: "es",
     title: "Dejar ir",
-    content: `No puedes tener aquello que todavía no tienes.
+    content: `No puedes vivir como si ya tuvieras aquello que todavía no tienes.
 
-Pero si lo tuvieras, para ti sería una normalidad.
+Pero imagina que lo tuvieras. Probablemente, para ti, sería una normalidad.
 
-Ya no lo querrías de la misma manera.
+Ya no pensarías en ello constantemente. No lo buscarías en todas partes. No te obsesionarías con ello.
 
-No pensarías en ello constantemente.
+Y quizá aquí hay algo interesante: cuando dejas de vivir lo que quieres como una carencia y empiezas a imaginar cómo sería si eso que anhelas formara parte de tu vida, algo cambia.
 
-No te obsesionarías con ello.
+No porque de pronto el Universo te lo tenga que poner delante, sino porque tú también empiezas a actuar de otra manera y a observar detalles que antes no observabas.
 
-Cuando dejas de pensarlo como una carencia y empiezas a integrarlo como algo que ya forma parte de ti, algo cambia.
+Quizá dejas de perseguirlo. Quizá tomas decisiones distintas. Quizá dejas espacio para que llegue.
 
-El Universo se pone a tu favor.
-
-Y, inevitablemente, acabas consiguiéndolo.`,
+Y, sin darte cuenta, dejas de estar tan pendiente de conseguirlo y, de alguna manera, acaba presentándose en tu vida.`,
   },
   {
     reflection_id: "6",
     language: "en",
     title: "Letting go",
-    content: `You cannot have what you do not yet have.
+    content: `You cannot live as if you already had what you do not yet have.
 
-But if you already had it, it would feel ordinary to you.
+But imagine that you did. For you, it would probably feel ordinary.
 
-You would no longer want it in the same way.
+You would no longer think about it constantly. You would not look for it everywhere. You would not obsess over it.
 
-You would not think about it constantly.
+And maybe there is something interesting here: when you stop living what you want as a lack and begin to imagine what it would be like if what you long for were part of your life, something changes.
 
-You would not obsess over it.
+Not because the Universe suddenly has to place it in front of you, but because you also start acting differently and noticing details you did not notice before.
 
-When you stop thinking of it as a lack, and begin to integrate it as something that already belongs to you, something changes.
+Maybe you stop chasing it. Maybe you make different decisions. Maybe you leave space for it to arrive.
 
-The Universe aligns in your favor.
-
-And inevitably, you end up receiving it.`,
+And without noticing, you stop watching so closely for it — and somehow, it ends up showing up in your life.`,
   },
   {
     reflection_id: "6",
     language: "fr",
     title: "Lâcher prise",
-    content: `Tu ne peux pas avoir ce que tu n’as pas encore.
+    content: `Tu ne peux pas vivre comme si tu avais déjà ce que tu n’as pas encore.
 
-Mais si tu l’avais, cela serait pour toi une normalité.
+Mais imagine que tu l’aies. Pour toi, ce serait probablement une normalité.
 
-Tu ne le voudrais plus de la même manière.
+Tu n’y penserais plus constamment. Tu ne le chercherais pas partout. Tu ne t’y obsessionnerais pas.
 
-Tu n’y penserais pas constamment.
+Et peut-être y a-t-il ici quelque chose d’intéressant : quand tu cesses de vivre ce que tu veux comme un manque et que tu commences à imaginer ce que ce serait si ce que tu désires faisait partie de ta vie, quelque chose change.
 
-Tu ne t’y obsessionnerais pas.
+Non pas parce que l’Univers doive soudain te le mettre devant, mais parce que toi aussi tu commences à agir autrement et à observer des détails que tu n’observais pas avant.
 
-Quand tu cesses d’y penser comme à un manque et que tu commences à l’intégrer comme quelque chose qui fait déjà partie de toi, quelque chose change.
+Peut-être que tu arrêtes de le poursuivre. Peut-être que tu prends des décisions différentes. Peut-être que tu laisses de l’espace pour que cela arrive.
 
-L’Univers se met en ta faveur.
-
-Et, inévitablement, tu finis par l’obtenir.`,
+Et, sans t’en rendre compte, tu cesses d’être aussi attaché à l’obtenir — et, d’une certaine manière, cela finit par se présenter dans ta vie.`,
   },
 
   // ─── 07 ───
@@ -631,13 +635,13 @@ Et, inévitablement, tu finis par l’obtenir.`,
     title: "Les ulleres dels altres",
     content: `Preocupar-te pel que pensen els altres és inútil.
 
-Cada individu té unes ulleres tintades amb la seva pròpia realitat, les seves vivències i les seves creences.
+Cada persona mira el món a través d'unes ulleres tintades amb la seva pròpia realitat: les seves vivències, les seves creences, les seves pors i tot allò que ha viscut.
 
-Per tant, la manera com algú et veu dependrà molt més d'ell que de com ets realment tu.
+Per això, la manera com algú et veu diu més d'ell que de tu.
 
-No pots controlar les ulleres dels altres.
+Tu no pots controlar les ulleres amb què et miren els altres.
 
-Només pots decidir com vols mirar tu.`,
+Només pots decidir si vols passar la vida intentant canviar-les o començar a mirar-te amb les teves.`,
   },
   {
     reflection_id: "7",
@@ -645,13 +649,13 @@ Només pots decidir com vols mirar tu.`,
     title: "Las gafas de los demás",
     content: `Preocuparte por lo que piensan los demás es inútil.
 
-Cada individuo tiene unas gafas teñidas con su propia realidad, sus vivencias y sus creencias.
+Cada persona mira el mundo a través de unas gafas teñidas con su propia realidad: sus vivencias, sus creencias, sus miedos y todo aquello que ha vivido.
 
-Por tanto, la manera en que alguien te ve dependerá mucho más de él que de cómo eres realmente tú.
+Por eso, la manera en que alguien te ve dice más de él que de ti.
 
-No puedes controlar las gafas de los demás.
+Tú no puedes controlar las gafas con las que te miran los demás.
 
-Solo puedes decidir cómo quieres mirar tú.`,
+Solo puedes decidir si quieres pasar la vida intentando cambiarlas o empezar a mirarte con las tuyas.`,
   },
   {
     reflection_id: "7",
@@ -659,13 +663,13 @@ Solo puedes decidir cómo quieres mirar tú.`,
     title: "Other people’s glasses",
     content: `Worrying about what other people think is useless.
 
-Every person wears glasses tinted with their own reality, their experiences and their beliefs.
+Every person looks at the world through glasses tinted with their own reality: their experiences, their beliefs, their fears, and everything they have lived.
 
-So the way someone sees you depends far more on them than on who you really are.
+That is why the way someone sees you says more about them than about you.
 
-You cannot control other people’s glasses.
+You cannot control the glasses others use to look at you.
 
-You can only decide how you want to look.`,
+You can only decide whether you want to spend your life trying to change them, or start looking at yourself through your own.`,
   },
   {
     reflection_id: "7",
@@ -673,13 +677,13 @@ You can only decide how you want to look.`,
     title: "Les lunettes des autres",
     content: `Te préoccuper de ce que pensent les autres est inutile.
 
-Chaque individu porte des lunettes teintées de sa propre réalité, de ses expériences et de ses croyances.
+Chaque personne regarde le monde à travers des lunettes teintées de sa propre réalité : ses expériences, ses croyances, ses peurs et tout ce qu’elle a vécu.
 
-Par conséquent, la façon dont quelqu’un te voit dépendra bien plus de lui que de ce que tu es réellement.
+C’est pourquoi la façon dont quelqu’un te voit en dit plus sur lui que sur toi.
 
-Tu ne peux pas contrôler les lunettes des autres.
+Tu ne peux pas contrôler les lunettes avec lesquelles les autres te regardent.
 
-Tu peux seulement décider comment tu veux regarder.`,
+Tu peux seulement décider si tu veux passer ta vie à essayer de les changer, ou commencer à te regarder avec les tiennes.`,
   },
 
   // ─── 08 ───
@@ -687,18 +691,21 @@ Tu peux seulement décider comment tu veux regarder.`,
     reflection_id: "8",
     language: "ca",
     title: "Ser abans que fer",
-    content: `L'esforç físic pot ser el premi de consolació de qui encara no domina la seva ment.
+    content: `No tot requereix un esforç extrem.
 
-Mentre el 99% s'esgota en el fer, l'1% domina el ser.
+Ens han ensenyat a associar l'esforç amb el valor: com més costa, més mèrit té. Com si arribar més lluny sempre impliqués fer més, aguantar més o exigir-nos més.
 
-L'esforç sense alineació ens allunya de nosaltres mateixos.
+Però no sempre és així.
 
-Quan actuem des de la por, des de la necessitat o des de la desesperació, ens costa veure amb claredat.
+Hi ha coses que requereixen disciplina, constància i compromís, però no necessàriament patiment.
 
-Quan primer ordenem el nostre interior, alguna cosa canvia també en l'exterior.
+Quan actuem des de la por, la necessitat o la desesperació, sovint sentim que hem de fer més i més per aconseguir-ho.
+
+I potser no sempre cal fer més. Potser cal fer-ho d'una altra manera.
+
+Quan primer ordenem el nostre interior, també canvia la manera com actuem a l'exterior.
 
 No sempre cal fer més.
-
 A vegades cal ser més.
 
 I des d'aquest lloc, actuar.`,
@@ -707,18 +714,21 @@ I des d'aquest lloc, actuar.`,
     reflection_id: "8",
     language: "es",
     title: "Ser antes que hacer",
-    content: `El esfuerzo físico puede ser el premio de consolación de quien todavía no domina su mente.
+    content: `No todo requiere un esfuerzo extremo.
 
-Mientras el 99% se agota en el hacer, el 1% domina el ser.
+Nos han enseñado a asociar el esfuerzo con el valor: cuanto más cuesta, más mérito tiene. Como si llegar más lejos siempre implicara hacer más, aguantar más o exigirnos más.
 
-El esfuerzo sin alineación nos aleja de nosotros mismos.
+Pero no siempre es así.
 
-Cuando actuamos desde el miedo, desde la necesidad o desde la desesperación, nos cuesta ver con claridad.
+Hay cosas que requieren disciplina, constancia y compromiso, pero no necesariamente sufrimiento.
 
-Cuando primero ordenamos nuestro interior, algo cambia también en el exterior.
+Cuando actuamos desde el miedo, la necesidad o la desesperación, a menudo sentimos que tenemos que hacer más y más para conseguirlo.
+
+Y quizá no siempre hace falta hacer más. Quizá hace falta hacerlo de otra manera.
+
+Cuando primero ordenamos nuestro interior, también cambia la manera en que actuamos en el exterior.
 
 No siempre hace falta hacer más.
-
 A veces hace falta ser más.
 
 Y desde ese lugar, actuar.`,
@@ -727,18 +737,21 @@ Y desde ese lugar, actuar.`,
     reflection_id: "8",
     language: "en",
     title: "Being before doing",
-    content: `Physical effort can be the consolation prize of those who have not yet mastered their mind.
+    content: `Not everything requires extreme effort.
 
-While 99% exhaust themselves in doing, 1% master being.
+We have been taught to associate effort with value: the harder it is, the more merit it has. As if going further always meant doing more, enduring more, or demanding more of ourselves.
 
-Effort without alignment takes us away from ourselves.
+But it is not always like that.
 
-When we act from fear, from need or from despair, it becomes hard to see clearly.
+There are things that require discipline, consistency and commitment, but not necessarily suffering.
 
-When we first put our inner world in order, something shifts in the outer world too.
+When we act from fear, need or despair, we often feel we must do more and more to get there.
+
+And maybe it is not always necessary to do more. Maybe we need to do it differently.
+
+When we first put our inner world in order, the way we act outwardly also changes.
 
 It is not always necessary to do more.
-
 Sometimes we need to be more.
 
 And from that place, act.`,
@@ -747,18 +760,21 @@ And from that place, act.`,
     reflection_id: "8",
     language: "fr",
     title: "Être avant de faire",
-    content: `L’effort physique peut être le prix de consolation de celui qui ne maîtrise pas encore son esprit.
+    content: `Tout ne demande pas un effort extrême.
 
-Pendant que 99 % s’épuisent dans le faire, 1 % maîtrise l’être.
+On nous a appris à associer l’effort à la valeur : plus cela coûte, plus cela a du mérite. Comme si aller plus loin impliquait toujours d’en faire plus, de tenir plus ou de nous exiger davantage.
 
-L’effort sans alignement nous éloigne de nous-mêmes.
+Mais ce n’est pas toujours le cas.
 
-Quand nous agissons depuis la peur, depuis le besoin ou depuis le désespoir, il nous est difficile de voir clairement.
+Il y a des choses qui demandent de la discipline, de la constance et de l’engagement, mais pas forcément de la souffrance.
 
-Quand nous mettons d’abord de l’ordre en nous, quelque chose change aussi à l’extérieur.
+Quand nous agissons depuis la peur, le besoin ou le désespoir, nous sentons souvent que nous devons en faire toujours plus pour y arriver.
+
+Et peut-être qu’il n’est pas toujours nécessaire d’en faire plus. Peut-être faut-il le faire autrement.
+
+Quand nous mettons d’abord de l’ordre en nous, la façon dont nous agissons à l’extérieur change aussi.
 
 Il n’est pas toujours nécessaire d’en faire plus.
-
 Parfois, il faut être davantage.
 
 Et depuis cet endroit, agir.`,
@@ -890,6 +906,178 @@ L’art qui émeut est celui qui parvient à faire ressentir quelque chose — u
 Parce que, au fond, l’art c’est cela : prendre quelque chose de l’intérieur et le transformer en quelque chose que les autres puissent percevoir.
 
 Et c’est très puissant.`,
+  },
+
+  // ─── 11 ───
+  {
+    reflection_id: "11",
+    language: "ca",
+    title: "La part de tu que ja no existeix",
+    content: `Quan perdem algú, tendim a pensar que el dolor prové únicament de la seva absència. Però una relació també construeix una versió de nosaltres.
+
+No som exactament els mateixos amb la nostra família, amb els amics, amb una parella o quan estem sols. Cada vincle desperta parts diferents de nosaltres: maneres de parlar, de pensar, de sentir, de cuidar, de riure, de mirar el món.
+
+Per això, quan una persona important desapareix de la nostra vida, no només deixem de tenir-la a ella. També deixem de tenir l'espai on existia aquella versió de nosaltres.
+
+I potser per això, després d'una pèrdua, podem sentir que no només trobem a faltar l'altra persona. També ens trobem a faltar a nosaltres mateixos.
+
+El dol, en certa manera, és aprendre a viure sense aquella relació i descobrir qui som ara que ja no hi és.
+
+No es tracta de tornar a ser qui érem abans. Es tracta de retrobar les parts de nosaltres que aquella relació havia despertat, conservar les que encara ens pertanyen i deixar espai perquè en neixin de noves.
+
+Perquè cada persona que passa per la nostra vida deixa una empremta en qui som.
+
+I quan marxa, potser una part de nosaltres marxa amb ella.`,
+  },
+  {
+    reflection_id: "11",
+    language: "es",
+    title: "La parte de ti que ya no existe",
+    content: `Cuando perdemos a alguien, tendemos a pensar que el dolor proviene únicamente de su ausencia. Pero una relación también construye una versión de nosotros.
+
+No somos exactamente los mismos con nuestra familia, con los amigos, con una pareja o cuando estamos solos. Cada vínculo despierta partes distintas de nosotros: maneras de hablar, de pensar, de sentir, de cuidar, de reír, de mirar el mundo.
+
+Por eso, cuando una persona importante desaparece de nuestra vida, no solo dejamos de tenerla a ella. También dejamos de tener el espacio donde existía aquella versión de nosotros.
+
+Y quizá por eso, después de una pérdida, podemos sentir que no solo echamos de menos a la otra persona. También nos echamos de menos a nosotros mismos.
+
+El duelo, en cierta manera, es aprender a vivir sin aquella relación y descubrir quiénes somos ahora que ya no está.
+
+No se trata de volver a ser quien éramos antes. Se trata de reencontrar las partes de nosotros que aquella relación había despertado, conservar las que aún nos pertenecen y dejar espacio para que nazcan otras nuevas.
+
+Porque cada persona que pasa por nuestra vida deja una huella en quiénes somos.
+
+Y cuando se marcha, quizá una parte de nosotros se va con ella.`,
+  },
+  {
+    reflection_id: "11",
+    language: "en",
+    title: "The part of you that no longer exists",
+    content: `When we lose someone, we tend to think the pain comes only from their absence. But a relationship also builds a version of us.
+
+We are not exactly the same with our family, with friends, with a partner, or when we are alone. Every bond awakens different parts of us: ways of speaking, thinking, feeling, caring, laughing, looking at the world.
+
+That is why, when an important person disappears from our life, we do not only lose them. We also lose the space where that version of ourselves existed.
+
+And maybe that is why, after a loss, we can feel that we do not only miss the other person. We also miss ourselves.
+
+Grief, in a way, is learning to live without that relationship and discovering who we are now that they are gone.
+
+It is not about becoming who we were before. It is about finding again the parts of ourselves that relationship had awakened, keeping those that still belong to us, and leaving space for new ones to grow.
+
+Because every person who passes through our life leaves a mark on who we are.
+
+And when they leave, maybe a part of us leaves with them.`,
+  },
+  {
+    reflection_id: "11",
+    language: "fr",
+    title: "La part de toi qui n’existe plus",
+    content: `Quand nous perdons quelqu’un, nous avons tendance à penser que la douleur vient uniquement de son absence. Mais une relation construit aussi une version de nous.
+
+Nous ne sommes pas exactement les mêmes avec notre famille, avec nos amis, avec un partenaire ou quand nous sommes seuls. Chaque lien éveille des parts différentes de nous : des façons de parler, de penser, de sentir, de prendre soin, de rire, de regarder le monde.
+
+C’est pourquoi, quand une personne importante disparaît de notre vie, nous ne cessons pas seulement de l’avoir. Nous cessons aussi d’avoir l’espace où existait cette version de nous.
+
+Et c’est peut-être pour cela qu’après une perte, nous pouvons sentir que nous ne manquons pas seulement l’autre personne. Nous nous manquons aussi à nous-mêmes.
+
+Le deuil, d’une certaine manière, c’est apprendre à vivre sans cette relation et découvrir qui nous sommes maintenant qu’elle n’est plus là.
+
+Il ne s’agit pas de redevenir qui nous étions avant. Il s’agit de retrouver les parts de nous que cette relation avait éveillées, conserver celles qui nous appartiennent encore et laisser de la place pour que d’autres naissent.
+
+Parce que chaque personne qui passe dans notre vie laisse une empreinte sur qui nous sommes.
+
+Et quand elle part, peut-être qu’une part de nous part avec elle.`,
+  },
+
+  // ─── 12 ───
+  {
+    reflection_id: "12",
+    language: "ca",
+    title: "L'èxit",
+    content: `Durant molt de temps hem associat l'èxit amb arribar més lluny, tenir més, aconseguir més.
+
+Però potser l'èxit no té tant a veure amb tot allò que aconseguim, sinó amb com ens sentim mentre vivim la nostra vida.
+
+Per mi, l'èxit és la benedicció de sentir-se en pau i feliç amb el que fem, sigui on sigui i amb qui sigui.
+
+Una pau que no depèn de tenir-ho tot resolt.
+Una felicitat que no necessita grans motius.
+
+La possibilitat de mirar la vida que tens i sentir que, malgrat tot el que encara pugui faltar, no voldries estar en un altre lloc ni ser una altra persona.
+
+Potser l'èxit més gran no és arribar a una vida extraordinària.
+
+És arribar a una vida que, per a tu, se senti bé.
+
+Una pau pura.
+Una felicitat senzilla.`,
+  },
+  {
+    reflection_id: "12",
+    language: "es",
+    title: "El éxito",
+    content: `Durante mucho tiempo hemos asociado el éxito con llegar más lejos, tener más, conseguir más.
+
+Pero quizá el éxito no tiene tanto que ver con todo aquello que conseguimos, sino con cómo nos sentimos mientras vivimos nuestra vida.
+
+Para mí, el éxito es la bendición de sentirse en paz y feliz con lo que hacemos, sea donde sea y con quien sea.
+
+Una paz que no depende de tenerlo todo resuelto.
+Una felicidad que no necesita grandes motivos.
+
+La posibilidad de mirar la vida que tienes y sentir que, a pesar de todo lo que aún pueda faltar, no querrías estar en otro lugar ni ser otra persona.
+
+Quizá el mayor éxito no es llegar a una vida extraordinaria.
+
+Es llegar a una vida que, para ti, se sienta bien.
+
+Una paz pura.
+Una felicidad sencilla.`,
+  },
+  {
+    reflection_id: "12",
+    language: "en",
+    title: "Success",
+    content: `For a long time we have associated success with going further, having more, achieving more.
+
+But maybe success has less to do with everything we achieve, and more with how we feel while we live our life.
+
+For me, success is the blessing of feeling at peace and happy with what we do, wherever we are and with whoever we are.
+
+A peace that does not depend on having everything sorted.
+A happiness that does not need grand reasons.
+
+The possibility of looking at the life you have and feeling that, despite everything that may still be missing, you would not want to be somewhere else or someone else.
+
+Maybe the greatest success is not reaching an extraordinary life.
+
+It is reaching a life that, for you, feels good.
+
+A pure peace.
+A simple happiness.`,
+  },
+  {
+    reflection_id: "12",
+    language: "fr",
+    title: "Le succès",
+    content: `Pendant longtemps, nous avons associé le succès à aller plus loin, avoir plus, obtenir plus.
+
+Mais peut-être que le succès n’a pas tant à voir avec tout ce que nous obtenons, qu’avec la façon dont nous nous sentons pendant que nous vivons notre vie.
+
+Pour moi, le succès est la bénédiction de se sentir en paix et heureux avec ce que l’on fait, où que l’on soit et avec qui que l’on soit.
+
+Une paix qui ne dépend pas d’avoir tout réglé.
+Un bonheur qui n’a pas besoin de grandes raisons.
+
+La possibilité de regarder la vie que l’on a et de sentir que, malgré tout ce qui peut encore manquer, on ne voudrait être nulle part ailleurs ni être quelqu’un d’autre.
+
+Peut-être que le plus grand succès n’est pas d’arriver à une vie extraordinaire.
+
+C’est d’arriver à une vie qui, pour toi, se sente bien.
+
+Une paix pure.
+Un bonheur simple.`,
   },
 ];
 

@@ -231,14 +231,17 @@
   transform: translateX(-50%);
   z-index: 8;
   margin: 0;
+  max-width: min(22rem, 88vw);
   font-family: var(--font-sans);
-  font-size: 0.52rem;
+  font-size: 0.55rem;
   font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: none;
   color: var(--color-muted);
-  opacity: 0.55;
-  white-space: nowrap;
+  opacity: 0.7;
+  white-space: normal;
 }
 
 .arxiu-center {
@@ -1310,7 +1313,8 @@ button.flipbook__hit:disabled {
 
 @media (max-width: 480px) {
   .arxiu-drag-hint {
-    font-size: 0.45rem;
-    letter-spacing: 0.12em;
+    font-size: 0.5rem;
+    letter-spacing: 0.03em;
+    max-width: min(18rem, 90vw);
   }
 }

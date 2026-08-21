@@ -1,0 +1,101 @@
+:root {
+  /* Surfaces */
+  --color-ivory: #f4f0e8;
+  --color-ivory-deep: #ebe6dc;
+  --color-paper: #f7f3eb;
+  --color-paper-shadow: #e6e0d4;
+  --color-beige: #d4cbb9;
+  --color-warm-gray: #6e675c;
+  --color-ink: #2a2620;
+  --color-ink-soft: #4a453c;
+  --color-muted: #9a9286;
+
+  /* Brand navy — same as favicon mark */
+  --color-ink-blue: #143158;
+  --color-ink-blue-soft: #3a5a82;
+
+  /* Book cover — natural cloth / ecru */
+  --color-cloth: #e4dccf;
+  --color-cloth-deep: #cfc4b3;
+  --color-cloth-light: #f0e9dd;
+  --color-cloth-warm: #ddd3c3;
+  --color-spine: #d8cfbf;
+  --color-spine-deep: #c4b9a6;
+  --color-page-edge: #f7f2ea;
+  --color-page-shadow: #e4dccf;
+
+  /* Shadows — physical object */
+  --shadow-book:
+    0 48px 100px rgba(42, 38, 32, 0.18),
+    0 18px 40px rgba(42, 38, 32, 0.1),
+    0 4px 10px rgba(42, 38, 32, 0.05);
+  --shadow-page: 0 1px 2px rgba(42, 38, 32, 0.06);
+
+  /* Typography
+     sans      = Instrument Sans → UI
+     serif     = Instrument Serif → index / UI serif accents
+     page-title = Bodoni Moda → chapter titles inside the book
+     body      = Libre Baskerville → long reading (interior)
+     hand      = Caveat → cover accents / chapter numbers */
+  --font-sans: var(--font-instrument-sans, "Instrument Sans"), "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-instrument-serif, "Instrument Serif"), Georgia,
+    serif;
+  --font-page-title: var(--font-bodoni-moda, "Bodoni Moda"), "Bodoni MT",
+    Didot, Georgia, serif;
+  --font-body: var(--font-libre-baskerville, "Libre Baskerville"),
+    "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
+  --font-hand: var(--font-handwritten, "Caveat"), "Patrick Hand", cursive;
+
+  /* Rhythm */
+  --space-xs: 0.35rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* Book — ~16×22 cm hardcover proportions */
+  --book-height: min(78vh, 760px);
+  --book-width: calc(var(--book-height) / 1.375);
+  --book-depth: calc(var(--book-width) * 0.155);
+
+  /* Open spread — always fits the viewport with chrome margins */
+  --spread-width: min(920px, calc(100vw - 2.5rem));
+  --spread-height: min(620px, calc(100dvh - 8.5rem));
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --book-height: min(70vh, 640px);
+    --spread-width: min(820px, calc(100vw - 2.25rem));
+    --spread-height: min(560px, calc(100dvh - 8.25rem));
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --book-height: min(58vh, 520px);
+    --spread-width: min(720px, calc(100vw - 2rem));
+    --spread-height: min(500px, calc(100dvh - 8rem));
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --book-height: min(52vh, 440px);
+    /* Single-page mobile: one leaf, centered */
+    --spread-width: min(calc(100vw - 1.75rem), 400px);
+    --spread-height: min(calc(100dvh - 8.5rem), 580px);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --book-height: min(48vh, 380px);
+    --spread-width: min(calc(100vw - 1.5rem), 360px);
+    --spread-height: min(calc(100dvh - 8rem), 520px);
+  }
+}

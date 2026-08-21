@@ -1,0 +1,362 @@
+.page-inner {
+  height: 100%;
+  padding: 3.5rem 2.75rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-title-spread {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 4.75rem;
+  padding-left: 3rem;
+  padding-right: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Right page titles sit away from the spine (book center) */
+.flipbook__page--right .page-title-spread,
+.flipbook__sheet-face--right .page-title-spread {
+  padding-left: 4.5rem;
+}
+
+.flipbook__page--left .page-title-spread,
+.flipbook__sheet-face--left .page-title-spread {
+  padding-right: 4.5rem;
+}
+
+.page-title-block {
+  margin-top: 0;
+  max-width: 300px;
+  /* Leave the rest of the page as quiet open space */
+  margin-bottom: auto;
+}
+
+.page-title-block__num {
+  /* Same hand typography as the index numbers */
+  font-family: var(--font-hand);
+  font-size: 1.63rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--color-ink-blue);
+  margin: 0 0 1rem;
+}
+
+.page-title-block__rule {
+  width: 1.5rem;
+  height: 1px;
+  background: var(--color-beige);
+  margin: 0 0 1.35rem;
+  border: 0;
+}
+
+.page-title-block__title {
+  font-family: var(--font-page-title);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  color: var(--color-ink);
+  margin: 0;
+  max-width: 300px;
+}
+
+.page-title-block__figure {
+  position: relative;
+  margin: 3.75rem 0 0;
+  padding: 0;
+  max-width: 210px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-title-block__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Body page — narrow editorial column, generous white space */
+.page-body-spread {
+  padding: 4.5rem 3.25rem 3rem 2.75rem;
+}
+
+.flipbook__page--left .page-body-spread {
+  padding: 4.5rem 2.75rem 3rem 3.25rem;
+}
+
+.page-body {
+  margin-top: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 410px;
+}
+
+.page-body__text {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0.005em;
+  color: var(--color-ink-soft);
+  max-width: 410px;
+  margin: 0 0 0.7em;
+  text-align: left;
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+.page-body__text:last-child {
+  margin-bottom: 0;
+}
+
+.page-body__text--empty {
+  min-height: 4em;
+}
+
+.page-margin-mark {
+  position: absolute;
+  left: 2.75rem;
+  bottom: 0.9rem;
+  top: auto;
+  right: auto;
+  transform: none;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: none;
+  color: var(--color-muted);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Keep “Arxiu” on the outer edge — never toward the spine */
+.flipbook__page--left .page-margin-mark {
+  left: 2.75rem;
+  right: auto;
+}
+
+.flipbook__page--right .page-margin-mark {
+  left: auto;
+  right: 2.75rem;
+}
+
+.page-folio {
+  position: absolute;
+  top: auto;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+  pointer-events: none;
+  /* Left page, bottom — clear of the outer “Arxiu” mark */
+  bottom: 0.85rem;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.flipbook__page--left .page-folio {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.page-quote {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.page-quote__text {
+  font-family: var(--font-page-title);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  max-width: 300px;
+  margin: 0;
+}
+
+.page-letter .page-body__text {
+  font-style: italic;
+}
+
+.page-hand .page-body__text {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0.005em;
+  color: var(--color-ink-soft);
+  max-width: 410px;
+}
+
+.page-fragment .page-body {
+  justify-content: center;
+  max-width: 410px;
+}
+
+.page-fragment .page-body__text {
+  font-size: 10.5px;
+  line-height: 1.42;
+  max-width: 410px;
+}
+
+.page-empty {
+  height: 100%;
+}
+
+.page-beginning {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 4.75rem;
+  padding-left: 4.5rem;
+  padding-right: 3.25rem;
+  padding-bottom: 3rem;
+}
+
+.page-beginning__text {
+  max-width: 320px;
+}
+
+.page-beginning__paragraph {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.42;
+  letter-spacing: 0.01em;
+  color: var(--color-ink-blue);
+  margin: 0;
+}
+
+.page-beginning__paragraph + .page-beginning__paragraph {
+  margin-top: 1.05em;
+}
+
+.page-beginning__signature {
+  margin-top: 1.75em;
+  font-size: 1.2rem;
+}
+
+.page-moment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-moment__date {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-blue);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .page-inner {
+    padding: 2.5rem 1.75rem 2rem;
+  }
+
+  .page-title-spread {
+    padding-top: 3.5rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .flipbook__page--right .page-title-spread,
+  .flipbook__sheet-face--right .page-title-spread {
+    padding-left: 2.25rem;
+  }
+
+  .flipbook__page--left .page-title-spread,
+  .flipbook__sheet-face--left .page-title-spread {
+    padding-right: 2.25rem;
+  }
+
+  .page-title-block,
+  .page-title-block__title {
+    max-width: 260px;
+  }
+
+  .page-title-block__figure {
+    max-width: 180px;
+    margin-top: 3rem;
+  }
+
+  .page-title-block__num {
+    font-size: 1.435rem;
+  }
+
+  .page-beginning {
+    padding-top: 3.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+  }
+
+  .page-beginning__paragraph {
+    font-size: 0.98rem;
+  }
+
+  .page-title-block__title,
+  .page-quote__text {
+    font-size: 20px;
+  }
+
+  .page-body-spread {
+    padding: 3rem 1.75rem 2.25rem;
+  }
+
+  .page-body,
+  .page-body__text,
+  .page-hand .page-body__text,
+  .page-fragment .page-body,
+  .page-fragment .page-body__text {
+    max-width: min(410px, 100%);
+  }
+
+  .page-body__text,
+  .page-hand .page-body__text,
+  .page-fragment .page-body__text {
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+
+  .page-margin-mark {
+    bottom: 0.75rem;
+    font-size: 7px;
+  }
+
+  .flipbook__page--left .page-margin-mark {
+    left: 1.35rem;
+  }
+
+  .flipbook__page--right .page-margin-mark {
+    right: 1.35rem;
+  }
+
+  .page-folio {
+    bottom: 0.7rem;
+  }
+}

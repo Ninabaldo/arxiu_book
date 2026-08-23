@@ -12,7 +12,7 @@ import type {
 export const reflectionRecords: ReflectionRecord[] = [
   {
     id: "1",
-    slug: "la-vida-et-posa-a-prova",
+    slug: "fins-que-ho-aprenem",
     order: 1,
     type: "reflection",
     status: "published",
@@ -106,6 +106,14 @@ export const reflectionRecords: ReflectionRecord[] = [
     status: "published",
     image: "/chapters/12.jpg",
   },
+  {
+    id: "13",
+    slug: "decisions",
+    order: 13,
+    type: "reflection",
+    status: "published",
+    image: "/chapters/13.jpg",
+  },
 ];
 
 type TranslationSeed = {
@@ -120,78 +128,130 @@ const translations: TranslationSeed[] = [
   {
     reflection_id: "1",
     language: "ca",
-    title: "La vida et posa a prova",
-    content: `Quan decideixes que vols ser més pacient, més resilient, posar més límits, deixar anar o simplement reaccionar d'una altra manera, sovint apareixen situacions que et posen just davant d'allò que estàs intentant treballar.
+    title: "Fins que ho aprenem",
+    content: `Hi ha situacions que sembla que es repeteixin a la nostra vida.
 
-I quan aconsegueixes gestionar-ho d'una manera diferent, penses:
+Canvien les persones, els llocs i les circumstàncies, però d'alguna manera acabem trobant-nos una vegada i una altra davant del mateix punt: la mateixa por, el mateix límit que no sabem posar, la mateixa necessitat de controlar, la mateixa dificultat per deixar anar, la mateixa manera de reaccionar.
 
-«Ostres, crec que ara sí que tinc més paciència.»
-«Potser ara sí que sé posar límits.»
-«Crec que ja no em costa tant deixar anar.»
-«Això abans m'hauria afectat molt més.»
+I potser no és casualitat.
 
-I durant un moment penses que ja ho has après.
+Potser hi ha coses que la vida ens continua mostrant perquè encara no les hem acabat d'aprendre.
 
-Però llavors arriba una altra situació. Potser més petita, potser completament diferent, però que torna a tocar exactament el mateix punt.
+A vegades pensem que ja ho hem superat perquè, davant d'una situació concreta, reaccionem diferent. Tenim més paciència. Posem un límit. No contestem. No insistim. Deixem anar.
 
-I és aquí on entens que no es tracta de superar una prova i ja està. Potser es tracta d'anar veient, a poc a poc, si realment has canviat la manera de reaccionar.`,
+I pensem: aquesta vegada sí.
+
+Però més endavant torna a aparèixer una situació que, encara que sigui completament diferent, toca exactament el mateix lloc dins nostre.
+
+I llavors entenem que no es tractava d'aquella situació.
+
+Es tractava de nosaltres.
+
+Potser la vida no ens repeteix les mateixes experiències perquè no hàgim après prou, sinó perquè encara hi ha una part de nosaltres que necessita ser mirada d'una altra manera.
+
+Perquè aprendre alguna cosa no és saber què hauríem de fer.
+
+És arribar a un punt en què ja no necessitem esforçar-nos per actuar diferent.
+
+Simplement, un dia, ho fem.
+
+I allò que abans es repetia deixa de tenir el mateix poder sobre nosaltres.`,
   },
   {
     reflection_id: "1",
     language: "es",
-    title: "La vida te pone a prueba",
-    content: `Cuando decides que quieres ser más paciente, más resiliente, poner más límites, soltar o simplemente reaccionar de otra manera, a menudo aparecen situaciones que te ponen justo delante de aquello que estás intentando trabajar.
+    title: "Hasta que lo aprendemos",
+    content: `Hay situaciones que parece que se repiten en nuestra vida.
 
-Y cuando consigues gestionarlo de una manera diferente, piensas:
+Cambian las personas, los lugares y las circunstancias, pero de alguna manera acabamos encontrándonos una y otra vez ante el mismo punto: el mismo miedo, el mismo límite que no sabemos poner, la misma necesidad de controlar, la misma dificultad para soltar, la misma manera de reaccionar.
 
-«Ostras, creo que ahora sí que tengo más paciencia.»
-«Quizá ahora sí que sé poner límites.»
-«Creo que ya no me cuesta tanto soltar.»
-«Esto antes me habría afectado mucho más.»
+Y quizá no es casualidad.
 
-Y durante un momento piensas que ya lo has aprendido.
+Quizá hay cosas que la vida nos sigue mostrando porque todavía no las hemos terminado de aprender.
 
-Pero entonces llega otra situación. Quizá más pequeña, quizá completamente distinta, pero que vuelve a tocar exactamente el mismo punto.
+A veces pensamos que ya lo hemos superado porque, ante una situación concreta, reaccionamos distinto. Tenemos más paciencia. Ponemos un límite. No contestamos. No insistimos. Soltamos.
 
-Y es ahí donde entiendes que no se trata de superar una prueba y ya está. Quizá se trata de ir viendo, poco a poco, si de verdad has cambiado la manera de reaccionar.`,
+Y pensamos: esta vez sí.
+
+Pero más adelante vuelve a aparecer una situación que, aunque sea completamente distinta, toca exactamente el mismo lugar dentro de nosotros.
+
+Y entonces entendemos que no se trataba de aquella situación.
+
+Se trataba de nosotros.
+
+Quizá la vida no nos repite las mismas experiencias porque no hayamos aprendido lo suficiente, sino porque todavía hay una parte de nosotros que necesita ser mirada de otra manera.
+
+Porque aprender algo no es saber qué deberíamos hacer.
+
+Es llegar a un punto en el que ya no necesitamos esforzarnos por actuar distinto.
+
+Simplemente, un día, lo hacemos.
+
+Y aquello que antes se repetía deja de tener el mismo poder sobre nosotros.`,
   },
   {
     reflection_id: "1",
     language: "en",
-    title: "Life puts you to the test",
-    content: `When you decide you want to be more patient, more resilient, set clearer boundaries, let go, or simply react differently, situations often appear that place you right in front of what you are trying to work on.
+    title: "Until we learn it",
+    content: `There are situations that seem to repeat themselves in our lives.
 
-And when you manage to handle it differently, you think:
+People, places and circumstances change, but somehow we end up finding ourselves again and again at the same point: the same fear, the same boundary we cannot set, the same need to control, the same difficulty letting go, the same way of reacting.
 
-«Wow, I think I really am more patient now.»
-«Maybe I finally know how to set boundaries.»
-«I think letting go doesn’t cost me as much anymore.»
-«This would have affected me much more before.»
+And maybe it is not a coincidence.
 
-And for a moment you think you have already learned it.
+Maybe there are things life keeps showing us because we have not finished learning them yet.
 
-But then another situation arrives. Maybe smaller, maybe completely different, yet it touches exactly the same point again.
+Sometimes we think we have already moved past it because, in one particular situation, we react differently. We have more patience. We set a boundary. We do not answer back. We do not insist. We let go.
 
-And that is where you understand it is not about passing a test and being done. Maybe it is about slowly noticing whether you have truly changed the way you react.`,
+And we think: this time, yes.
+
+But later another situation appears that, even if it is completely different, touches exactly the same place inside us.
+
+And then we understand it was never about that situation.
+
+It was about us.
+
+Maybe life does not repeat the same experiences because we have not learned enough, but because there is still a part of us that needs to be looked at differently.
+
+Because learning something is not knowing what we should do.
+
+It is reaching a point where we no longer need to force ourselves to act differently.
+
+One day, we simply do.
+
+And what used to repeat itself no longer holds the same power over us.`,
   },
   {
     reflection_id: "1",
     language: "fr",
-    title: "La vie te met à l’épreuve",
-    content: `Quand tu décides que tu veux être plus patient, plus résilient, poser plus de limites, lâcher prise ou simplement réagir autrement, des situations apparaissent souvent qui te placent juste face à ce que tu essaies de travailler.
+    title: "Jusqu’à ce qu’on l’apprenne",
+    content: `Il y a des situations qui semblent se répéter dans notre vie.
 
-Et quand tu parviens à le gérer autrement, tu penses :
+Les personnes, les lieux et les circonstances changent, mais d’une certaine façon nous nous retrouvons encore et encore devant le même point : la même peur, la même limite que nous ne savons pas poser, le même besoin de contrôler, la même difficulté à lâcher prise, la même manière de réagir.
 
-« Tiens, je crois que j’ai vraiment plus de patience maintenant. »
-« Peut-être que je sais enfin poser des limites. »
-« Je crois que lâcher prise me coûte moins qu’avant. »
-« Avant, cela m’aurait beaucoup plus affecté. »
+Et ce n’est peut-être pas un hasard.
 
-Et pendant un moment, tu penses que tu as déjà appris.
+Peut-être y a-t-il des choses que la vie continue de nous montrer parce que nous n’avons pas encore fini de les apprendre.
 
-Mais alors arrive une autre situation. Peut-être plus petite, peut-être complètement différente, mais qui touche à nouveau exactement le même point.
+Parfois, nous pensons avoir déjà dépassé cela parce que, face à une situation précise, nous réagissons autrement. Nous avons plus de patience. Nous posons une limite. Nous ne répondons pas. Nous n’insistons pas. Nous lâchons prise.
 
-Et c’est là que tu comprends qu’il ne s’agit pas de passer une épreuve et que ce soit réglé. Peut-être s’agit-il de voir, peu à peu, si tu as vraiment changé ta manière de réagir.`,
+Et nous pensons : cette fois, oui.
+
+Mais plus tard réapparaît une situation qui, même si elle est complètement différente, touche exactement le même endroit en nous.
+
+Et alors nous comprenons que ce n’était pas cette situation.
+
+C’était nous.
+
+Peut-être que la vie ne nous répète pas les mêmes expériences parce que nous n’avons pas assez appris, mais parce qu’il y a encore une part de nous qui a besoin d’être regardée autrement.
+
+Parce qu’apprendre quelque chose, ce n’est pas savoir ce que nous devrions faire.
+
+C’est arriver à un point où nous n’avons plus besoin de nous forcer à agir autrement.
+
+Un jour, simplement, nous le faisons.
+
+Et ce qui se répétait auparavant cesse d’avoir le même pouvoir sur nous.`,
   },
 
   // ─── 02 ───
@@ -1078,6 +1138,120 @@ C’est d’arriver à une vie qui, pour toi, se sente bien.
 
 Une paix pure.
 Un bonheur simple.`,
+  },
+
+  // ─── 13 ───
+  {
+    reflection_id: "13",
+    language: "ca",
+    title: "Decisions",
+    content: `La nostra vida pot arribar a assemblar-se molt més al que imaginem del que sovint ens permetem creure.
+
+Cada decisió que prenem, fins i tot les més petites, ens condueix en una direcció. Algunes ens apropen a la vida que volem. D'altres ens mantenen exactament on som. I moltes vegades no ens n'adonem perquè esperem que el canvi arribi abans de començar a actuar d'una manera diferent.
+
+Vivim envoltats de possibilitats. Hi ha versions de la nostra vida que encara no coneixem i que podrien arribar a ser perfectament nostres. Però perquè una realitat canviï, alguna cosa dins nostre també ha de canviar.
+
+A vegades diem que volem una vida diferent, però encara no estem preparats per assumir tot el que implica arribar-hi. Perquè tota nova realitat té un preu: deixar enrere hàbits, persones, comoditats, maneres de pensar o decisions que ja no són coherents amb qui volem ser.
+
+No sempre ens falta capacitat. De vegades ens falta disposició.
+
+Canviar de vida no consisteix només a decidir què volem aconseguir. Consisteix a començar a prendre les decisions que prendria la persona que ja viu aquesta realitat.
+
+Per això, potser la pregunta no és:
+
+«Què vull que canviï a la meva vida?»
+
+Sinó:
+
+«Si ja visqués en la meva nova realitat, com actuaria? Com pensaria? Com viuria? Com parlaria? I, sobretot, quines decisions prendria?»
+
+Perquè, al final, cada decisió és una direcció.
+
+I potser canviar de realitat no consisteix a esperar que la nostra vida canviï, sinó a començar a comportar-nos com si ja haguéssim escollit cap a on volem anar.`,
+  },
+  {
+    reflection_id: "13",
+    language: "es",
+    title: "Decisiones",
+    content: `Nuestra vida puede llegar a parecerse mucho más a lo que imaginamos de lo que a menudo nos permitimos creer.
+
+Cada decisión que tomamos, incluso las más pequeñas, nos conduce en una dirección. Algunas nos acercan a la vida que queremos. Otras nos mantienen exactamente donde estamos. Y muchas veces no nos damos cuenta porque esperamos que el cambio llegue antes de empezar a actuar de una manera distinta.
+
+Vivimos rodeados de posibilidades. Hay versiones de nuestra vida que aún no conocemos y que podrían llegar a ser perfectamente nuestras. Pero para que una realidad cambie, algo dentro de nosotros también tiene que cambiar.
+
+A veces decimos que queremos una vida diferente, pero aún no estamos preparados para asumir todo lo que implica llegar ahí. Porque toda nueva realidad tiene un precio: dejar atrás hábitos, personas, comodidades, maneras de pensar o decisiones que ya no son coherentes con quien queremos ser.
+
+No siempre nos falta capacidad. A veces nos falta disposición.
+
+Cambiar de vida no consiste solo en decidir qué queremos conseguir. Consiste en empezar a tomar las decisiones que tomaría la persona que ya vive esa realidad.
+
+Por eso, quizá la pregunta no es:
+
+«¿Qué quiero que cambie en mi vida?»
+
+Sino:
+
+«Si ya viviera en mi nueva realidad, ¿cómo actuaría? ¿Cómo pensaría? ¿Cómo viviría? ¿Cómo hablaría? Y, sobre todo, ¿qué decisiones tomaría?»
+
+Porque, al final, cada decisión es una dirección.
+
+Y quizá cambiar de realidad no consiste en esperar a que nuestra vida cambie, sino en empezar a comportarnos como si ya hubiéramos elegido hacia dónde queremos ir.`,
+  },
+  {
+    reflection_id: "13",
+    language: "en",
+    title: "Decisions",
+    content: `Our life can come to look far more like what we imagine than we often allow ourselves to believe.
+
+Every decision we make, even the smallest ones, leads us in a direction. Some bring us closer to the life we want. Others keep us exactly where we are. And often we do not notice, because we wait for change to arrive before we start acting differently.
+
+We live surrounded by possibilities. There are versions of our life we do not yet know, and that could become perfectly ours. But for a reality to change, something inside us also has to change.
+
+Sometimes we say we want a different life, but we are not yet ready to take on everything it takes to get there. Because every new reality has a price: leaving behind habits, people, comforts, ways of thinking, or decisions that are no longer consistent with who we want to be.
+
+It is not always capacity we lack. Sometimes it is willingness.
+
+Changing your life is not only about deciding what you want to achieve. It is about starting to make the decisions the person who already lives that reality would make.
+
+That is why, maybe, the question is not:
+
+«What do I want to change in my life?»
+
+But:
+
+«If I already lived in my new reality, how would I act? How would I think? How would I live? How would I speak? And above all, what decisions would I make?»
+
+Because, in the end, every decision is a direction.
+
+And maybe changing reality is not about waiting for our life to change, but about starting to behave as if we had already chosen where we want to go.`,
+  },
+  {
+    reflection_id: "13",
+    language: "fr",
+    title: "Décisions",
+    content: `Notre vie peut finir par ressembler bien plus à ce que nous imaginons que ce que nous nous permettons souvent de croire.
+
+Chaque décision que nous prenons, même les plus petites, nous conduit dans une direction. Certaines nous rapprochent de la vie que nous voulons. D’autres nous maintiennent exactement là où nous sommes. Et bien souvent, nous ne nous en rendons pas compte parce que nous attendons que le changement arrive avant de commencer à agir autrement.
+
+Nous vivons entourés de possibilités. Il existe des versions de notre vie que nous ne connaissons pas encore et qui pourraient parfaitement devenir nôtres. Mais pour qu’une réalité change, quelque chose en nous doit aussi changer.
+
+Parfois, nous disons que nous voulons une vie différente, mais nous ne sommes pas encore prêts à assumer tout ce que cela implique d’y arriver. Parce que toute nouvelle réalité a un prix : laisser derrière soi des habitudes, des personnes, des confort, des façons de penser ou des décisions qui ne sont plus cohérentes avec qui nous voulons être.
+
+Ce n’est pas toujours la capacité qui nous manque. Parfois, c’est la disposition.
+
+Changer de vie ne consiste pas seulement à décider ce que l’on veut obtenir. Cela consiste à commencer à prendre les décisions que prendrait la personne qui vit déjà cette réalité.
+
+C’est pourquoi, peut-être, la question n’est pas :
+
+« Que veux-je qui change dans ma vie ? »
+
+Mais :
+
+« Si je vivais déjà dans ma nouvelle réalité, comment agirais-je ? Comment penserais-je ? Comment vivrais-je ? Comment parlerais-je ? Et surtout, quelles décisions prendrais-je ? »
+
+Parce qu’au fond, chaque décision est une direction.
+
+Et peut-être que changer de réalité ne consiste pas à attendre que notre vie change, mais à commencer à nous comporter comme si nous avions déjà choisi où nous voulons aller.`,
   },
 ];
 

@@ -1,5 +1,7 @@
 .page-inner {
+  box-sizing: border-box;
   height: 100%;
+  min-height: 0;
   padding: 3.5rem 2.75rem 2.75rem;
   display: flex;
   flex-direction: column;
@@ -28,15 +30,16 @@
 
 .page-title-block {
   margin-top: 0;
-  max-width: 300px;
+  max-width: min(300px, 100%);
   /* Leave the rest of the page as quiet open space */
   margin-bottom: auto;
+  min-height: 0;
 }
 
 .page-title-block__num {
   /* Same hand typography as the index numbers */
   font-family: var(--font-hand);
-  font-size: 1.63rem;
+  font-size: clamp(1.2rem, 4.2cqh, 1.63rem);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -54,20 +57,20 @@
 
 .page-title-block__title {
   font-family: var(--font-page-title);
-  font-size: 22px;
+  font-size: clamp(16px, 3.6cqh, 22px);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.012em;
   color: var(--color-ink);
   margin: 0;
-  max-width: 300px;
+  max-width: min(300px, 100%);
 }
 
 .page-title-block__figure {
   position: relative;
-  margin: 3.75rem 0 0;
+  margin: clamp(1.5rem, 6cqh, 3.75rem) 0 0;
   padding: 0;
-  max-width: 210px;
+  max-width: min(210px, 72%);
   width: 100%;
   overflow: hidden;
 }
@@ -76,6 +79,8 @@
   display: block;
   width: 100%;
   height: auto;
+  max-height: min(42cqh, 280px);
+  object-fit: cover;
   user-select: none;
   pointer-events: none;
 }
@@ -83,6 +88,7 @@
 /* Body page — narrow editorial column, generous white space */
 .page-body-spread {
   padding: 4.5rem 3.25rem 3rem 2.75rem;
+  min-height: 0;
 }
 
 .flipbook__page--left .page-body-spread {
@@ -91,21 +97,28 @@
 
 .page-body {
   margin-top: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 410px;
+  max-width: min(410px, 100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 49, 88, 0.2) transparent;
 }
 
 .page-body__text {
   font-family: var(--font-body);
-  font-size: 10.5px;
+  font-size: clamp(9px, 1.85cqh, 10.5px);
   font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0.005em;
   color: var(--color-ink-soft);
-  max-width: 410px;
+  max-width: min(410px, 100%);
   margin: 0 0 0.7em;
   text-align: left;
   text-wrap: pretty;
@@ -188,11 +201,11 @@
   font-family: var(--font-page-title);
   font-style: italic;
   font-weight: 400;
-  font-size: 22px;
+  font-size: clamp(16px, 3.6cqh, 22px);
   line-height: 1.22;
   letter-spacing: -0.01em;
   color: var(--color-ink);
-  max-width: 300px;
+  max-width: min(300px, 100%);
   margin: 0;
 }
 
@@ -202,23 +215,23 @@
 
 .page-hand .page-body__text {
   font-family: var(--font-body);
-  font-size: 10.5px;
+  font-size: clamp(9px, 1.85cqh, 10.5px);
   font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0.005em;
   color: var(--color-ink-soft);
-  max-width: 410px;
+  max-width: min(410px, 100%);
 }
 
 .page-fragment .page-body {
   justify-content: center;
-  max-width: 410px;
+  max-width: min(410px, 100%);
 }
 
 .page-fragment .page-body__text {
-  font-size: 10.5px;
+  font-size: clamp(9px, 1.85cqh, 10.5px);
   line-height: 1.42;
-  max-width: 410px;
+  max-width: min(410px, 100%);
 }
 
 .page-empty {
@@ -232,15 +245,23 @@
   padding-left: 4.5rem;
   padding-right: 3.25rem;
   padding-bottom: 2.5rem;
+  min-height: 0;
 }
 
 .page-beginning__text {
-  max-width: 320px;
+  max-width: min(320px, 100%);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 49, 88, 0.2) transparent;
 }
 
 .page-beginning__paragraph {
   font-family: var(--font-hand);
-  font-size: 0.9rem;
+  font-size: clamp(0.78rem, 2.2cqh, 0.9rem);
   font-weight: 500;
   line-height: 1.36;
   letter-spacing: 0.01em;
@@ -254,7 +275,7 @@
 
 .page-beginning__signature {
   margin-top: 1.35em;
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 2.8cqh, 1.05rem);
 }
 
 .page-beginning-image {
@@ -322,16 +343,16 @@
 
   .page-title-block,
   .page-title-block__title {
-    max-width: 260px;
+    max-width: min(260px, 100%);
   }
 
   .page-title-block__figure {
-    max-width: 180px;
-    margin-top: 3rem;
+    max-width: min(180px, 68%);
+    margin-top: clamp(1.25rem, 5cqh, 3rem);
   }
 
   .page-title-block__num {
-    font-size: 1.435rem;
+    font-size: clamp(1.1rem, 4cqh, 1.435rem);
   }
 
   .page-beginning {
@@ -342,7 +363,7 @@
   }
 
   .page-beginning__paragraph {
-    font-size: 0.82rem;
+    font-size: clamp(0.72rem, 2.4cqh, 0.82rem);
     line-height: 1.34;
   }
 
@@ -352,7 +373,7 @@
 
   .page-beginning__signature {
     margin-top: 1.1em;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2.6cqh, 0.95rem);
   }
 
   .page-beginning-image {
@@ -360,16 +381,16 @@
   }
 
   .page-beginning-image__figure {
-    max-width: 300px;
+    max-width: min(300px, 88%);
   }
 
   .page-title-block__title,
   .page-quote__text {
-    font-size: 20px;
+    font-size: clamp(16px, 3.8cqh, 20px);
   }
 
   .page-body-spread {
-    padding: 3rem 1.75rem 2.25rem;
+    padding: 2.75rem 1.75rem 2.25rem;
   }
 
   .page-body,
@@ -383,7 +404,7 @@
   .page-body__text,
   .page-hand .page-body__text,
   .page-fragment .page-body__text {
-    font-size: 10.5px;
+    font-size: clamp(9px, 1.9cqh, 10.5px);
     line-height: 1.4;
   }
 

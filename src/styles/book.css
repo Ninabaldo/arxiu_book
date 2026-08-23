@@ -874,6 +874,17 @@
   transform-style: flat;
   transform: none;
   z-index: 1;
+  container-type: size;
+  container-name: book-page;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.flipbook__page > .page-inner {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .flipbook__page--left {
@@ -955,6 +966,8 @@
     linear-gradient(180deg, #fbf8f2 0%, var(--color-paper) 42%, #f2ebe0 100%);
   overflow: hidden;
   border-radius: 0;
+  container-type: size;
+  container-name: book-page;
 }
 
 .flipbook__sheet-face--front {
@@ -983,6 +996,15 @@
 .flipbook__sheet-face-content {
   width: 100%;
   height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.flipbook__sheet-face-content > .page-inner {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .flipbook__hit {
@@ -1158,19 +1180,29 @@ button.flipbook__hit:disabled {
   position: fixed;
   inset: 0;
   z-index: 20;
-  display: grid;
-  place-items: center;
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1.25rem, env(safe-area-inset-top))
+    max(1.25rem, env(safe-area-inset-right))
+    max(1.25rem, env(safe-area-inset-bottom))
+    max(1.25rem, env(safe-area-inset-left));
   background: rgba(247, 243, 235, 0.92);
   backdrop-filter: blur(2px);
+  overflow: hidden;
 }
 
 .index-overlay__panel {
   width: min(480px, 92vw);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .index-overlay__label {
-  margin: 0 0 2rem;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem;
   font-family: var(--font-sans);
   font-size: 0.65rem;
   font-weight: 500;
@@ -1182,10 +1214,18 @@ button.flipbook__hit:disabled {
 .index-overlay__list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0.35rem 0.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1.05rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 49, 88, 0.25) transparent;
 }
 
 .index-overlay__item {
@@ -1222,7 +1262,9 @@ button.flipbook__hit:disabled {
 }
 
 .index-overlay__back {
-  margin-top: 2.75rem;
+  flex-shrink: 0;
+  margin-top: 1.75rem;
+  padding-top: 0.25rem;
   font-family: var(--font-sans);
   font-size: 0.6rem;
   font-weight: 400;
@@ -1236,6 +1278,41 @@ button.flipbook__hit:disabled {
 .index-overlay__back:hover {
   opacity: 1;
   color: var(--color-ink-soft);
+}
+
+@media (max-width: 720px) {
+  .index-overlay {
+    align-items: stretch;
+    padding: max(1rem, env(safe-area-inset-top))
+      max(1rem, env(safe-area-inset-right))
+      max(1rem, env(safe-area-inset-bottom))
+      max(1rem, env(safe-area-inset-left));
+  }
+
+  .index-overlay__panel {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .index-overlay__label {
+    margin-bottom: 1.15rem;
+  }
+
+  .index-overlay__list {
+    gap: 0.9rem;
+  }
+
+  .index-overlay__num {
+    font-size: 1.12rem;
+  }
+
+  .index-overlay__title {
+    font-size: 1.05rem;
+  }
+
+  .index-overlay__back {
+    margin-top: 1.35rem;
+  }
 }
 
 @media (max-width: 1100px) {

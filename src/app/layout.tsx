@@ -51,12 +51,12 @@ export const metadata: Metadata = {
   description: "Reflexions escrites al llarg del temps",
   icons: {
     icon: [
-      { url: "/favicon.png?v=3", type: "image/png", sizes: "48x48" },
-      { url: "/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-16.png?v=3", type: "image/png", sizes: "16x16" },
-      { url: "/favicon.ico?v=3", sizes: "any" },
+      { url: "/favicon.png?v=4", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-32.png?v=4", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16.png?v=4", type: "image/png", sizes: "16x16" },
+      { url: "/favicon.ico?v=4", sizes: "any" },
     ],
-    apple: [{ url: "/apple-icon.png?v=3", type: "image/png", sizes: "180x180" }],
+    apple: [{ url: "/apple-icon.png?v=4", type: "image/png", sizes: "180x180" }],
   },
 };
 

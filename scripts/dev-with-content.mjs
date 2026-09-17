@@ -59,7 +59,6 @@ watch(chaptersDir, { persistent: true }, (event, file) => {
 const next = spawn("npx", ["next", "dev", "--turbopack"], {
   cwd: root,
   stdio: "inherit",
-  shell: true,
   env: process.env,
 });
 

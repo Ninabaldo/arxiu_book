@@ -391,9 +391,9 @@ paciència.
 
 **3. Deixar una porta oberta**
 
-Després d’allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l’altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L’altra és capaç de posar-se al costat de l’altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
+Després d’allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l’altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L’altra és capaç de posar-se al lloc de l’altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
 
-Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. Després de tot, jo acabava de fer una mica de tot: primer que sí, després que no, després un hotel, després febre, després que millor un altre dia… Quina paciència. Però ell seguia allà. El Max és força consistent i se’l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
+Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. El Max és força consistent i se’l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
 
 Allò havia passat un dimarts a la nit. Dimecres a la nit ja era a casa i divendres vaig decidir fer un pas més madur: dir-li clarament el que pensava. Li vaig reconèixer que m’hauria agradat tenir aquella cita, que ja em trobava millor i que li agraïa que s’hagués preocupat per mi. I, sobretot, li vaig dir que jo volia seguir veient-lo. Si ell no volia, cap problema. Evidentment, ho hauria hagut de gestionar, però en aquell moment jo ho deia amb una seguretat espectacular. Com si tingués absolutament clar què volia, què sentia i cap a on anava tot plegat. Una especialitat meva.
 
@@ -407,11 +407,11 @@ Fins que diumenge al matí em va baixar la regla.
 
 Havíem quedat dimarts i els números, sincerament, no em quadraven gens. Perquè una cosa és estar refredada i una altra és això. No fotem. Jo encara arrossegant el refredat, ara la regla… Què més? Una gastroenteritis per completar el pack?
 
-Vaig decidir explicar-li-ho. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l’apocalipsi, però jo tampoc sabia com s’ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
+Vaig decidir explicar-li. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l’apocalipsi, però jo tampoc sabia com s’ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
 
 I vaig decidir que quedaríem igualment.
 
-Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s’estava acabant d’amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m’encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, anar a mirar sofàs no era precisament una tortura. De fet, em semblava un pla bastant guai.
+Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s’estava acabant d’amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m’encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, no era precisament una tortura. De fet, em semblava un pla bastant guai.
 
 Però per una segona cita, després de tot el que havia passat i, sobretot, després de tot el que jo ja tenia al cap, no ho veia gens clar. Així que li vaig canviar el pla i li vaig proposar quedar-nos a casa.
 
@@ -423,9 +423,9 @@ Volia veure què passava quan simplement érem ell i jo.
 
 **4. Quan baixes la guàrdia**
 
-Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig enfilar cap allà amb els nervis típics d’una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
+Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig pujar al cotxe amb els nervis típics d’una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
 
-Vaig aparcar al lloc que m’havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M’havia fet una llista. Una llista! Per anar a casa d’un home. Evidentment, jo no sabia si m’hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
+Vaig aparcar al lloc que m’havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M’havia fet una llista, per anar a casa d’un home. Evidentment, jo no sabia si m’hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
 
 Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo un paquete», però el pis tenia càmera i vaig pensar que potser no calia que el primer que veiés fos jo fent el pallasso davant d’un objectiu. Vaig picar i vaig pujar.
 
@@ -433,9 +433,9 @@ Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo 
 
 Em va ensenyar casa seva, habitació per habitació, i després vam acabar al sofà. Cervesa rere cervesa, una mica de menjar i conversa. I les hores van anar passant sense que me n’adonés. Amb el Max no m’avorria gens. Sempre tenia alguna història per explicar, alguna anècdota interessant, alguna cosa que em feia voler saber-ne una mica més.
 
-En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat d’organitzar una cita com si fos una entrevista de feina.
+En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat organitzativa.
 
-Li vaig dir: «Vols fer un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m’estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d’entendre les relacions. M’agradava descobrir-ho.
+Li vaig dir: «Vols jugar un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m’estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d’entendre les relacions. M’agradava descobrir-ho.
 
 A mig joc em va fer un petó.
 
@@ -449,11 +449,11 @@ Quan vam arribar a l’última, vaig deixar el mòbil.
 
 I aquí començava l’aventura.
 
-Ens vam anar cap a l’habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d’haver estat contenint-nos tota l’estona. Jo, a més, portava un conjuntet moníssim que m’havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure’l tal com tu l’havies imaginat. Però a mi m’agradava, i amb això ja n’hi havia prou.
+Ens vam anar cap a l’habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d’haver estat contenint-nos tota l’estona. Jo, a més, portava un conjuntet de roba interior moníssim que m’havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure-t'el posat mes de 3 minuts. Però a mi m’agradava, i amb això ja n’hi havia prou.
 
 Després ens vam dutxar i jo ja pensava que ara sí, que aniríem a dormir. Però abans de ficar-nos al llit, el Max em va proposar anar a buscar la bossa al cotxe, perquè allà hi tenia coses. I, de cop, va fer la broma:
 
-«Hi anem en boles sobre la moto?»
+«Pillem la moto i anem en boles?»
 
 Jo sabia perfectament que era una broma i li vaig seguir el joc. Ell, en canvi, em va creure.
 
@@ -461,7 +461,7 @@ La gràcia és que jo, sincerament, ho hauria fet. A mi, allà, no em coneix nin
 
 Finalment, la bossa es va quedar al cotxe i vam tornar a l’habitació. Si ja m’havia preparat una llista de tot el que necessitava, sembla que aquella nit també havia preparat una mica massa bé la logística d’una estada que encara no sabia si arribaria a passar.
 
-La meva tos, però, sí que tenia clar que pensava quedar-se.
+La meva tos de malalta, però, sí que tenia clar que pensava quedar-se.
 
 Era aquella tos lletja, sorollosa i persistent que sembla que tingui personalitat pròpia. El Max em va donar aigua, xarop i va intentar cuidar-me com podia. Si m’incorporava, estava una mica millor, així que vam acabar allà, sense pressa, fent temps.
 

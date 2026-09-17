@@ -615,7 +615,7 @@ En el fons, havia estimat tant el Marcos que només volia que estigués bé. I s
 
 Ara bé, jo estava en plena etapa happy flowers i això també té els seus perills.
 
-Vaig coincidir amb una amiga seva i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d’aquella casa, perquè estava feta amb molt de carinyo.
+Vaig coincidir amb una amiga de la seva novia i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d’aquella casa, perquè estava feta amb molt de carinyo.
 
 Molt bonic tot.
 
@@ -649,7 +649,7 @@ I a mi allò em va flipar.
 
 No perquè necessités que algú portés el volant per mi. Precisament perquè, després d’haver passat tant de temps conduint jo, descobrir que podia seure al costat d’algú que també sabia agafar-lo em va resultar molt més atractiu del que m’hauria imaginat.
 
-Les primeres setmanes, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me’ls emportava a caminar. A vegades dues vegades al dia. Pobres.
+Les primeres setmanes post ruptura, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me’ls emportava a caminar. A vegades dues vegades al dia. Pobres.
 
 Amb la meva mare parlava de tot. Hi havia moments en què jo li donava tanta informació que arribava un punt que ja no sabia ni què dir-me. I llavors em començava a explicar les seves pròpies històries, especialment les d’aquella ruptura que havia viscut abans de conèixer el meu pare, feia més de trenta anys. I jo l’escoltava pensant que, al final, potser les ruptures canvien de decorat però tenen unes quantes coses que es repeteixen.
 
@@ -669,13 +669,13 @@ Em fa molta gràcia pensar com ens assemblem, perquè aquell home que jo conside
 
 I després hi havia les meves amigues, que van ser una altra peça fonamental d’aquells mesos.
 
-L’Bruna i l’Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
+La Bruna i l’Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
 
 L’Alex sempre estava disponible per una bona conversa. Tant si vivia a prop com si havia d’anar a veure-la quan vivia fora, sempre hi havia espai per mi. I, com si no fos prou, em presentava els seus amics i m’anava obrint portes a gent i llocs nous.
 
 Amb la Sofia també m’hi he sentit sempre molt a gust, tot i que vivia lluny. Aquell Sant Joan, poc després de la ruptura, vaig anar a Itàlia amb ella i em vaig sentir italiana en qüestió d’hores. Em va integrar perfectament a la seva vida i, a més, ella també estava passant per un moment complicat amb la seva parella. Ens enteníem força bé perquè, d’una manera o altra, totes dues estàvem intentant entendre què coi fèiem amb les nostres vides.
 
-I després hi havia la Juliana.
+I després hi havia la Sofía.
 
 Amb ella sempre hem estat molt properes, però en aquell moment la seva vida era pràcticament l’antítesi de la meva. Estava compromesa, embarassada i acabava de fer-se una casa amb el Nacho. I jo estava encantada per ella, perquè sabia que era exactament el que sempre havia volgut, i a més en aquell ordre. Em feia molta il·lusió veure-la complint el seu projecte de vida.
 
@@ -685,9 +685,9 @@ Recordo un dia que, pobreta, m’explicava tota emocionada com de feliç estava 
 
 Perdona?
 
-«Si m’estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofia.»
+«Si m’estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofía.»
 
-Ella encara no sabia que estava embarassada.
+Ella, en aquell moment encara no sabia que estava embarassada.
 
 Poc després ens ho va explicar.
 
@@ -705,25 +705,17 @@ D’altres, encara no sabia ni que existien.
 
 El Max se n’anava de pont. I jo, després de tota la confusió amb la bossa, la tos i la meva necessitat de marxar abans que em poguessin fer fora, havia perdut l’oportunitat de quedar-me més dies amb ell. Em va fer una mica de ràbia. No perquè hagués passat res, sinó perquè em vaig quedar amb aquella sensació de «potser podríem haver aprofitat més el moment».
 
-Li vaig preguntar què faria durant el pont. Em va explicar el seu pla: amics, furgos, escalar, kitesurf… Un planazo. I, al final, em va preguntar:
-
-«Em volies proposar un pla?»
-
-No li vaig contestar.
-
-Però sí, evidentment que li volia proposar un pla.
-
-Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M’enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m’agradava aquella manera de viure.
+Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M’enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m’agradava aquella manera de viure que tenia.
 
 Em veia fent aquelles coses.
 
 I això em sorprenia.
 
-No era només que m’agradés el Max. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure’s, d’agafar una furgoneta, marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m’havia acostumat massa a una manera concreta de viure i ara estava descobrint que n’hi havia moltes més.
+No era només que m’agradés ell. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure’s, d’agafar de marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m’havia acostumat massa a una manera concreta de viure i ara estava descobrint que n’hi havia moltes més.
 
 El dissabte, però, vaig tenir una petita crisi existencial.
 
-No tenia plans.
+No tenia plans programats.
 
 I em vaig trobar massa pendent del mòbil.
 
@@ -731,7 +723,7 @@ Mirava si m’havia escrit, pensava què estaria fent, quan contestaria… i em 
 
 Però tampoc volia fer veure que no m’importava.
 
-Així que vaig pensar en l’Bruna.
+Així que vaig pensar en la Bruna.
 
 Regla número dos d’una dona empoderada: abans d’escriure a un tio alguna cosa que probablement t’arrepentiràs d’haver escrit, escriu a la teva amiga.
 
@@ -755,7 +747,7 @@ Del mòbil.
 
 Sense proposar-m’ho gaire, vaig descobrir que era molt més fàcil deixar de pensar en si algú m’escrivia quan jo estava ocupada vivint.
 
-El Max havia tornat del pont i em va escriure. Em va donar bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
+El Max havia tornat del pont i em va escriure. Em va donar el bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
 
 I vaig continuar amb el meu dia.
 
@@ -781,9 +773,9 @@ Era la seva vida.
 
 I jo estava molt contenta per ella.
 
-Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… i sí, reconec que em vaig posar una mica coqueta.
+Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… 
 
-M’havia agradat que m’hagués buscat.
+M’havia agradat que m’hagués buscat dues vegades.
 
 Així que li vaig dir:
 
@@ -799,7 +791,7 @@ I ara volia veure què feia ell.
 
 Vam estar parlant una estona del cap de setmana, de les nostres coses, de les anècdotes… fins que em va dir:
 
-«Demà et proposo un pla.»
+«Demà et proposo un plà.»
 
 I em vaig quedar esperant.
 
@@ -811,19 +803,15 @@ A casa del Marcos.
 
 Així que li vaig escriure.
 
-«Tinc aquest pal aquí, allà.»
+«Tinc aquest pal aquí, es del meu pare, el necessito.»
 
-No sé què em feia més gràcia: recuperar el pal després de sis mesos o imaginar-me la cara del Marcos llegint aquell missatge.
+No sé què em feia més gràcia: recuperar el pal després de sis mesos de no viure allà o imaginar-me la cara del Marcos llegint aquell missatge.
 
 Perquè, sent una persona tan previsible com és, jo estava gairebé segura que no havia mogut absolutament res de lloc.
 
 Només volia veure si em contestava i em deia exactament on era.
 
-Després de sis mesos.
-
-Un pal.
-
-Així és com, de vegades, el passat torna a aparèixer.
+I així és com, de vegades, el passat torna a aparèixer.
 
 No amb una conversa transcendental.
 
@@ -841,7 +829,7 @@ I, curiosament, jo estava molt tranquil·la.
 
 Molt tranquil·la. En pau.
 
-Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d’aquests missatges. La coherència. Que l’interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant ni contestava sempre ràpid, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
+Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d’aquests missatges. La coherència. Que l’interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
 
 I ja feia gairebé un mes que parlàvem.
 
@@ -849,7 +837,7 @@ Un mes.
 
 Que, tenint en compte que ens havíem conegut en una aplicació i que jo al principi eliminava homes per coses bastant més petites, poca broma.
 
-Cap a les vuit del vespre del dilluns vaig escriure-li. Just sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l’escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
+Cap a les vuit del vespre del dilluns vaig escriure-li. Ell sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l’escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
 
 I la veritat és que me n’alegrava.
 

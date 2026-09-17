@@ -19,9 +19,20 @@ function renderParagraph(text: string): HTMLParagraphElement {
   return p;
 }
 
+/**
+ * True inked height of children (top of first → bottom of last),
+ * not scrollHeight — avoids flex/box quirks that pack one line too many.
+ */
+function usedHeight(body: HTMLElement): number {
+  const kids = body.children;
+  if (kids.length === 0) return 0;
+  const first = (kids[0] as HTMLElement).getBoundingClientRect();
+  const last = (kids[kids.length - 1] as HTMLElement).getBoundingClientRect();
+  return last.bottom - first.top;
+}
+
 function fits(body: HTMLElement, maxHeight: number): boolean {
-  // Allow 1px subpixel slack
-  return body.scrollHeight <= maxHeight + 1;
+  return usedHeight(body) <= maxHeight + 0.01;
 }
 
 /**
@@ -80,22 +91,40 @@ export function chunkContentMeasured(
   content: string,
   body: HTMLElement,
 ): string[] {
-  const rect = body.getBoundingClientRect();
-  const rawHeight = Math.floor(rect.height);
-  const rawWidth = Math.floor(rect.width);
+  // Prefer content-box height (excludes padding) so we don't pack into the pad
+  const clientH = body.clientHeight;
+  const style = window.getComputedStyle(body);
+  const padY =
+    (parseFloat(style.paddingTop) || 0) +
+    (parseFloat(style.paddingBottom) || 0);
+  const contentBoxH = Math.max(0, clientH - padY);
+  const rawWidth = Math.floor(body.getBoundingClientRect().width);
 
   // Guard against collapsed probe (was producing ~1 word per page → thousands of pages)
-  if (rawHeight < 120 || rawWidth < 140) {
+  if (contentBoxH < 120 || rawWidth < 140) {
     return [];
   }
 
   const sample = renderParagraph("Mg");
   body.appendChild(sample);
+  const sampleStyles = window.getComputedStyle(sample);
+  const fontSize = parseFloat(sampleStyles.fontSize) || 10.5;
+  const lineHeightRaw = sampleStyles.lineHeight;
+  const lineHeight =
+    lineHeightRaw === "normal"
+      ? fontSize * 1.42
+      : parseFloat(lineHeightRaw) || fontSize * 1.42;
   body.removeChild(sample);
 
-  // Leave ~1 line of air above the folio / bottom margin
-  const linePx = 15;
-  const maxHeight = Math.max(80, rawHeight - linePx);
+  // Keep the last line fully clear of the clip edge (folio zone + descenders)
+  const isNarrow =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 720px)").matches;
+  const reserveLines = isNarrow ? 3 : 2;
+  const maxHeight = Math.max(
+    80,
+    Math.floor(contentBoxH - lineHeight * reserveLines - 4),
+  );
 
   const paragraphs = splitParagraphs(content);
   if (paragraphs.length === 0) return [""];

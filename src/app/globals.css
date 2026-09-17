@@ -18,7 +18,7 @@ body {
 html {
   background: var(--color-ivory);
   /* Cover / pàgina 1 — marca ARXIU (favicon) */
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 body {
@@ -52,13 +52,13 @@ button {
   color: inherit;
   background: none;
   border: none;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, pointer;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, pointer;
   padding: 0;
 }
 
 a,
 [role="button"] {
-  cursor: url("/cursors/favicon-cursor.png") 7 7, pointer;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, pointer;
 }
 
 button:focus-visible,

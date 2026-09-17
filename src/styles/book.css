@@ -9,7 +9,7 @@
 
 .arxiu-stage--cover {
   display: block;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   /* Stage may clip chrome; the WebGL hero is full-bleed so the book is not boxed */
   overflow: hidden;
 }
@@ -24,7 +24,7 @@
   /* Safe chrome: lang top + page-nav bottom — book stays optically centered */
   padding: clamp(3.25rem, 8vh, 4.5rem) var(--space-md)
     clamp(5rem, 11vh, 6.5rem);
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   overflow: hidden;
 }
 
@@ -79,7 +79,7 @@
   filter: drop-shadow(0 10px 22px rgba(42, 38, 32, 0.14));
   opacity: 1;
   pointer-events: auto;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   touch-action: none;
   user-select: none;
   z-index: 1;
@@ -88,7 +88,7 @@
 
 .cover-photos__item.is-dragging {
   z-index: 3;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   filter: drop-shadow(0 14px 28px rgba(42, 38, 32, 0.2));
   transition: none;
 }
@@ -328,7 +328,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   touch-action: none;
   outline: none;
   overflow: visible;
@@ -341,7 +341,7 @@
 
 .closed-book-canvas:active,
 .closed-book-canvas.is-opening {
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 .closed-book-canvas.is-opening {
@@ -396,7 +396,7 @@
   color: inherit;
   background: transparent;
   border: 0;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, pointer;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, pointer;
 }
 
 .book-zoom__btn {
@@ -419,7 +419,7 @@
 
 .book-zoom__btn:disabled {
   opacity: 0.25;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, default;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, default;
 }
 
 .open-book-shell {
@@ -438,14 +438,14 @@
   height: var(--book-height);
   perspective: 2400px;
   perspective-origin: 50% 45%;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
   touch-action: none;
   user-select: none;
 }
 
 .book-scene:active,
 .book-scene.is-dragging {
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 .book-scene.is-opening {
@@ -962,11 +962,11 @@
 
 .flipbook__sheet.is-interactive {
   pointer-events: auto;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 .flipbook__sheet.is-flipping {
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 .flipbook__sheet-face {
@@ -1067,7 +1067,7 @@ button.flipbook__hit--next {
 }
 
 button.flipbook__hit:disabled {
-  cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, auto;
 }
 
 .page-nav {
@@ -1128,7 +1128,7 @@ button.flipbook__hit:disabled {
 
 .page-nav button:disabled {
   opacity: 0.3;
-  cursor: url("/cursors/favicon-cursor.png") 7 7, default;
+  cursor: url("/cursors/favicon-cursor.png") 9 9, default;
 }
 
 .page-nav__index {

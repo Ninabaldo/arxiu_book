@@ -2,8 +2,8 @@
   --page-pad-y: 3.25rem;
   --page-pad-outer: 3.1rem;
   --page-pad-inner: 3.15rem;
-  /* Folio near the page edge — page-nav is portaled below the book */
-  --page-pad-bottom: 1.75rem;
+  /* Room for folio + last-line clearance (must match measure reserve) */
+  --page-pad-bottom: 2.75rem;
   --page-col-max: min(380px, 100%);
 
   box-sizing: border-box;
@@ -108,6 +108,9 @@
   max-width: var(--page-col-max);
   width: 100%;
   overflow: hidden;
+  /* Keep descenders of the last line clear of the clip edge */
+  padding-bottom: 0.35em;
+  box-sizing: border-box;
 }
 
 .page-body__text {
@@ -165,6 +168,9 @@
   height: 0;
   width: 100%;
   max-width: var(--page-col-max);
+  /* Same clip padding as live pages */
+  padding-bottom: 0.35em;
+  box-sizing: border-box;
 }
 
 @media (max-width: 720px) {
@@ -345,7 +351,7 @@
     --page-pad-y: 2.5rem;
     --page-pad-outer: 2rem;
     --page-pad-inner: 2rem;
-    --page-pad-bottom: 1.75rem;
+    --page-pad-bottom: 3rem;
   }
 
   .page-title-block__num {

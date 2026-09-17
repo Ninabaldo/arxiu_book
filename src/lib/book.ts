@@ -88,7 +88,7 @@ const CHARS_PER_LINE = 48;
  * Vertical budget for one body page (text lines + paragraph gaps).
  * One line short of the physical bottom so text never sits on the edge.
  */
-const PAGE_LINE_BUDGET = 39;
+const PAGE_LINE_BUDGET = 36;
 /** Extra cost per paragraph ≈ margin-bottom 0.7em / line-height 1.42 */
 const PARA_GAP = 0.5;
 

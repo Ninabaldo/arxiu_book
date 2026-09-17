@@ -68,6 +68,52 @@ export function BookExperience({ reflections }: BookExperienceProps) {
     let cancelled = false;
     let attempts = 0;
 
+    const syncProbeToLivePage = (el: HTMLElement) => {
+      // Lock the probe to the visible leaf’s content box so measure ≡ render.
+      const liveBody = document.querySelector(
+        ".flipbook__page:not(.is-hidden) .page-body",
+      ) as HTMLElement | null;
+      if (liveBody) {
+        const r = liveBody.getBoundingClientRect();
+        const w = Math.floor(r.width);
+        const h = Math.floor(r.height);
+        if (w >= 100 && h >= 100) {
+          el.style.flex = "none";
+          el.style.width = `${w}px`;
+          el.style.maxWidth = `${w}px`;
+          el.style.height = `${h}px`;
+          return;
+        }
+      }
+
+      // Fallback: derive from the visible leaf + page-inner padding
+      const leaf = document.querySelector(
+        ".flipbook__page:not(.is-hidden)",
+      ) as HTMLElement | null;
+      if (!leaf) {
+        el.style.width = "";
+        el.style.height = "";
+        el.style.flex = "";
+        el.style.maxWidth = "";
+        return;
+      }
+      const leafR = leaf.getBoundingClientRect();
+      const cs = getComputedStyle(
+        leaf.querySelector(".page-inner") ?? leaf,
+      );
+      const padX =
+        (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+      const padY =
+        (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+      const w = Math.floor(leafR.width - padX);
+      const h = Math.floor(leafR.height - padY);
+      if (w < 100 || h < 100) return;
+      el.style.flex = "none";
+      el.style.width = `${w}px`;
+      el.style.maxWidth = `${w}px`;
+      el.style.height = `${h}px`;
+    };
+
     const run = async () => {
       try {
         await document.fonts?.ready;
@@ -77,7 +123,8 @@ export function BookExperience({ reflections }: BookExperienceProps) {
       if (cancelled || !measureBodyRef.current) return;
 
       const el = measureBodyRef.current;
-      // Force layout read after fonts
+      syncProbeToLivePage(el);
+      // Force layout read after fonts / size lock
       void el.offsetHeight;
       const h = el.getBoundingClientRect().height;
       if (h < 40 && attempts < 8) {
@@ -108,9 +155,18 @@ export function BookExperience({ reflections }: BookExperienceProps) {
       });
     });
 
+    // Second pass after open layout settles (mobile chrome / font swap)
+    const retry =
+      phase === "open"
+        ? window.setTimeout(() => {
+            if (!cancelled) void run();
+          }, 180)
+        : null;
+
     return () => {
       cancelled = true;
       cancelAnimationFrame(id);
+      if (retry != null) window.clearTimeout(retry);
     };
   }, [published, locale, measureKey, phase]);
 

@@ -67,7 +67,7 @@ El Max era un dels sis.
 
 I aquí la cosa va començar a canviar.
 
-Des del principi em va cridar l’atenció. Era molt esportista, feia moltes coses, tenia molts amics, semblava independent i, al mateix temps, transmetia que realment volia connectar amb algú. Vam començar a parlar i em vaig trobar amb una conversa que no s’acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
+Des del principi em va cridar l’atenció. Mentalment em deia "és esportista, fa moltes coses, té molts amics, sembla independent i, al mateix temps, transmet que realment vol connectar amb algú". Vam començar a parlar i em vaig trobar amb una conversa que no s’acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
 
 Anàvem descobrint coses en comú, coincidències i maneres de veure determinades coses que encaixaven. Vaig començar a pensar que potser havia aparegut en un moment curiós, gairebé com si hagués arribat quan tocava. Però jo continuava tenint els peus a terra: primer ens havíem de conèixer.
 
@@ -78,8 +78,6 @@ El primer dia em va fer una pregunta que em va fer molta gràcia:
 Aquell «o creus que vols» em va encantar. Em va semblar una mica provocador, així que vaig contestar sense donar-hi gaire voltes:
 
 —Marit i fills.
-
-Pim pam.
 
 No sé què esperava ell, però no va desaparèixer.
 
@@ -99,7 +97,7 @@ De fet, fa poc vaig estar amb ella i el Lucas, la seva parella, en una d’aquel
 
 Marameva.
 
-El Lucas el porta a ratlla.
+Porta el Lucas a ratlla.
 
 I jo, mirant-los, només podia pensar que potser havia d’aprendre una mica d’ella.
 
@@ -121,7 +119,7 @@ Li vaig escriure, més o menys, que veia que estava molt ocupat i que per això 
 
 Va contestar.
 
-Tenia feina.
+—Ho sento, tenia feina.
 
 S’havia salvat.
 
@@ -129,7 +127,7 @@ I jo li vaig dir:
 
 —Has tingut sort. T’anava a eliminar.
 
-Li va fer gràcia i vam continuar parlant.
+Li va fer gràcia que li fos tant sincèra i vam continuar parlant.
 
 Poc després em va proposar passar-nos a WhatsApp. Em va donar el seu número i em va dir que ara ja sabia que li podia escriure. Jo, evidentment, no podia semblar massa disponible, així que li vaig dir que m’ho pensaria. Ell ja havia fet el moviment.
 
@@ -151,7 +149,7 @@ Però somreia.
 
 Perquè, en el fons, aquell joc m’estava divertint.
 
-Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era diumenge i jo tenia el dia lliure. Li vaig dir:
+Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era dissabte i jo l'endemà tenia el dia lliure. Li vaig dir:
 
 —Demà tinc el dia lliure.
 
@@ -165,9 +163,7 @@ Però va funcionar.
 
 El Max va proposar:
 
-—Anem a prendre alguna cosa, entre tu i jo. Pensa tu el lloc.
-
-Perfecte.
+—Anem a prendre alguna cosa. Pensa tu el lloc.
 
 Vaig començar a buscar llocs, però tot em semblava massa formal i em feia mandra. No em venia de gust una cita convencional asseguts en una taula, amb aquella sensació de «ara ens hem de conèixer oficialment».
 
@@ -207,8 +203,6 @@ Abans que em donés gaire temps a pensar res més, ja m’estava fent un petó.
 
 I ho feia bé.
 
-Molt bé.
-
 Aquell petó va ser una explosió d’emocions. La nit es va convertir en una barreja de passió, calor i afecte, amb aquella sensació una mica absurda que dues persones que pràcticament no es coneixen poden arribar a connectar d’una manera molt intensa en molt poc temps.
 
 Vam acabar despullats i vam viure una nit molt intensa, amb molta passió i afecte, com si no hi hagués un demà.
@@ -227,13 +221,11 @@ A mesura que recuperava la consciència, també recuperava els records de la nit
 
 I sí: havia estat molt bé.
 
-Molt.
-
-Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i adonar-te que estàs dins d’una furgoneta amb un home que feia unes hores pràcticament no coneixies.
+Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i recordar tot el que havía passat i d'on vens.
 
 No vaig pensar: «Déu meu, què he fet?».
 
-Vaig pensar: «Necessito casa».
+Vaig pensar: «Necessito processarr».
 
 Necessitava espai, aigua, una dutxa i una mica de temps per assimilar què acabava de passar. Així que, a poc a poc, em vaig vestir.
 
@@ -269,9 +261,7 @@ Espero jo també que no.
 
 Però no.
 
-No m’havien pegat.
-
-El problema era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
+El problema no era la marqueta al mig de la cara, era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
 
 Aquell mateix vespre, el Max em va escriure fent broma i em va preguntar si havia aprofitat bé el dia des de les set del matí.
 
@@ -293,16 +283,15 @@ No perquè el necessités.
 
 Sinó perquè em venia de gust.
 
-
 **2. Entre el sí i el no**
 
-A partir d’aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m’escrivia, quan no, què m’escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una inconsciència que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
+A partir d’aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m’escrivia, quan no, què m’escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una naturalitat que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
 
 El que no volia, evidentment, era tornar a ficar-me en una història amb algú que no tingués les coses clares. Amb carinyo, Marcos, però espavila.
 
 Al cap de poc, com que el WhatsApp ja s’havia convertit en el nostre canal de comunicació principal, vaig començar a obrir-me una mica més amb el Max. I aquí, vist amb perspectiva, semblava que la història s’havia acabat abans de començar. Per dins havia estat brutal, m’havia agradat molt, però al mateix temps jo tenia una barrera enorme que em deia que no volia continuar.
 
-Així que, naturalment, el vaig tornar a posar a prova.
+Així que, naturalment, el vaig tornar a posar a prova, com si això m'ajudés a tenir les coses una mica més clares.
 
 Li vaig dir que no estava preparada.
 
@@ -315,8 +304,6 @@ La seva resposta va ser:
 —Espero que et vagi bé la recuperació de la teva ruptura.
 
 Em vaig picar.
-
-Jajajaja.
 
 No sé què esperava exactament que em digués, però aquella frase em va tocar l’ego. Així que vaig acabar dient-li la veritat: m’havia sentit massa exposada i vulnerable. M’havia agradat molt, però també m’havia fet por.
 
@@ -342,9 +329,7 @@ Bé.
 
 La suposada segona cita.
 
-Perquè no vam arribar ni a tenir-la.
-
-Jo havia reservat un hotel i l’havia pagat jo. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
+Jo havia reservat un hotel i l’havia pagat. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
 
 «Guapa, tu aquesta nit et quedes al llit».
 
@@ -354,7 +339,7 @@ Amb febre.
 
 Així que vaig haver d’escriure al Max per dir-li que estava feta pols i que probablement no ens podríem veure.
 
-Imagino que ell ja devia pensar que aquella noia era una mica complicada. I no el culpo.
+Imagino que ell ja devia pensar que aquella noia era una mica complicada,o que era una petita exxcusa. I no el culpo.
 
 Perquè, des de fora, la seqüència tenia bastant gràcia: primer «no estic preparada», després «estaré prop de casa teva», després reservo un hotel i, just quan sembla que per fi ens veurem, em poso malalta.
 
@@ -365,8 +350,6 @@ El curiós és que ell no deia gaire res. No feia escenes, no em demanava explic
 I era normal.
 
 Jo també ho hauria fet.
-
-Però alguna cosa ho notava.
 
 I, mentre la febre em pujava i jo tenia un hotel pagat, encara vaig intentar veure si d’alguna manera podia quedar amb ell. Em vaig moure com vaig poder fins a l’hotel, perquè, evidentment, si jo havia reservat una habitació, la meva missió era aprofitar-la fins al final.
 
@@ -406,7 +389,6 @@ I el Max, que probablement a aquestes alçades devia estar intentant entendre ex
 
 paciència.
 
-
 **3. Deixar una porta oberta**
 
 Després d’allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l’altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L’altra és capaç de posar-se al costat de l’altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
@@ -438,7 +420,6 @@ Crec que ell també es va sentir més tranquil. Però ara, mirant-ho amb perspec
 Jo, en canvi, tenia una altra cosa al cap. Volia connectar amb ell de veritat. Conèixer-lo més enllà de l’atracció, de la tensió i de tota aquella intensitat que havia aparegut tan ràpid. I, per això, no volia estímuls externs innecessaris.
 
 Volia veure què passava quan simplement érem ell i jo.
-
 
 **4. Quan baixes la guàrdia**
 
@@ -600,7 +581,6 @@ No perquè fos igual que jo.
 
 Precisament perquè no ho era.
 
-
 **5. Qui porta el volant**
 
 Durant sis anys, a casa jo era una mica la manetes oficial. Lampista, jardinera, decoradora, organitzadora, logística, compres, idees… si hi havia alguna cosa per fer, probablement jo ja hi havia pensat abans que ningú. I no ho dic per carregar-li tot al Marcos. De fet, ell segurament estava encantat de tenir una persona que resolia coses abans que existís el problema. Jo també n’estava encantada. La meva iniciativa em sortia sola i, com que no em costava gaire, cada vegada en feia més.
@@ -720,7 +700,6 @@ I que podia tenir moltes formes.
 Algunes les volia.
 
 D’altres, encara no sabia ni que existien.
-
 
 **6. Passar del mòbil**
 
@@ -854,7 +833,6 @@ I jo, mentre esperava saber on era el pal, només podia pensar en una cosa:
 
 què em proposaria el Max l’endemà?
 
-
 **7. Bidireccionalitat**
 
 L’endemà no vam parlar en tot el dia.
@@ -940,5 +918,3 @@ Amb el Max, de moment, la música també semblava prometedora.
 A veure si aquí també encaixàvem.
 
 Jo començava a tenir bastanta curiositat per descobrir-ho.
-
-

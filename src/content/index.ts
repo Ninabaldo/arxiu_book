@@ -147,11 +147,15 @@ export function getReflectionById(id: string): Reflection | undefined {
 }
 
 /**
- * Async loader: Supabase when configured, otherwise seed.
- * Prefer this from Server Components / route handlers.
+ * Async loader for Server Components / route handlers.
+ * Uses the local seed (chapter txt files) as source of truth.
+ * Set NEXT_PUBLIC_CONTENT_SOURCE=supabase to read from Supabase instead.
  */
 export async function loadPublishedReflections(): Promise<Reflection[]> {
-  if (hasSupabaseEnv()) {
+  const useSupabase =
+    process.env.NEXT_PUBLIC_CONTENT_SOURCE === "supabase" && hasSupabaseEnv();
+
+  if (useSupabase) {
     try {
       const fromDb = await fetchFromSupabase();
       if (fromDb?.length) {

@@ -15,10 +15,11 @@ import type { CoverCopy } from "@/i18n/cover";
 import { BOOK, bookTotalDepth } from "./dimensions";
 import {
   BACK_COVER_URL,
-  FRONT_COVER_URL,
+  COVER_PHOTO_URL,
   LINEN_URL,
   createPageEdgeTexture,
   createPaperFaceTexture,
+  createPhotoFrontCoverTexture,
   createSpineTexture,
 } from "./textures";
 
@@ -37,7 +38,8 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
   const hingeRef = useRef<THREE.Group>(null);
 
   const linen = useTexture(LINEN_URL);
-  const [frontPhoto, backPhoto] = useTexture([FRONT_COVER_URL, BACK_COVER_URL]);
+  const backPhoto = useTexture(BACK_COVER_URL);
+  const [frontMap, setFrontMap] = useState<THREE.CanvasTexture | null>(null);
 
   useLayoutEffect(() => {
     linen.colorSpace = THREE.SRGBColorSpace;
@@ -49,14 +51,12 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
   }, [linen]);
 
   useLayoutEffect(() => {
-    for (const tex of [frontPhoto, backPhoto]) {
-      tex.colorSpace = THREE.SRGBColorSpace;
-      tex.anisotropy = 12;
-      tex.wrapS = THREE.ClampToEdgeWrapping;
-      tex.wrapT = THREE.ClampToEdgeWrapping;
-      tex.needsUpdate = true;
-    }
-  }, [frontPhoto, backPhoto]);
+    backPhoto.colorSpace = THREE.SRGBColorSpace;
+    backPhoto.anisotropy = 12;
+    backPhoto.wrapS = THREE.ClampToEdgeWrapping;
+    backPhoto.wrapT = THREE.ClampToEdgeWrapping;
+    backPhoto.needsUpdate = true;
+  }, [backPhoto]);
 
   useFrame(() => {
     if (!hingeRef.current || !coverOpenRef) return;
@@ -76,6 +76,7 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
   useEffect(() => {
     let alive = true;
     let spine: THREE.CanvasTexture | null = null;
+    let front: THREE.CanvasTexture | null = null;
 
     createSpineTexture({
       title: copy.spine,
@@ -91,12 +92,39 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
       setSpineMap(tex);
     });
 
+    createPhotoFrontCoverTexture(
+      {
+        title: copy.coverTitle,
+        subtitle: copy.coverSubtitle,
+        dedication: copy.coverDedication,
+        year: copy.coverYear,
+      },
+      COVER_PHOTO_URL,
+    ).then((tex) => {
+      if (!alive) {
+        tex.dispose();
+        return;
+      }
+      front?.dispose();
+      front = tex;
+      setFrontMap(tex);
+    });
+
     return () => {
       alive = false;
       setSpineMap(null);
+      setFrontMap(null);
       spine?.dispose();
+      front?.dispose();
     };
-  }, [copy.spine, copy.coverSubtitle, copy.spineAuthor]);
+  }, [
+    copy.spine,
+    copy.coverSubtitle,
+    copy.spineAuthor,
+    copy.coverTitle,
+    copy.coverDedication,
+    copy.coverYear,
+  ]);
 
   useLayoutEffect(
     () => () => {
@@ -278,7 +306,7 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
           >
             <planeGeometry args={[coverArtW, coverArtH]} />
             <meshStandardMaterial
-              map={frontPhoto}
+              map={frontMap ?? backPhoto}
               color="#ffffff"
               roughness={0.92}
               metalness={0}

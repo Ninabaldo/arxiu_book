@@ -10,9 +10,11 @@ const PAPER = "#faf7f1";
 const PAPER_LINE = "#ebe4d8";
 
 export const LINEN_URL = "/textures/linen-weave.png";
-/** Full-bleed photo covers (title baked into front) */
+/** Full-bleed photo covers — front text is drawn live (see createPhotoFrontCoverTexture) */
 export const FRONT_COVER_URL = "/cover/front.jpg";
 export const BACK_COVER_URL = "/cover/back.jpg";
+/** Photo used under live title/author on the front cover */
+export const COVER_PHOTO_URL = BACK_COVER_URL;
 
 let linenImage: HTMLImageElement | null = null;
 let linenPromise: Promise<HTMLImageElement | null> | null = null;
@@ -701,6 +703,121 @@ export function createPaperFaceTexture(): THREE.CanvasTexture {
   ctx.globalAlpha = 1;
 
   return toTexture(canvas);
+}
+
+function serifStack() {
+  return `${cssFont("--font-instrument-serif", "Instrument Serif")}, "Instrument Serif", Georgia, serif`;
+}
+
+function pageTitleStack() {
+  return `${cssFont("--font-bodoni-moda", "Bodoni Moda")}, "Bodoni Moda", Georgia, serif`;
+}
+
+function loadImage(url: string): Promise<HTMLImageElement | null> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.crossOrigin = "anonymous";
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
+function wrapLines(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxWidth: number,
+): string[] {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return [];
+  const lines: string[] = [];
+  let current = words[0]!;
+  for (let i = 1; i < words.length; i++) {
+    const next = `${current} ${words[i]}`;
+    if (ctx.measureText(next).width <= maxWidth) {
+      current = next;
+    } else {
+      lines.push(current);
+      current = words[i]!;
+    }
+  }
+  lines.push(current);
+  return lines;
+}
+
+/**
+ * Front cover: back-cover photo (no baked text) + live title/author
+ * so locale switches update the cover typography.
+ */
+export async function createPhotoFrontCoverTexture(
+  copy: CoverTextureCopy,
+  photoUrl: string = BACK_COVER_URL,
+): Promise<THREE.CanvasTexture> {
+  await fontsReady();
+
+  const w = 1448;
+  const h = 2048;
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d", { alpha: false })!;
+
+  const photo = await withTimeout(loadImage(photoUrl), 4000);
+  if (photo) {
+    // Cover the canvas (object-fit: cover)
+    const scale = Math.max(w / photo.naturalWidth, h / photo.naturalHeight);
+    const dw = photo.naturalWidth * scale;
+    const dh = photo.naturalHeight * scale;
+    ctx.drawImage(photo, (w - dw) / 2, (h - dh) / 2, dw, dh);
+  } else {
+    ctx.fillStyle = PAPER;
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  const ink = "#2f241c";
+  const serif = serifStack();
+  const display = pageTitleStack();
+  const cx = w / 2;
+  const maxTextW = w * 0.78;
+
+  const author = copy.dedication.trim();
+  const title = copy.title.trim();
+
+  ctx.save();
+  ctx.fillStyle = ink;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "alphabetic";
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+
+  // Match the former baked cover: author small, title large in the lower half
+  const authorSize = Math.round(h * 0.028);
+  const titleSize = Math.round(h * 0.052);
+  const titleLineGap = titleSize * 1.18;
+
+  ctx.font = `400 ${titleSize}px ${display}`;
+  const titleLines = wrapLines(ctx, title, maxTextW);
+  const blockH =
+    (author ? authorSize * 1.6 : 0) + titleLines.length * titleLineGap;
+  let y = h * 0.72 - blockH * 0.35;
+
+  if (author) {
+    ctx.font = `400 ${authorSize}px ${serif}`;
+    ctx.globalAlpha = 0.92;
+    ctx.fillText(author, cx, y);
+    y += authorSize * 1.75;
+  }
+
+  ctx.font = `400 ${titleSize}px ${display}`;
+  ctx.globalAlpha = 1;
+  for (const line of titleLines) {
+    ctx.fillText(line, cx, y);
+    y += titleLineGap;
+  }
+
+  ctx.restore();
+  return toCoverAlbedoTexture(canvas);
 }
 
 export async function createBoardTexture(): Promise<THREE.CanvasTexture> {

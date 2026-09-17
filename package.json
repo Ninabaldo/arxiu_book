@@ -11,7 +11,8 @@
     "supabase:stop": "npx supabase stop",
     "supabase:status": "npx supabase status",
     "supabase:reset": "npx supabase db reset",
-    "supabase:seed:generate": "npx tsx scripts/generate-supabase-seed.mjs"
+    "supabase:seed:generate": "npx tsx scripts/generate-supabase-seed.mjs",
+    "content:build": "node scripts/build-seed-translations.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",

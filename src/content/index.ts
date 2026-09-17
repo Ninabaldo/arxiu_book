@@ -6,10 +6,11 @@ import type {
 } from "@/types";
 import { LOCALES } from "@/types";
 import { reflectionRecords, reflectionTranslations } from "@/content/seed";
+import { getSupabase, hasSupabaseEnv } from "@/lib/supabase";
 
 /**
  * Content access layer.
- * Today: local seed. Tomorrow: swap for Supabase queries without changing UI.
+ * Prefers local Supabase when env is set; falls back to seed on miss/error.
  */
 
 function joinReflection(
@@ -45,15 +46,96 @@ function joinReflection(
   };
 }
 
-export function getAllReflections(): Reflection[] {
-  return reflectionRecords
+function joinAll(
+  records: ReflectionRecord[],
+  translations: ReflectionTranslationRecord[],
+): Reflection[] {
+  return records
     .map((record) =>
       joinReflection(
         record,
-        reflectionTranslations.filter((t) => t.reflection_id === record.id),
+        translations.filter((t) => t.reflection_id === record.id),
       ),
     )
     .sort((a, b) => a.order - b.order);
+}
+
+function getSeedReflections(): Reflection[] {
+  return joinAll(reflectionRecords, reflectionTranslations);
+}
+
+type ReflectionRow = {
+  id: string;
+  slug: string;
+  order: number;
+  type: ReflectionRecord["type"];
+  status: ReflectionRecord["status"];
+  image: string | null;
+};
+
+type TranslationRow = {
+  id: string;
+  reflection_id: string;
+  language: Locale;
+  title: string;
+  content: string;
+};
+
+async function fetchFromSupabase(): Promise<Reflection[] | null> {
+  const supabase = getSupabase();
+  if (!supabase) return null;
+
+  const { data: reflections, error: reflectionsError } = await supabase
+    .from("reflections")
+    .select("id, slug, order, type, status, image")
+    .order("order", { ascending: true });
+
+  if (reflectionsError || !reflections?.length) {
+    if (reflectionsError) {
+      console.warn("[content] Supabase reflections failed:", reflectionsError.message);
+    }
+    return null;
+  }
+
+  const { data: translations, error: translationsError } = await supabase
+    .from("reflection_translations")
+    .select("id, reflection_id, language, title, content");
+
+  if (translationsError) {
+    console.warn(
+      "[content] Supabase translations failed:",
+      translationsError.message,
+    );
+    return null;
+  }
+
+  const records: ReflectionRecord[] = (reflections as ReflectionRow[]).map(
+    (row) => ({
+      id: row.id,
+      slug: row.slug,
+      order: row.order,
+      type: row.type,
+      status: row.status,
+      image: row.image ?? undefined,
+    }),
+  );
+
+  const translationRecords: ReflectionTranslationRecord[] = (
+    (translations ?? []) as TranslationRow[]
+  ).map((row) => ({
+    id: row.id,
+    reflection_id: row.reflection_id,
+    language: row.language,
+    title: row.title,
+    content: row.content,
+  }));
+
+  return joinAll(records, translationRecords);
+}
+
+/** Sync seed path — used when Supabase is unavailable. */
+export function getAllReflections(): Reflection[] {
+  return getSeedReflections();
 }
 
 export function getPublishedReflections(): Reflection[] {
@@ -62,6 +144,24 @@ export function getPublishedReflections(): Reflection[] {
 
 export function getReflectionById(id: string): Reflection | undefined {
   return getAllReflections().find((r) => r.id === id);
+}
+
+/**
+ * Async loader: Supabase when configured, otherwise seed.
+ * Prefer this from Server Components / route handlers.
+ */
+export async function loadPublishedReflections(): Promise<Reflection[]> {
+  if (hasSupabaseEnv()) {
+    try {
+      const fromDb = await fetchFromSupabase();
+      if (fromDb?.length) {
+        return fromDb.filter((r) => r.published);
+      }
+    } catch (err) {
+      console.warn("[content] Supabase load error, using seed:", err);
+    }
+  }
+  return getPublishedReflections();
 }
 
 export function getLocalizedField(

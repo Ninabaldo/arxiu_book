@@ -1,4 +1,4 @@
--- ARXIU content schema (Supabase) — source of truth is migrations/
+-- ARXIU content schema (local Supabase)
 -- Public frontend must never render created_at / updated_at.
 
 create or replace function public.set_updated_at()
@@ -36,6 +36,29 @@ create index if not exists reflections_status_idx on public.reflections (status)
 create index if not exists reflection_translations_lang_idx
   on public.reflection_translations (language);
 
--- RLS: anon only reads published reflections (+ their translations)
+create trigger reflections_set_updated_at
+before update on public.reflections
+for each row execute function public.set_updated_at();
+
 alter table public.reflections enable row level security;
 alter table public.reflection_translations enable row level security;
+
+-- Anon / authenticated: read published reflections only
+create policy "Public read published reflections"
+  on public.reflections
+  for select
+  to anon, authenticated
+  using (status = 'published');
+
+create policy "Public read translations of published reflections"
+  on public.reflection_translations
+  for select
+  to anon, authenticated
+  using (
+    exists (
+      select 1
+      from public.reflections r
+      where r.id = reflection_id
+        and r.status = 'published'
+    )
+  );

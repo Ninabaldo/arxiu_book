@@ -1,7 +1,7 @@
 import { BookExperience } from "@/components/book/BookExperience";
-import { getPublishedReflections } from "@/content";
+import { loadPublishedReflections } from "@/content";
 
-export default function HomePage() {
-  const reflections = getPublishedReflections();
+export default async function HomePage() {
+  const reflections = await loadPublishedReflections();
   return <BookExperience reflections={reflections} />;
 }

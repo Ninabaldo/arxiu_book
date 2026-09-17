@@ -44,6 +44,8 @@ export function FlipBook({
   const [flipping, setFlipping] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev" | null>(null);
   const [mobileSide, setMobileSide] = useState<"left" | "right">("left");
+  /** When set, next spreadIndex effect uses this side instead of defaulting to left. */
+  const mobileSideIntent = useRef<"left" | "right" | null>(null);
   const drag = useRef({
     active: false,
     startX: 0,
@@ -60,7 +62,37 @@ export function FlipBook({
     [reflections],
   );
 
+  /** Non-blank A5 leaves in reading order (for mobile page numbers). */
+  const leaves = useMemo(() => {
+    const list: { spreadIndex: number; side: "left" | "right" }[] = [];
+    spreads.forEach((spread, index) => {
+      if (spread.left.kind !== "blank") {
+        list.push({ spreadIndex: index, side: "left" });
+      }
+      if (spread.right.kind !== "blank") {
+        list.push({ spreadIndex: index, side: "right" });
+      }
+    });
+    return list;
+  }, [spreads]);
+
+  const leafNumber = useMemo(() => {
+    const i = leaves.findIndex(
+      (leaf) => leaf.spreadIndex === spreadIndex && leaf.side === mobileSide,
+    );
+    return i >= 0 ? i + 1 : spreadIndex + 1;
+  }, [leaves, mobileSide, spreadIndex]);
+
+  const navCurrent = isMobile ? leafNumber : spreadIndex + 1;
+  const navTotal = isMobile ? leaves.length : spreads.length;
+  const pageLabel = `${String(navCurrent).padStart(2, "0")} / ${String(navTotal).padStart(2, "0")}`;
+
   useEffect(() => {
+    if (mobileSideIntent.current) {
+      setMobileSide(mobileSideIntent.current);
+      mobileSideIntent.current = null;
+      return;
+    }
     setMobileSide(current?.left.kind === "blank" ? "right" : "left");
   }, [spreadIndex, current?.left.kind]);
 
@@ -123,6 +155,9 @@ export function FlipBook({
         return;
       }
       if (spreadIndex >= spreads.length - 1) return;
+      const next = spreads[spreadIndex + 1];
+      mobileSideIntent.current =
+        next?.left.kind === "blank" ? "right" : "left";
       onSpreadChange(spreadIndex + 1);
       return;
     }
@@ -137,7 +172,7 @@ export function FlipBook({
     mobileSide,
     onSpreadChange,
     spreadIndex,
-    spreads.length,
+    spreads,
   ]);
 
   const goPrev = useCallback(() => {
@@ -149,6 +184,10 @@ export function FlipBook({
         return;
       }
       if (spreadIndex <= 0) return;
+      const prev = spreads[spreadIndex - 1];
+      // Land on the last leaf of the previous spread (right if present)
+      mobileSideIntent.current =
+        prev && prev.right.kind !== "blank" ? "right" : "left";
       onSpreadChange(spreadIndex - 1);
       return;
     }
@@ -163,6 +202,7 @@ export function FlipBook({
     mobileSide,
     onSpreadChange,
     spreadIndex,
+    spreads,
   ]);
 
   useEffect(() => {
@@ -252,7 +292,11 @@ export function FlipBook({
   const turningNext = !isMobile && flipping && direction === "next";
   const turningPrev = !isMobile && flipping && direction === "prev";
   const showTurningSheet = turningNext || turningPrev;
-  const atStart = spreadIndex <= 0 && (!isMobile || mobileSide === "left");
+  const atStart =
+    spreadIndex <= 0 &&
+    (!isMobile ||
+      mobileSide === "left" ||
+      current.left.kind === "blank");
   const atEnd =
     spreadIndex >= spreads.length - 1 &&
     (!isMobile ||
@@ -294,7 +338,9 @@ export function FlipBook({
               reflections={reflectionById}
               allReflections={reflections}
               locale={locale}
-              pageLabel={`${String(spreadIndex + 1).padStart(2, "0")} / ${String(spreads.length).padStart(2, "0")}`}
+              pageLabel={
+                !isMobile || mobileSide === "left" ? pageLabel : undefined
+              }
               onSelectReflection={onSelectReflection}
             />
           </div>
@@ -308,6 +354,9 @@ export function FlipBook({
               reflections={reflectionById}
               allReflections={reflections}
               locale={locale}
+              pageLabel={
+                isMobile && mobileSide === "right" ? pageLabel : undefined
+              }
               onSelectReflection={onSelectReflection}
             />
           </div>
@@ -395,8 +444,8 @@ export function FlipBook({
       {embedded && typeof document !== "undefined"
         ? createPortal(
             <PageNav
-              current={spreadIndex + 1}
-              total={spreads.length}
+              current={navCurrent}
+              total={navTotal}
               previousLabel={copy.previous}
               nextLabel={copy.next}
               openIndexLabel={copy.openIndex}
@@ -410,8 +459,8 @@ export function FlipBook({
           )
         : (
             <PageNav
-              current={spreadIndex + 1}
-              total={spreads.length}
+              current={navCurrent}
+              total={navTotal}
               previousLabel={copy.previous}
               nextLabel={copy.next}
               openIndexLabel={copy.openIndex}
@@ -456,7 +505,11 @@ function PageFace({
 }
 
 function useIsNarrow() {
-  const [narrow, setNarrow] = useState(false);
+  const [narrow, setNarrow] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(max-width: 720px)").matches
+      : false,
+  );
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 720px)");
     setNarrow(mq.matches);

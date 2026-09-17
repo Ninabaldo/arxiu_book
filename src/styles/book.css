@@ -1361,23 +1361,29 @@ button.flipbook__hit:disabled {
   }
 }
 
+/* One A5 leaf at a time on phone — do not wait for .is-mobile JS */
 @media (max-width: 720px) {
-  .flipbook.is-mobile .flipbook__spread {
+  .flipbook__spread {
     grid-template-columns: 1fr;
   }
 
-  .flipbook.is-mobile .flipbook__page--left.is-hidden,
-  .flipbook.is-mobile .flipbook__page--right.is-hidden {
+  .flipbook__page--left.is-hidden,
+  .flipbook__page--right.is-hidden {
     display: none;
   }
 
-  .flipbook.is-mobile .flipbook__page--left,
-  .flipbook.is-mobile .flipbook__page--right {
+  /* Before JS hydrates: show only the left leaf */
+  .flipbook:not(.is-mobile) .flipbook__page--right {
+    display: none;
+  }
+
+  .flipbook__page--left,
+  .flipbook__page--right {
     border-radius: 3px;
   }
 
-  .flipbook.is-mobile .flipbook__gutter,
-  .flipbook.is-mobile .flipbook__sheet {
+  .flipbook__gutter,
+  .flipbook__sheet {
     display: none;
   }
 

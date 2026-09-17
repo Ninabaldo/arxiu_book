@@ -119,9 +119,6 @@ export function PageContent({
 
   return (
     <div className={`page-inner page-body-spread ${typeClass}`.trim()}>
-      <span className="page-margin-mark" aria-hidden="true">
-        Arxiu
-      </span>
       <div className="page-body">
         {paragraphs.length > 0 ? (
           paragraphs.map((paragraph, i) => (

@@ -55,6 +55,15 @@ function loadLinenImage(): Promise<HTMLImageElement | null> {
 async function fontsReady(): Promise<void> {
   if (typeof document === "undefined" || !document.fonts?.ready) return;
   await withTimeout(document.fonts.ready.then(() => true), 1200);
+  /* Ensure interior body face is available for the written back cover */
+  try {
+    await withTimeout(
+      document.fonts.load('400 16px "Libre Baskerville"'),
+      800,
+    );
+  } catch {
+    /* fall through — stack still has Georgia */
+  }
   await new Promise<void>((r) => requestAnimationFrame(() => r()));
 }
 
@@ -537,16 +546,24 @@ export async function createFrontCoverTexture(
   return map;
 }
 
+export type BackCoverTextureCopy = {
+  paragraphs: string[];
+};
+
 /**
- * Back cover — same oatmeal linen cloth as the front (no alternate material).
+ * Written back cover — oatmeal linen + blurb in cover ink.
  */
-export async function createBackCoverTexture(): Promise<THREE.CanvasTexture> {
-  const w = 1024;
-  const h = 1408;
+export async function createBackCoverTexture(
+  copy: BackCoverTextureCopy,
+): Promise<THREE.CanvasTexture> {
+  await fontsReady();
+
+  const w = 1448;
+  const h = 2048;
   const canvas = document.createElement("canvas");
   canvas.width = w;
   canvas.height = h;
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext("2d", { alpha: false })!;
   await clothBase(ctx, w, h);
 
   // Hinge crease on the spine edge (right when viewing the back)
@@ -557,25 +574,82 @@ export async function createBackCoverTexture(): Promise<THREE.CanvasTexture> {
   ctx.fillStyle = hinge;
   ctx.fillRect(w * 0.88, 0, w * 0.12, h);
 
-  return toTexture(canvas);
+  const body = bodyStack();
+  const ink = INK_BLUE;
+  const marginX = w * 0.11;
+  const maxTextW = w - marginX * 2;
+  const topY = h * 0.1;
+  const bottomY = h * 0.9;
+
+  const paragraphs = copy.paragraphs
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0);
+
+  const fitAndPaint = (fontSize: number) => {
+    /* Match interior page body rhythm (line-height ~1.42) */
+    const lineGap = fontSize * 1.42;
+    const paraGap = fontSize * 0.95;
+    ctx.font = `400 ${fontSize}px ${body}`;
+
+    const blocks: string[][] = [];
+    for (const para of paragraphs) {
+      const forced = para.split("\n");
+      const lines: string[] = [];
+      for (const chunk of forced) {
+        lines.push(...wrapLines(ctx, chunk.trim(), maxTextW));
+      }
+      if (lines.length) blocks.push(lines);
+    }
+
+    let totalH = 0;
+    for (let i = 0; i < blocks.length; i++) {
+      totalH += blocks[i]!.length * lineGap;
+      if (i < blocks.length - 1) totalH += paraGap;
+    }
+
+    return { blocks, lineGap, paraGap, totalH };
+  };
+
+  let size = Math.round(h * 0.024) - 2;
+  let layout = fitAndPaint(size);
+  while (layout.totalH > bottomY - topY && size > Math.round(h * 0.017)) {
+    size -= 1;
+    layout = fitAndPaint(size);
+  }
+
+  ctx.save();
+  ctx.fillStyle = ink;
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+  ctx.globalAlpha = 0.94;
+  ctx.font = `400 ${size}px ${body}`;
+
+  let y = topY + (bottomY - topY - layout.totalH) * 0.35 + size;
+  for (let i = 0; i < layout.blocks.length; i++) {
+    for (const line of layout.blocks[i]!) {
+      ctx.fillText(line, marginX, y);
+      y += layout.lineGap;
+    }
+    if (i < layout.blocks.length - 1) y += layout.paraGap;
+  }
+  ctx.restore();
+
+  return toCoverAlbedoTexture(canvas);
 }
 
 export type SpineTextureCopy = {
-  title: string;
-  subtitle: string;
-  author: string;
+  title?: string;
+  author?: string;
 };
 
 /**
- * Spine face texture: same cloth as covers + vertically centered title stack.
- * Canvas X = across spine thickness, Y = along book height.
- * Text runs top → bottom when the spine faces the viewer.
+ * Spine face — cloth only (no title / author on the lateral edge).
  */
 export async function createSpineTexture(
-  copy: SpineTextureCopy,
+  _copy?: SpineTextureCopy,
 ): Promise<THREE.CanvasTexture> {
-  await fontsReady();
-
   const w = 384;
   const h = 2048;
   const canvas = document.createElement("canvas");
@@ -590,37 +664,6 @@ export async function createSpineTexture(
   relief.addColorStop(1, "rgba(80,68,50,0.08)");
   ctx.fillStyle = relief;
   ctx.fillRect(0, 0, w, h);
-
-  const hand = handStack();
-  const sans = sansStack();
-  const title = copy.title.toUpperCase();
-  const subtitle = copy.subtitle.replace(/\n/g, " ").toLowerCase();
-  const author = copy.author;
-
-  /** Draw text along the spine (top → bottom), centered in thickness. */
-  const drawAlongSpine = (
-    text: string,
-    yCenter: number,
-    font: string,
-    alpha: number,
-  ) => {
-    ctx.save();
-    ctx.translate(w / 2, yCenter);
-    // +90° so glyphs read top→bottom when viewing the left spine
-    ctx.rotate(Math.PI / 2);
-    ctx.fillStyle = INK_BLUE;
-    ctx.globalAlpha = alpha;
-    ctx.font = font;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(text, 0, 0);
-    ctx.restore();
-  };
-
-  // Vertically balanced: title / subtitle / author
-  drawAlongSpine(title, h * 0.22, `400 56px ${hand}`, 0.96);
-  drawAlongSpine(subtitle, h * 0.5, `400 34px ${hand}`, 0.9);
-  drawAlongSpine(author, h * 0.78, `500 32px ${sans}`, 0.92);
 
   return toTexture(canvas);
 }
@@ -707,6 +750,11 @@ export function createPaperFaceTexture(): THREE.CanvasTexture {
 
 function serifStack() {
   return `${cssFont("--font-instrument-serif", "Instrument Serif")}, "Instrument Serif", Georgia, serif`;
+}
+
+/** Interior reading face — same stack as `.page-body__text` */
+function bodyStack() {
+  return `${cssFont("--font-libre-baskerville", "Libre Baskerville")}, "Libre Baskerville", Georgia, "Times New Roman", Times, serif`;
 }
 
 function pageTitleStack() {

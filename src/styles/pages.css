@@ -179,33 +179,6 @@
   }
 }
 
-.page-margin-mark {
-  position: absolute;
-  left: var(--page-pad-outer);
-  bottom: 1rem;
-  top: auto;
-  right: auto;
-  transform: none;
-  font-family: var(--font-sans);
-  font-size: 8px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: none;
-  color: var(--color-muted);
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-.flipbook__page--left .page-margin-mark {
-  left: var(--page-pad-outer);
-  right: auto;
-}
-
-.flipbook__page--right .page-margin-mark {
-  left: auto;
-  right: var(--page-pad-outer);
-}
-
 .page-folio {
   position: absolute;
   z-index: 20;
@@ -382,11 +355,6 @@
   .page-fragment .page-body__text {
     font-size: 10px;
     line-height: 1.4;
-  }
-
-  .page-margin-mark {
-    bottom: 0.85rem;
-    font-size: 7px;
   }
 
   .page-folio {

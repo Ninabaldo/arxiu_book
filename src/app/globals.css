@@ -94,3 +94,140 @@ a:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/* ——— Access gate (4-digit PIN) ——— */
+.access-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, #faf6ef 0%, var(--color-ivory) 55%, #ebe5da 100%);
+  opacity: 1;
+  transition:
+    opacity 0.85s var(--ease-out),
+    visibility 0.85s var(--ease-out);
+}
+
+.access-gate.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.access-gate--boot {
+  background: var(--color-ivory);
+}
+
+.access-gate__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: min(100%, 22rem);
+  text-align: center;
+  transition:
+    opacity 0.55s var(--ease-out),
+    transform 0.85s var(--ease-out);
+}
+
+.access-gate.is-leaving .access-gate__panel {
+  opacity: 0;
+  transform: translateY(-0.35rem) scale(0.985);
+}
+
+.access-gate__mark {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.access-gate__hint {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-ink-soft);
+}
+
+.access-gate__pin {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.access-gate__digit {
+  width: 2.75rem;
+  height: 3.25rem;
+  border: 0;
+  border-bottom: 1.5px solid rgba(47, 36, 28, 0.28);
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+  caret-color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.access-gate__digit:focus {
+  border-bottom-color: var(--color-ink);
+}
+
+.access-gate__digit:disabled {
+  opacity: 0.55;
+}
+
+.access-gate__pin.is-error .access-gate__digit {
+  border-bottom-color: rgba(120, 48, 42, 0.55);
+  color: #7a322c;
+}
+
+.access-gate__error,
+.access-gate__spacer {
+  margin: 0.15rem 0 0;
+  min-height: 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a322c;
+}
+
+.access-gate__spacer {
+  visibility: hidden;
+}
+
+.access-reveal {
+  min-height: 100dvh;
+  opacity: 0;
+  transform: translateY(0.55rem) scale(0.985);
+  filter: blur(2px);
+  transition:
+    opacity 1.05s var(--ease-out) 0.12s,
+    transform 1.15s var(--ease-out) 0.08s,
+    filter 1s var(--ease-out) 0.1s;
+}
+
+.access-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.access-reveal.is-settled {
+  filter: none;
+  transform: none;
+}

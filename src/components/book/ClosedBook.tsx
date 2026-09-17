@@ -1,13 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import type { CoverCopy } from "@/i18n/cover";
+import { BookZoomControls } from "@/components/ui/BookZoomControls";
 import {
   COVER_ZOOM_DEFAULT,
+  COVER_ZOOM_MAX,
+  COVER_ZOOM_MIN,
   COVER_ZOOM_MOBILE,
-  ZOOM_MAX,
-  ZOOM_MIN,
+  useBookZoom,
 } from "@/hooks/useBookZoom";
 
 interface ClosedBookProps {
@@ -26,34 +28,31 @@ const BookScene = dynamic(
   },
 );
 
-function clampCoverZoom(value: number) {
-  return Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, value));
-}
-
 /** Closed landing object — R3F hardcover. Click opens FlipBook. */
 export function ClosedBook({ copy, onOpen }: ClosedBookProps) {
-  const [isMobile, setIsMobile] = useState(false);
-  const [zoom, setZoom] = useState(COVER_ZOOM_DEFAULT);
+  const {
+    zoom,
+    setZoom,
+    setInitialZoom,
+    zoomIn,
+    zoomOut,
+    resetZoom,
+    canZoomIn,
+    canZoomOut,
+  } = useBookZoom(COVER_ZOOM_DEFAULT, {
+    min: COVER_ZOOM_MIN,
+    max: COVER_ZOOM_MAX,
+  });
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 720px)");
     const apply = () => {
-      const mobile = mq.matches;
-      setIsMobile(mobile);
-      setZoom(mobile ? COVER_ZOOM_MOBILE : COVER_ZOOM_DEFAULT);
+      setInitialZoom(mq.matches ? COVER_ZOOM_MOBILE : COVER_ZOOM_DEFAULT);
     };
     apply();
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
-  }, []);
-
-  const onZoomChange = useCallback(
-    (next: number) => {
-      if (!isMobile) return;
-      setZoom(clampCoverZoom(next));
-    },
-    [isMobile],
-  );
+  }, [setInitialZoom]);
 
   return (
     <div className="book-hero book-hero--r3f">
@@ -61,7 +60,19 @@ export function ClosedBook({ copy, onOpen }: ClosedBookProps) {
         copy={copy}
         onOpen={onOpen}
         zoom={zoom}
-        onZoomChange={isMobile ? onZoomChange : undefined}
+        onZoomChange={setZoom}
+      />
+      <BookZoomControls
+        placement="cover"
+        zoom={zoom}
+        onZoomIn={zoomIn}
+        onZoomOut={zoomOut}
+        onReset={resetZoom}
+        canZoomIn={canZoomIn}
+        canZoomOut={canZoomOut}
+        zoomInLabel={copy.zoomIn}
+        zoomOutLabel={copy.zoomOut}
+        zoomResetLabel={copy.zoomReset}
       />
     </div>
   );

@@ -17,10 +17,10 @@ import {
   BACK_COVER_URL,
   COVER_PHOTO_URL,
   LINEN_URL,
+  createBackCoverTexture,
   createPageEdgeTexture,
   createPaperFaceTexture,
   createPhotoFrontCoverTexture,
-  createSpineTexture,
 } from "./textures";
 
 interface PhysicalBookProps {
@@ -40,6 +40,7 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
   const linen = useTexture(LINEN_URL);
   const backPhoto = useTexture(BACK_COVER_URL);
   const [frontMap, setFrontMap] = useState<THREE.CanvasTexture | null>(null);
+  const [backMap, setBackMap] = useState<THREE.CanvasTexture | null>(null);
 
   useLayoutEffect(() => {
     linen.colorSpace = THREE.SRGBColorSpace;
@@ -64,8 +65,6 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
     hingeRef.current.rotation.y = -t * Math.PI * 0.92;
   });
 
-  const [spineMap, setSpineMap] = useState<THREE.CanvasTexture | null>(null);
-
   const pageMaps = useMemo(() => {
     const pageSide = createPageEdgeTexture("side");
     const pageEdge = createPageEdgeTexture("edge");
@@ -75,22 +74,8 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
 
   useEffect(() => {
     let alive = true;
-    let spine: THREE.CanvasTexture | null = null;
     let front: THREE.CanvasTexture | null = null;
-
-    createSpineTexture({
-      title: copy.spine,
-      subtitle: copy.coverSubtitle,
-      author: copy.spineAuthor,
-    }).then((tex) => {
-      if (!alive) {
-        tex.dispose();
-        return;
-      }
-      spine?.dispose();
-      spine = tex;
-      setSpineMap(tex);
-    });
+    let back: THREE.CanvasTexture | null = null;
 
     createPhotoFrontCoverTexture(
       {
@@ -110,20 +95,31 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
       setFrontMap(tex);
     });
 
+    createBackCoverTexture({
+      paragraphs: copy.backCoverParagraphs,
+    }).then((tex) => {
+      if (!alive) {
+        tex.dispose();
+        return;
+      }
+      back?.dispose();
+      back = tex;
+      setBackMap(tex);
+    });
+
     return () => {
       alive = false;
-      setSpineMap(null);
       setFrontMap(null);
-      spine?.dispose();
+      setBackMap(null);
       front?.dispose();
+      back?.dispose();
     };
   }, [
-    copy.spine,
-    copy.coverSubtitle,
-    copy.spineAuthor,
     copy.coverTitle,
     copy.coverDedication,
+    copy.coverSubtitle,
     copy.coverYear,
+    copy.backCoverParagraphs,
   ]);
 
   useLayoutEffect(
@@ -172,11 +168,9 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
     });
   }, []);
 
-  /** Spine face matches the board so text sits on the physical spine, not a floating card */
+  /** Spine board — cloth only, no title/author on the lateral edge */
   const spineBoardW = depth * 0.98;
   const spineBoardH = BOOK.height * 0.995;
-  const spineFaceW = spineBoardW * 0.98;
-  const spineFaceH = spineBoardH * 0.985;
 
   const clothMat = {
     map: linen,
@@ -192,7 +186,7 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
 
   return (
     <group name="physical-book">
-      {/* Back cover — photo on the outer face */}
+      {/* Back cover — written blurb on oatmeal linen */}
       <group
         name="back-cover"
         position={[0, 0, -depth / 2 + BOOK.coverThickness / 2]}
@@ -207,20 +201,23 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
           <meshStandardMaterial {...clothMat} />
         </RoundedBox>
 
-        <mesh
-          position={[0, 0, -BOOK.coverThickness / 2 - 0.0008]}
-          rotation={[0, Math.PI, 0]}
-          castShadow={false}
-          receiveShadow
-        >
-          <planeGeometry args={[coverArtW, coverArtH]} />
-          <meshStandardMaterial
-            map={backPhoto}
-            color="#ffffff"
-            roughness={0.92}
-            metalness={0}
-          />
-        </mesh>
+        {backMap ? (
+          <mesh
+            position={[0, 0, -BOOK.coverThickness / 2 - 0.0008]}
+            rotation={[0, Math.PI, 0]}
+            castShadow={false}
+            receiveShadow
+          >
+            <planeGeometry args={[coverArtW, coverArtH]} />
+            <meshStandardMaterial
+              map={backMap}
+              color="#ffffff"
+              roughness={0.92}
+              metalness={0}
+              toneMapped={false}
+            />
+          </mesh>
+        ) : null}
       </group>
 
       <group name="page-block" position={[pageX, 0, 0]}>
@@ -256,27 +253,6 @@ export function PhysicalBook({ copy, coverOpenRef }: PhysicalBookProps) {
         >
           <meshStandardMaterial {...clothMat} />
         </RoundedBox>
-
-        {spineMap ? (
-          <mesh
-            position={[0, 0, BOOK.coverThickness / 2 + 0.00035]}
-            renderOrder={2}
-          >
-            <planeGeometry args={[spineFaceW, spineFaceH]} />
-            <meshStandardMaterial
-              map={spineMap}
-              color="#ffffff"
-              roughness={0.9}
-              metalness={0}
-              bumpMap={linen}
-              bumpScale={0.03}
-              polygonOffset
-              polygonOffsetFactor={-1}
-              polygonOffsetUnits={-1}
-              depthWrite
-            />
-          </mesh>
-        ) : null}
       </group>
 
       <group

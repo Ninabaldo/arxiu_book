@@ -8,11 +8,11 @@ import {
   useRef,
   type MutableRefObject,
 } from "react";
-import { Canvas, useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 import type { CoverCopy } from "@/i18n/cover";
-import { ZOOM_MAX, ZOOM_MIN } from "@/hooks/useBookZoom";
+import { COVER_ZOOM_MAX, COVER_ZOOM_MIN } from "@/hooks/useBookZoom";
 import { CLOSED_FORMAT } from "./config";
 import { PhysicalBook } from "./hardcover/PhysicalBook";
 import { BOOK, bookTotalDepth } from "./hardcover/dimensions";
@@ -31,14 +31,25 @@ const CLICK_PX = 8;
 /** Face-on rest pose — book sits straight until the user drags. */
 const REST_X = 0;
 const REST_Y = 0;
-/** Slow, intentional orbit */
-const PITCH_SENS = 0.0016;
-const YAW_SENS = 0.0028;
-const PITCH_MAX = 1.05;
-const VEL_GAIN = 4.5;
-const VEL_DECAY = 0.78;
-const VEL_MIN = 0.00015;
-const ROT_FOLLOW = 9;
+/** Orbit — responsive enough to reach the back cover in one drag */
+const PITCH_SENS = 0.0022;
+const YAW_SENS = 0.0055;
+const PITCH_MAX = 1.15;
+const VEL_GAIN = 5.5;
+const VEL_DECAY = 0.86;
+const VEL_MIN = 0.00012;
+const ROT_FOLLOW = 14;
+/** Only open when the front cover roughly faces the camera */
+const OPEN_YAW_MAX = 0.65;
+
+function normalizeAngle(a: number) {
+  const tau = Math.PI * 2;
+  return ((((a + Math.PI) % tau) + tau) % tau) - Math.PI;
+}
+
+function isFacingFront(yaw: number) {
+  return Math.abs(normalizeAngle(yaw)) < OPEN_YAW_MAX;
+}
 
 function ClosedPhysical({
   copy,
@@ -118,6 +129,33 @@ function DraggableBook({
   useEffect(() => {
     const el = gl.domElement;
 
+    const onDown = (e: PointerEvent) => {
+      if (e.button !== 0) return;
+      pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      /* Pinch / multi-touch — do not start a spin */
+      if (pointers.current.size > 1) {
+        drag.current = null;
+        vel.current = { x: 0, y: 0 };
+        return;
+      }
+      try {
+        el.setPointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+      drag.current = {
+        active: true,
+        pointerId: e.pointerId,
+        x: e.clientX,
+        y: e.clientY,
+        ox: rot.current.x,
+        oy: rot.current.y,
+        moved: 0,
+        lt: performance.now(),
+      };
+      vel.current = { x: 0, y: 0 };
+    };
+
     const onMove = (e: PointerEvent) => {
       pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
       /* Pinch / multi-touch — do not spin the book */
@@ -142,10 +180,18 @@ function DraggableBook({
       const nextY = drag.current.oy + dx * YAW_SENS;
 
       const now = performance.now();
-      const dlt = Math.max(24, now - drag.current.lt);
+      const dlt = Math.max(16, now - drag.current.lt);
       vel.current = {
-        x: THREE.MathUtils.clamp(((nextX - rot.current.x) / dlt) * VEL_GAIN, -0.04, 0.04),
-        y: THREE.MathUtils.clamp(((nextY - rot.current.y) / dlt) * VEL_GAIN, -0.05, 0.05),
+        x: THREE.MathUtils.clamp(
+          ((nextX - rot.current.x) / dlt) * VEL_GAIN,
+          -0.05,
+          0.05,
+        ),
+        y: THREE.MathUtils.clamp(
+          ((nextY - rot.current.y) / dlt) * VEL_GAIN,
+          -0.08,
+          0.08,
+        ),
       };
       drag.current.lt = now;
       rot.current.x = nextX;
@@ -162,47 +208,29 @@ function DraggableBook({
       }
       const wasClick = drag.current.moved < CLICK_PX;
       drag.current = null;
-      if (wasClick && pointers.current.size === 0) onOpenRef.current();
+      if (
+        wasClick &&
+        pointers.current.size === 0 &&
+        isFacingFront(rot.current.y)
+      ) {
+        onOpenRef.current();
+      }
     };
 
+    el.addEventListener("pointerdown", onDown);
     el.addEventListener("pointermove", onMove);
     el.addEventListener("pointerup", onUp);
     el.addEventListener("pointercancel", onUp);
     return () => {
+      el.removeEventListener("pointerdown", onDown);
       el.removeEventListener("pointermove", onMove);
       el.removeEventListener("pointerup", onUp);
       el.removeEventListener("pointercancel", onUp);
     };
   }, [gl]);
 
-  const onPointerDown = (e: ThreeEvent<PointerEvent>) => {
-    e.stopPropagation();
-    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (pointers.current.size > 1) {
-      drag.current = null;
-      vel.current = { x: 0, y: 0 };
-      return;
-    }
-    gl.domElement.setPointerCapture(e.pointerId);
-    drag.current = {
-      active: true,
-      pointerId: e.pointerId,
-      x: e.clientX,
-      y: e.clientY,
-      ox: rot.current.x,
-      oy: rot.current.y,
-      moved: 0,
-      lt: performance.now(),
-    };
-    vel.current = { x: 0, y: 0 };
-  };
-
   return (
-    <group
-      ref={group}
-      rotation={[REST_X, REST_Y, 0]}
-      onPointerDown={onPointerDown}
-    >
+    <group ref={group} rotation={[REST_X, REST_Y, 0]}>
       <ClosedPhysical copy={copy} coverOpenRef={coverOpenRef} />
       <BookFollowShadow />
     </group>
@@ -352,7 +380,8 @@ export function BookScene({
     const el = shellRef.current;
     if (!el || !onZoomChange) return;
 
-    const clamp = (v: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, v));
+    const clamp = (v: number) =>
+      Math.min(COVER_ZOOM_MAX, Math.max(COVER_ZOOM_MIN, v));
 
     const onTouchStart = (e: TouchEvent) => {
       if (e.touches.length !== 2) {
@@ -385,15 +414,23 @@ export function BookScene({
       pinchRef.current = null;
     };
 
+    const onWheel = (e: WheelEvent) => {
+      if (!onZoomRef.current) return;
+      e.preventDefault();
+      onZoomRef.current(clamp(zoomRef.current - e.deltaY * 0.00055));
+    };
+
     el.addEventListener("touchstart", onTouchStart, { passive: true });
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd);
     el.addEventListener("touchcancel", onTouchEnd);
+    el.addEventListener("wheel", onWheel, { passive: false });
     return () => {
       el.removeEventListener("touchstart", onTouchStart);
       el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
       el.removeEventListener("touchcancel", onTouchEnd);
+      el.removeEventListener("wheel", onWheel);
     };
   }, [onZoomChange]);
 

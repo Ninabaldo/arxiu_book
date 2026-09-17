@@ -1,0 +1,9 @@
+[
+  {"id":"1","slug":"no-perque-et-necessiti","order":1,"title_ca":"No perquè et necessiti","title_es":"No porque te necesite","title_en":"Not because I needed you","title_fr":"Pas parce que j’avais besoin de toi","provisional":false},
+  {"id":"2","slug":"entre-el-si-i-el-no","order":2,"title_ca":"Entre el sí i el no","title_es":"Entre el sí y el no","title_en":"Between yes and no","title_fr":"Entre le oui et le non","provisional":false},
+  {"id":"3","slug":"deixar-una-porta-oberta","order":3,"title_ca":"Deixar una porta oberta","title_es":"Dejar una puerta abierta","title_en":"Leaving a door open","title_fr":"Laisser une porte ouverte","provisional":false},
+  {"id":"4","slug":"quan-baixes-la-guardia","order":4,"title_ca":"Quan baixes la guàrdia","title_es":"Cuando bajas la guardia","title_en":"When you let your guard down","title_fr":"Quand on baisse la garde","provisional":false},
+  {"id":"5","slug":"qui-porta-el-volant","order":5,"title_ca":"Qui porta el volant","title_es":"Quién lleva el volante","title_en":"Who’s in the driver’s seat","title_fr":"Qui tient le volant","provisional":false},
+  {"id":"6","slug":"passar-del-mobil","order":6,"title_ca":"Passar del mòbil","title_es":"Pasar del móvil","title_en":"Putting the phone aside","title_fr":"Lâcher le téléphone","provisional":true},
+  {"id":"7","slug":"bidireccionalitat","order":7,"title_ca":"Bidireccionalitat","title_es":"Bidireccionalidad","title_en":"Two-way streets","title_fr":"Bidirectionnalité","provisional":true}
+]

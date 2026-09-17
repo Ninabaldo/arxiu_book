@@ -10,6 +10,9 @@ const PAPER = "#faf7f1";
 const PAPER_LINE = "#ebe4d8";
 
 export const LINEN_URL = "/textures/linen-weave.png";
+/** Full-bleed photo covers (title baked into front) */
+export const FRONT_COVER_URL = "/cover/front.jpg";
+export const BACK_COVER_URL = "/cover/back.jpg";
 
 let linenImage: HTMLImageElement | null = null;
 let linenPromise: Promise<HTMLImageElement | null> | null = null;

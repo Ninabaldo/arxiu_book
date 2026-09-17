@@ -47,7 +47,7 @@ export function PageNav({
         >
           ←
         </button>
-        <span className="page-nav__count visually-hidden" aria-live="polite">
+        <span className="page-nav__count" aria-live="polite">
           {String(current).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
         <button

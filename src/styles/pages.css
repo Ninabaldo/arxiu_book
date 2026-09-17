@@ -1,43 +1,54 @@
 .page-inner {
+  --page-pad-y: 3.25rem;
+  --page-pad-outer: 3.1rem;
+  --page-pad-inner: 3.15rem;
+  /* Same as top — text fills to this edge, never past it */
+  --page-pad-bottom: 3.25rem;
+  --page-col-max: min(380px, 100%);
+
   box-sizing: border-box;
   height: 100%;
   min-height: 0;
-  padding: 3.5rem 2.75rem 2.75rem;
+  /* Default: right page (outer on the right, spine on the left) */
+  padding: var(--page-pad-y) var(--page-pad-outer) var(--page-pad-bottom)
+    var(--page-pad-inner);
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
-.page-title-spread {
+/* Left pages: outer edge on the left, spine gutter on the right */
+.flipbook__page--left .page-inner,
+.flipbook__sheet-face--left .page-inner {
+  padding-left: var(--page-pad-outer);
+  padding-right: var(--page-pad-inner);
+}
+
+.flipbook__page--right .page-inner,
+.flipbook__sheet-face--right .page-inner {
+  padding-left: var(--page-pad-inner);
+  padding-right: var(--page-pad-outer);
+}
+
+.page-title-spread,
+.page-body-spread,
+.page-beginning,
+.page-quote {
+  /* Inherit the shared page-inner padding — no per-role overrides */
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 4.75rem;
-  padding-left: 3rem;
-  padding-right: 3.5rem;
-  padding-bottom: 3rem;
-}
-
-/* Right page titles sit away from the spine (book center) */
-.flipbook__page--right .page-title-spread,
-.flipbook__sheet-face--right .page-title-spread {
-  padding-left: 4.5rem;
-}
-
-.flipbook__page--left .page-title-spread,
-.flipbook__sheet-face--left .page-title-spread {
-  padding-right: 4.5rem;
+  min-height: 0;
 }
 
 .page-title-block {
   margin-top: 0;
-  max-width: min(300px, 100%);
-  /* Leave the rest of the page as quiet open space */
+  max-width: var(--page-col-max);
   margin-bottom: auto;
   min-height: 0;
 }
 
 .page-title-block__num {
-  /* Same hand typography as the index numbers */
   font-family: var(--font-hand);
   font-size: clamp(1.2rem, 4.2cqh, 1.63rem);
   font-weight: 500;
@@ -63,36 +74,26 @@
   letter-spacing: -0.012em;
   color: var(--color-ink);
   margin: 0;
-  max-width: min(300px, 100%);
+  max-width: var(--page-col-max);
 }
 
 .page-title-block__figure {
   position: relative;
-  margin: clamp(1.5rem, 6cqh, 3.75rem) 0 0;
+  margin: clamp(1.25rem, 5cqh, 2.75rem) 0 0;
   padding: 0;
-  max-width: min(210px, 72%);
-  width: 100%;
+  width: min(220px, 76%);
+  aspect-ratio: 3 / 4;
   overflow: hidden;
 }
 
 .page-title-block__image {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: min(42cqh, 280px);
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   user-select: none;
   pointer-events: none;
-}
-
-/* Body page — narrow editorial column, generous white space */
-.page-body-spread {
-  padding: 4.5rem 3.25rem 3rem 2.75rem;
-  min-height: 0;
-}
-
-.flipbook__page--left .page-body-spread {
-  padding: 4.5rem 2.75rem 3rem 3.25rem;
 }
 
 .page-body {
@@ -102,26 +103,22 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: min(410px, 100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(20, 49, 88, 0.2) transparent;
+  max-width: var(--page-col-max);
+  width: 100%;
+  overflow: hidden;
 }
 
 .page-body__text {
   font-family: var(--font-body);
-  font-size: clamp(9px, 1.85cqh, 10.5px);
+  /* Fixed size — predictable pagination (cqh caused measure ≠ render mismatch) */
+  font-size: 10.5px;
   font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0.005em;
   color: var(--color-ink-soft);
-  max-width: min(410px, 100%);
+  max-width: var(--page-col-max);
   margin: 0 0 0.7em;
   text-align: left;
-  text-wrap: pretty;
   hyphens: none;
 }
 
@@ -133,10 +130,50 @@
   min-height: 4em;
 }
 
+/* Off-screen probe used to measure how much text fits on one page */
+.page-measure-probe {
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* Full spread size first — never calc(var(--spread-width) / 2) (can resolve to 0) */
+  width: var(--spread-width);
+  height: var(--spread-height);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.page-measure-probe__leaf {
+  width: 50%;
+  height: 100%;
+  container-type: size;
+  container-name: book-page;
+}
+
+.page-measure-probe .page-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.page-measure-probe .page-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  width: 100%;
+  max-width: var(--page-col-max);
+}
+
+@media (max-width: 720px) {
+  .page-measure-probe__leaf {
+    width: 100%;
+  }
+}
+
 .page-margin-mark {
   position: absolute;
-  left: 2.75rem;
-  bottom: 0.9rem;
+  left: var(--page-pad-outer);
+  bottom: 1rem;
   top: auto;
   right: auto;
   transform: none;
@@ -150,15 +187,14 @@
   pointer-events: none;
 }
 
-/* Keep “Arxiu” on the outer edge — never toward the spine */
 .flipbook__page--left .page-margin-mark {
-  left: 2.75rem;
+  left: var(--page-pad-outer);
   right: auto;
 }
 
 .flipbook__page--right .page-margin-mark {
   left: auto;
-  right: 2.75rem;
+  right: var(--page-pad-outer);
 }
 
 .page-folio {
@@ -175,8 +211,7 @@
   font-variant-numeric: tabular-nums;
   opacity: 0.7;
   pointer-events: none;
-  /* Left page, bottom — clear of the outer “Arxiu” mark */
-  bottom: 0.85rem;
+  bottom: 1rem;
   left: 50%;
   right: auto;
   transform: translateX(-50%);
@@ -189,12 +224,9 @@
 }
 
 .page-quote {
-  height: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2.5rem;
 }
 
 .page-quote__text {
@@ -213,50 +245,30 @@
   font-style: italic;
 }
 
-.page-hand .page-body__text {
+.page-hand .page-body__text,
+.page-fragment .page-body__text {
   font-family: var(--font-body);
-  font-size: clamp(9px, 1.85cqh, 10.5px);
+  font-size: 10.5px;
   font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0.005em;
   color: var(--color-ink-soft);
-  max-width: min(410px, 100%);
+  max-width: var(--page-col-max);
 }
 
 .page-fragment .page-body {
-  justify-content: center;
-  max-width: min(410px, 100%);
-}
-
-.page-fragment .page-body__text {
-  font-size: clamp(9px, 1.85cqh, 10.5px);
-  line-height: 1.42;
-  max-width: min(410px, 100%);
+  max-width: var(--page-col-max);
 }
 
 .page-empty {
   height: 100%;
 }
 
-.page-beginning {
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 4.25rem;
-  padding-left: 4.5rem;
-  padding-right: 3.25rem;
-  padding-bottom: 2.5rem;
-  min-height: 0;
-}
-
 .page-beginning__text {
-  max-width: min(320px, 100%);
+  max-width: var(--page-col-max);
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(20, 49, 88, 0.2) transparent;
+  overflow: hidden;
 }
 
 .page-beginning__paragraph {
@@ -278,31 +290,6 @@
   font-size: clamp(0.9rem, 2.8cqh, 1.05rem);
 }
 
-.page-beginning-image {
-  justify-content: center;
-  align-items: center;
-  padding: 2.75rem 2.5rem 2.75rem 3rem;
-}
-
-.page-beginning-image__figure {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 360px;
-  overflow: hidden;
-}
-
-.page-beginning-image__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 35%;
-  user-select: none;
-  pointer-events: none;
-}
-
 .page-moment {
   height: 100%;
   display: flex;
@@ -322,44 +309,14 @@
 
 @media (max-width: 720px) {
   .page-inner {
-    padding: 2.5rem 1.75rem 2rem;
-  }
-
-  .page-title-spread {
-    padding-top: 3.5rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-  }
-
-  .flipbook__page--right .page-title-spread,
-  .flipbook__sheet-face--right .page-title-spread {
-    padding-left: 2.25rem;
-  }
-
-  .flipbook__page--left .page-title-spread,
-  .flipbook__sheet-face--left .page-title-spread {
-    padding-right: 2.25rem;
-  }
-
-  .page-title-block,
-  .page-title-block__title {
-    max-width: min(260px, 100%);
-  }
-
-  .page-title-block__figure {
-    max-width: min(180px, 68%);
-    margin-top: clamp(1.25rem, 5cqh, 3rem);
+    --page-pad-y: 2.5rem;
+    --page-pad-outer: 2rem;
+    --page-pad-inner: 2rem;
+    --page-pad-bottom: 2.5rem;
   }
 
   .page-title-block__num {
     font-size: clamp(1.1rem, 4cqh, 1.435rem);
-  }
-
-  .page-beginning {
-    padding-top: 2.75rem;
-    padding-left: 2.25rem;
-    padding-right: 1.75rem;
-    padding-bottom: 2rem;
   }
 
   .page-beginning__paragraph {
@@ -376,52 +333,24 @@
     font-size: clamp(0.85rem, 2.6cqh, 0.95rem);
   }
 
-  .page-beginning-image {
-    padding: 2rem 1.75rem;
-  }
-
-  .page-beginning-image__figure {
-    max-width: min(300px, 88%);
-  }
-
   .page-title-block__title,
   .page-quote__text {
     font-size: clamp(16px, 3.8cqh, 20px);
   }
 
-  .page-body-spread {
-    padding: 2.75rem 1.75rem 2.25rem;
-  }
-
-  .page-body,
-  .page-body__text,
-  .page-hand .page-body__text,
-  .page-fragment .page-body,
-  .page-fragment .page-body__text {
-    max-width: min(410px, 100%);
-  }
-
   .page-body__text,
   .page-hand .page-body__text,
   .page-fragment .page-body__text {
-    font-size: clamp(9px, 1.9cqh, 10.5px);
+    font-size: 10px;
     line-height: 1.4;
   }
 
   .page-margin-mark {
-    bottom: 0.75rem;
+    bottom: 0.85rem;
     font-size: 7px;
   }
 
-  .flipbook__page--left .page-margin-mark {
-    left: 1.35rem;
-  }
-
-  .flipbook__page--right .page-margin-mark {
-    right: 1.35rem;
-  }
-
   .page-folio {
-    bottom: 0.7rem;
+    bottom: 0.85rem;
   }
 }

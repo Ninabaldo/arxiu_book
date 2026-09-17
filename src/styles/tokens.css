@@ -62,7 +62,7 @@
 
   /* Open spread — always fits the viewport with chrome margins */
   --spread-width: min(920px, calc(100vw - 2.5rem));
-  --spread-height: min(620px, calc(100dvh - 8.5rem));
+  --spread-height: min(620px, calc(100dvh - 9.5rem));
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,7 +72,7 @@
   :root {
     --book-height: min(70vh, 640px);
     --spread-width: min(820px, calc(100vw - 2.25rem));
-    --spread-height: min(560px, calc(100dvh - 8.25rem));
+    --spread-height: min(560px, calc(100dvh - 9.25rem));
   }
 }
 
@@ -80,16 +80,16 @@
   :root {
     --book-height: min(58vh, 520px);
     --spread-width: min(720px, calc(100vw - 2rem));
-    --spread-height: min(500px, calc(100dvh - 8rem));
+    --spread-height: min(500px, calc(100dvh - 9rem));
   }
 }
 
 @media (max-width: 720px) {
   :root {
     --book-height: min(42vh, 340px);
-    /* Single-page mobile: one leaf, centered */
+    /* Single-page mobile: one leaf, centered — leave clear room for page-nav */
     --spread-width: min(calc(100vw - 1.75rem), 400px);
-    --spread-height: min(calc(100dvh - 8.5rem), 580px);
+    --spread-height: min(calc(100dvh - 11rem), 520px);
   }
 }
 
@@ -97,6 +97,6 @@
   :root {
     --book-height: min(38vh, 300px);
     --spread-width: min(calc(100vw - 1.5rem), 360px);
-    --spread-height: min(calc(100dvh - 8rem), 520px);
+    --spread-height: min(calc(100dvh - 10.5rem), 480px);
   }
 }

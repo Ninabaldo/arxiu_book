@@ -22,7 +22,8 @@
   min-height: 100dvh;
   min-height: 100svh;
   /* Safe chrome: lang top + page-nav bottom — book stays optically centered */
-  padding: clamp(3.25rem, 8vh, 4.5rem) var(--space-md) clamp(4.25rem, 9vh, 5.75rem);
+  padding: clamp(3.25rem, 8vh, 4.5rem) var(--space-md)
+    clamp(5rem, 11vh, 6.5rem);
   cursor: url("/cursors/favicon-cursor.png") 7 7, auto;
   overflow: hidden;
 }
@@ -1011,7 +1012,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 18%;
+  /* Narrower than before so text column stays clear of turn zones */
+  width: 12%;
   z-index: 12;
   background: transparent;
   border: 0;
@@ -1069,7 +1071,7 @@ button.flipbook__hit:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.25rem;
   line-height: 1;
   min-height: 1.5rem;
 }
@@ -1103,16 +1105,19 @@ button.flipbook__hit:disabled {
 
 .page-nav__count {
   font-variant-numeric: tabular-nums;
-  min-width: 4.5rem;
+  min-width: 3.75rem;
   height: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 8px;
-  letter-spacing: 0.12em;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   line-height: 1;
-  /* Optical nudge — uppercase tracking sits high next to arrow glyphs */
+  color: var(--color-muted);
+  opacity: 0.55;
+  pointer-events: none;
   transform: translateY(0.5px);
 }
 

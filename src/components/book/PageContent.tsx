@@ -1,8 +1,9 @@
 "use client";
 
 import type { BookPageModel, Locale, Reflection } from "@/types";
-import { beginningBody, BEGINNING_IMAGE } from "@/content/beginning";
+import { beginningBody } from "@/content/beginning";
 import { chunkContent, getLocalized, padOrder } from "@/lib/book";
+import { useChunkMap } from "@/components/book/ChunkMapContext";
 
 interface PageContentProps {
   page: BookPageModel;
@@ -19,22 +20,7 @@ export function PageContent({
   locale,
   pageLabel,
 }: PageContentProps) {
-  if (page.role === "beginning-image") {
-    return (
-      <div className="page-inner page-beginning-image">
-        <figure className="page-beginning-image__figure">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={BEGINNING_IMAGE}
-            alt=""
-            className="page-beginning-image__img"
-            draggable={false}
-          />
-        </figure>
-        {pageLabel && <p className="page-folio">{pageLabel}</p>}
-      </div>
-    );
-  }
+  const chunkMap = useChunkMap();
 
   if (page.role === "beginning") {
     const text = beginningBody[locale] || beginningBody.ca;
@@ -47,7 +33,7 @@ export function PageContent({
       <div className="page-inner page-beginning">
         <div className="page-beginning__text">
           {paragraphs.map((paragraph, i) => {
-            const isSignature = paragraph === "Nina";
+            const isSignature = paragraph === "Violeta" || paragraph === "Nina";
             return (
               <p
                 key={i}
@@ -77,7 +63,10 @@ export function PageContent({
 
   const title = getLocalized(reflection.title, locale);
   const fullContent = getLocalized(reflection.content, locale);
-  const chunks = chunkContent(fullContent);
+  const chunks =
+    chunkMap?.[reflection.id]?.length
+      ? chunkMap[reflection.id]
+      : chunkContent(fullContent);
   const chunkIndex = page.bodyChunk ?? 0;
   const content = chunks[chunkIndex] ?? "";
   const num = padOrder(reflection.order);

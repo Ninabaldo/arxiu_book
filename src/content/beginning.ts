@@ -25,7 +25,7 @@ No pretenen ser veritats absolutes ni consells per a ningú. Són simplement cos
 
 Si alguna d'aquestes reflexions et remou alguna cosa, ja haurà valgut la pena compartir-les.
 
-Nina`,
+Violeta`,
 
   es: `Cuando escribo, ordeno mis pensamientos.
 Cuando los leo, todo toma forma.
@@ -38,7 +38,7 @@ No pretenden ser verdades absolutas ni consejos para nadie. Son simplemente cosa
 
 Si alguna de estas reflexiones te remueve algo, ya habrá valido la pena compartirlas.
 
-Nina`,
+Violeta`,
 
   en: `When I write, I order my thoughts.
 When I read them, everything takes shape.
@@ -51,7 +51,7 @@ They do not claim to be absolute truths or advice for anyone. They are simply th
 
 If any of these reflections moves something in you, sharing them will already have been worth it.
 
-Nina`,
+Violeta`,
 
   fr: `Quand j'écris, j'ordonne mes pensées.
 Quand je les lis, tout prend forme.
@@ -64,5 +64,5 @@ Elles ne prétendent pas être des vérités absolues ni des conseils pour quico
 
 Si l'une de ces réflexions remue quelque chose en toi, les avoir partagées aura déjà valu la peine.
 
-Nina`,
+Violeta`,
 };

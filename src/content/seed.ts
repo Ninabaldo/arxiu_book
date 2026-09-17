@@ -4,15 +4,16 @@ import type {
 } from "@/types";
 
 /**
- * Seed mirrors Supabase tables.
- * created_at / updated_at (and any editorial date) are internal only —
- * never rendered on the public book experience.
+ * Narrative chapters (Violeta Mayer).
+ * Bodies are authored in Catalan; ES/EN/FR titles are translated,
+ * body text currently shares the Catalan source until full translations land.
+ * Provisional titles: chapters 6–7 (user did not supply titles).
  */
 
 export const reflectionRecords: ReflectionRecord[] = [
   {
     id: "1",
-    slug: "fins-que-ho-aprenem",
+    slug: "no-perque-et-necessiti",
     order: 1,
     type: "reflection",
     status: "published",
@@ -20,7 +21,7 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "2",
-    slug: "qui-et-vol-coneixer",
+    slug: "entre-el-si-i-el-no",
     order: 2,
     type: "reflection",
     status: "published",
@@ -28,7 +29,7 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "3",
-    slug: "tot-el-que-arriba",
+    slug: "deixar-una-porta-oberta",
     order: 3,
     type: "reflection",
     status: "published",
@@ -36,7 +37,7 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "4",
-    slug: "la-vida-esta-a-favor-teu",
+    slug: "quan-baixes-la-guardia",
     order: 4,
     type: "reflection",
     status: "published",
@@ -44,7 +45,7 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "5",
-    slug: "aprendre-a-estar-sol",
+    slug: "qui-porta-el-volant",
     order: 5,
     type: "reflection",
     status: "published",
@@ -52,7 +53,7 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "6",
-    slug: "deixar-anar",
+    slug: "passar-del-mobil",
     order: 6,
     type: "reflection",
     status: "published",
@@ -60,59 +61,11 @@ export const reflectionRecords: ReflectionRecord[] = [
   },
   {
     id: "7",
-    slug: "les-ulleres-dels-altres",
+    slug: "bidireccionalitat",
     order: 7,
     type: "reflection",
     status: "published",
     image: "/chapters/07.jpg",
-  },
-  {
-    id: "8",
-    slug: "ser-abans-que-fer",
-    order: 8,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/08.jpg",
-  },
-  {
-    id: "9",
-    slug: "la-calma-ho-fa-tot-possible",
-    order: 9,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/09.jpg",
-  },
-  {
-    id: "10",
-    slug: "lart-com-a-expressio-intencionada",
-    order: 10,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/10.jpg",
-  },
-  {
-    id: "11",
-    slug: "la-part-de-tu-que-ja-no-existeix",
-    order: 11,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/11.jpg",
-  },
-  {
-    id: "12",
-    slug: "lexit",
-    order: 12,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/12.jpg",
-  },
-  {
-    id: "13",
-    slug: "decisions",
-    order: 13,
-    type: "reflection",
-    status: "published",
-    image: "/chapters/13.jpg",
   },
 ];
 
@@ -124,1134 +77,3817 @@ type TranslationSeed = {
 };
 
 const translations: TranslationSeed[] = [
-  // ─── 01 ───
   {
     reflection_id: "1",
     language: "ca",
-    title: "Fins que ho aprenem",
-    content: `Hi ha situacions que sembla que es repeteixin a la nostra vida.
+    title: "No perquè et necessiti",
+    content: `Hi ha moments a la vida en què no tens ni idea que estàs a punt de començar una etapa nova. No hi ha música de fons, ni una llum especial, ni una veu que et digui que el que està passant ara et canviarà la vida. Simplement estàs fent la teva vida i, de sobte, algú et diu una frase que no esperaves escoltar i et quedes intentant entendre en quin moment has passat de tenir-ho tot més o menys controlat a no saber ni què faràs l'endemà.
 
-Canvien les persones, els llocs i les circumstàncies, però d'alguna manera acabem trobant-nos una vegada i una altra davant del mateix punt: la mateixa por, el mateix límit que no sabem posar, la mateixa necessitat de controlar, la mateixa dificultat per deixar anar, la mateixa manera de reaccionar.
+A mi em va passar un dissabte al matí.
 
-I potser no és casualitat.
+El Marcos em va mirar i em va dir:
 
-Potser hi ha coses que la vida ens continua mostrant perquè encara no les hem acabat d'aprendre.
+—T'HAIG DE DIR UNA COSA.
 
-A vegades pensem que ja ho hem superat perquè, davant d'una situació concreta, reaccionem diferent. Tenim més paciència. Posem un límit. No contestem. No insistim. Deixem anar.
+Uf.
 
-I pensem: aquesta vegada sí.
+Això és una frase per a la qual no sé si estem mai prou preparats. Perquè, evidentment, depèn del context, però hi ha una edat en què, quan algú et diu «t'he de dir una cosa», ja t'imagines que no ve precisament a anunciar-te que ha guanyat un sorteig.
 
-Però més endavant torna a aparèixer una situació que, encara que sigui completament diferent, toca exactament el mateix lloc dins nostre.
+I jo, abans d'entrar oficialment en estat de xoc, encara vaig tenir temps de dir-li de tot menys guapo. Evidentment, no entenia res. Després de sis anys de relació, que una persona et digui de cop una cosa que et canvia completament el guió de la teva vida no és fàcil d'assimilar. El meu cervell intentava trobar una explicació mentre jo encara estava intentant entendre què estava passant.
 
-I llavors entenem que no es tractava d'aquella situació.
+I llavors el Marcos va marxar.
 
-Es tractava de nosaltres.
+Em va deixar allà, a casa seva, fent maletes.
 
-Potser la vida no ens repeteix les mateixes experiències perquè no hàgim après prou, sinó perquè encara hi ha una part de nosaltres que necessita ser mirada d'una altra manera.
+Així, tal qual.
 
-Perquè aprendre alguna cosa no és saber què hauríem de fer.
+Durant unes dues hores em vaig quedar en estat de xoc, asseguda i mirant el no res, sense ser capaç de moure'm. No sabia què havia de fer, per on començar ni, sincerament, com se suposava que funcionava una persona a qui acabaven de deixar després de tot. El cos estava allà, però el cervell havia plegat.
 
-És arribar a un punt en què ja no necessitem esforçar-nos per actuar diferent.
+En algun moment vaig entendre que havia de marxar i vaig començar a fer les maletes. Vaig trucar a la meva amiga Bruna i va venir a rescatar-me. Perquè les amigues de veritat no sempre saben què dir-te, però apareixen. I la Bruna és molt del meu clan: davant d'una situació emocionalment complicada, és capaç de venir a ajudar-te i, ja que hi és, aprofitar per dutxar-se. No perdem el temps.
 
-Simplement, un dia, ho fem.
+Amb ella allà vaig poder començar a moure coses, recollir i intentar posar una mica d'ordre en aquell caos. Però una cosa és decidir que te'n vas i una altra és aconseguir treure sis anys d'una casa. Vaig trigar dues setmanes a acabar de fer totes les maletes. Dues setmanes. Durant aquells dies vaig anar traient coses, tornant a buscar-ne, decidint què m'enduia i què deixava. I, a poc a poc, vaig entendre que allò no era només una mudança. Estava deixant enrere una vida que fins aquell moment havia donat per feta.
 
-I allò que abans es repetia deixa de tenir el mateix poder sobre nosaltres.`,
+I després van venir cinc mesos.
+
+Cinc mesos en què vaig estar sola i que, mirant-ho ara, van ser molt més importants del que jo podia imaginar aleshores. Perquè no em vaig quedar aturada. No vaig passar cinc mesos esperant que aparegués algú per tornar a sentir-me bé. Vaig fer exactament el contrari: vaig començar a fer la meva vida.
+
+Vaig començar a anar amb bici de carretera, vaig fer encara més esport, vaig conèixer gent nova, vaig anar a retirs de cap de setmana i vaig fer viatges aquí i allà. Em movia, feia plans, descobria coses i recuperava una part de mi que potser durant aquells anys havia quedat una mica amagada dins d'una vida compartida. I, sobretot, vaig descobrir que podia estar sola sense sentir que em faltava alguna cosa.
+
+Això em va donar una tranquil·litat que no esperava.
+
+Perquè jo continuava creient en l'amor. No havia sortit d'aquella relació pensant que els homes eren tots iguals o que enamorar-se era una mala inversió. Al contrari. Jo continuava volent conèixer un home interessant, enamorar-me si tocava i, algun dia, formar una família. Però una cosa era voler trobar algú i una altra era perdre el temps.
+
+I jo no soc gaire de perdre el temps.
+
+Així que vaig entrar en una aplicació de cites amb un sistema de selecció que probablement hauria pogut aplicar perfectament a un procés de contractació d'una multinacional. El meu criteri era senzill: si no contestava, fora; si contestava però no em convencia, fora; si em donava l'Instagram i em semblava massa egocèntric, fora. No sabia exactament com seria l'home que acabaria coneixent amb més profunditat, però tenia bastant clar com no volia que fos.
+
+En algun moment vaig arribar a tenir sis matches.
+
+Sis candidats.
+
+I, evidentment, el mercat em va oferir una mica de tot.
+
+Un, per exemple, em va portar a una platja nudista a la segona cita. A la segona. Jo encara estava intentant recordar com es deia i ell ja havia decidit que la roba era una barrera innecessària per a la nostra relació. Em vaig espantar.
+
+Amb un altre vaig quedar per anar amb bicicleta. I aquí hi ha un petit detall important: la idea d'anar amb bicicleta l'havia proposat jo. Jo sabia perfectament que allò era una cita. Ell, pel que sembla, no tant. Mentre pedalejava, jo anava fent el meu estudi de mercat: l'observava, l'escoltava, analitzava i, en algun moment, vaig arribar a una conclusió bastant ràpida.
+
+Fora.
+
+I no em va costar gens.
+
+Aquells cinc mesos m'havien ensenyat precisament això: no havia de quedar-me enlloc només perquè ja hi havia invertit temps. Podia provar, mirar, sentir i decidir. I si alguna cosa no em quadrava, marxava.
+
+Potser per això, quan va aparèixer el Max, jo ja no estava buscant que algú m'omplís cap buit.
+
+El Max era un dels sis.
+
+I aquí la cosa va començar a canviar.
+
+Des del principi em va cridar l'atenció. Era molt esportista, feia moltes coses, tenia molts amics, semblava independent i, al mateix temps, transmetia que realment volia connectar amb algú. Vam començar a parlar i em vaig trobar amb una conversa que no s'acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
+
+Anàvem descobrint coses en comú, coincidències i maneres de veure determinades coses que encaixaven. Vaig començar a pensar que potser havia aparegut en un moment curiós, gairebé com si hagués arribat quan tocava. Però jo continuava tenint els peus a terra: primer ens havíem de conèixer.
+
+El primer dia em va fer una pregunta que em va fer molta gràcia:
+
+—Què vols o creus que vols?
+
+Aquell «o creus que vols» em va encantar. Em va semblar una mica provocador, així que vaig contestar sense donar-hi gaire voltes:
+
+—Marit i fills.
+
+Pim pam.
+
+No sé què esperava ell, però no va desaparèixer.
+
+I això també em va agradar.
+
+A partir d'aquí vaig començar a gaudir d'una cosa que em divertia especialment: veure fins a quin punt el Max seria capaç d'arribar al meu nivell d'exigència. Jo el posava a prova, sempre amb carinyo, amb aquell somriure als llavis i els ulls mirant una mica cap amunt, com dient: «A veure, campió, què tens?».
+
+I aquí entra l'Olívia.
+
+Jo li explicava les coses que anaven passant amb el Max i ella, curiosament, ja n'era molt fan. Mentre jo analitzava, valorava i, probablement, començava a preparar mentalment alguna futura expulsió, ella em deia:
+
+—No el xutis, si us plau.
+
+L'Olívia té molta paciència. És d'aquelles amigues que escolten i que sembla que, mentre tu expliques una història, ja n'hagin entès tres capes més. És una d'aquelles persones de les quals pots aprendre.
+
+De fet, fa poc vaig estar amb ella i el Lucas, la seva parella, en una d'aquelles furgonetes camperitzades i vaig poder veure en directe com funciona l'Olívia.
+
+Marameva.
+
+El Lucas el porta a ratlla.
+
+I jo, mirant-los, només podia pensar que potser havia d'aprendre una mica d'ella.
+
+Perquè jo tenia una tendència bastant marcada a analitzar cada moviment i decidir ràpidament si algú passava o no passava la pantalla. Ella, en canvi, té una calma que jo admiro. I això que, pel que sembla, també sap perfectament com mantenir un home al seu lloc.
+
+Amb el Max, de moment, l'Olívia em demanava que no el xutés.
+
+I jo pensava que ja ho veuríem.
+
+Perquè el Max tampoc ho tenia tot guanyat.
+
+Per començar, no contestava sempre ràpid. I jo venia d'una relació en què m'havia acostumat molt malament als missatges immediats. El Marcos contestava ràpid, molt ràpid. Ell mateix deia que teníem una mena d'«apego al mòbil» i jo no li discutiré la diagnosi.
+
+Amb el Max, en canvi, un dia va deixar sense respondre una de les meves últimes preguntes i jo estava a punt d'eliminar-lo. El problema era que vivia a una hora de distància i no tenia cap altra manera de contactar amb ell. Si l'eliminava, s'havia acabat.
+
+Així que li vaig donar una última oportunitat.
+
+Li vaig escriure, més o menys, que veia que estava molt ocupat i que per això no em podia respondre, i que li anés molt bé.
+
+Va contestar.
+
+Tenia feina.
+
+S'havia salvat.
+
+I jo li vaig dir:
+
+—Has tingut sort. T'anava a eliminar.
+
+Li va fer gràcia i vam continuar parlant.
+
+Poc després em va proposar passar-nos a WhatsApp. Em va donar el seu número i em va dir que ara ja sabia que li podia escriure. Jo, evidentment, no podia semblar massa disponible, així que li vaig dir que m'ho pensaria. Ell ja havia fet el moviment.
+
+L'endemà vaig decidir que sí.
+
+Després d'uns dies parlant, jo ja volia conèixer-lo. No volia passar-me setmanes parlant amb una persona a través d'una pantalla per descobrir després que en persona no hi havia res. Així que vam començar a parlar de quedar.
+
+La primera proposta del Max, però, no em va convèncer gens. Era més tard a la tarda i implicava que jo havia d'agafar el cotxe, conduir una hora fins a la seva ciutat i quedar per prendre alguna cosa.
+
+I jo vaig pensar: de debò?
+
+Li vaig dir que creia que no sabia fer propostes a dones i, amb carinyo, li vaig dir que no.
+
+Ell es va disculpar immediatament.
+
+Jo, per dins, estava amb els ulls en blanc.
+
+Però somreia.
+
+Perquè, en el fons, aquell joc m'estava divertint.
+
+Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era diumenge i jo tenia el dia lliure. Li vaig dir:
+
+—Demà tinc el dia lliure.
+
+I vaig esperar.
+
+No li estava demanant una cita. Li estava donant l'oportunitat de proposar-la. Si no ho feia, probablement aquella conversa s'hauria acabat allà.
+
+Soc una mica radical amb aquestes coses.
+
+Però va funcionar.
+
+El Max va proposar:
+
+—Anem a prendre alguna cosa, entre tu i jo. Pensa tu el lloc.
+
+Perfecte.
+
+Vaig començar a buscar llocs, però tot em semblava massa formal i em feia mandra. No em venia de gust una cita convencional asseguts en una taula, amb aquella sensació de «ara ens hem de conèixer oficialment».
+
+Llavors vaig recordar que el Max tenia una furgoneta camperitzada.
+
+Jo havia tingut amics amb furgoneta, però mai m'havia cridat especialment l'atenció. Venia d'una vida en què els hotels havien estat bastant més habituals. I de cop estava pensant que potser quedar amb un home dins d'una furgoneta no estava gens malament.
+
+El contrast era considerable.
+
+Vam decidir trobar-nos en un lloc. Ell prepararia les coses i jo conduiria fins allà. Em va semblar un bon acord: ell s'encarregava de preparar-ho i jo només havia d'arribar.
+
+Quan vaig arribar, em va dir, fent broma:
+
+—Ho he fet molt romàntic, no t'espantis.
+
+No em vaig espantar.
+
+Tot em va semblar sorprenentment natural.
+
+I vaig pensar: deixa't portar.
+
+I em vaig deixar portar.
+
+Vam obrir dues ampolles de vi i vam començar a parlar. Vam estar quatre hores sense parar. Estàvem tan ficats en aquella conversa que pràcticament no vam menjar. I jo, mentre parlava amb ell, el mirava i em feia una pregunta molt concreta: li faries un petó?
+
+La resposta era sí.
+
+Això ja era una bona notícia.
+
+En algun moment, entre el vi i els nervis, vaig caure jo de la cadira. I ell, en veure'm, també va acabar per terra. De cop, el tenia a sobre meu.
+
+I vaig pensar: que llest, aquest.
+
+I, irònicament, també em va agradar.
+
+Abans que em donés gaire temps a pensar res més, ja m'estava fent un petó.
+
+I ho feia bé.
+
+Molt bé.
+
+Aquell petó va ser una explosió d'emocions. La nit es va convertir en una barreja de passió, calor i afecte, amb aquella sensació una mica absurda que dues persones que pràcticament no es coneixen poden arribar a connectar d'una manera molt intensa en molt poc temps.
+
+Vam acabar despullats i vam viure una nit molt intensa, amb molta passió i afecte, com si no hi hagués un demà.
+
+I, sincerament, jo ho havia volgut.
+
+No hi havia penediment.
+
+La nit havia estat brutal.
+
+El problema va arribar l'endemà.
+
+A les set del matí em vaig despertar. El meu rellotge intern és bastant eficient, fins i tot quan no li ho demano. Vaig obrir els ulls i, a poc a poc, el cervell va començar a reconstruir la situació: estava dins d'una furgoneta camperitzada, hi havia un noi al meu costat que coneixia des de feia molt poc, els ocells cantaven, jo tenia una ressaca considerable i estava despullada.
+
+A mesura que recuperava la consciència, també recuperava els records de la nit anterior.
+
+I sí: havia estat molt bé.
+
+Molt.
+
+Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i adonar-te que estàs dins d'una furgoneta amb un home que feia unes hores pràcticament no coneixies.
+
+No vaig pensar: «Déu meu, què he fet?».
+
+Vaig pensar: «Necessito casa».
+
+Necessitava espai, aigua, una dutxa i una mica de temps per assimilar què acabava de passar. Així que, a poc a poc, em vaig vestir.
+
+El Max es va sorprendre una mica quan va veure que jo marxava, però es va aixecar, ens vam acomiadar i em va deixar anar.
+
+I jo vaig marxar.
+
+No estava penedida. Simplement necessitava tornar al meu món.
+
+Va ser conduint de tornada quan em vaig començar a fer una pregunta:
+
+Per què estic fugint?
+
+No ho sabia.
+
+Potser tot havia anat massa ràpid. Potser després de sis anys en una relació necessitava recuperar el meu espai. Potser simplement necessitava arribar a casa, dutxar-me, beure aigua i deixar que el meu cervell, que en aquell moment estava bastant deshidratat, tornés a funcionar.
+
+Quan vaig arribar, vaig explicar algunes coses a les meves amigues i, en algun moment, fins i tot em vaig adonar que tenia una petita marca a la cara.
+
+Marameva.
+
+Havia estat una nit intensa.
+
+La meva mare em va veure i em va dir una cosa semblant a:
+
+—Ostres, espero que no t'hagin donat un cop.
+
+—No, dona. Com vols?
+
+I, mentre ho deia, vaig pensar:
+
+Espero jo també que no.
+
+Però no.
+
+No m'havien pegat.
+
+El problema era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
+
+Aquell mateix vespre, el Max em va escriure fent broma i em va preguntar si havia aprofitat bé el dia des de les set del matí.
+
+Vaig riure.
+
+Perquè sí, havia aprofitat el dia.
+
+Però encara no sabia exactament què pensar de tot allò.
+
+Havia estat brutal, inesperat i intens.
+
+I jo necessitava una mica de temps per entendre què significava.
+
+El que sí que sabia era que, quan el Max havia aparegut, jo ja feia cinc mesos que havia après una cosa important: que podia estar bé amb mi mateixa.
+
+I potser precisament per això podia deixar entrar algú nou.
+
+No perquè el necessités.
+
+Sinó perquè em venia de gust.
+`,
   },
   {
     reflection_id: "1",
     language: "es",
-    title: "Hasta que lo aprendemos",
-    content: `Hay situaciones que parece que se repiten en nuestra vida.
+    title: "No porque te necesite",
+    content: `Hi ha moments a la vida en què no tens ni idea que estàs a punt de començar una etapa nova. No hi ha música de fons, ni una llum especial, ni una veu que et digui que el que està passant ara et canviarà la vida. Simplement estàs fent la teva vida i, de sobte, algú et diu una frase que no esperaves escoltar i et quedes intentant entendre en quin moment has passat de tenir-ho tot més o menys controlat a no saber ni què faràs l'endemà.
 
-Cambian las personas, los lugares y las circunstancias, pero de alguna manera acabamos encontrándonos una y otra vez ante el mismo punto: el mismo miedo, el mismo límite que no sabemos poner, la misma necesidad de controlar, la misma dificultad para soltar, la misma manera de reaccionar.
+A mi em va passar un dissabte al matí.
 
-Y quizá no es casualidad.
+El Marcos em va mirar i em va dir:
 
-Quizá hay cosas que la vida nos sigue mostrando porque todavía no las hemos terminado de aprender.
+—T'HAIG DE DIR UNA COSA.
 
-A veces pensamos que ya lo hemos superado porque, ante una situación concreta, reaccionamos distinto. Tenemos más paciencia. Ponemos un límite. No contestamos. No insistimos. Soltamos.
+Uf.
 
-Y pensamos: esta vez sí.
+Això és una frase per a la qual no sé si estem mai prou preparats. Perquè, evidentment, depèn del context, però hi ha una edat en què, quan algú et diu «t'he de dir una cosa», ja t'imagines que no ve precisament a anunciar-te que ha guanyat un sorteig.
 
-Pero más adelante vuelve a aparecer una situación que, aunque sea completamente distinta, toca exactamente el mismo lugar dentro de nosotros.
+I jo, abans d'entrar oficialment en estat de xoc, encara vaig tenir temps de dir-li de tot menys guapo. Evidentment, no entenia res. Després de sis anys de relació, que una persona et digui de cop una cosa que et canvia completament el guió de la teva vida no és fàcil d'assimilar. El meu cervell intentava trobar una explicació mentre jo encara estava intentant entendre què estava passant.
 
-Y entonces entendemos que no se trataba de aquella situación.
+I llavors el Marcos va marxar.
 
-Se trataba de nosotros.
+Em va deixar allà, a casa seva, fent maletes.
 
-Quizá la vida no nos repite las mismas experiencias porque no hayamos aprendido lo suficiente, sino porque todavía hay una parte de nosotros que necesita ser mirada de otra manera.
+Així, tal qual.
 
-Porque aprender algo no es saber qué deberíamos hacer.
+Durant unes dues hores em vaig quedar en estat de xoc, asseguda i mirant el no res, sense ser capaç de moure'm. No sabia què havia de fer, per on començar ni, sincerament, com se suposava que funcionava una persona a qui acabaven de deixar després de tot. El cos estava allà, però el cervell havia plegat.
 
-Es llegar a un punto en el que ya no necesitamos esforzarnos por actuar distinto.
+En algun moment vaig entendre que havia de marxar i vaig començar a fer les maletes. Vaig trucar a la meva amiga Bruna i va venir a rescatar-me. Perquè les amigues de veritat no sempre saben què dir-te, però apareixen. I la Bruna és molt del meu clan: davant d'una situació emocionalment complicada, és capaç de venir a ajudar-te i, ja que hi és, aprofitar per dutxar-se. No perdem el temps.
 
-Simplemente, un día, lo hacemos.
+Amb ella allà vaig poder començar a moure coses, recollir i intentar posar una mica d'ordre en aquell caos. Però una cosa és decidir que te'n vas i una altra és aconseguir treure sis anys d'una casa. Vaig trigar dues setmanes a acabar de fer totes les maletes. Dues setmanes. Durant aquells dies vaig anar traient coses, tornant a buscar-ne, decidint què m'enduia i què deixava. I, a poc a poc, vaig entendre que allò no era només una mudança. Estava deixant enrere una vida que fins aquell moment havia donat per feta.
 
-Y aquello que antes se repetía deja de tener el mismo poder sobre nosotros.`,
+I després van venir cinc mesos.
+
+Cinc mesos en què vaig estar sola i que, mirant-ho ara, van ser molt més importants del que jo podia imaginar aleshores. Perquè no em vaig quedar aturada. No vaig passar cinc mesos esperant que aparegués algú per tornar a sentir-me bé. Vaig fer exactament el contrari: vaig començar a fer la meva vida.
+
+Vaig començar a anar amb bici de carretera, vaig fer encara més esport, vaig conèixer gent nova, vaig anar a retirs de cap de setmana i vaig fer viatges aquí i allà. Em movia, feia plans, descobria coses i recuperava una part de mi que potser durant aquells anys havia quedat una mica amagada dins d'una vida compartida. I, sobretot, vaig descobrir que podia estar sola sense sentir que em faltava alguna cosa.
+
+Això em va donar una tranquil·litat que no esperava.
+
+Perquè jo continuava creient en l'amor. No havia sortit d'aquella relació pensant que els homes eren tots iguals o que enamorar-se era una mala inversió. Al contrari. Jo continuava volent conèixer un home interessant, enamorar-me si tocava i, algun dia, formar una família. Però una cosa era voler trobar algú i una altra era perdre el temps.
+
+I jo no soc gaire de perdre el temps.
+
+Així que vaig entrar en una aplicació de cites amb un sistema de selecció que probablement hauria pogut aplicar perfectament a un procés de contractació d'una multinacional. El meu criteri era senzill: si no contestava, fora; si contestava però no em convencia, fora; si em donava l'Instagram i em semblava massa egocèntric, fora. No sabia exactament com seria l'home que acabaria coneixent amb més profunditat, però tenia bastant clar com no volia que fos.
+
+En algun moment vaig arribar a tenir sis matches.
+
+Sis candidats.
+
+I, evidentment, el mercat em va oferir una mica de tot.
+
+Un, per exemple, em va portar a una platja nudista a la segona cita. A la segona. Jo encara estava intentant recordar com es deia i ell ja havia decidit que la roba era una barrera innecessària per a la nostra relació. Em vaig espantar.
+
+Amb un altre vaig quedar per anar amb bicicleta. I aquí hi ha un petit detall important: la idea d'anar amb bicicleta l'havia proposat jo. Jo sabia perfectament que allò era una cita. Ell, pel que sembla, no tant. Mentre pedalejava, jo anava fent el meu estudi de mercat: l'observava, l'escoltava, analitzava i, en algun moment, vaig arribar a una conclusió bastant ràpida.
+
+Fora.
+
+I no em va costar gens.
+
+Aquells cinc mesos m'havien ensenyat precisament això: no havia de quedar-me enlloc només perquè ja hi havia invertit temps. Podia provar, mirar, sentir i decidir. I si alguna cosa no em quadrava, marxava.
+
+Potser per això, quan va aparèixer el Max, jo ja no estava buscant que algú m'omplís cap buit.
+
+El Max era un dels sis.
+
+I aquí la cosa va començar a canviar.
+
+Des del principi em va cridar l'atenció. Era molt esportista, feia moltes coses, tenia molts amics, semblava independent i, al mateix temps, transmetia que realment volia connectar amb algú. Vam començar a parlar i em vaig trobar amb una conversa que no s'acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
+
+Anàvem descobrint coses en comú, coincidències i maneres de veure determinades coses que encaixaven. Vaig començar a pensar que potser havia aparegut en un moment curiós, gairebé com si hagués arribat quan tocava. Però jo continuava tenint els peus a terra: primer ens havíem de conèixer.
+
+El primer dia em va fer una pregunta que em va fer molta gràcia:
+
+—Què vols o creus que vols?
+
+Aquell «o creus que vols» em va encantar. Em va semblar una mica provocador, així que vaig contestar sense donar-hi gaire voltes:
+
+—Marit i fills.
+
+Pim pam.
+
+No sé què esperava ell, però no va desaparèixer.
+
+I això també em va agradar.
+
+A partir d'aquí vaig començar a gaudir d'una cosa que em divertia especialment: veure fins a quin punt el Max seria capaç d'arribar al meu nivell d'exigència. Jo el posava a prova, sempre amb carinyo, amb aquell somriure als llavis i els ulls mirant una mica cap amunt, com dient: «A veure, campió, què tens?».
+
+I aquí entra l'Olívia.
+
+Jo li explicava les coses que anaven passant amb el Max i ella, curiosament, ja n'era molt fan. Mentre jo analitzava, valorava i, probablement, començava a preparar mentalment alguna futura expulsió, ella em deia:
+
+—No el xutis, si us plau.
+
+L'Olívia té molta paciència. És d'aquelles amigues que escolten i que sembla que, mentre tu expliques una història, ja n'hagin entès tres capes més. És una d'aquelles persones de les quals pots aprendre.
+
+De fet, fa poc vaig estar amb ella i el Lucas, la seva parella, en una d'aquelles furgonetes camperitzades i vaig poder veure en directe com funciona l'Olívia.
+
+Marameva.
+
+El Lucas el porta a ratlla.
+
+I jo, mirant-los, només podia pensar que potser havia d'aprendre una mica d'ella.
+
+Perquè jo tenia una tendència bastant marcada a analitzar cada moviment i decidir ràpidament si algú passava o no passava la pantalla. Ella, en canvi, té una calma que jo admiro. I això que, pel que sembla, també sap perfectament com mantenir un home al seu lloc.
+
+Amb el Max, de moment, l'Olívia em demanava que no el xutés.
+
+I jo pensava que ja ho veuríem.
+
+Perquè el Max tampoc ho tenia tot guanyat.
+
+Per començar, no contestava sempre ràpid. I jo venia d'una relació en què m'havia acostumat molt malament als missatges immediats. El Marcos contestava ràpid, molt ràpid. Ell mateix deia que teníem una mena d'«apego al mòbil» i jo no li discutiré la diagnosi.
+
+Amb el Max, en canvi, un dia va deixar sense respondre una de les meves últimes preguntes i jo estava a punt d'eliminar-lo. El problema era que vivia a una hora de distància i no tenia cap altra manera de contactar amb ell. Si l'eliminava, s'havia acabat.
+
+Així que li vaig donar una última oportunitat.
+
+Li vaig escriure, més o menys, que veia que estava molt ocupat i que per això no em podia respondre, i que li anés molt bé.
+
+Va contestar.
+
+Tenia feina.
+
+S'havia salvat.
+
+I jo li vaig dir:
+
+—Has tingut sort. T'anava a eliminar.
+
+Li va fer gràcia i vam continuar parlant.
+
+Poc després em va proposar passar-nos a WhatsApp. Em va donar el seu número i em va dir que ara ja sabia que li podia escriure. Jo, evidentment, no podia semblar massa disponible, així que li vaig dir que m'ho pensaria. Ell ja havia fet el moviment.
+
+L'endemà vaig decidir que sí.
+
+Després d'uns dies parlant, jo ja volia conèixer-lo. No volia passar-me setmanes parlant amb una persona a través d'una pantalla per descobrir després que en persona no hi havia res. Així que vam començar a parlar de quedar.
+
+La primera proposta del Max, però, no em va convèncer gens. Era més tard a la tarda i implicava que jo havia d'agafar el cotxe, conduir una hora fins a la seva ciutat i quedar per prendre alguna cosa.
+
+I jo vaig pensar: de debò?
+
+Li vaig dir que creia que no sabia fer propostes a dones i, amb carinyo, li vaig dir que no.
+
+Ell es va disculpar immediatament.
+
+Jo, per dins, estava amb els ulls en blanc.
+
+Però somreia.
+
+Perquè, en el fons, aquell joc m'estava divertint.
+
+Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era diumenge i jo tenia el dia lliure. Li vaig dir:
+
+—Demà tinc el dia lliure.
+
+I vaig esperar.
+
+No li estava demanant una cita. Li estava donant l'oportunitat de proposar-la. Si no ho feia, probablement aquella conversa s'hauria acabat allà.
+
+Soc una mica radical amb aquestes coses.
+
+Però va funcionar.
+
+El Max va proposar:
+
+—Anem a prendre alguna cosa, entre tu i jo. Pensa tu el lloc.
+
+Perfecte.
+
+Vaig començar a buscar llocs, però tot em semblava massa formal i em feia mandra. No em venia de gust una cita convencional asseguts en una taula, amb aquella sensació de «ara ens hem de conèixer oficialment».
+
+Llavors vaig recordar que el Max tenia una furgoneta camperitzada.
+
+Jo havia tingut amics amb furgoneta, però mai m'havia cridat especialment l'atenció. Venia d'una vida en què els hotels havien estat bastant més habituals. I de cop estava pensant que potser quedar amb un home dins d'una furgoneta no estava gens malament.
+
+El contrast era considerable.
+
+Vam decidir trobar-nos en un lloc. Ell prepararia les coses i jo conduiria fins allà. Em va semblar un bon acord: ell s'encarregava de preparar-ho i jo només havia d'arribar.
+
+Quan vaig arribar, em va dir, fent broma:
+
+—Ho he fet molt romàntic, no t'espantis.
+
+No em vaig espantar.
+
+Tot em va semblar sorprenentment natural.
+
+I vaig pensar: deixa't portar.
+
+I em vaig deixar portar.
+
+Vam obrir dues ampolles de vi i vam començar a parlar. Vam estar quatre hores sense parar. Estàvem tan ficats en aquella conversa que pràcticament no vam menjar. I jo, mentre parlava amb ell, el mirava i em feia una pregunta molt concreta: li faries un petó?
+
+La resposta era sí.
+
+Això ja era una bona notícia.
+
+En algun moment, entre el vi i els nervis, vaig caure jo de la cadira. I ell, en veure'm, també va acabar per terra. De cop, el tenia a sobre meu.
+
+I vaig pensar: que llest, aquest.
+
+I, irònicament, també em va agradar.
+
+Abans que em donés gaire temps a pensar res més, ja m'estava fent un petó.
+
+I ho feia bé.
+
+Molt bé.
+
+Aquell petó va ser una explosió d'emocions. La nit es va convertir en una barreja de passió, calor i afecte, amb aquella sensació una mica absurda que dues persones que pràcticament no es coneixen poden arribar a connectar d'una manera molt intensa en molt poc temps.
+
+Vam acabar despullats i vam viure una nit molt intensa, amb molta passió i afecte, com si no hi hagués un demà.
+
+I, sincerament, jo ho havia volgut.
+
+No hi havia penediment.
+
+La nit havia estat brutal.
+
+El problema va arribar l'endemà.
+
+A les set del matí em vaig despertar. El meu rellotge intern és bastant eficient, fins i tot quan no li ho demano. Vaig obrir els ulls i, a poc a poc, el cervell va començar a reconstruir la situació: estava dins d'una furgoneta camperitzada, hi havia un noi al meu costat que coneixia des de feia molt poc, els ocells cantaven, jo tenia una ressaca considerable i estava despullada.
+
+A mesura que recuperava la consciència, també recuperava els records de la nit anterior.
+
+I sí: havia estat molt bé.
+
+Molt.
+
+Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i adonar-te que estàs dins d'una furgoneta amb un home que feia unes hores pràcticament no coneixies.
+
+No vaig pensar: «Déu meu, què he fet?».
+
+Vaig pensar: «Necessito casa».
+
+Necessitava espai, aigua, una dutxa i una mica de temps per assimilar què acabava de passar. Així que, a poc a poc, em vaig vestir.
+
+El Max es va sorprendre una mica quan va veure que jo marxava, però es va aixecar, ens vam acomiadar i em va deixar anar.
+
+I jo vaig marxar.
+
+No estava penedida. Simplement necessitava tornar al meu món.
+
+Va ser conduint de tornada quan em vaig començar a fer una pregunta:
+
+Per què estic fugint?
+
+No ho sabia.
+
+Potser tot havia anat massa ràpid. Potser després de sis anys en una relació necessitava recuperar el meu espai. Potser simplement necessitava arribar a casa, dutxar-me, beure aigua i deixar que el meu cervell, que en aquell moment estava bastant deshidratat, tornés a funcionar.
+
+Quan vaig arribar, vaig explicar algunes coses a les meves amigues i, en algun moment, fins i tot em vaig adonar que tenia una petita marca a la cara.
+
+Marameva.
+
+Havia estat una nit intensa.
+
+La meva mare em va veure i em va dir una cosa semblant a:
+
+—Ostres, espero que no t'hagin donat un cop.
+
+—No, dona. Com vols?
+
+I, mentre ho deia, vaig pensar:
+
+Espero jo també que no.
+
+Però no.
+
+No m'havien pegat.
+
+El problema era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
+
+Aquell mateix vespre, el Max em va escriure fent broma i em va preguntar si havia aprofitat bé el dia des de les set del matí.
+
+Vaig riure.
+
+Perquè sí, havia aprofitat el dia.
+
+Però encara no sabia exactament què pensar de tot allò.
+
+Havia estat brutal, inesperat i intens.
+
+I jo necessitava una mica de temps per entendre què significava.
+
+El que sí que sabia era que, quan el Max havia aparegut, jo ja feia cinc mesos que havia après una cosa important: que podia estar bé amb mi mateixa.
+
+I potser precisament per això podia deixar entrar algú nou.
+
+No perquè el necessités.
+
+Sinó perquè em venia de gust.
+`,
   },
   {
     reflection_id: "1",
     language: "en",
-    title: "Until we learn it",
-    content: `There are situations that seem to repeat themselves in our lives.
+    title: "Not because I needed you",
+    content: `Hi ha moments a la vida en què no tens ni idea que estàs a punt de començar una etapa nova. No hi ha música de fons, ni una llum especial, ni una veu que et digui que el que està passant ara et canviarà la vida. Simplement estàs fent la teva vida i, de sobte, algú et diu una frase que no esperaves escoltar i et quedes intentant entendre en quin moment has passat de tenir-ho tot més o menys controlat a no saber ni què faràs l'endemà.
 
-People, places and circumstances change, but somehow we end up finding ourselves again and again at the same point: the same fear, the same boundary we cannot set, the same need to control, the same difficulty letting go, the same way of reacting.
+A mi em va passar un dissabte al matí.
 
-And maybe it is not a coincidence.
+El Marcos em va mirar i em va dir:
 
-Maybe there are things life keeps showing us because we have not finished learning them yet.
+—T'HAIG DE DIR UNA COSA.
 
-Sometimes we think we have already moved past it because, in one particular situation, we react differently. We have more patience. We set a boundary. We do not answer back. We do not insist. We let go.
+Uf.
 
-And we think: this time, yes.
+Això és una frase per a la qual no sé si estem mai prou preparats. Perquè, evidentment, depèn del context, però hi ha una edat en què, quan algú et diu «t'he de dir una cosa», ja t'imagines que no ve precisament a anunciar-te que ha guanyat un sorteig.
 
-But later another situation appears that, even if it is completely different, touches exactly the same place inside us.
+I jo, abans d'entrar oficialment en estat de xoc, encara vaig tenir temps de dir-li de tot menys guapo. Evidentment, no entenia res. Després de sis anys de relació, que una persona et digui de cop una cosa que et canvia completament el guió de la teva vida no és fàcil d'assimilar. El meu cervell intentava trobar una explicació mentre jo encara estava intentant entendre què estava passant.
 
-And then we understand it was never about that situation.
+I llavors el Marcos va marxar.
 
-It was about us.
+Em va deixar allà, a casa seva, fent maletes.
 
-Maybe life does not repeat the same experiences because we have not learned enough, but because there is still a part of us that needs to be looked at differently.
+Així, tal qual.
 
-Because learning something is not knowing what we should do.
+Durant unes dues hores em vaig quedar en estat de xoc, asseguda i mirant el no res, sense ser capaç de moure'm. No sabia què havia de fer, per on començar ni, sincerament, com se suposava que funcionava una persona a qui acabaven de deixar després de tot. El cos estava allà, però el cervell havia plegat.
 
-It is reaching a point where we no longer need to force ourselves to act differently.
+En algun moment vaig entendre que havia de marxar i vaig començar a fer les maletes. Vaig trucar a la meva amiga Bruna i va venir a rescatar-me. Perquè les amigues de veritat no sempre saben què dir-te, però apareixen. I la Bruna és molt del meu clan: davant d'una situació emocionalment complicada, és capaç de venir a ajudar-te i, ja que hi és, aprofitar per dutxar-se. No perdem el temps.
 
-One day, we simply do.
+Amb ella allà vaig poder començar a moure coses, recollir i intentar posar una mica d'ordre en aquell caos. Però una cosa és decidir que te'n vas i una altra és aconseguir treure sis anys d'una casa. Vaig trigar dues setmanes a acabar de fer totes les maletes. Dues setmanes. Durant aquells dies vaig anar traient coses, tornant a buscar-ne, decidint què m'enduia i què deixava. I, a poc a poc, vaig entendre que allò no era només una mudança. Estava deixant enrere una vida que fins aquell moment havia donat per feta.
 
-And what used to repeat itself no longer holds the same power over us.`,
+I després van venir cinc mesos.
+
+Cinc mesos en què vaig estar sola i que, mirant-ho ara, van ser molt més importants del que jo podia imaginar aleshores. Perquè no em vaig quedar aturada. No vaig passar cinc mesos esperant que aparegués algú per tornar a sentir-me bé. Vaig fer exactament el contrari: vaig començar a fer la meva vida.
+
+Vaig començar a anar amb bici de carretera, vaig fer encara més esport, vaig conèixer gent nova, vaig anar a retirs de cap de setmana i vaig fer viatges aquí i allà. Em movia, feia plans, descobria coses i recuperava una part de mi que potser durant aquells anys havia quedat una mica amagada dins d'una vida compartida. I, sobretot, vaig descobrir que podia estar sola sense sentir que em faltava alguna cosa.
+
+Això em va donar una tranquil·litat que no esperava.
+
+Perquè jo continuava creient en l'amor. No havia sortit d'aquella relació pensant que els homes eren tots iguals o que enamorar-se era una mala inversió. Al contrari. Jo continuava volent conèixer un home interessant, enamorar-me si tocava i, algun dia, formar una família. Però una cosa era voler trobar algú i una altra era perdre el temps.
+
+I jo no soc gaire de perdre el temps.
+
+Així que vaig entrar en una aplicació de cites amb un sistema de selecció que probablement hauria pogut aplicar perfectament a un procés de contractació d'una multinacional. El meu criteri era senzill: si no contestava, fora; si contestava però no em convencia, fora; si em donava l'Instagram i em semblava massa egocèntric, fora. No sabia exactament com seria l'home que acabaria coneixent amb més profunditat, però tenia bastant clar com no volia que fos.
+
+En algun moment vaig arribar a tenir sis matches.
+
+Sis candidats.
+
+I, evidentment, el mercat em va oferir una mica de tot.
+
+Un, per exemple, em va portar a una platja nudista a la segona cita. A la segona. Jo encara estava intentant recordar com es deia i ell ja havia decidit que la roba era una barrera innecessària per a la nostra relació. Em vaig espantar.
+
+Amb un altre vaig quedar per anar amb bicicleta. I aquí hi ha un petit detall important: la idea d'anar amb bicicleta l'havia proposat jo. Jo sabia perfectament que allò era una cita. Ell, pel que sembla, no tant. Mentre pedalejava, jo anava fent el meu estudi de mercat: l'observava, l'escoltava, analitzava i, en algun moment, vaig arribar a una conclusió bastant ràpida.
+
+Fora.
+
+I no em va costar gens.
+
+Aquells cinc mesos m'havien ensenyat precisament això: no havia de quedar-me enlloc només perquè ja hi havia invertit temps. Podia provar, mirar, sentir i decidir. I si alguna cosa no em quadrava, marxava.
+
+Potser per això, quan va aparèixer el Max, jo ja no estava buscant que algú m'omplís cap buit.
+
+El Max era un dels sis.
+
+I aquí la cosa va començar a canviar.
+
+Des del principi em va cridar l'atenció. Era molt esportista, feia moltes coses, tenia molts amics, semblava independent i, al mateix temps, transmetia que realment volia connectar amb algú. Vam començar a parlar i em vaig trobar amb una conversa que no s'acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
+
+Anàvem descobrint coses en comú, coincidències i maneres de veure determinades coses que encaixaven. Vaig començar a pensar que potser havia aparegut en un moment curiós, gairebé com si hagués arribat quan tocava. Però jo continuava tenint els peus a terra: primer ens havíem de conèixer.
+
+El primer dia em va fer una pregunta que em va fer molta gràcia:
+
+—Què vols o creus que vols?
+
+Aquell «o creus que vols» em va encantar. Em va semblar una mica provocador, així que vaig contestar sense donar-hi gaire voltes:
+
+—Marit i fills.
+
+Pim pam.
+
+No sé què esperava ell, però no va desaparèixer.
+
+I això també em va agradar.
+
+A partir d'aquí vaig començar a gaudir d'una cosa que em divertia especialment: veure fins a quin punt el Max seria capaç d'arribar al meu nivell d'exigència. Jo el posava a prova, sempre amb carinyo, amb aquell somriure als llavis i els ulls mirant una mica cap amunt, com dient: «A veure, campió, què tens?».
+
+I aquí entra l'Olívia.
+
+Jo li explicava les coses que anaven passant amb el Max i ella, curiosament, ja n'era molt fan. Mentre jo analitzava, valorava i, probablement, començava a preparar mentalment alguna futura expulsió, ella em deia:
+
+—No el xutis, si us plau.
+
+L'Olívia té molta paciència. És d'aquelles amigues que escolten i que sembla que, mentre tu expliques una història, ja n'hagin entès tres capes més. És una d'aquelles persones de les quals pots aprendre.
+
+De fet, fa poc vaig estar amb ella i el Lucas, la seva parella, en una d'aquelles furgonetes camperitzades i vaig poder veure en directe com funciona l'Olívia.
+
+Marameva.
+
+El Lucas el porta a ratlla.
+
+I jo, mirant-los, només podia pensar que potser havia d'aprendre una mica d'ella.
+
+Perquè jo tenia una tendència bastant marcada a analitzar cada moviment i decidir ràpidament si algú passava o no passava la pantalla. Ella, en canvi, té una calma que jo admiro. I això que, pel que sembla, també sap perfectament com mantenir un home al seu lloc.
+
+Amb el Max, de moment, l'Olívia em demanava que no el xutés.
+
+I jo pensava que ja ho veuríem.
+
+Perquè el Max tampoc ho tenia tot guanyat.
+
+Per començar, no contestava sempre ràpid. I jo venia d'una relació en què m'havia acostumat molt malament als missatges immediats. El Marcos contestava ràpid, molt ràpid. Ell mateix deia que teníem una mena d'«apego al mòbil» i jo no li discutiré la diagnosi.
+
+Amb el Max, en canvi, un dia va deixar sense respondre una de les meves últimes preguntes i jo estava a punt d'eliminar-lo. El problema era que vivia a una hora de distància i no tenia cap altra manera de contactar amb ell. Si l'eliminava, s'havia acabat.
+
+Així que li vaig donar una última oportunitat.
+
+Li vaig escriure, més o menys, que veia que estava molt ocupat i que per això no em podia respondre, i que li anés molt bé.
+
+Va contestar.
+
+Tenia feina.
+
+S'havia salvat.
+
+I jo li vaig dir:
+
+—Has tingut sort. T'anava a eliminar.
+
+Li va fer gràcia i vam continuar parlant.
+
+Poc després em va proposar passar-nos a WhatsApp. Em va donar el seu número i em va dir que ara ja sabia que li podia escriure. Jo, evidentment, no podia semblar massa disponible, així que li vaig dir que m'ho pensaria. Ell ja havia fet el moviment.
+
+L'endemà vaig decidir que sí.
+
+Després d'uns dies parlant, jo ja volia conèixer-lo. No volia passar-me setmanes parlant amb una persona a través d'una pantalla per descobrir després que en persona no hi havia res. Així que vam començar a parlar de quedar.
+
+La primera proposta del Max, però, no em va convèncer gens. Era més tard a la tarda i implicava que jo havia d'agafar el cotxe, conduir una hora fins a la seva ciutat i quedar per prendre alguna cosa.
+
+I jo vaig pensar: de debò?
+
+Li vaig dir que creia que no sabia fer propostes a dones i, amb carinyo, li vaig dir que no.
+
+Ell es va disculpar immediatament.
+
+Jo, per dins, estava amb els ulls en blanc.
+
+Però somreia.
+
+Perquè, en el fons, aquell joc m'estava divertint.
+
+Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era diumenge i jo tenia el dia lliure. Li vaig dir:
+
+—Demà tinc el dia lliure.
+
+I vaig esperar.
+
+No li estava demanant una cita. Li estava donant l'oportunitat de proposar-la. Si no ho feia, probablement aquella conversa s'hauria acabat allà.
+
+Soc una mica radical amb aquestes coses.
+
+Però va funcionar.
+
+El Max va proposar:
+
+—Anem a prendre alguna cosa, entre tu i jo. Pensa tu el lloc.
+
+Perfecte.
+
+Vaig començar a buscar llocs, però tot em semblava massa formal i em feia mandra. No em venia de gust una cita convencional asseguts en una taula, amb aquella sensació de «ara ens hem de conèixer oficialment».
+
+Llavors vaig recordar que el Max tenia una furgoneta camperitzada.
+
+Jo havia tingut amics amb furgoneta, però mai m'havia cridat especialment l'atenció. Venia d'una vida en què els hotels havien estat bastant més habituals. I de cop estava pensant que potser quedar amb un home dins d'una furgoneta no estava gens malament.
+
+El contrast era considerable.
+
+Vam decidir trobar-nos en un lloc. Ell prepararia les coses i jo conduiria fins allà. Em va semblar un bon acord: ell s'encarregava de preparar-ho i jo només havia d'arribar.
+
+Quan vaig arribar, em va dir, fent broma:
+
+—Ho he fet molt romàntic, no t'espantis.
+
+No em vaig espantar.
+
+Tot em va semblar sorprenentment natural.
+
+I vaig pensar: deixa't portar.
+
+I em vaig deixar portar.
+
+Vam obrir dues ampolles de vi i vam començar a parlar. Vam estar quatre hores sense parar. Estàvem tan ficats en aquella conversa que pràcticament no vam menjar. I jo, mentre parlava amb ell, el mirava i em feia una pregunta molt concreta: li faries un petó?
+
+La resposta era sí.
+
+Això ja era una bona notícia.
+
+En algun moment, entre el vi i els nervis, vaig caure jo de la cadira. I ell, en veure'm, també va acabar per terra. De cop, el tenia a sobre meu.
+
+I vaig pensar: que llest, aquest.
+
+I, irònicament, també em va agradar.
+
+Abans que em donés gaire temps a pensar res més, ja m'estava fent un petó.
+
+I ho feia bé.
+
+Molt bé.
+
+Aquell petó va ser una explosió d'emocions. La nit es va convertir en una barreja de passió, calor i afecte, amb aquella sensació una mica absurda que dues persones que pràcticament no es coneixen poden arribar a connectar d'una manera molt intensa en molt poc temps.
+
+Vam acabar despullats i vam viure una nit molt intensa, amb molta passió i afecte, com si no hi hagués un demà.
+
+I, sincerament, jo ho havia volgut.
+
+No hi havia penediment.
+
+La nit havia estat brutal.
+
+El problema va arribar l'endemà.
+
+A les set del matí em vaig despertar. El meu rellotge intern és bastant eficient, fins i tot quan no li ho demano. Vaig obrir els ulls i, a poc a poc, el cervell va començar a reconstruir la situació: estava dins d'una furgoneta camperitzada, hi havia un noi al meu costat que coneixia des de feia molt poc, els ocells cantaven, jo tenia una ressaca considerable i estava despullada.
+
+A mesura que recuperava la consciència, també recuperava els records de la nit anterior.
+
+I sí: havia estat molt bé.
+
+Molt.
+
+Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i adonar-te que estàs dins d'una furgoneta amb un home que feia unes hores pràcticament no coneixies.
+
+No vaig pensar: «Déu meu, què he fet?».
+
+Vaig pensar: «Necessito casa».
+
+Necessitava espai, aigua, una dutxa i una mica de temps per assimilar què acabava de passar. Així que, a poc a poc, em vaig vestir.
+
+El Max es va sorprendre una mica quan va veure que jo marxava, però es va aixecar, ens vam acomiadar i em va deixar anar.
+
+I jo vaig marxar.
+
+No estava penedida. Simplement necessitava tornar al meu món.
+
+Va ser conduint de tornada quan em vaig començar a fer una pregunta:
+
+Per què estic fugint?
+
+No ho sabia.
+
+Potser tot havia anat massa ràpid. Potser després de sis anys en una relació necessitava recuperar el meu espai. Potser simplement necessitava arribar a casa, dutxar-me, beure aigua i deixar que el meu cervell, que en aquell moment estava bastant deshidratat, tornés a funcionar.
+
+Quan vaig arribar, vaig explicar algunes coses a les meves amigues i, en algun moment, fins i tot em vaig adonar que tenia una petita marca a la cara.
+
+Marameva.
+
+Havia estat una nit intensa.
+
+La meva mare em va veure i em va dir una cosa semblant a:
+
+—Ostres, espero que no t'hagin donat un cop.
+
+—No, dona. Com vols?
+
+I, mentre ho deia, vaig pensar:
+
+Espero jo també que no.
+
+Però no.
+
+No m'havien pegat.
+
+El problema era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
+
+Aquell mateix vespre, el Max em va escriure fent broma i em va preguntar si havia aprofitat bé el dia des de les set del matí.
+
+Vaig riure.
+
+Perquè sí, havia aprofitat el dia.
+
+Però encara no sabia exactament què pensar de tot allò.
+
+Havia estat brutal, inesperat i intens.
+
+I jo necessitava una mica de temps per entendre què significava.
+
+El que sí que sabia era que, quan el Max havia aparegut, jo ja feia cinc mesos que havia après una cosa important: que podia estar bé amb mi mateixa.
+
+I potser precisament per això podia deixar entrar algú nou.
+
+No perquè el necessités.
+
+Sinó perquè em venia de gust.
+`,
   },
   {
     reflection_id: "1",
     language: "fr",
-    title: "Jusqu’à ce qu’on l’apprenne",
-    content: `Il y a des situations qui semblent se répéter dans notre vie.
+    title: "Pas parce que j’avais besoin de toi",
+    content: `Hi ha moments a la vida en què no tens ni idea que estàs a punt de començar una etapa nova. No hi ha música de fons, ni una llum especial, ni una veu que et digui que el que està passant ara et canviarà la vida. Simplement estàs fent la teva vida i, de sobte, algú et diu una frase que no esperaves escoltar i et quedes intentant entendre en quin moment has passat de tenir-ho tot més o menys controlat a no saber ni què faràs l'endemà.
 
-Les personnes, les lieux et les circonstances changent, mais d’une certaine façon nous nous retrouvons encore et encore devant le même point : la même peur, la même limite que nous ne savons pas poser, le même besoin de contrôler, la même difficulté à lâcher prise, la même manière de réagir.
+A mi em va passar un dissabte al matí.
 
-Et ce n’est peut-être pas un hasard.
+El Marcos em va mirar i em va dir:
 
-Peut-être y a-t-il des choses que la vie continue de nous montrer parce que nous n’avons pas encore fini de les apprendre.
+—T'HAIG DE DIR UNA COSA.
 
-Parfois, nous pensons avoir déjà dépassé cela parce que, face à une situation précise, nous réagissons autrement. Nous avons plus de patience. Nous posons une limite. Nous ne répondons pas. Nous n’insistons pas. Nous lâchons prise.
+Uf.
 
-Et nous pensons : cette fois, oui.
+Això és una frase per a la qual no sé si estem mai prou preparats. Perquè, evidentment, depèn del context, però hi ha una edat en què, quan algú et diu «t'he de dir una cosa», ja t'imagines que no ve precisament a anunciar-te que ha guanyat un sorteig.
 
-Mais plus tard réapparaît une situation qui, même si elle est complètement différente, touche exactement le même endroit en nous.
+I jo, abans d'entrar oficialment en estat de xoc, encara vaig tenir temps de dir-li de tot menys guapo. Evidentment, no entenia res. Després de sis anys de relació, que una persona et digui de cop una cosa que et canvia completament el guió de la teva vida no és fàcil d'assimilar. El meu cervell intentava trobar una explicació mentre jo encara estava intentant entendre què estava passant.
 
-Et alors nous comprenons que ce n’était pas cette situation.
+I llavors el Marcos va marxar.
 
-C’était nous.
+Em va deixar allà, a casa seva, fent maletes.
 
-Peut-être que la vie ne nous répète pas les mêmes expériences parce que nous n’avons pas assez appris, mais parce qu’il y a encore une part de nous qui a besoin d’être regardée autrement.
+Així, tal qual.
 
-Parce qu’apprendre quelque chose, ce n’est pas savoir ce que nous devrions faire.
+Durant unes dues hores em vaig quedar en estat de xoc, asseguda i mirant el no res, sense ser capaç de moure'm. No sabia què havia de fer, per on començar ni, sincerament, com se suposava que funcionava una persona a qui acabaven de deixar després de tot. El cos estava allà, però el cervell havia plegat.
 
-C’est arriver à un point où nous n’avons plus besoin de nous forcer à agir autrement.
+En algun moment vaig entendre que havia de marxar i vaig començar a fer les maletes. Vaig trucar a la meva amiga Bruna i va venir a rescatar-me. Perquè les amigues de veritat no sempre saben què dir-te, però apareixen. I la Bruna és molt del meu clan: davant d'una situació emocionalment complicada, és capaç de venir a ajudar-te i, ja que hi és, aprofitar per dutxar-se. No perdem el temps.
 
-Un jour, simplement, nous le faisons.
+Amb ella allà vaig poder començar a moure coses, recollir i intentar posar una mica d'ordre en aquell caos. Però una cosa és decidir que te'n vas i una altra és aconseguir treure sis anys d'una casa. Vaig trigar dues setmanes a acabar de fer totes les maletes. Dues setmanes. Durant aquells dies vaig anar traient coses, tornant a buscar-ne, decidint què m'enduia i què deixava. I, a poc a poc, vaig entendre que allò no era només una mudança. Estava deixant enrere una vida que fins aquell moment havia donat per feta.
 
-Et ce qui se répétait auparavant cesse d’avoir le même pouvoir sur nous.`,
+I després van venir cinc mesos.
+
+Cinc mesos en què vaig estar sola i que, mirant-ho ara, van ser molt més importants del que jo podia imaginar aleshores. Perquè no em vaig quedar aturada. No vaig passar cinc mesos esperant que aparegués algú per tornar a sentir-me bé. Vaig fer exactament el contrari: vaig començar a fer la meva vida.
+
+Vaig començar a anar amb bici de carretera, vaig fer encara més esport, vaig conèixer gent nova, vaig anar a retirs de cap de setmana i vaig fer viatges aquí i allà. Em movia, feia plans, descobria coses i recuperava una part de mi que potser durant aquells anys havia quedat una mica amagada dins d'una vida compartida. I, sobretot, vaig descobrir que podia estar sola sense sentir que em faltava alguna cosa.
+
+Això em va donar una tranquil·litat que no esperava.
+
+Perquè jo continuava creient en l'amor. No havia sortit d'aquella relació pensant que els homes eren tots iguals o que enamorar-se era una mala inversió. Al contrari. Jo continuava volent conèixer un home interessant, enamorar-me si tocava i, algun dia, formar una família. Però una cosa era voler trobar algú i una altra era perdre el temps.
+
+I jo no soc gaire de perdre el temps.
+
+Així que vaig entrar en una aplicació de cites amb un sistema de selecció que probablement hauria pogut aplicar perfectament a un procés de contractació d'una multinacional. El meu criteri era senzill: si no contestava, fora; si contestava però no em convencia, fora; si em donava l'Instagram i em semblava massa egocèntric, fora. No sabia exactament com seria l'home que acabaria coneixent amb més profunditat, però tenia bastant clar com no volia que fos.
+
+En algun moment vaig arribar a tenir sis matches.
+
+Sis candidats.
+
+I, evidentment, el mercat em va oferir una mica de tot.
+
+Un, per exemple, em va portar a una platja nudista a la segona cita. A la segona. Jo encara estava intentant recordar com es deia i ell ja havia decidit que la roba era una barrera innecessària per a la nostra relació. Em vaig espantar.
+
+Amb un altre vaig quedar per anar amb bicicleta. I aquí hi ha un petit detall important: la idea d'anar amb bicicleta l'havia proposat jo. Jo sabia perfectament que allò era una cita. Ell, pel que sembla, no tant. Mentre pedalejava, jo anava fent el meu estudi de mercat: l'observava, l'escoltava, analitzava i, en algun moment, vaig arribar a una conclusió bastant ràpida.
+
+Fora.
+
+I no em va costar gens.
+
+Aquells cinc mesos m'havien ensenyat precisament això: no havia de quedar-me enlloc només perquè ja hi havia invertit temps. Podia provar, mirar, sentir i decidir. I si alguna cosa no em quadrava, marxava.
+
+Potser per això, quan va aparèixer el Max, jo ja no estava buscant que algú m'omplís cap buit.
+
+El Max era un dels sis.
+
+I aquí la cosa va començar a canviar.
+
+Des del principi em va cridar l'atenció. Era molt esportista, feia moltes coses, tenia molts amics, semblava independent i, al mateix temps, transmetia que realment volia connectar amb algú. Vam començar a parlar i em vaig trobar amb una conversa que no s'acabava mai. Ell preguntava molt, jo responia i ell tornava a preguntar. I així una vegada i una altra.
+
+Anàvem descobrint coses en comú, coincidències i maneres de veure determinades coses que encaixaven. Vaig començar a pensar que potser havia aparegut en un moment curiós, gairebé com si hagués arribat quan tocava. Però jo continuava tenint els peus a terra: primer ens havíem de conèixer.
+
+El primer dia em va fer una pregunta que em va fer molta gràcia:
+
+—Què vols o creus que vols?
+
+Aquell «o creus que vols» em va encantar. Em va semblar una mica provocador, així que vaig contestar sense donar-hi gaire voltes:
+
+—Marit i fills.
+
+Pim pam.
+
+No sé què esperava ell, però no va desaparèixer.
+
+I això també em va agradar.
+
+A partir d'aquí vaig començar a gaudir d'una cosa que em divertia especialment: veure fins a quin punt el Max seria capaç d'arribar al meu nivell d'exigència. Jo el posava a prova, sempre amb carinyo, amb aquell somriure als llavis i els ulls mirant una mica cap amunt, com dient: «A veure, campió, què tens?».
+
+I aquí entra l'Olívia.
+
+Jo li explicava les coses que anaven passant amb el Max i ella, curiosament, ja n'era molt fan. Mentre jo analitzava, valorava i, probablement, començava a preparar mentalment alguna futura expulsió, ella em deia:
+
+—No el xutis, si us plau.
+
+L'Olívia té molta paciència. És d'aquelles amigues que escolten i que sembla que, mentre tu expliques una història, ja n'hagin entès tres capes més. És una d'aquelles persones de les quals pots aprendre.
+
+De fet, fa poc vaig estar amb ella i el Lucas, la seva parella, en una d'aquelles furgonetes camperitzades i vaig poder veure en directe com funciona l'Olívia.
+
+Marameva.
+
+El Lucas el porta a ratlla.
+
+I jo, mirant-los, només podia pensar que potser havia d'aprendre una mica d'ella.
+
+Perquè jo tenia una tendència bastant marcada a analitzar cada moviment i decidir ràpidament si algú passava o no passava la pantalla. Ella, en canvi, té una calma que jo admiro. I això que, pel que sembla, també sap perfectament com mantenir un home al seu lloc.
+
+Amb el Max, de moment, l'Olívia em demanava que no el xutés.
+
+I jo pensava que ja ho veuríem.
+
+Perquè el Max tampoc ho tenia tot guanyat.
+
+Per començar, no contestava sempre ràpid. I jo venia d'una relació en què m'havia acostumat molt malament als missatges immediats. El Marcos contestava ràpid, molt ràpid. Ell mateix deia que teníem una mena d'«apego al mòbil» i jo no li discutiré la diagnosi.
+
+Amb el Max, en canvi, un dia va deixar sense respondre una de les meves últimes preguntes i jo estava a punt d'eliminar-lo. El problema era que vivia a una hora de distància i no tenia cap altra manera de contactar amb ell. Si l'eliminava, s'havia acabat.
+
+Així que li vaig donar una última oportunitat.
+
+Li vaig escriure, més o menys, que veia que estava molt ocupat i que per això no em podia respondre, i que li anés molt bé.
+
+Va contestar.
+
+Tenia feina.
+
+S'havia salvat.
+
+I jo li vaig dir:
+
+—Has tingut sort. T'anava a eliminar.
+
+Li va fer gràcia i vam continuar parlant.
+
+Poc després em va proposar passar-nos a WhatsApp. Em va donar el seu número i em va dir que ara ja sabia que li podia escriure. Jo, evidentment, no podia semblar massa disponible, així que li vaig dir que m'ho pensaria. Ell ja havia fet el moviment.
+
+L'endemà vaig decidir que sí.
+
+Després d'uns dies parlant, jo ja volia conèixer-lo. No volia passar-me setmanes parlant amb una persona a través d'una pantalla per descobrir després que en persona no hi havia res. Així que vam començar a parlar de quedar.
+
+La primera proposta del Max, però, no em va convèncer gens. Era més tard a la tarda i implicava que jo havia d'agafar el cotxe, conduir una hora fins a la seva ciutat i quedar per prendre alguna cosa.
+
+I jo vaig pensar: de debò?
+
+Li vaig dir que creia que no sabia fer propostes a dones i, amb carinyo, li vaig dir que no.
+
+Ell es va disculpar immediatament.
+
+Jo, per dins, estava amb els ulls en blanc.
+
+Però somreia.
+
+Perquè, en el fons, aquell joc m'estava divertint.
+
+Poc després vaig decidir fer una contraproposta sense fer-la exactament. Era diumenge i jo tenia el dia lliure. Li vaig dir:
+
+—Demà tinc el dia lliure.
+
+I vaig esperar.
+
+No li estava demanant una cita. Li estava donant l'oportunitat de proposar-la. Si no ho feia, probablement aquella conversa s'hauria acabat allà.
+
+Soc una mica radical amb aquestes coses.
+
+Però va funcionar.
+
+El Max va proposar:
+
+—Anem a prendre alguna cosa, entre tu i jo. Pensa tu el lloc.
+
+Perfecte.
+
+Vaig començar a buscar llocs, però tot em semblava massa formal i em feia mandra. No em venia de gust una cita convencional asseguts en una taula, amb aquella sensació de «ara ens hem de conèixer oficialment».
+
+Llavors vaig recordar que el Max tenia una furgoneta camperitzada.
+
+Jo havia tingut amics amb furgoneta, però mai m'havia cridat especialment l'atenció. Venia d'una vida en què els hotels havien estat bastant més habituals. I de cop estava pensant que potser quedar amb un home dins d'una furgoneta no estava gens malament.
+
+El contrast era considerable.
+
+Vam decidir trobar-nos en un lloc. Ell prepararia les coses i jo conduiria fins allà. Em va semblar un bon acord: ell s'encarregava de preparar-ho i jo només havia d'arribar.
+
+Quan vaig arribar, em va dir, fent broma:
+
+—Ho he fet molt romàntic, no t'espantis.
+
+No em vaig espantar.
+
+Tot em va semblar sorprenentment natural.
+
+I vaig pensar: deixa't portar.
+
+I em vaig deixar portar.
+
+Vam obrir dues ampolles de vi i vam començar a parlar. Vam estar quatre hores sense parar. Estàvem tan ficats en aquella conversa que pràcticament no vam menjar. I jo, mentre parlava amb ell, el mirava i em feia una pregunta molt concreta: li faries un petó?
+
+La resposta era sí.
+
+Això ja era una bona notícia.
+
+En algun moment, entre el vi i els nervis, vaig caure jo de la cadira. I ell, en veure'm, també va acabar per terra. De cop, el tenia a sobre meu.
+
+I vaig pensar: que llest, aquest.
+
+I, irònicament, també em va agradar.
+
+Abans que em donés gaire temps a pensar res més, ja m'estava fent un petó.
+
+I ho feia bé.
+
+Molt bé.
+
+Aquell petó va ser una explosió d'emocions. La nit es va convertir en una barreja de passió, calor i afecte, amb aquella sensació una mica absurda que dues persones que pràcticament no es coneixen poden arribar a connectar d'una manera molt intensa en molt poc temps.
+
+Vam acabar despullats i vam viure una nit molt intensa, amb molta passió i afecte, com si no hi hagués un demà.
+
+I, sincerament, jo ho havia volgut.
+
+No hi havia penediment.
+
+La nit havia estat brutal.
+
+El problema va arribar l'endemà.
+
+A les set del matí em vaig despertar. El meu rellotge intern és bastant eficient, fins i tot quan no li ho demano. Vaig obrir els ulls i, a poc a poc, el cervell va començar a reconstruir la situació: estava dins d'una furgoneta camperitzada, hi havia un noi al meu costat que coneixia des de feia molt poc, els ocells cantaven, jo tenia una ressaca considerable i estava despullada.
+
+A mesura que recuperava la consciència, també recuperava els records de la nit anterior.
+
+I sí: havia estat molt bé.
+
+Molt.
+
+Però una cosa és viure una nit així a les fosques, amb vi, nervis i emoció, i una altra és despertar-te amb la llum del dia i adonar-te que estàs dins d'una furgoneta amb un home que feia unes hores pràcticament no coneixies.
+
+No vaig pensar: «Déu meu, què he fet?».
+
+Vaig pensar: «Necessito casa».
+
+Necessitava espai, aigua, una dutxa i una mica de temps per assimilar què acabava de passar. Així que, a poc a poc, em vaig vestir.
+
+El Max es va sorprendre una mica quan va veure que jo marxava, però es va aixecar, ens vam acomiadar i em va deixar anar.
+
+I jo vaig marxar.
+
+No estava penedida. Simplement necessitava tornar al meu món.
+
+Va ser conduint de tornada quan em vaig començar a fer una pregunta:
+
+Per què estic fugint?
+
+No ho sabia.
+
+Potser tot havia anat massa ràpid. Potser després de sis anys en una relació necessitava recuperar el meu espai. Potser simplement necessitava arribar a casa, dutxar-me, beure aigua i deixar que el meu cervell, que en aquell moment estava bastant deshidratat, tornés a funcionar.
+
+Quan vaig arribar, vaig explicar algunes coses a les meves amigues i, en algun moment, fins i tot em vaig adonar que tenia una petita marca a la cara.
+
+Marameva.
+
+Havia estat una nit intensa.
+
+La meva mare em va veure i em va dir una cosa semblant a:
+
+—Ostres, espero que no t'hagin donat un cop.
+
+—No, dona. Com vols?
+
+I, mentre ho deia, vaig pensar:
+
+Espero jo també que no.
+
+Però no.
+
+No m'havien pegat.
+
+El problema era que el meu cervell estava intentant processar una nit que havia començat parlant durant quatre hores amb un desconegut i havia acabat dormint despullada dins de la seva furgoneta.
+
+Aquell mateix vespre, el Max em va escriure fent broma i em va preguntar si havia aprofitat bé el dia des de les set del matí.
+
+Vaig riure.
+
+Perquè sí, havia aprofitat el dia.
+
+Però encara no sabia exactament què pensar de tot allò.
+
+Havia estat brutal, inesperat i intens.
+
+I jo necessitava una mica de temps per entendre què significava.
+
+El que sí que sabia era que, quan el Max havia aparegut, jo ja feia cinc mesos que havia après una cosa important: que podia estar bé amb mi mateixa.
+
+I potser precisament per això podia deixar entrar algú nou.
+
+No perquè el necessités.
+
+Sinó perquè em venia de gust.
+`,
   },
-
-  // ─── 02 ───
   {
     reflection_id: "2",
     language: "ca",
-    title: "Ni fugir, ni forçar-ho",
-    content: `Si alguna cosa és per tu, et perseguirà encara que vulguis marxar.
-Si algú et vol conèixer, et coneixerà.
-Si algú vol estar amb tu, no marxarà.
-Si algú t'estima, t'ho demostrarà.
+    title: "Entre el sí i el no",
+    content: `A partir d'aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m'escrivia, quan no, què m'escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una inconsciència que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
 
-Això no vol dir quedar-te quiet esperant. Vol dir posar-hi la teva part, sense necessitat de forçar la de l'altre.
+El que no volia, evidentment, era tornar a ficar-me en una història amb algú que no tingués les coses clares. Amb carinyo, Marcos, però espavila.
 
-Cal tenir en compte, però, que el llenguatge de l'amor és molt divers. No tots estimem ni el demostrem de la mateixa manera.
+Al cap de poc, com que el WhatsApp ja s'havia convertit en el nostre canal de comunicació principal, vaig començar a obrir-me una mica més amb el Max. I aquí, vist amb perspectiva, semblava que la història s'havia acabat abans de començar. Per dins havia estat brutal, m'havia agradat molt, però al mateix temps jo tenia una barrera enorme que em deia que no volia continuar.
 
-Però hi ha unes bases que podem compartir tots: un mínim d'interès, reciprocitat, iniciativa equilibrada, sentiment de pau, no trair-nos per complaure.
+Així que, naturalment, el vaig tornar a posar a prova.
 
-No has de perseguir allò que constantment has de convèncer perquè existeixi.
+Li vaig dir que no estava preparada.
 
-I si alguna cosa no és, no vol dir que no en puguis extreure res.
-De fet, si no és, probablement és precisament perquè n'has d'aprendre alguna cosa, que ben apresa, et servirà per a la resta de la teva vida.`,
+No era exactament veritat.
+
+Però volia veure què feia ell amb aquella informació.
+
+La seva resposta va ser:
+
+—Espero que et vagi bé la recuperació de la teva ruptura.
+
+Em vaig picar.
+
+Jajajaja.
+
+No sé què esperava exactament que em digués, però aquella frase em va tocar l'ego. Així que vaig acabar dient-li la veritat: m'havia sentit massa exposada i vulnerable. M'havia agradat molt, però també m'havia fet por.
+
+I aquí el Max em va sorprendre.
+
+No es va defensar, no em va pressionar ni va fer veure que no passava res. Va respondre amb molta empatia, entenent el que li estava explicant i fent-me sentir més protegida. I això em va permetre continuar intentant-ho.
+
+Així que, poc després, li vaig dir que estaria uns dies a prop de casa seva.
+
+Devia flipar.
+
+Passar de dir-li que no estava preparada a anunciar-li que estaria a prop de casa seva era, com a mínim, una evolució argumental interessant.
+
+Jo mateixa em reia pensant: marameva, quina poca coherència estic demostrant.
+
+Però què vols que et digui? No puc controlar-ho tot.
+
+Ell, per sort, tampoc va fer gaire cas de les meves contradiccions i em va proposar que ens veiéssim.
+
+I així va arribar el moment de la segona cita.
+
+Bé.
+
+La suposada segona cita.
+
+Perquè no vam arribar ni a tenir-la.
+
+Jo havia reservat un hotel i l'havia pagat jo. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
+
+«Guapa, tu aquesta nit et quedes al llit».
+
+I em vaig posar malalta.
+
+Amb febre.
+
+Així que vaig haver d'escriure al Max per dir-li que estava feta pols i que probablement no ens podríem veure.
+
+Imagino que ell ja devia pensar que aquella noia era una mica complicada. I no el culpo.
+
+Perquè, des de fora, la seqüència tenia bastant gràcia: primer «no estic preparada», després «estaré prop de casa teva», després reservo un hotel i, just quan sembla que per fi ens veurem, em poso malalta.
+
+Quina paciència, el Max.
+
+El curiós és que ell no deia gaire res. No feia escenes, no em demanava explicacions. L'únic que vaig començar a notar era que hi havia una mica més d'espai entre les converses.
+
+I era normal.
+
+Jo també ho hauria fet.
+
+Però alguna cosa ho notava.
+
+I, mentre la febre em pujava i jo tenia un hotel pagat, encara vaig intentar veure si d'alguna manera podia quedar amb ell. Em vaig moure com vaig poder fins a l'hotel, perquè, evidentment, si jo havia reservat una habitació, la meva missió era aprofitar-la fins al final.
+
+Vaig arribar, vaig fer una migdiada, em vaig dutxar i em vaig prendre una bona dosi de medicació amb la intenció de ressuscitar.
+
+No va funcionar.
+
+Després de tot aquell desplegament logístic, vaig haver d'assumir que no podia veure'l i li vaig dir que ho deixàvem per un altre moment.
+
+Ell, molt amable, em va contestar que la salut era la salut i que li hauria agradat tenir sexe amb mi, però que un altre dia seria.
+
+I jo vaig riure.
+
+Però també vaig pensar:
+
+Perdona?
+
+Perquè, en aquell moment, em va sortir l'ego.
+
+Jo volia que vingués a veure'm, parlar amb mi, estar una estona junts. No volia que donés per fet que l'únic motiu pel qual jo havia reservat un hotel era tornar a tenir sexe amb ell.
+
+I aquí vaig pensar que potser jo també havia contribuït una mica a la confusió.
+
+Perquè, siguem sinceres: en quin moment una noia reserva un hotel, es posa malalta, travessa mig món amb febre i espera que un home entengui que en realitat només volia xerrar?
+
+Ho sé.
+
+Una altra vegada, poca coherència.
+
+No em vull tirar pedres, perquè també reconec que hi havia coses que en aquell moment no podia evitar. Estava intentant protegir-me, entendre què sentia i, al mateix temps, continuar deixant-me portar. I aquestes dues coses no sempre anaven en la mateixa direcció.
+
+Així que aquella segona cita va acabar com havia començat: sense arribar a passar.
+
+Jo vaig acabar dormint sola a l'hotel, amb el Frenadol com a únic convidat de la nit.
+
+I el Max, que probablement a aquestes alçades devia estar intentant entendre exactament amb quin tipus de dona s'havia anat a trobar, va tenir una cosa que jo encara no sabia valorar prou:
+
+paciència.
+`,
   },
   {
     reflection_id: "2",
     language: "es",
-    title: "Ni huir, ni forzarlo",
-    content: `Si algo es para ti, te perseguirá aunque quieras irte.
-Si alguien te quiere conocer, te conocerá.
-Si alguien quiere estar contigo, no se irá.
-Si alguien te ama, te lo demostrará.
+    title: "Entre el sí y el no",
+    content: `A partir d'aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m'escrivia, quan no, què m'escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una inconsciència que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
 
-Eso no significa quedarte quieto esperando. Significa poner tu parte, sin necesidad de forzar la del otro.
+El que no volia, evidentment, era tornar a ficar-me en una història amb algú que no tingués les coses clares. Amb carinyo, Marcos, però espavila.
 
-Hay que tener en cuenta, sin embargo, que el lenguaje del amor es muy diverso. No todos amamos ni lo demostramos de la misma manera.
+Al cap de poc, com que el WhatsApp ja s'havia convertit en el nostre canal de comunicació principal, vaig començar a obrir-me una mica més amb el Max. I aquí, vist amb perspectiva, semblava que la història s'havia acabat abans de començar. Per dins havia estat brutal, m'havia agradat molt, però al mateix temps jo tenia una barrera enorme que em deia que no volia continuar.
 
-Pero hay unas bases que podemos compartir todos: un mínimo de interés, reciprocidad, iniciativa equilibrada, sentimiento de paz, no traicionarnos por complacer.
+Així que, naturalment, el vaig tornar a posar a prova.
 
-No tienes que perseguir aquello que constantemente has de convencer para que exista.
+Li vaig dir que no estava preparada.
 
-Y si algo no es, no significa que no puedas extraer nada de ello.
-De hecho, si no es, probablemente es precisamente porque has de aprender algo que, bien aprendido, te servirá para el resto de tu vida.`,
+No era exactament veritat.
+
+Però volia veure què feia ell amb aquella informació.
+
+La seva resposta va ser:
+
+—Espero que et vagi bé la recuperació de la teva ruptura.
+
+Em vaig picar.
+
+Jajajaja.
+
+No sé què esperava exactament que em digués, però aquella frase em va tocar l'ego. Així que vaig acabar dient-li la veritat: m'havia sentit massa exposada i vulnerable. M'havia agradat molt, però també m'havia fet por.
+
+I aquí el Max em va sorprendre.
+
+No es va defensar, no em va pressionar ni va fer veure que no passava res. Va respondre amb molta empatia, entenent el que li estava explicant i fent-me sentir més protegida. I això em va permetre continuar intentant-ho.
+
+Així que, poc després, li vaig dir que estaria uns dies a prop de casa seva.
+
+Devia flipar.
+
+Passar de dir-li que no estava preparada a anunciar-li que estaria a prop de casa seva era, com a mínim, una evolució argumental interessant.
+
+Jo mateixa em reia pensant: marameva, quina poca coherència estic demostrant.
+
+Però què vols que et digui? No puc controlar-ho tot.
+
+Ell, per sort, tampoc va fer gaire cas de les meves contradiccions i em va proposar que ens veiéssim.
+
+I així va arribar el moment de la segona cita.
+
+Bé.
+
+La suposada segona cita.
+
+Perquè no vam arribar ni a tenir-la.
+
+Jo havia reservat un hotel i l'havia pagat jo. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
+
+«Guapa, tu aquesta nit et quedes al llit».
+
+I em vaig posar malalta.
+
+Amb febre.
+
+Així que vaig haver d'escriure al Max per dir-li que estava feta pols i que probablement no ens podríem veure.
+
+Imagino que ell ja devia pensar que aquella noia era una mica complicada. I no el culpo.
+
+Perquè, des de fora, la seqüència tenia bastant gràcia: primer «no estic preparada», després «estaré prop de casa teva», després reservo un hotel i, just quan sembla que per fi ens veurem, em poso malalta.
+
+Quina paciència, el Max.
+
+El curiós és que ell no deia gaire res. No feia escenes, no em demanava explicacions. L'únic que vaig començar a notar era que hi havia una mica més d'espai entre les converses.
+
+I era normal.
+
+Jo també ho hauria fet.
+
+Però alguna cosa ho notava.
+
+I, mentre la febre em pujava i jo tenia un hotel pagat, encara vaig intentar veure si d'alguna manera podia quedar amb ell. Em vaig moure com vaig poder fins a l'hotel, perquè, evidentment, si jo havia reservat una habitació, la meva missió era aprofitar-la fins al final.
+
+Vaig arribar, vaig fer una migdiada, em vaig dutxar i em vaig prendre una bona dosi de medicació amb la intenció de ressuscitar.
+
+No va funcionar.
+
+Després de tot aquell desplegament logístic, vaig haver d'assumir que no podia veure'l i li vaig dir que ho deixàvem per un altre moment.
+
+Ell, molt amable, em va contestar que la salut era la salut i que li hauria agradat tenir sexe amb mi, però que un altre dia seria.
+
+I jo vaig riure.
+
+Però també vaig pensar:
+
+Perdona?
+
+Perquè, en aquell moment, em va sortir l'ego.
+
+Jo volia que vingués a veure'm, parlar amb mi, estar una estona junts. No volia que donés per fet que l'únic motiu pel qual jo havia reservat un hotel era tornar a tenir sexe amb ell.
+
+I aquí vaig pensar que potser jo també havia contribuït una mica a la confusió.
+
+Perquè, siguem sinceres: en quin moment una noia reserva un hotel, es posa malalta, travessa mig món amb febre i espera que un home entengui que en realitat només volia xerrar?
+
+Ho sé.
+
+Una altra vegada, poca coherència.
+
+No em vull tirar pedres, perquè també reconec que hi havia coses que en aquell moment no podia evitar. Estava intentant protegir-me, entendre què sentia i, al mateix temps, continuar deixant-me portar. I aquestes dues coses no sempre anaven en la mateixa direcció.
+
+Així que aquella segona cita va acabar com havia començat: sense arribar a passar.
+
+Jo vaig acabar dormint sola a l'hotel, amb el Frenadol com a únic convidat de la nit.
+
+I el Max, que probablement a aquestes alçades devia estar intentant entendre exactament amb quin tipus de dona s'havia anat a trobar, va tenir una cosa que jo encara no sabia valorar prou:
+
+paciència.
+`,
   },
   {
     reflection_id: "2",
     language: "en",
-    title: "Neither flee, nor force it",
-    content: `If something is meant for you, it will pursue you even if you want to leave.
-If someone wants to know you, they will know you.
-If someone wants to be with you, they will not leave.
-If someone loves you, they will show you.
+    title: "Between yes and no",
+    content: `A partir d'aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m'escrivia, quan no, què m'escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una inconsciència que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
 
-That does not mean staying still and waiting. It means doing your part, without needing to force the other’s.
+El que no volia, evidentment, era tornar a ficar-me en una història amb algú que no tingués les coses clares. Amb carinyo, Marcos, però espavila.
 
-It matters, though, to remember that the language of love is deeply diverse. We do not all love or show it in the same way.
+Al cap de poc, com que el WhatsApp ja s'havia convertit en el nostre canal de comunicació principal, vaig començar a obrir-me una mica més amb el Max. I aquí, vist amb perspectiva, semblava que la història s'havia acabat abans de començar. Per dins havia estat brutal, m'havia agradat molt, però al mateix temps jo tenia una barrera enorme que em deia que no volia continuar.
 
-But there are a few foundations we can all share: a minimum of interest, reciprocity, a balanced initiative, a sense of peace, not betraying ourselves to please.
+Així que, naturalment, el vaig tornar a posar a prova.
 
-You do not have to chase what you constantly have to convince into existing.
+Li vaig dir que no estava preparada.
 
-And if something is not meant to be, that does not mean you cannot take something from it.
-In fact, if it is not, it is probably precisely because there is something you need to learn — and once learned well, it will serve you for the rest of your life.`,
+No era exactament veritat.
+
+Però volia veure què feia ell amb aquella informació.
+
+La seva resposta va ser:
+
+—Espero que et vagi bé la recuperació de la teva ruptura.
+
+Em vaig picar.
+
+Jajajaja.
+
+No sé què esperava exactament que em digués, però aquella frase em va tocar l'ego. Així que vaig acabar dient-li la veritat: m'havia sentit massa exposada i vulnerable. M'havia agradat molt, però també m'havia fet por.
+
+I aquí el Max em va sorprendre.
+
+No es va defensar, no em va pressionar ni va fer veure que no passava res. Va respondre amb molta empatia, entenent el que li estava explicant i fent-me sentir més protegida. I això em va permetre continuar intentant-ho.
+
+Així que, poc després, li vaig dir que estaria uns dies a prop de casa seva.
+
+Devia flipar.
+
+Passar de dir-li que no estava preparada a anunciar-li que estaria a prop de casa seva era, com a mínim, una evolució argumental interessant.
+
+Jo mateixa em reia pensant: marameva, quina poca coherència estic demostrant.
+
+Però què vols que et digui? No puc controlar-ho tot.
+
+Ell, per sort, tampoc va fer gaire cas de les meves contradiccions i em va proposar que ens veiéssim.
+
+I així va arribar el moment de la segona cita.
+
+Bé.
+
+La suposada segona cita.
+
+Perquè no vam arribar ni a tenir-la.
+
+Jo havia reservat un hotel i l'havia pagat jo. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
+
+«Guapa, tu aquesta nit et quedes al llit».
+
+I em vaig posar malalta.
+
+Amb febre.
+
+Així que vaig haver d'escriure al Max per dir-li que estava feta pols i que probablement no ens podríem veure.
+
+Imagino que ell ja devia pensar que aquella noia era una mica complicada. I no el culpo.
+
+Perquè, des de fora, la seqüència tenia bastant gràcia: primer «no estic preparada», després «estaré prop de casa teva», després reservo un hotel i, just quan sembla que per fi ens veurem, em poso malalta.
+
+Quina paciència, el Max.
+
+El curiós és que ell no deia gaire res. No feia escenes, no em demanava explicacions. L'únic que vaig començar a notar era que hi havia una mica més d'espai entre les converses.
+
+I era normal.
+
+Jo també ho hauria fet.
+
+Però alguna cosa ho notava.
+
+I, mentre la febre em pujava i jo tenia un hotel pagat, encara vaig intentar veure si d'alguna manera podia quedar amb ell. Em vaig moure com vaig poder fins a l'hotel, perquè, evidentment, si jo havia reservat una habitació, la meva missió era aprofitar-la fins al final.
+
+Vaig arribar, vaig fer una migdiada, em vaig dutxar i em vaig prendre una bona dosi de medicació amb la intenció de ressuscitar.
+
+No va funcionar.
+
+Després de tot aquell desplegament logístic, vaig haver d'assumir que no podia veure'l i li vaig dir que ho deixàvem per un altre moment.
+
+Ell, molt amable, em va contestar que la salut era la salut i que li hauria agradat tenir sexe amb mi, però que un altre dia seria.
+
+I jo vaig riure.
+
+Però també vaig pensar:
+
+Perdona?
+
+Perquè, en aquell moment, em va sortir l'ego.
+
+Jo volia que vingués a veure'm, parlar amb mi, estar una estona junts. No volia que donés per fet que l'únic motiu pel qual jo havia reservat un hotel era tornar a tenir sexe amb ell.
+
+I aquí vaig pensar que potser jo també havia contribuït una mica a la confusió.
+
+Perquè, siguem sinceres: en quin moment una noia reserva un hotel, es posa malalta, travessa mig món amb febre i espera que un home entengui que en realitat només volia xerrar?
+
+Ho sé.
+
+Una altra vegada, poca coherència.
+
+No em vull tirar pedres, perquè també reconec que hi havia coses que en aquell moment no podia evitar. Estava intentant protegir-me, entendre què sentia i, al mateix temps, continuar deixant-me portar. I aquestes dues coses no sempre anaven en la mateixa direcció.
+
+Així que aquella segona cita va acabar com havia començat: sense arribar a passar.
+
+Jo vaig acabar dormint sola a l'hotel, amb el Frenadol com a únic convidat de la nit.
+
+I el Max, que probablement a aquestes alçades devia estar intentant entendre exactament amb quin tipus de dona s'havia anat a trobar, va tenir una cosa que jo encara no sabia valorar prou:
+
+paciència.
+`,
   },
   {
     reflection_id: "2",
     language: "fr",
-    title: "Ni fuir, ni forcer",
-    content: `Si quelque chose est pour toi, elle te poursuivra même si tu veux partir.
-Si quelqu’un veut te connaître, il te connaîtra.
-Si quelqu’un veut être avec toi, il ne partira pas.
-Si quelqu’un t’aime, il te le montrera.
+    title: "Entre le oui et le non",
+    content: `A partir d'aquell moment vaig continuar analitzant cada pas que feia el Max. Quan m'escrivia, quan no, què m'escrivia, amb quina freqüència… sorprenentment, ell ho feia tot amb una inconsciència que a mi em desconcertava una mica. Però jo estava tranquil·la. Confiava en la meva intuïció i, després de tot el que havia viscut, sabia que podia escoltar-la.
 
-Cela ne veut pas dire rester immobile en attendant. Cela veut dire faire ta part, sans avoir besoin de forcer celle de l’autre.
+El que no volia, evidentment, era tornar a ficar-me en una història amb algú que no tingués les coses clares. Amb carinyo, Marcos, però espavila.
 
-Il faut toutefois garder à l’esprit que le langage de l’amour est très divers. Nous n’aimons pas tous, et nous ne le montrons pas tous, de la même manière.
+Al cap de poc, com que el WhatsApp ja s'havia convertit en el nostre canal de comunicació principal, vaig començar a obrir-me una mica més amb el Max. I aquí, vist amb perspectiva, semblava que la història s'havia acabat abans de començar. Per dins havia estat brutal, m'havia agradat molt, però al mateix temps jo tenia una barrera enorme que em deia que no volia continuar.
 
-Mais il existe des bases que nous pouvons tous partager : un minimum d’intérêt, de la réciprocité, une initiative équilibrée, un sentiment de paix, ne pas se trahir pour plaire.
+Així que, naturalment, el vaig tornar a posar a prova.
 
-Tu n’as pas à poursuivre ce que tu dois constamment convaincre d’exister.
+Li vaig dir que no estava preparada.
 
-Et si quelque chose n’est pas, cela ne veut pas dire que tu ne puisses rien en retirer.
-En fait, s’il n’est pas, c’est probablement précisément parce que tu as quelque chose à en apprendre — qui, une fois bien appris, te servira pour le reste de ta vie.`,
+No era exactament veritat.
+
+Però volia veure què feia ell amb aquella informació.
+
+La seva resposta va ser:
+
+—Espero que et vagi bé la recuperació de la teva ruptura.
+
+Em vaig picar.
+
+Jajajaja.
+
+No sé què esperava exactament que em digués, però aquella frase em va tocar l'ego. Així que vaig acabar dient-li la veritat: m'havia sentit massa exposada i vulnerable. M'havia agradat molt, però també m'havia fet por.
+
+I aquí el Max em va sorprendre.
+
+No es va defensar, no em va pressionar ni va fer veure que no passava res. Va respondre amb molta empatia, entenent el que li estava explicant i fent-me sentir més protegida. I això em va permetre continuar intentant-ho.
+
+Així que, poc després, li vaig dir que estaria uns dies a prop de casa seva.
+
+Devia flipar.
+
+Passar de dir-li que no estava preparada a anunciar-li que estaria a prop de casa seva era, com a mínim, una evolució argumental interessant.
+
+Jo mateixa em reia pensant: marameva, quina poca coherència estic demostrant.
+
+Però què vols que et digui? No puc controlar-ho tot.
+
+Ell, per sort, tampoc va fer gaire cas de les meves contradiccions i em va proposar que ens veiéssim.
+
+I així va arribar el moment de la segona cita.
+
+Bé.
+
+La suposada segona cita.
+
+Perquè no vam arribar ni a tenir-la.
+
+Jo havia reservat un hotel i l'havia pagat jo. Suposo que els hotels em resultaven familiars i, en aquell moment, em devia semblar una idea perfectament normal. La nit abans, però, un virus va decidir intervenir en la nostra història i em va dir:
+
+«Guapa, tu aquesta nit et quedes al llit».
+
+I em vaig posar malalta.
+
+Amb febre.
+
+Així que vaig haver d'escriure al Max per dir-li que estava feta pols i que probablement no ens podríem veure.
+
+Imagino que ell ja devia pensar que aquella noia era una mica complicada. I no el culpo.
+
+Perquè, des de fora, la seqüència tenia bastant gràcia: primer «no estic preparada», després «estaré prop de casa teva», després reservo un hotel i, just quan sembla que per fi ens veurem, em poso malalta.
+
+Quina paciència, el Max.
+
+El curiós és que ell no deia gaire res. No feia escenes, no em demanava explicacions. L'únic que vaig començar a notar era que hi havia una mica més d'espai entre les converses.
+
+I era normal.
+
+Jo també ho hauria fet.
+
+Però alguna cosa ho notava.
+
+I, mentre la febre em pujava i jo tenia un hotel pagat, encara vaig intentar veure si d'alguna manera podia quedar amb ell. Em vaig moure com vaig poder fins a l'hotel, perquè, evidentment, si jo havia reservat una habitació, la meva missió era aprofitar-la fins al final.
+
+Vaig arribar, vaig fer una migdiada, em vaig dutxar i em vaig prendre una bona dosi de medicació amb la intenció de ressuscitar.
+
+No va funcionar.
+
+Després de tot aquell desplegament logístic, vaig haver d'assumir que no podia veure'l i li vaig dir que ho deixàvem per un altre moment.
+
+Ell, molt amable, em va contestar que la salut era la salut i que li hauria agradat tenir sexe amb mi, però que un altre dia seria.
+
+I jo vaig riure.
+
+Però també vaig pensar:
+
+Perdona?
+
+Perquè, en aquell moment, em va sortir l'ego.
+
+Jo volia que vingués a veure'm, parlar amb mi, estar una estona junts. No volia que donés per fet que l'únic motiu pel qual jo havia reservat un hotel era tornar a tenir sexe amb ell.
+
+I aquí vaig pensar que potser jo també havia contribuït una mica a la confusió.
+
+Perquè, siguem sinceres: en quin moment una noia reserva un hotel, es posa malalta, travessa mig món amb febre i espera que un home entengui que en realitat només volia xerrar?
+
+Ho sé.
+
+Una altra vegada, poca coherència.
+
+No em vull tirar pedres, perquè també reconec que hi havia coses que en aquell moment no podia evitar. Estava intentant protegir-me, entendre què sentia i, al mateix temps, continuar deixant-me portar. I aquestes dues coses no sempre anaven en la mateixa direcció.
+
+Així que aquella segona cita va acabar com havia començat: sense arribar a passar.
+
+Jo vaig acabar dormint sola a l'hotel, amb el Frenadol com a únic convidat de la nit.
+
+I el Max, que probablement a aquestes alçades devia estar intentant entendre exactament amb quin tipus de dona s'havia anat a trobar, va tenir una cosa que jo encara no sabia valorar prou:
+
+paciència.
+`,
   },
-
-  // ─── 03 ───
   {
     reflection_id: "3",
     language: "ca",
-    title: "No tot el que acaba és una pèrdua",
-    content: `Totes les relacions que viurem al llarg de la nostra vida ens aporten un aprenentatge que pot ser immens.
+    title: "Deixar una porta oberta",
+    content: `Després d'allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l'altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L'altra és capaç de posar-se al costat de l'altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
 
-Quedar-nos únicament amb el dolor d'una ruptura —i no em refereixo a no sentir-lo durant un temps, perquè això és imprescindible per transcendir-lo— és contraproduent.
+Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. Després de tot, jo acabava de fer una mica de tot: primer que sí, després que no, després un hotel, després febre, després que millor un altre dia… Quina paciència. Però ell seguia allà. El Max és força consistent i se'l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
 
-Perquè, si només ens quedem amb el dolor, no arribem a entendre la importància del que aquella relació ens ha aportat.
+Allò havia passat un dimarts a la nit. Dimecres a la nit ja era a casa i divendres vaig decidir fer un pas més madur: dir-li clarament el que pensava. Li vaig reconèixer que m'hauria agradat tenir aquella cita, que ja em trobava millor i que li agraïa que s'hagués preocupat per mi. I, sobretot, li vaig dir que jo volia seguir veient-lo. Si ell no volia, cap problema. Evidentment, ho hauria hagut de gestionar, però en aquell moment jo ho deia amb una seguretat espectacular. Com si tingués absolutament clar què volia, què sentia i cap a on anava tot plegat. Una especialitat meva.
 
-La vida és cíclica.
-Res és permanent i tot es mou constantment.
+Em va contestar molt ràpid que sí.
 
-Les coses que es trenquen, les relacions que s'acaben, també ens obren portes a noves oportunitats que, sense elles, potser mai no s'haurien obert.
+I va ser molt guai de sentir. Perquè, sincerament, jo ja no sabia què pensar.
 
-No tot el que perdura és bo.
-I no tot el que acaba és una pèrdua.`,
+Poc després em va proposar que anés uns dies a casa seva. Ell treballava, però jo podia instal·lar-m'hi. Jo, evidentment, supercontenta. No vam arribar a concretar gaire, però jo ja ho tenia claríssim.
+
+Fins que diumenge al matí em va baixar la regla.
+
+Havíem quedat dimarts i els números, sincerament, no em quadraven gens. Perquè una cosa és estar refredada i una altra és això. No fotem. Jo encara arrossegant el refredat, ara la regla… Què més? Una gastroenteritis per completar el pack?
+
+Vaig decidir explicar-li-ho. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l'apocalipsi, però jo tampoc sabia com s'ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
+
+I vaig decidir que quedaríem igualment.
+
+Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s'estava acabant d'amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m'encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, anar a mirar sofàs no era precisament una tortura. De fet, em semblava un pla bastant guai.
+
+Però per una segona cita, després de tot el que havia passat i, sobretot, després de tot el que jo ja tenia al cap, no ho veia gens clar. Així que li vaig canviar el pla i li vaig proposar quedar-nos a casa.
+
+Crec que ell també es va sentir més tranquil. Però ara, mirant-ho amb perspectiva, penso que potser el seu pla inicial tenia més sentit del que jo li vaig voler donar. Potser ell simplement intentava trencar el gel. Fer vida normal. Que aquesta vegada no semblés que anàvem directament a la mateixa casella de la primera nit.
+
+Jo, en canvi, tenia una altra cosa al cap. Volia connectar amb ell de veritat. Conèixer-lo més enllà de l'atracció, de la tensió i de tota aquella intensitat que havia aparegut tan ràpid. I, per això, no volia estímuls externs innecessaris.
+
+Volia veure què passava quan simplement érem ell i jo.
+`,
   },
   {
     reflection_id: "3",
     language: "es",
-    title: "No todo lo que termina es una pérdida",
-    content: `Todas las relaciones que viviremos a lo largo de nuestra vida nos aportan un aprendizaje que puede ser inmenso.
+    title: "Dejar una puerta abierta",
+    content: `Després d'allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l'altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L'altra és capaç de posar-se al costat de l'altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
 
-Quedarnos únicamente con el dolor de una ruptura —y no me refiero a no sentirlo durante un tiempo, porque eso es imprescindible para trascenderlo— es contraproducente.
+Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. Després de tot, jo acabava de fer una mica de tot: primer que sí, després que no, després un hotel, després febre, després que millor un altre dia… Quina paciència. Però ell seguia allà. El Max és força consistent i se'l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
 
-Porque, si solo nos quedamos con el dolor, no llegamos a entender la importancia de lo que aquella relación nos ha aportado.
+Allò havia passat un dimarts a la nit. Dimecres a la nit ja era a casa i divendres vaig decidir fer un pas més madur: dir-li clarament el que pensava. Li vaig reconèixer que m'hauria agradat tenir aquella cita, que ja em trobava millor i que li agraïa que s'hagués preocupat per mi. I, sobretot, li vaig dir que jo volia seguir veient-lo. Si ell no volia, cap problema. Evidentment, ho hauria hagut de gestionar, però en aquell moment jo ho deia amb una seguretat espectacular. Com si tingués absolutament clar què volia, què sentia i cap a on anava tot plegat. Una especialitat meva.
 
-La vida es cíclica.
-Nada es permanente y todo se mueve constantemente.
+Em va contestar molt ràpid que sí.
 
-Las cosas que se rompen, las relaciones que terminan, también nos abren puertas a nuevas oportunidades que, sin ellas, quizás nunca se habrían abierto.
+I va ser molt guai de sentir. Perquè, sincerament, jo ja no sabia què pensar.
 
-No todo lo que perdura es bueno.
-Y no todo lo que termina es una pérdida.`,
+Poc després em va proposar que anés uns dies a casa seva. Ell treballava, però jo podia instal·lar-m'hi. Jo, evidentment, supercontenta. No vam arribar a concretar gaire, però jo ja ho tenia claríssim.
+
+Fins que diumenge al matí em va baixar la regla.
+
+Havíem quedat dimarts i els números, sincerament, no em quadraven gens. Perquè una cosa és estar refredada i una altra és això. No fotem. Jo encara arrossegant el refredat, ara la regla… Què més? Una gastroenteritis per completar el pack?
+
+Vaig decidir explicar-li-ho. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l'apocalipsi, però jo tampoc sabia com s'ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
+
+I vaig decidir que quedaríem igualment.
+
+Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s'estava acabant d'amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m'encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, anar a mirar sofàs no era precisament una tortura. De fet, em semblava un pla bastant guai.
+
+Però per una segona cita, després de tot el que havia passat i, sobretot, després de tot el que jo ja tenia al cap, no ho veia gens clar. Així que li vaig canviar el pla i li vaig proposar quedar-nos a casa.
+
+Crec que ell també es va sentir més tranquil. Però ara, mirant-ho amb perspectiva, penso que potser el seu pla inicial tenia més sentit del que jo li vaig voler donar. Potser ell simplement intentava trencar el gel. Fer vida normal. Que aquesta vegada no semblés que anàvem directament a la mateixa casella de la primera nit.
+
+Jo, en canvi, tenia una altra cosa al cap. Volia connectar amb ell de veritat. Conèixer-lo més enllà de l'atracció, de la tensió i de tota aquella intensitat que havia aparegut tan ràpid. I, per això, no volia estímuls externs innecessaris.
+
+Volia veure què passava quan simplement érem ell i jo.
+`,
   },
   {
     reflection_id: "3",
     language: "en",
-    title: "Not everything that ends is a loss",
-    content: `Every relationship we live through in our lives brings us a learning that can be immense.
+    title: "Leaving a door open",
+    content: `Després d'allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l'altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L'altra és capaç de posar-se al costat de l'altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
 
-Staying only with the pain of a breakup — and I do not mean not feeling it for a while, because that is essential in order to transcend it — is counterproductive.
+Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. Després de tot, jo acabava de fer una mica de tot: primer que sí, després que no, després un hotel, després febre, després que millor un altre dia… Quina paciència. Però ell seguia allà. El Max és força consistent i se'l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
 
-Because if we stay only with the pain, we do not come to understand the importance of what that relationship gave us.
+Allò havia passat un dimarts a la nit. Dimecres a la nit ja era a casa i divendres vaig decidir fer un pas més madur: dir-li clarament el que pensava. Li vaig reconèixer que m'hauria agradat tenir aquella cita, que ja em trobava millor i que li agraïa que s'hagués preocupat per mi. I, sobretot, li vaig dir que jo volia seguir veient-lo. Si ell no volia, cap problema. Evidentment, ho hauria hagut de gestionar, però en aquell moment jo ho deia amb una seguretat espectacular. Com si tingués absolutament clar què volia, què sentia i cap a on anava tot plegat. Una especialitat meva.
 
-Life is cyclical.
-Nothing is permanent, and everything is constantly moving.
+Em va contestar molt ràpid que sí.
 
-The things that break, the relationships that end, also open doors to new opportunities that, without them, might never have opened.
+I va ser molt guai de sentir. Perquè, sincerament, jo ja no sabia què pensar.
 
-Not everything that lasts is good.
-And not everything that ends is a loss.`,
+Poc després em va proposar que anés uns dies a casa seva. Ell treballava, però jo podia instal·lar-m'hi. Jo, evidentment, supercontenta. No vam arribar a concretar gaire, però jo ja ho tenia claríssim.
+
+Fins que diumenge al matí em va baixar la regla.
+
+Havíem quedat dimarts i els números, sincerament, no em quadraven gens. Perquè una cosa és estar refredada i una altra és això. No fotem. Jo encara arrossegant el refredat, ara la regla… Què més? Una gastroenteritis per completar el pack?
+
+Vaig decidir explicar-li-ho. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l'apocalipsi, però jo tampoc sabia com s'ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
+
+I vaig decidir que quedaríem igualment.
+
+Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s'estava acabant d'amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m'encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, anar a mirar sofàs no era precisament una tortura. De fet, em semblava un pla bastant guai.
+
+Però per una segona cita, després de tot el que havia passat i, sobretot, després de tot el que jo ja tenia al cap, no ho veia gens clar. Així que li vaig canviar el pla i li vaig proposar quedar-nos a casa.
+
+Crec que ell també es va sentir més tranquil. Però ara, mirant-ho amb perspectiva, penso que potser el seu pla inicial tenia més sentit del que jo li vaig voler donar. Potser ell simplement intentava trencar el gel. Fer vida normal. Que aquesta vegada no semblés que anàvem directament a la mateixa casella de la primera nit.
+
+Jo, en canvi, tenia una altra cosa al cap. Volia connectar amb ell de veritat. Conèixer-lo més enllà de l'atracció, de la tensió i de tota aquella intensitat que havia aparegut tan ràpid. I, per això, no volia estímuls externs innecessaris.
+
+Volia veure què passava quan simplement érem ell i jo.
+`,
   },
   {
     reflection_id: "3",
     language: "fr",
-    title: "Tout ce qui se termine n’est pas une perte",
-    content: `Toutes les relations que nous vivrons au cours de notre vie nous apportent un apprentissage qui peut être immense.
+    title: "Laisser une porte ouverte",
+    content: `Després d'allò, evidentment, jo no pretenia excusar-me per estar malalta. Però si alguna cosa començava a entendre de mi mateixa era que tinc dues facetes bastant reconeixibles. Una és la que es protegeix de tot: posa una barrera, diu «per aquí no passo» i, de cop, només veu allò que l'altre no fa bé —o allò que fa perquè no sap ben bé què fer— i decideix trencar-ho tot abans que li puguin fer mal. L'altra és capaç de posar-se al costat de l'altre, entendre la seva postura i reconèixer també els propis errors. Suposo que això és madurar. Suposo.
 
-Rester uniquement avec la douleur d’une rupture — et je ne parle pas de ne pas la ressentir pendant un certain temps, car cela est indispensable pour la transcender — est contre-productif.
+Els dies següents, el Max va ser amable. Em preguntava com estava, estava pendent de mi, però no us mentiré: tampoc el veia especialment implicat. I ho entenia. Després de tot, jo acabava de fer una mica de tot: primer que sí, després que no, després un hotel, després febre, després que millor un altre dia… Quina paciència. Però ell seguia allà. El Max és força consistent i se'l veu seriós, i jo em preguntava què li devia estar passant pel cap. Les converses ja no eren tan intenses com els primers dies, però jo continuava interessada. Simplement vaig deixar passar les hores i vaig observar.
 
-Parce que, si nous ne restons qu’avec la douleur, nous n’arrivons pas à comprendre l’importance de ce que cette relation nous a apporté.
+Allò havia passat un dimarts a la nit. Dimecres a la nit ja era a casa i divendres vaig decidir fer un pas més madur: dir-li clarament el que pensava. Li vaig reconèixer que m'hauria agradat tenir aquella cita, que ja em trobava millor i que li agraïa que s'hagués preocupat per mi. I, sobretot, li vaig dir que jo volia seguir veient-lo. Si ell no volia, cap problema. Evidentment, ho hauria hagut de gestionar, però en aquell moment jo ho deia amb una seguretat espectacular. Com si tingués absolutament clar què volia, què sentia i cap a on anava tot plegat. Una especialitat meva.
 
-La vie est cyclique.
-Rien n’est permanent et tout bouge constamment.
+Em va contestar molt ràpid que sí.
 
-Les choses qui se brisent, les relations qui se terminent, nous ouvrent aussi des portes vers de nouvelles opportunités qui, sans elles, ne se seraient peut-être jamais ouvertes.
+I va ser molt guai de sentir. Perquè, sincerament, jo ja no sabia què pensar.
 
-Tout ce qui dure n’est pas forcément bon.
-Et tout ce qui se termine n’est pas forcément une perte.`,
-  },
+Poc després em va proposar que anés uns dies a casa seva. Ell treballava, però jo podia instal·lar-m'hi. Jo, evidentment, supercontenta. No vam arribar a concretar gaire, però jo ja ho tenia claríssim.
 
-  // ─── 04 ───
-  {
-    reflection_id: "4",
-    language: "ca",
-    title: "La vida està a favor teu",
-    content: `Què ens aporta creure en alguna cosa? Tenir fe?
+Fins que diumenge al matí em va baixar la regla.
 
-L'Univers, la vida, la força suprema, Déu... el nom que li posem importa poc.
+Havíem quedat dimarts i els números, sincerament, no em quadraven gens. Perquè una cosa és estar refredada i una altra és això. No fotem. Jo encara arrossegant el refredat, ara la regla… Què més? Una gastroenteritis per completar el pack?
 
-Fe en què?
+Vaig decidir explicar-li-ho. No volia enganxar-me els dits i, a més, un noi que ha tingut parella normalment no hauria de viure aquestes coses com si fossin l'apocalipsi, però jo tampoc sabia com s'ho prendria. Ell no va reaccionar especialment. Em va dir que depenia de mi.
 
-Per mi, la fe no comença deixant anar, creient que tot està en mans alienes i sense prendre cap tipus d'acció per part nostra. Comença posant-hi una intenció.
+I vaig decidir que quedaríem igualment.
 
-Primer cal saber cap a on vols anar. Tenir uns objectius, una direcció clara.
-Després, creure-hi.
-I només llavors, deixar anar el control. Confiar que no ho has de sostenir tot tu sol.
+Dimarts, el pla inicial del Max era anar a veure sofàs, perquè s'estava acabant d'amoblar el pis, prendre alguna cosa per la ciutat i sopar a casa. I, sincerament, a mi el pla dels sofàs m'encantava. Tot el que té a veure amb cases, mobles, decoració i imaginar com quedaria un espai em fascina. Per mi, anar a mirar sofàs no era precisament una tortura. De fet, em semblava un pla bastant guai.
 
-Jo crec que, sigui quin sigui el nom que hi donem, sempre està a favor nostre.
-Ens guia cap al millor.
-Perquè l'únic que vol és oferir-nos l'abundància infinita que pot donar.
+Però per una segona cita, després de tot el que havia passat i, sobretot, després de tot el que jo ja tenia al cap, no ho veia gens clar. Així que li vaig canviar el pla i li vaig proposar quedar-nos a casa.
 
-I les pèrdues, els trencaments, també en formen part. No sempre és fàcil veure-ho enmig del dolor, però amb el temps es revelen com un pas més d'aquest camí.
+Crec que ell també es va sentir més tranquil. Però ara, mirant-ho amb perspectiva, penso que potser el seu pla inicial tenia més sentit del que jo li vaig voler donar. Potser ell simplement intentava trencar el gel. Fer vida normal. Que aquesta vegada no semblés que anàvem directament a la mateixa casella de la primera nit.
 
-Quan hi tens fe, ho comences a veure a tot arreu.
+Jo, en canvi, tenia una altra cosa al cap. Volia connectar amb ell de veritat. Conèixer-lo més enllà de l'atracció, de la tensió i de tota aquella intensitat que havia aparegut tan ràpid. I, per això, no volia estímuls externs innecessaris.
 
-En les casualitats.
-En les persones que apareixen.
-En les portes que es tanquen.
-En les que s'obren.
-En allò que avui no entens i que, amb el temps, acaba tenint tot el sentit.`,
+Volia veure què passava quan simplement érem ell i jo.
+`,
   },
   {
     reflection_id: "4",
+    language: "ca",
+    title: "Quan baixes la guàrdia",
+    content: `Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig enfilar cap allà amb els nervis típics d'una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
+
+Vaig aparcar al lloc que m'havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M'havia fet una llista. Una llista! Per anar a casa d'un home. Evidentment, jo no sabia si m'hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
+
+Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo un paquete», però el pis tenia càmera i vaig pensar que potser no calia que el primer que veiés fos jo fent el pallasso davant d'un objectiu. Vaig picar i vaig pujar.
+
+És curiós com ens desenvolupem quan estem nerviosos. Jo parlo molt, això ja ho sabem, però quan estic nerviosa puc arribar a considerar els silencis una amenaça personal. No deixo ni un buit. I el Max crec que tampoc és precisament especialista en deixar-los, així que entre un i l'altre vam aconseguir que allò semblés una emissió de ràdio en directe.
+
+Em va ensenyar casa seva, habitació per habitació, i després vam acabar al sofà. Cervesa rere cervesa, una mica de menjar i conversa. I les hores van anar passant sense que me n'adonés. Amb el Max no m'avorria gens. Sempre tenia alguna història per explicar, alguna anècdota interessant, alguna cosa que em feia voler saber-ne una mica més.
+
+En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat d'organitzar una cita com si fos una entrevista de feina.
+
+Li vaig dir: «Vols fer un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m'estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d'entendre les relacions. M'agradava descobrir-ho.
+
+A mig joc em va fer un petó.
+
+I jo li vaig dir que volia acabar les preguntes.
+
+Crec que li va fer gràcia.
+
+Quan vam arribar a l'última, vaig deixar el mòbil.
+
+«Ara sí.»
+
+I aquí començava l'aventura.
+
+Ens vam anar cap a l'habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d'haver estat contenint-nos tota l'estona. Jo, a més, portava un conjuntet moníssim que m'havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure'l tal com tu l'havies imaginat. Però a mi m'agradava, i amb això ja n'hi havia prou.
+
+Després ens vam dutxar i jo ja pensava que ara sí, que aniríem a dormir. Però abans de ficar-nos al llit, el Max em va proposar anar a buscar la bossa al cotxe, perquè allà hi tenia coses. I, de cop, va fer la broma:
+
+«Hi anem en boles sobre la moto?»
+
+Jo sabia perfectament que era una broma i li vaig seguir el joc. Ell, en canvi, em va creure.
+
+La gràcia és que jo, sincerament, ho hauria fet. A mi allà no em coneix ningú.
+
+Finalment, la bossa es va quedar al cotxe i vam tornar a l'habitació. Si ja m'havia preparat una llista de tot el que necessitava, sembla que aquella nit també havia preparat una mica massa bé la logística d'una estada que encara no sabia si arribaria a passar.
+
+La meva tos, però, sí que tenia clar que pensava quedar-se.
+
+Era aquella tos lletja, sorollosa i persistent que sembla que tingui personalitat pròpia. El Max em va donar aigua, xarop i va intentar cuidar-me com podia. Si m'incorporava, estava una mica millor, així que vam acabar allà, sense pressa, fent temps.
+
+En un moment li vaig fer un massatge al quàdriceps perquè tenia dolor i jo tinc algunes nocions de fisioteràpia. Li va semblar molt bé. Després ens vam començar a fer massatges a l'esquena, amb la seva música sonant de fons, i l'ambient es va anar tornant cada vegada més còmode.
+
+I jo hi estava molt a gust.
+
+Tant que vaig arribar a pensar: «Demà li dic a l'Ofèlia i a l'Olívia que m'estic enamorant si seguim així.»
+
+Jo soc molt ràpida. Ho sé.
+
+Ja devien ser quarts d'una quan vaig notar que el Max començava a adormir-se. La música seguia sonant, la llum estava encesa i jo, com sempre, pendent de tot.
+
+«Max, no t'adormis que tenim tot encès.»
+
+«Estic molt bé ara mateix, no m'adormo.»
+
+I vam seguir una estona més.
+
+Fins que, quan va voler anar a dormir, em va preguntar si em feia res que ell anés a dormir a l'altra habitació per culpa de la meva tos.
+
+Crec que vaig fingir molt bé que no passava res.
+
+Per dins, però, la meva cara deia: «És broma, no?»
+
+Perquè sí, jo li havia dit unes trenta vegades que podíem dormir separats. Però una cosa és dir-ho tu i una altra és que t'ho digui un home després d'haver estat tan bé. Això ja no t'ho esperes.
+
+«Sí, cap problema», li vaig dir amb el meu millor to amable.
+
+Em va donar un llençolet, me'l va posar per sobre i em va preguntar:
+
+«T'ajusto la porta?»
+
+«Tanca-la, si us plau.»
+
+Necessitava planificar la fugida estratègicament.
+
+No em va costar gaire. Vaig ordenar les meves coses, vaig agafar aire i vaig pensar: aquí et quedes. No és que m'hagués enfadat. Simplement jo tampoc sabia exactament què havia entès ell que significava que jo em quedés uns dies. Ell em deia que l'endemà marxava d'hora, però això significava que jo també havia de marxar? O podia quedar-me? No ho sabria mai. El que sí que sabia era que no volia que fos ell qui em digués que marxés.
+
+Regla número u d'una dona empoderada: quan sentis que és el millor moment per marxar, marxa. I no miris enrere. No deixis mai que un home et digui que marxis abans d'haver-ho decidit tu.
+
+Vaig picar a la porta de la seva habitació.
+
+«Max, marxo.»
+
+Ell devia flipar.
+
+«Violeta, no em molestes, eh.»
+
+«Ja ho sé. Però estaré més còmoda dormint a casa.»
+
+Vaig agafar el meu bolset, em vaig vestir i vaig marxar amb la meva dignitat.
+
+I amb la bossa que, per sort, havia deixat al cotxe.
+
+L'hora de trajecte fins a casa em va passar volant. No perquè no estigués cansada, sinó perquè vaig passar-la analitzant absolutament tota la nit. Reconec que em feia ràbia marxar. Havia estat genial. Jo hi havia estat molt bé. Però alguna cosa dins meu em deia que havia de fer-ho.
+
+Quan vaig arribar a casa, li vaig enviar un àudio explicant-li com de bé havia estat tot i dient-li que ja era a casa.
+
+Una de cal i una de sorra.
+
+Sembla que així és com enganxem els homes.
+
+Aquella nit vaig dormir força malament, però l'endemà em vaig despertar amb més calma. Per sort, el Max ja entenia que la meva fugida nocturna tenia més a veure amb la tos que amb ell. I vam continuar parlant amb normalitat.
+
+Però hi havia una diferència important. Jo ja havia pres una decisió: el Max m'agradava. No sé si fins ara ho havia dit així de clar, però ho havia decidit. I, una vegada presa aquella decisió, la meva feina s'havia acabat. No havia de fer res més.
+
+Simplement veure què passava.
+
+I, per primera vegada, em vaig permetre no avançar-me.
+
+Recordo que era la prèvia d'un pont i jo estava al gimnàs. Sortia de la sauna i ens anàvem enviant alguna foto mentre sortíem d'allà. En un moment vaig pensar que li podia fer una pregunta. I aquí va començar, una vegada més, la meva particular batalla entre la dona que sembla claríssima i segura de si mateixa i la dona que, davant d'una pregunta de quatre paraules, és capaç de convertir un got d'aigua en l'Atlàntic.
+
+«Et puc fer una pregunta?»
+
+Marameva. Com em costa anar al gra.
+
+Ell no em va respondre i em va canviar de tema.
+
+I jo, que aparentment ho tinc tot sota control, vaig decidir fer veure que no passava res i vaig anar directament a la pregunta que realment volia fer.
+
+«Què fas demà vespre?»
+
+El cor em anava a mil.
+
+Aquesta era la pregunta.
+
+Increïble com m'ofego amb un got d'aigua.
+
+El Max em va explicar amb tot detall el seu pla de cap de setmana: marxava amb uns amics a escalar i a fer kitesurf, amb les furgos. Un planazo. I jo, mentre l'escoltava, vaig notar aquella petita punxada de gelosia i, sobretot, una mica de ràbia per haver perdut l'oportunitat de passar un dia més amb ell.
+
+Però llavors vaig recordar la meva decisió.
+
+El Max m'agradava. I ja estava.
+
+No calia forçar res. Ja arribaria un altre moment.
+
+Així que vaig deixar que fos ell qui fes el següent pas.
+
+I llavors em va deixar anar:
+
+«Em volies proposar un pla?»
+
+No vaig contestar.
+
+Li vaig desitjar bon viatge.
+
+No sé si allò era misteri, estratègia o simplement una incapacitat bastant meva per reconèixer que sí, que evidentment li volia proposar un pla.
+
+Durant aquells dies ens vam anar enviant fotos. Ell des de la seva aventura, entre amics, furgos, esport i aire lliure; jo amb una vida molt diferent. I, tot i així, ens continuàvem buscant. No necessitàvem estar fent una conversa constant ni explicant-nos cada moviment del dia, però hi havia curiositat. Jo volia saber què estava fent ell i ell volia saber què estava fent jo.
+
+I potser aquesta era una de les coses que començaven a encaixar.
+
+Jo crec que li transmetia una certa pau i tranquil·litat. I a mi, en canvi, aquella part seva d'aventura, de moure's, de tenir plans, amics i una vida que no depenia de mi, m'atreia molt.
+
+No perquè fos igual que jo.
+
+Precisament perquè no ho era.
+`,
+  },
+  {
+    reflection_id: "4",
     language: "es",
-    title: "La vida está a tu favor",
-    content: `¿Qué nos aporta creer en algo? ¿Tener fe?
+    title: "Cuando bajas la guardia",
+    content: `Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig enfilar cap allà amb els nervis típics d'una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
 
-El Universo, la vida, la fuerza suprema, Dios... el nombre que le pongamos importa poco.
+Vaig aparcar al lloc que m'havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M'havia fet una llista. Una llista! Per anar a casa d'un home. Evidentment, jo no sabia si m'hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
 
-¿Fe en qué?
+Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo un paquete», però el pis tenia càmera i vaig pensar que potser no calia que el primer que veiés fos jo fent el pallasso davant d'un objectiu. Vaig picar i vaig pujar.
 
-Para mí, la fe no empieza soltando, creyendo que todo está en manos ajenas y sin tomar ningún tipo de acción por nuestra parte. Empieza poniendo una intención.
+És curiós com ens desenvolupem quan estem nerviosos. Jo parlo molt, això ja ho sabem, però quan estic nerviosa puc arribar a considerar els silencis una amenaça personal. No deixo ni un buit. I el Max crec que tampoc és precisament especialista en deixar-los, així que entre un i l'altre vam aconseguir que allò semblés una emissió de ràdio en directe.
 
-Primero hay que saber hacia dónde quieres ir. Tener unos objetivos, una dirección clara.
-Después, creer en ello.
-Y solo entonces, soltar el control. Confiar en que no lo tienes que sostener todo tú solo.
+Em va ensenyar casa seva, habitació per habitació, i després vam acabar al sofà. Cervesa rere cervesa, una mica de menjar i conversa. I les hores van anar passant sense que me n'adonés. Amb el Max no m'avorria gens. Sempre tenia alguna història per explicar, alguna anècdota interessant, alguna cosa que em feia voler saber-ne una mica més.
 
-Yo creo que, sea cual sea el nombre que le demos, siempre está a favor nuestro.
-Nos guía hacia lo mejor.
-Porque lo único que quiere es ofrecernos la abundancia infinita que puede dar.
+En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat d'organitzar una cita com si fos una entrevista de feina.
 
-Y las pérdidas, las rupturas, también forman parte. No siempre es fácil verlo en medio del dolor, pero con el tiempo se revelan como un paso más de este camino.
+Li vaig dir: «Vols fer un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m'estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d'entendre les relacions. M'agradava descobrir-ho.
 
-Cuando tienes fe en ello, empiezas a verlo en todas partes.
+A mig joc em va fer un petó.
 
-En las casualidades.
-En las personas que aparecen.
-En las puertas que se cierran.
-En las que se abren.
-En aquello que hoy no entiendes y que, con el tiempo, acaba teniendo todo el sentido.`,
+I jo li vaig dir que volia acabar les preguntes.
+
+Crec que li va fer gràcia.
+
+Quan vam arribar a l'última, vaig deixar el mòbil.
+
+«Ara sí.»
+
+I aquí començava l'aventura.
+
+Ens vam anar cap a l'habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d'haver estat contenint-nos tota l'estona. Jo, a més, portava un conjuntet moníssim que m'havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure'l tal com tu l'havies imaginat. Però a mi m'agradava, i amb això ja n'hi havia prou.
+
+Després ens vam dutxar i jo ja pensava que ara sí, que aniríem a dormir. Però abans de ficar-nos al llit, el Max em va proposar anar a buscar la bossa al cotxe, perquè allà hi tenia coses. I, de cop, va fer la broma:
+
+«Hi anem en boles sobre la moto?»
+
+Jo sabia perfectament que era una broma i li vaig seguir el joc. Ell, en canvi, em va creure.
+
+La gràcia és que jo, sincerament, ho hauria fet. A mi allà no em coneix ningú.
+
+Finalment, la bossa es va quedar al cotxe i vam tornar a l'habitació. Si ja m'havia preparat una llista de tot el que necessitava, sembla que aquella nit també havia preparat una mica massa bé la logística d'una estada que encara no sabia si arribaria a passar.
+
+La meva tos, però, sí que tenia clar que pensava quedar-se.
+
+Era aquella tos lletja, sorollosa i persistent que sembla que tingui personalitat pròpia. El Max em va donar aigua, xarop i va intentar cuidar-me com podia. Si m'incorporava, estava una mica millor, així que vam acabar allà, sense pressa, fent temps.
+
+En un moment li vaig fer un massatge al quàdriceps perquè tenia dolor i jo tinc algunes nocions de fisioteràpia. Li va semblar molt bé. Després ens vam començar a fer massatges a l'esquena, amb la seva música sonant de fons, i l'ambient es va anar tornant cada vegada més còmode.
+
+I jo hi estava molt a gust.
+
+Tant que vaig arribar a pensar: «Demà li dic a l'Ofèlia i a l'Olívia que m'estic enamorant si seguim així.»
+
+Jo soc molt ràpida. Ho sé.
+
+Ja devien ser quarts d'una quan vaig notar que el Max començava a adormir-se. La música seguia sonant, la llum estava encesa i jo, com sempre, pendent de tot.
+
+«Max, no t'adormis que tenim tot encès.»
+
+«Estic molt bé ara mateix, no m'adormo.»
+
+I vam seguir una estona més.
+
+Fins que, quan va voler anar a dormir, em va preguntar si em feia res que ell anés a dormir a l'altra habitació per culpa de la meva tos.
+
+Crec que vaig fingir molt bé que no passava res.
+
+Per dins, però, la meva cara deia: «És broma, no?»
+
+Perquè sí, jo li havia dit unes trenta vegades que podíem dormir separats. Però una cosa és dir-ho tu i una altra és que t'ho digui un home després d'haver estat tan bé. Això ja no t'ho esperes.
+
+«Sí, cap problema», li vaig dir amb el meu millor to amable.
+
+Em va donar un llençolet, me'l va posar per sobre i em va preguntar:
+
+«T'ajusto la porta?»
+
+«Tanca-la, si us plau.»
+
+Necessitava planificar la fugida estratègicament.
+
+No em va costar gaire. Vaig ordenar les meves coses, vaig agafar aire i vaig pensar: aquí et quedes. No és que m'hagués enfadat. Simplement jo tampoc sabia exactament què havia entès ell que significava que jo em quedés uns dies. Ell em deia que l'endemà marxava d'hora, però això significava que jo també havia de marxar? O podia quedar-me? No ho sabria mai. El que sí que sabia era que no volia que fos ell qui em digués que marxés.
+
+Regla número u d'una dona empoderada: quan sentis que és el millor moment per marxar, marxa. I no miris enrere. No deixis mai que un home et digui que marxis abans d'haver-ho decidit tu.
+
+Vaig picar a la porta de la seva habitació.
+
+«Max, marxo.»
+
+Ell devia flipar.
+
+«Violeta, no em molestes, eh.»
+
+«Ja ho sé. Però estaré més còmoda dormint a casa.»
+
+Vaig agafar el meu bolset, em vaig vestir i vaig marxar amb la meva dignitat.
+
+I amb la bossa que, per sort, havia deixat al cotxe.
+
+L'hora de trajecte fins a casa em va passar volant. No perquè no estigués cansada, sinó perquè vaig passar-la analitzant absolutament tota la nit. Reconec que em feia ràbia marxar. Havia estat genial. Jo hi havia estat molt bé. Però alguna cosa dins meu em deia que havia de fer-ho.
+
+Quan vaig arribar a casa, li vaig enviar un àudio explicant-li com de bé havia estat tot i dient-li que ja era a casa.
+
+Una de cal i una de sorra.
+
+Sembla que així és com enganxem els homes.
+
+Aquella nit vaig dormir força malament, però l'endemà em vaig despertar amb més calma. Per sort, el Max ja entenia que la meva fugida nocturna tenia més a veure amb la tos que amb ell. I vam continuar parlant amb normalitat.
+
+Però hi havia una diferència important. Jo ja havia pres una decisió: el Max m'agradava. No sé si fins ara ho havia dit així de clar, però ho havia decidit. I, una vegada presa aquella decisió, la meva feina s'havia acabat. No havia de fer res més.
+
+Simplement veure què passava.
+
+I, per primera vegada, em vaig permetre no avançar-me.
+
+Recordo que era la prèvia d'un pont i jo estava al gimnàs. Sortia de la sauna i ens anàvem enviant alguna foto mentre sortíem d'allà. En un moment vaig pensar que li podia fer una pregunta. I aquí va començar, una vegada més, la meva particular batalla entre la dona que sembla claríssima i segura de si mateixa i la dona que, davant d'una pregunta de quatre paraules, és capaç de convertir un got d'aigua en l'Atlàntic.
+
+«Et puc fer una pregunta?»
+
+Marameva. Com em costa anar al gra.
+
+Ell no em va respondre i em va canviar de tema.
+
+I jo, que aparentment ho tinc tot sota control, vaig decidir fer veure que no passava res i vaig anar directament a la pregunta que realment volia fer.
+
+«Què fas demà vespre?»
+
+El cor em anava a mil.
+
+Aquesta era la pregunta.
+
+Increïble com m'ofego amb un got d'aigua.
+
+El Max em va explicar amb tot detall el seu pla de cap de setmana: marxava amb uns amics a escalar i a fer kitesurf, amb les furgos. Un planazo. I jo, mentre l'escoltava, vaig notar aquella petita punxada de gelosia i, sobretot, una mica de ràbia per haver perdut l'oportunitat de passar un dia més amb ell.
+
+Però llavors vaig recordar la meva decisió.
+
+El Max m'agradava. I ja estava.
+
+No calia forçar res. Ja arribaria un altre moment.
+
+Així que vaig deixar que fos ell qui fes el següent pas.
+
+I llavors em va deixar anar:
+
+«Em volies proposar un pla?»
+
+No vaig contestar.
+
+Li vaig desitjar bon viatge.
+
+No sé si allò era misteri, estratègia o simplement una incapacitat bastant meva per reconèixer que sí, que evidentment li volia proposar un pla.
+
+Durant aquells dies ens vam anar enviant fotos. Ell des de la seva aventura, entre amics, furgos, esport i aire lliure; jo amb una vida molt diferent. I, tot i així, ens continuàvem buscant. No necessitàvem estar fent una conversa constant ni explicant-nos cada moviment del dia, però hi havia curiositat. Jo volia saber què estava fent ell i ell volia saber què estava fent jo.
+
+I potser aquesta era una de les coses que començaven a encaixar.
+
+Jo crec que li transmetia una certa pau i tranquil·litat. I a mi, en canvi, aquella part seva d'aventura, de moure's, de tenir plans, amics i una vida que no depenia de mi, m'atreia molt.
+
+No perquè fos igual que jo.
+
+Precisament perquè no ho era.
+`,
   },
   {
     reflection_id: "4",
     language: "en",
-    title: "Life is on your side",
-    content: `What does believing in something give us? Having faith?
+    title: "When you let your guard down",
+    content: `Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig enfilar cap allà amb els nervis típics d'una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
 
-The Universe, life, the supreme force, God… the name we give it matters little.
+Vaig aparcar al lloc que m'havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M'havia fet una llista. Una llista! Per anar a casa d'un home. Evidentment, jo no sabia si m'hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
 
-Faith in what?
+Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo un paquete», però el pis tenia càmera i vaig pensar que potser no calia que el primer que veiés fos jo fent el pallasso davant d'un objectiu. Vaig picar i vaig pujar.
 
-For me, faith does not begin by letting go, believing that everything is in someone else’s hands and taking no action of our own. It begins by setting an intention.
+És curiós com ens desenvolupem quan estem nerviosos. Jo parlo molt, això ja ho sabem, però quan estic nerviosa puc arribar a considerar els silencis una amenaça personal. No deixo ni un buit. I el Max crec que tampoc és precisament especialista en deixar-los, així que entre un i l'altre vam aconseguir que allò semblés una emissió de ràdio en directe.
 
-First you need to know where you want to go. To have goals, a clear direction.
-Then, to believe in it.
-And only then, to release control. To trust that you do not have to hold it all alone.
+Em va ensenyar casa seva, habitació per habitació, i després vam acabar al sofà. Cervesa rere cervesa, una mica de menjar i conversa. I les hores van anar passant sense que me n'adonés. Amb el Max no m'avorria gens. Sempre tenia alguna història per explicar, alguna anècdota interessant, alguna cosa que em feia voler saber-ne una mica més.
 
-I believe that, whatever name we give it, it is always on our side.
-It guides us toward what is best.
-Because all it wants is to offer us the infinite abundance it can give.
+En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat d'organitzar una cita com si fos una entrevista de feina.
 
-And losses, breakups, are part of it too. It is not always easy to see that in the middle of pain, but with time they reveal themselves as another step on this path.
+Li vaig dir: «Vols fer un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m'estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d'entendre les relacions. M'agradava descobrir-ho.
 
-When you have faith in it, you begin to see it everywhere.
+A mig joc em va fer un petó.
 
-In the coincidences.
-In the people who appear.
-In the doors that close.
-In the ones that open.
-In what you do not understand today, and that, with time, ends up making complete sense.`,
+I jo li vaig dir que volia acabar les preguntes.
+
+Crec que li va fer gràcia.
+
+Quan vam arribar a l'última, vaig deixar el mòbil.
+
+«Ara sí.»
+
+I aquí començava l'aventura.
+
+Ens vam anar cap a l'habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d'haver estat contenint-nos tota l'estona. Jo, a més, portava un conjuntet moníssim que m'havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure'l tal com tu l'havies imaginat. Però a mi m'agradava, i amb això ja n'hi havia prou.
+
+Després ens vam dutxar i jo ja pensava que ara sí, que aniríem a dormir. Però abans de ficar-nos al llit, el Max em va proposar anar a buscar la bossa al cotxe, perquè allà hi tenia coses. I, de cop, va fer la broma:
+
+«Hi anem en boles sobre la moto?»
+
+Jo sabia perfectament que era una broma i li vaig seguir el joc. Ell, en canvi, em va creure.
+
+La gràcia és que jo, sincerament, ho hauria fet. A mi allà no em coneix ningú.
+
+Finalment, la bossa es va quedar al cotxe i vam tornar a l'habitació. Si ja m'havia preparat una llista de tot el que necessitava, sembla que aquella nit també havia preparat una mica massa bé la logística d'una estada que encara no sabia si arribaria a passar.
+
+La meva tos, però, sí que tenia clar que pensava quedar-se.
+
+Era aquella tos lletja, sorollosa i persistent que sembla que tingui personalitat pròpia. El Max em va donar aigua, xarop i va intentar cuidar-me com podia. Si m'incorporava, estava una mica millor, així que vam acabar allà, sense pressa, fent temps.
+
+En un moment li vaig fer un massatge al quàdriceps perquè tenia dolor i jo tinc algunes nocions de fisioteràpia. Li va semblar molt bé. Després ens vam començar a fer massatges a l'esquena, amb la seva música sonant de fons, i l'ambient es va anar tornant cada vegada més còmode.
+
+I jo hi estava molt a gust.
+
+Tant que vaig arribar a pensar: «Demà li dic a l'Ofèlia i a l'Olívia que m'estic enamorant si seguim així.»
+
+Jo soc molt ràpida. Ho sé.
+
+Ja devien ser quarts d'una quan vaig notar que el Max començava a adormir-se. La música seguia sonant, la llum estava encesa i jo, com sempre, pendent de tot.
+
+«Max, no t'adormis que tenim tot encès.»
+
+«Estic molt bé ara mateix, no m'adormo.»
+
+I vam seguir una estona més.
+
+Fins que, quan va voler anar a dormir, em va preguntar si em feia res que ell anés a dormir a l'altra habitació per culpa de la meva tos.
+
+Crec que vaig fingir molt bé que no passava res.
+
+Per dins, però, la meva cara deia: «És broma, no?»
+
+Perquè sí, jo li havia dit unes trenta vegades que podíem dormir separats. Però una cosa és dir-ho tu i una altra és que t'ho digui un home després d'haver estat tan bé. Això ja no t'ho esperes.
+
+«Sí, cap problema», li vaig dir amb el meu millor to amable.
+
+Em va donar un llençolet, me'l va posar per sobre i em va preguntar:
+
+«T'ajusto la porta?»
+
+«Tanca-la, si us plau.»
+
+Necessitava planificar la fugida estratègicament.
+
+No em va costar gaire. Vaig ordenar les meves coses, vaig agafar aire i vaig pensar: aquí et quedes. No és que m'hagués enfadat. Simplement jo tampoc sabia exactament què havia entès ell que significava que jo em quedés uns dies. Ell em deia que l'endemà marxava d'hora, però això significava que jo també havia de marxar? O podia quedar-me? No ho sabria mai. El que sí que sabia era que no volia que fos ell qui em digués que marxés.
+
+Regla número u d'una dona empoderada: quan sentis que és el millor moment per marxar, marxa. I no miris enrere. No deixis mai que un home et digui que marxis abans d'haver-ho decidit tu.
+
+Vaig picar a la porta de la seva habitació.
+
+«Max, marxo.»
+
+Ell devia flipar.
+
+«Violeta, no em molestes, eh.»
+
+«Ja ho sé. Però estaré més còmoda dormint a casa.»
+
+Vaig agafar el meu bolset, em vaig vestir i vaig marxar amb la meva dignitat.
+
+I amb la bossa que, per sort, havia deixat al cotxe.
+
+L'hora de trajecte fins a casa em va passar volant. No perquè no estigués cansada, sinó perquè vaig passar-la analitzant absolutament tota la nit. Reconec que em feia ràbia marxar. Havia estat genial. Jo hi havia estat molt bé. Però alguna cosa dins meu em deia que havia de fer-ho.
+
+Quan vaig arribar a casa, li vaig enviar un àudio explicant-li com de bé havia estat tot i dient-li que ja era a casa.
+
+Una de cal i una de sorra.
+
+Sembla que així és com enganxem els homes.
+
+Aquella nit vaig dormir força malament, però l'endemà em vaig despertar amb més calma. Per sort, el Max ja entenia que la meva fugida nocturna tenia més a veure amb la tos que amb ell. I vam continuar parlant amb normalitat.
+
+Però hi havia una diferència important. Jo ja havia pres una decisió: el Max m'agradava. No sé si fins ara ho havia dit així de clar, però ho havia decidit. I, una vegada presa aquella decisió, la meva feina s'havia acabat. No havia de fer res més.
+
+Simplement veure què passava.
+
+I, per primera vegada, em vaig permetre no avançar-me.
+
+Recordo que era la prèvia d'un pont i jo estava al gimnàs. Sortia de la sauna i ens anàvem enviant alguna foto mentre sortíem d'allà. En un moment vaig pensar que li podia fer una pregunta. I aquí va començar, una vegada més, la meva particular batalla entre la dona que sembla claríssima i segura de si mateixa i la dona que, davant d'una pregunta de quatre paraules, és capaç de convertir un got d'aigua en l'Atlàntic.
+
+«Et puc fer una pregunta?»
+
+Marameva. Com em costa anar al gra.
+
+Ell no em va respondre i em va canviar de tema.
+
+I jo, que aparentment ho tinc tot sota control, vaig decidir fer veure que no passava res i vaig anar directament a la pregunta que realment volia fer.
+
+«Què fas demà vespre?»
+
+El cor em anava a mil.
+
+Aquesta era la pregunta.
+
+Increïble com m'ofego amb un got d'aigua.
+
+El Max em va explicar amb tot detall el seu pla de cap de setmana: marxava amb uns amics a escalar i a fer kitesurf, amb les furgos. Un planazo. I jo, mentre l'escoltava, vaig notar aquella petita punxada de gelosia i, sobretot, una mica de ràbia per haver perdut l'oportunitat de passar un dia més amb ell.
+
+Però llavors vaig recordar la meva decisió.
+
+El Max m'agradava. I ja estava.
+
+No calia forçar res. Ja arribaria un altre moment.
+
+Així que vaig deixar que fos ell qui fes el següent pas.
+
+I llavors em va deixar anar:
+
+«Em volies proposar un pla?»
+
+No vaig contestar.
+
+Li vaig desitjar bon viatge.
+
+No sé si allò era misteri, estratègia o simplement una incapacitat bastant meva per reconèixer que sí, que evidentment li volia proposar un pla.
+
+Durant aquells dies ens vam anar enviant fotos. Ell des de la seva aventura, entre amics, furgos, esport i aire lliure; jo amb una vida molt diferent. I, tot i així, ens continuàvem buscant. No necessitàvem estar fent una conversa constant ni explicant-nos cada moviment del dia, però hi havia curiositat. Jo volia saber què estava fent ell i ell volia saber què estava fent jo.
+
+I potser aquesta era una de les coses que començaven a encaixar.
+
+Jo crec que li transmetia una certa pau i tranquil·litat. I a mi, en canvi, aquella part seva d'aventura, de moure's, de tenir plans, amics i una vida que no depenia de mi, m'atreia molt.
+
+No perquè fos igual que jo.
+
+Precisament perquè no ho era.
+`,
   },
   {
     reflection_id: "4",
     language: "fr",
-    title: "La vie est de ton côté",
-    content: `Qu’est-ce que croire en quelque chose nous apporte ? Avoir la foi ?
+    title: "Quand on baisse la garde",
+    content: `Havíem quedat a les set i mitja del vespre. Jo venia de casa i tenia una horeta de trajecte, així que vaig passar abans a comprar un pica-pica una mica gourmet i unes Complot, perquè si havia de connectar amb algú, almenys que fos amb una mica de bon menjar i cervesa. Vaig enfilar cap allà amb els nervis típics d'una segona cita: impossibles de camuflar, però també divertits. Aquells nervis que et fan sentir una mica adolescent encara que faci anys que no ho ets.
 
-L’Univers, la vie, la force suprême, Dieu… le nom que nous lui donnons importe peu.
+Vaig aparcar al lloc que m'havia indicat i aquí va aparèixer, sense avisar, la meva por preventiva. La bossa es quedava al cotxe. Ja veuríem si em sentia prou còmoda per quedar-me. I no era una bossa qualsevol. A dins hi havia tres conjunts de roba preparats, les meves cremes, els suplements i absolutament tot el que necessitava. M'havia fet una llista. Una llista! Per anar a casa d'un home. Evidentment, jo no sabia si m'hi quedaria una nit, tres dies o si als vint minuts estaria tornant cap a casa, però per si de cas, ho tenia tot perfectament planificat. Només em faltava portar una carpeta amb documentació.
 
-Foi en quoi ?
+Vaig arribar a la porta pensant a fer-li una de les meves bromes de «le traigo un paquete», però el pis tenia càmera i vaig pensar que potser no calia que el primer que veiés fos jo fent el pallasso davant d'un objectiu. Vaig picar i vaig pujar.
 
-Pour moi, la foi ne commence pas en lâchant prise, en croyant que tout est entre des mains étrangères et sans prendre aucune action de notre part. Elle commence en y mettant une intention.
+És curiós com ens desenvolupem quan estem nerviosos. Jo parlo molt, això ja ho sabem, però quan estic nerviosa puc arribar a considerar els silencis una amenaça personal. No deixo ni un buit. I el Max crec que tampoc és precisament especialista en deixar-los, així que entre un i l'altre vam aconseguir que allò semblés una emissió de ràdio en directe.
 
-D’abord, il faut savoir où l’on veut aller. Avoir des objectifs, une direction claire.
-Ensuite, y croire.
-Et seulement alors, lâcher le contrôle. Faire confiance au fait que l’on n’a pas à tout porter seul.
+Em va ensenyar casa seva, habitació per habitació, i després vam acabar al sofà. Cervesa rere cervesa, una mica de menjar i conversa. I les hores van anar passant sense que me n'adonés. Amb el Max no m'avorria gens. Sempre tenia alguna història per explicar, alguna anècdota interessant, alguna cosa que em feia voler saber-ne una mica més.
 
-Je crois que, quel que soit le nom que nous lui donnons, il est toujours de notre côté.
-Il nous guide vers le meilleur.
-Parce que la seule chose qu’il veut, c’est nous offrir l’abondance infinie qu’il peut donner.
+En algun moment vaig notar que començava a apropar-se a mi. I jo encara volia parlar. Encara volia analitzar algunes cosetes. De fet, havia preparat un joc de vuitanta-dues preguntes ràpides. Sí, vuitanta-dues. No sé si això diu més de mi o de la meva capacitat d'organitzar una cita com si fos una entrevista de feina.
 
-Et les pertes, les ruptures, en font aussi partie. Il n’est pas toujours facile de le voir au milieu de la douleur, mais avec le temps elles se révèlent comme un pas de plus sur ce chemin.
+Li vaig dir: «Vols fer un joc?». No em va dir que no. Es va estirar al sofà i em va agafar perquè m'estirés al seu costat. Jo mirava les preguntes a la pantalla del mòbil i les anava llegint en veu alta. I, sorprenentment, semblava que teníem bastantes coses en comú: des dels gustos culinaris fins a la manera d'entendre les relacions. M'agradava descobrir-ho.
 
-Quand tu y as foi, tu commences à le voir partout.
+A mig joc em va fer un petó.
 
-Dans les coïncidences.
-Dans les personnes qui apparaissent.
-Dans les portes qui se ferment.
-Dans celles qui s’ouvrent.
-Dans ce que tu ne comprends pas aujourd’hui et qui, avec le temps, finit par avoir tout son sens.`,
+I jo li vaig dir que volia acabar les preguntes.
+
+Crec que li va fer gràcia.
+
+Quan vam arribar a l'última, vaig deixar el mòbil.
+
+«Ara sí.»
+
+I aquí començava l'aventura.
+
+Ens vam anar cap a l'habitació i tot va passar amb aquella barreja de ganes, nervis i atracció que ja coneixíem. Hi havia molta passió, molt contacte i aquella sensació d'haver estat contenint-nos tota l'estona. Jo, a més, portava un conjuntet moníssim que m'havia posat expressament. Una cosa que, pensant-ho bé, és una mica absurda perquè un home gairebé mai arriba a veure'l tal com tu l'havies imaginat. Però a mi m'agradava, i amb això ja n'hi havia prou.
+
+Després ens vam dutxar i jo ja pensava que ara sí, que aniríem a dormir. Però abans de ficar-nos al llit, el Max em va proposar anar a buscar la bossa al cotxe, perquè allà hi tenia coses. I, de cop, va fer la broma:
+
+«Hi anem en boles sobre la moto?»
+
+Jo sabia perfectament que era una broma i li vaig seguir el joc. Ell, en canvi, em va creure.
+
+La gràcia és que jo, sincerament, ho hauria fet. A mi allà no em coneix ningú.
+
+Finalment, la bossa es va quedar al cotxe i vam tornar a l'habitació. Si ja m'havia preparat una llista de tot el que necessitava, sembla que aquella nit també havia preparat una mica massa bé la logística d'una estada que encara no sabia si arribaria a passar.
+
+La meva tos, però, sí que tenia clar que pensava quedar-se.
+
+Era aquella tos lletja, sorollosa i persistent que sembla que tingui personalitat pròpia. El Max em va donar aigua, xarop i va intentar cuidar-me com podia. Si m'incorporava, estava una mica millor, així que vam acabar allà, sense pressa, fent temps.
+
+En un moment li vaig fer un massatge al quàdriceps perquè tenia dolor i jo tinc algunes nocions de fisioteràpia. Li va semblar molt bé. Després ens vam començar a fer massatges a l'esquena, amb la seva música sonant de fons, i l'ambient es va anar tornant cada vegada més còmode.
+
+I jo hi estava molt a gust.
+
+Tant que vaig arribar a pensar: «Demà li dic a l'Ofèlia i a l'Olívia que m'estic enamorant si seguim així.»
+
+Jo soc molt ràpida. Ho sé.
+
+Ja devien ser quarts d'una quan vaig notar que el Max començava a adormir-se. La música seguia sonant, la llum estava encesa i jo, com sempre, pendent de tot.
+
+«Max, no t'adormis que tenim tot encès.»
+
+«Estic molt bé ara mateix, no m'adormo.»
+
+I vam seguir una estona més.
+
+Fins que, quan va voler anar a dormir, em va preguntar si em feia res que ell anés a dormir a l'altra habitació per culpa de la meva tos.
+
+Crec que vaig fingir molt bé que no passava res.
+
+Per dins, però, la meva cara deia: «És broma, no?»
+
+Perquè sí, jo li havia dit unes trenta vegades que podíem dormir separats. Però una cosa és dir-ho tu i una altra és que t'ho digui un home després d'haver estat tan bé. Això ja no t'ho esperes.
+
+«Sí, cap problema», li vaig dir amb el meu millor to amable.
+
+Em va donar un llençolet, me'l va posar per sobre i em va preguntar:
+
+«T'ajusto la porta?»
+
+«Tanca-la, si us plau.»
+
+Necessitava planificar la fugida estratègicament.
+
+No em va costar gaire. Vaig ordenar les meves coses, vaig agafar aire i vaig pensar: aquí et quedes. No és que m'hagués enfadat. Simplement jo tampoc sabia exactament què havia entès ell que significava que jo em quedés uns dies. Ell em deia que l'endemà marxava d'hora, però això significava que jo també havia de marxar? O podia quedar-me? No ho sabria mai. El que sí que sabia era que no volia que fos ell qui em digués que marxés.
+
+Regla número u d'una dona empoderada: quan sentis que és el millor moment per marxar, marxa. I no miris enrere. No deixis mai que un home et digui que marxis abans d'haver-ho decidit tu.
+
+Vaig picar a la porta de la seva habitació.
+
+«Max, marxo.»
+
+Ell devia flipar.
+
+«Violeta, no em molestes, eh.»
+
+«Ja ho sé. Però estaré més còmoda dormint a casa.»
+
+Vaig agafar el meu bolset, em vaig vestir i vaig marxar amb la meva dignitat.
+
+I amb la bossa que, per sort, havia deixat al cotxe.
+
+L'hora de trajecte fins a casa em va passar volant. No perquè no estigués cansada, sinó perquè vaig passar-la analitzant absolutament tota la nit. Reconec que em feia ràbia marxar. Havia estat genial. Jo hi havia estat molt bé. Però alguna cosa dins meu em deia que havia de fer-ho.
+
+Quan vaig arribar a casa, li vaig enviar un àudio explicant-li com de bé havia estat tot i dient-li que ja era a casa.
+
+Una de cal i una de sorra.
+
+Sembla que així és com enganxem els homes.
+
+Aquella nit vaig dormir força malament, però l'endemà em vaig despertar amb més calma. Per sort, el Max ja entenia que la meva fugida nocturna tenia més a veure amb la tos que amb ell. I vam continuar parlant amb normalitat.
+
+Però hi havia una diferència important. Jo ja havia pres una decisió: el Max m'agradava. No sé si fins ara ho havia dit així de clar, però ho havia decidit. I, una vegada presa aquella decisió, la meva feina s'havia acabat. No havia de fer res més.
+
+Simplement veure què passava.
+
+I, per primera vegada, em vaig permetre no avançar-me.
+
+Recordo que era la prèvia d'un pont i jo estava al gimnàs. Sortia de la sauna i ens anàvem enviant alguna foto mentre sortíem d'allà. En un moment vaig pensar que li podia fer una pregunta. I aquí va començar, una vegada més, la meva particular batalla entre la dona que sembla claríssima i segura de si mateixa i la dona que, davant d'una pregunta de quatre paraules, és capaç de convertir un got d'aigua en l'Atlàntic.
+
+«Et puc fer una pregunta?»
+
+Marameva. Com em costa anar al gra.
+
+Ell no em va respondre i em va canviar de tema.
+
+I jo, que aparentment ho tinc tot sota control, vaig decidir fer veure que no passava res i vaig anar directament a la pregunta que realment volia fer.
+
+«Què fas demà vespre?»
+
+El cor em anava a mil.
+
+Aquesta era la pregunta.
+
+Increïble com m'ofego amb un got d'aigua.
+
+El Max em va explicar amb tot detall el seu pla de cap de setmana: marxava amb uns amics a escalar i a fer kitesurf, amb les furgos. Un planazo. I jo, mentre l'escoltava, vaig notar aquella petita punxada de gelosia i, sobretot, una mica de ràbia per haver perdut l'oportunitat de passar un dia més amb ell.
+
+Però llavors vaig recordar la meva decisió.
+
+El Max m'agradava. I ja estava.
+
+No calia forçar res. Ja arribaria un altre moment.
+
+Així que vaig deixar que fos ell qui fes el següent pas.
+
+I llavors em va deixar anar:
+
+«Em volies proposar un pla?»
+
+No vaig contestar.
+
+Li vaig desitjar bon viatge.
+
+No sé si allò era misteri, estratègia o simplement una incapacitat bastant meva per reconèixer que sí, que evidentment li volia proposar un pla.
+
+Durant aquells dies ens vam anar enviant fotos. Ell des de la seva aventura, entre amics, furgos, esport i aire lliure; jo amb una vida molt diferent. I, tot i així, ens continuàvem buscant. No necessitàvem estar fent una conversa constant ni explicant-nos cada moviment del dia, però hi havia curiositat. Jo volia saber què estava fent ell i ell volia saber què estava fent jo.
+
+I potser aquesta era una de les coses que començaven a encaixar.
+
+Jo crec que li transmetia una certa pau i tranquil·litat. I a mi, en canvi, aquella part seva d'aventura, de moure's, de tenir plans, amics i una vida que no depenia de mi, m'atreia molt.
+
+No perquè fos igual que jo.
+
+Precisament perquè no ho era.
+`,
   },
-
-  // ─── 05 ───
   {
     reflection_id: "5",
     language: "ca",
-    title: "La soledat acompanyada",
-    content: `Quan la soledat crema, busquem desesperadament una via d'escapament.
-Una solució.
-Una sortida ràpida.
+    title: "Qui porta el volant",
+    content: `Durant sis anys, a casa jo era una mica la manetes oficial. Lampista, jardinera, decoradora, organitzadora, logística, compres, idees… si hi havia alguna cosa per fer, probablement jo ja hi havia pensat abans que ningú. I no ho dic per carregar-li tot al Marcos. De fet, ell segurament estava encantat de tenir una persona que resolia coses abans que existís el problema. Jo també n'estava encantada. La meva iniciativa em sortia sola i, com que no em costava gaire, cada vegada en feia més.
 
-Perquè al principi, quan observem els nostres propis pensaments, tot és fosc i desordenat. Ens costa quedar-nos-hi.
+Això sí: ell també es va acomodar. No perquè jo fos una tirana que no el deixava fer res —que també podria ser que una mica sí, no us mentiré—, sinó perquè quan una persona sempre s'avança, l'altra pot acabar pensant: «Perfecte, això ja ho té controlat la Violeta.»
 
-I és precisament d'això que escapem: no de la soledat en si, sinó d'aquell soroll de dins que costa tant d'escoltar.
+I així, sense adonar-nos-en gaire, vam anar construint una dinàmica.
 
-Però a mesura que hi tornem, amb presència, el desordre es va assentant.
+El nostre gran moment culinari, per exemple, era fer pizza casolana. I quan dic casolana vull dir que compràvem la massa, hi posàvem quatre coses a sobre i cap al forn. Ell sempre m'havia dit que li agradava molt cuinar i, de fet, té un restaurant familiar, però en sis anys tampoc vaig arribar a veure aquella passió culinària desbordada que jo m'esperava. Jo, en canvi, puc ser molt pràctica: amb un ou al microones i un tros d'enciam puc donar un sopar per resolt i anar-me'n a dormir tranquil·la.
 
-Trobar aquest punt és una de les ocupacions més valuoses que hi ha.
+La casa sí que era un altre tema. Aquella casa l'havíem dissenyat junts, però jo hi vaig posar moltíssima iniciativa. La vaig decorar al meu gust, vaig pensar espais, detalls, coses que hi volia… i m'hi vaig deixar molt de mi.
 
-Sentir-nos a gust amb nosaltres mateixos, en soledat, observant els nostres propis pensaments, és el que després ens permet sentir-nos a gust amb tothom.
+Per això, quan més endavant vaig saber que el Marcos tenia parella i vaig saber que encara conservava els nostres quadres, vaig pensar: «Ostres, però decora-la diferent…»
 
-Quan comencem a sentir-li gràcia a aquesta soledat —una que ja no necessita cobrir-se ni tapar-se amb distraccions— de cop deixa de sentir-se com a tal.`,
+Ell em va dir:
+
+«Ja saps que a mi això no se'm dona gens bé, Violeta.»
+
+I jo vaig riure per dins.
+
+Pobre noia.
+
+A mi m'agafaria alguna cosa.
+
+Però aquell moment també em va servir per entendre una mica més la meva antiga vida. Jo estava molt acostumada a portar el volant. I, en aquell moment, ni tan sols em semblava que pesés. Era simplement com funcionava jo.
+
+De fet, fins i tot després de separar-nos, vaig descobrir que encara em sortia aquesta necessitat de cuidar, entendre i posar-ho tot al seu lloc.
+
+Recordo una festa major de poble en què vam coincidir el Marcos, la seva nova parella, jo i tota la colla. Jo encara estava descobrint com em sentia en aquella nova vida i, sorprenentment, veure'ls junts no em va provocar aquella tragèdia grega que potser hauria imaginat mesos abans. Els vaig veure molt a prop, jo vaig somriure i vaig observar la situació amb una tranquil·litat que fins i tot a mi em va sorprendre.
+
+En el fons, havia estimat tant el Marcos que només volia que estigués bé. I si amb mi no era, doncs m'alegrava que ho pogués trobar amb algú altre.
+
+Ara bé, jo estava en plena etapa happy flowers i això també té els seus perills.
+
+Vaig coincidir amb una amiga seva i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d'aquella casa, perquè estava feta amb molt de carinyo.
+
+Molt bonic tot.
+
+Molt evolucionada.
+
+Molt «jo només vull que siguis feliç».
+
+Fins que l'Alex em va abraçar i em va preguntar:
+
+«Què li deies a aquella?»
+
+I jo la vaig abraçar.
+
+I em vaig posar a plorar com una magdalena.
+
+Perquè una cosa és estar evolucionada emocionalment i una altra és que algú et faci la pregunta correcta en el moment correcte.
+
+Aquella nit vaig dormir amb l'Alex.
+
+Gràcies, Alex. Això ho recordaré tota la vida.
+
+M'encanta fer-me la valenta. Quina necessitat tinc de ser Maria Teresa de Calcuta?
+
+I potser per això, quan va aparèixer el Max, hi havia alguna cosa que em va cridar especialment l'atenció.
+
+Perquè ell no funcionava com jo estava acostumada.
+
+El Max tenia iniciativa. Molta. En tots els sentits. Era d'aquelles persones que proposen, que organitzen, que fan coses, que tenen plans, que saben què volen fer i que, si alguna cosa els ve de gust, simplement la fan.
+
+I a mi allò em va flipar.
+
+No perquè necessités que algú portés el volant per mi. Precisament perquè, després d'haver passat tant de temps conduint jo, descobrir que podia seure al costat d'algú que també sabia agafar-lo em va resultar molt més atractiu del que m'hauria imaginat.
+
+Les primeres setmanes, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me'ls emportava a caminar. A vegades dues vegades al dia. Pobres.
+
+Amb la meva mare parlava de tot. Hi havia moments en què jo li donava tanta informació que arribava un punt que ja no sabia ni què dir-me. I llavors em començava a explicar les seves pròpies històries, especialment les d'aquella ruptura que havia viscut abans de conèixer el meu pare, feia més de trenta anys. I jo l'escoltava pensant que, al final, potser les ruptures canvien de decorat però tenen unes quantes coses que es repeteixen.
+
+El meu pare, en canvi, va trigar exactament dos dies a donar-me una solució.
+
+«Si fos tu, em descarregaria una app de cites i faria un supercribatge al principi.»
+
+Jo el vaig mirar pensant que s'havia tornat boig.
+
+Una app de cites? Jo? Després de sis anys de relació?
+
+Doncs bé.
+
+Al final vaig acabar fent exactament això.
+
+Em fa molta gràcia pensar com ens assemblem, perquè aquell home que jo considerava una mica boig aquell segon dia, en realitat m'havia entès bastant bé.
+
+I després hi havia les meves amigues, que van ser una altra peça fonamental d'aquells mesos.
+
+L'Ofèlia i l'Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
+
+L'Alex sempre estava disponible per una bona conversa. Tant si vivia a prop com si havia d'anar a veure-la quan vivia fora, sempre hi havia espai per mi. I, com si no fos prou, em presentava els seus amics i m'anava obrint portes a gent i llocs nous.
+
+Amb la Sofia també m'hi he sentit sempre molt a gust, tot i que vivia lluny. Aquell Sant Joan, poc després de la ruptura, vaig anar a Itàlia amb ella i em vaig sentir italiana en qüestió d'hores. Em va integrar perfectament a la seva vida i, a més, ella també estava passant per un moment complicat amb la seva parella. Ens enteníem força bé perquè, d'una manera o altra, totes dues estàvem intentant entendre què coi fèiem amb les nostres vides.
+
+I després hi havia la Juliana.
+
+Amb ella sempre hem estat molt properes, però en aquell moment la seva vida era pràcticament l'antítesi de la meva. Estava compromesa, embarassada i acabava de fer-se una casa amb el Nacho. I jo estava encantada per ella, perquè sabia que era exactament el que sempre havia volgut, i a més en aquell ordre. Em feia molta il·lusió veure-la complint el seu projecte de vida.
+
+Recordo un dia que, pobreta, m'explicava tota emocionada com de feliç estava i, enmig de la conversa, em va dir:
+
+«Jolin, ho sento per mostrar tanta felicitat.»
+
+Perdona?
+
+«Si m'estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofia.»
+
+Ella encara no sabia que estava embarassada.
+
+Poc després ens ho va explicar.
+
+I va ser brutal.
+
+I crec que això també explica una mica aquells cinc mesos. Jo estava trencada, sí, però no estava sola. Tenia gent al meu voltant que m'escoltava, que em feia riure, que m'obria portes, que em deixava plorar i que, sobretot, em recordava constantment que la vida continuava.
+
+I que podia tenir moltes formes.
+
+Algunes les volia.
+
+D'altres, encara no sabia ni que existien.
+`,
   },
   {
     reflection_id: "5",
     language: "es",
-    title: "La soledad acompañada",
-    content: `Cuando la soledad quema, buscamos desesperadamente una vía de escape.
-Una solución.
-Una salida rápida.
+    title: "Quién lleva el volante",
+    content: `Durant sis anys, a casa jo era una mica la manetes oficial. Lampista, jardinera, decoradora, organitzadora, logística, compres, idees… si hi havia alguna cosa per fer, probablement jo ja hi havia pensat abans que ningú. I no ho dic per carregar-li tot al Marcos. De fet, ell segurament estava encantat de tenir una persona que resolia coses abans que existís el problema. Jo també n'estava encantada. La meva iniciativa em sortia sola i, com que no em costava gaire, cada vegada en feia més.
 
-Porque al principio, cuando observamos nuestros propios pensamientos, todo es oscuro y desordenado. Nos cuesta quedarnos ahí.
+Això sí: ell també es va acomodar. No perquè jo fos una tirana que no el deixava fer res —que també podria ser que una mica sí, no us mentiré—, sinó perquè quan una persona sempre s'avança, l'altra pot acabar pensant: «Perfecte, això ja ho té controlat la Violeta.»
 
-Y es precisamente de eso de lo que escapamos: no de la soledad en sí, sino de aquel ruido interior que cuesta tanto escuchar.
+I així, sense adonar-nos-en gaire, vam anar construint una dinàmica.
 
-Pero a medida que volvemos, con presencia, el desorden se va asentando.
+El nostre gran moment culinari, per exemple, era fer pizza casolana. I quan dic casolana vull dir que compràvem la massa, hi posàvem quatre coses a sobre i cap al forn. Ell sempre m'havia dit que li agradava molt cuinar i, de fet, té un restaurant familiar, però en sis anys tampoc vaig arribar a veure aquella passió culinària desbordada que jo m'esperava. Jo, en canvi, puc ser molt pràctica: amb un ou al microones i un tros d'enciam puc donar un sopar per resolt i anar-me'n a dormir tranquil·la.
 
-Encontrar ese punto es una de las ocupaciones más valiosas que hay.
+La casa sí que era un altre tema. Aquella casa l'havíem dissenyat junts, però jo hi vaig posar moltíssima iniciativa. La vaig decorar al meu gust, vaig pensar espais, detalls, coses que hi volia… i m'hi vaig deixar molt de mi.
 
-Sentirnos a gusto con nosotros mismos, en soledad, observando nuestros propios pensamientos, es lo que después nos permite sentirnos a gusto con todo el mundo.
+Per això, quan més endavant vaig saber que el Marcos tenia parella i vaig saber que encara conservava els nostres quadres, vaig pensar: «Ostres, però decora-la diferent…»
 
-Cuando empezamos a tomarle cariño a esta soledad —una que ya no necesita cubrirse ni taparse con distracciones— de golpe deja de sentirse como tal.`,
+Ell em va dir:
+
+«Ja saps que a mi això no se'm dona gens bé, Violeta.»
+
+I jo vaig riure per dins.
+
+Pobre noia.
+
+A mi m'agafaria alguna cosa.
+
+Però aquell moment també em va servir per entendre una mica més la meva antiga vida. Jo estava molt acostumada a portar el volant. I, en aquell moment, ni tan sols em semblava que pesés. Era simplement com funcionava jo.
+
+De fet, fins i tot després de separar-nos, vaig descobrir que encara em sortia aquesta necessitat de cuidar, entendre i posar-ho tot al seu lloc.
+
+Recordo una festa major de poble en què vam coincidir el Marcos, la seva nova parella, jo i tota la colla. Jo encara estava descobrint com em sentia en aquella nova vida i, sorprenentment, veure'ls junts no em va provocar aquella tragèdia grega que potser hauria imaginat mesos abans. Els vaig veure molt a prop, jo vaig somriure i vaig observar la situació amb una tranquil·litat que fins i tot a mi em va sorprendre.
+
+En el fons, havia estimat tant el Marcos que només volia que estigués bé. I si amb mi no era, doncs m'alegrava que ho pogués trobar amb algú altre.
+
+Ara bé, jo estava en plena etapa happy flowers i això també té els seus perills.
+
+Vaig coincidir amb una amiga seva i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d'aquella casa, perquè estava feta amb molt de carinyo.
+
+Molt bonic tot.
+
+Molt evolucionada.
+
+Molt «jo només vull que siguis feliç».
+
+Fins que l'Alex em va abraçar i em va preguntar:
+
+«Què li deies a aquella?»
+
+I jo la vaig abraçar.
+
+I em vaig posar a plorar com una magdalena.
+
+Perquè una cosa és estar evolucionada emocionalment i una altra és que algú et faci la pregunta correcta en el moment correcte.
+
+Aquella nit vaig dormir amb l'Alex.
+
+Gràcies, Alex. Això ho recordaré tota la vida.
+
+M'encanta fer-me la valenta. Quina necessitat tinc de ser Maria Teresa de Calcuta?
+
+I potser per això, quan va aparèixer el Max, hi havia alguna cosa que em va cridar especialment l'atenció.
+
+Perquè ell no funcionava com jo estava acostumada.
+
+El Max tenia iniciativa. Molta. En tots els sentits. Era d'aquelles persones que proposen, que organitzen, que fan coses, que tenen plans, que saben què volen fer i que, si alguna cosa els ve de gust, simplement la fan.
+
+I a mi allò em va flipar.
+
+No perquè necessités que algú portés el volant per mi. Precisament perquè, després d'haver passat tant de temps conduint jo, descobrir que podia seure al costat d'algú que també sabia agafar-lo em va resultar molt més atractiu del que m'hauria imaginat.
+
+Les primeres setmanes, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me'ls emportava a caminar. A vegades dues vegades al dia. Pobres.
+
+Amb la meva mare parlava de tot. Hi havia moments en què jo li donava tanta informació que arribava un punt que ja no sabia ni què dir-me. I llavors em començava a explicar les seves pròpies històries, especialment les d'aquella ruptura que havia viscut abans de conèixer el meu pare, feia més de trenta anys. I jo l'escoltava pensant que, al final, potser les ruptures canvien de decorat però tenen unes quantes coses que es repeteixen.
+
+El meu pare, en canvi, va trigar exactament dos dies a donar-me una solució.
+
+«Si fos tu, em descarregaria una app de cites i faria un supercribatge al principi.»
+
+Jo el vaig mirar pensant que s'havia tornat boig.
+
+Una app de cites? Jo? Després de sis anys de relació?
+
+Doncs bé.
+
+Al final vaig acabar fent exactament això.
+
+Em fa molta gràcia pensar com ens assemblem, perquè aquell home que jo considerava una mica boig aquell segon dia, en realitat m'havia entès bastant bé.
+
+I després hi havia les meves amigues, que van ser una altra peça fonamental d'aquells mesos.
+
+L'Ofèlia i l'Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
+
+L'Alex sempre estava disponible per una bona conversa. Tant si vivia a prop com si havia d'anar a veure-la quan vivia fora, sempre hi havia espai per mi. I, com si no fos prou, em presentava els seus amics i m'anava obrint portes a gent i llocs nous.
+
+Amb la Sofia també m'hi he sentit sempre molt a gust, tot i que vivia lluny. Aquell Sant Joan, poc després de la ruptura, vaig anar a Itàlia amb ella i em vaig sentir italiana en qüestió d'hores. Em va integrar perfectament a la seva vida i, a més, ella també estava passant per un moment complicat amb la seva parella. Ens enteníem força bé perquè, d'una manera o altra, totes dues estàvem intentant entendre què coi fèiem amb les nostres vides.
+
+I després hi havia la Juliana.
+
+Amb ella sempre hem estat molt properes, però en aquell moment la seva vida era pràcticament l'antítesi de la meva. Estava compromesa, embarassada i acabava de fer-se una casa amb el Nacho. I jo estava encantada per ella, perquè sabia que era exactament el que sempre havia volgut, i a més en aquell ordre. Em feia molta il·lusió veure-la complint el seu projecte de vida.
+
+Recordo un dia que, pobreta, m'explicava tota emocionada com de feliç estava i, enmig de la conversa, em va dir:
+
+«Jolin, ho sento per mostrar tanta felicitat.»
+
+Perdona?
+
+«Si m'estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofia.»
+
+Ella encara no sabia que estava embarassada.
+
+Poc després ens ho va explicar.
+
+I va ser brutal.
+
+I crec que això també explica una mica aquells cinc mesos. Jo estava trencada, sí, però no estava sola. Tenia gent al meu voltant que m'escoltava, que em feia riure, que m'obria portes, que em deixava plorar i que, sobretot, em recordava constantment que la vida continuava.
+
+I que podia tenir moltes formes.
+
+Algunes les volia.
+
+D'altres, encara no sabia ni que existien.
+`,
   },
   {
     reflection_id: "5",
     language: "en",
-    title: "Accompanied solitude",
-    content: `When solitude burns, we desperately look for a way out.
-A solution.
-A quick escape.
+    title: "Who’s in the driver’s seat",
+    content: `Durant sis anys, a casa jo era una mica la manetes oficial. Lampista, jardinera, decoradora, organitzadora, logística, compres, idees… si hi havia alguna cosa per fer, probablement jo ja hi havia pensat abans que ningú. I no ho dic per carregar-li tot al Marcos. De fet, ell segurament estava encantat de tenir una persona que resolia coses abans que existís el problema. Jo també n'estava encantada. La meva iniciativa em sortia sola i, com que no em costava gaire, cada vegada en feia més.
 
-Because at first, when we observe our own thoughts, everything is dark and disordered. It is hard to stay with it.
+Això sí: ell també es va acomodar. No perquè jo fos una tirana que no el deixava fer res —que també podria ser que una mica sí, no us mentiré—, sinó perquè quan una persona sempre s'avança, l'altra pot acabar pensant: «Perfecte, això ja ho té controlat la Violeta.»
 
-And that is precisely what we are fleeing: not solitude itself, but that noise within that is so hard to listen to.
+I així, sense adonar-nos-en gaire, vam anar construint una dinàmica.
 
-But as we return to it, with presence, the disorder begins to settle.
+El nostre gran moment culinari, per exemple, era fer pizza casolana. I quan dic casolana vull dir que compràvem la massa, hi posàvem quatre coses a sobre i cap al forn. Ell sempre m'havia dit que li agradava molt cuinar i, de fet, té un restaurant familiar, però en sis anys tampoc vaig arribar a veure aquella passió culinària desbordada que jo m'esperava. Jo, en canvi, puc ser molt pràctica: amb un ou al microones i un tros d'enciam puc donar un sopar per resolt i anar-me'n a dormir tranquil·la.
 
-Finding that point is one of the most valuable occupations there is.
+La casa sí que era un altre tema. Aquella casa l'havíem dissenyat junts, però jo hi vaig posar moltíssima iniciativa. La vaig decorar al meu gust, vaig pensar espais, detalls, coses que hi volia… i m'hi vaig deixar molt de mi.
 
-Feeling at ease with ourselves, in solitude, watching our own thoughts, is what later allows us to feel at ease with everyone.
+Per això, quan més endavant vaig saber que el Marcos tenia parella i vaig saber que encara conservava els nostres quadres, vaig pensar: «Ostres, però decora-la diferent…»
 
-When we begin to take pleasure in this solitude —one that no longer needs to cover or hide itself with distractions— suddenly it stops feeling like solitude at all.`,
+Ell em va dir:
+
+«Ja saps que a mi això no se'm dona gens bé, Violeta.»
+
+I jo vaig riure per dins.
+
+Pobre noia.
+
+A mi m'agafaria alguna cosa.
+
+Però aquell moment també em va servir per entendre una mica més la meva antiga vida. Jo estava molt acostumada a portar el volant. I, en aquell moment, ni tan sols em semblava que pesés. Era simplement com funcionava jo.
+
+De fet, fins i tot després de separar-nos, vaig descobrir que encara em sortia aquesta necessitat de cuidar, entendre i posar-ho tot al seu lloc.
+
+Recordo una festa major de poble en què vam coincidir el Marcos, la seva nova parella, jo i tota la colla. Jo encara estava descobrint com em sentia en aquella nova vida i, sorprenentment, veure'ls junts no em va provocar aquella tragèdia grega que potser hauria imaginat mesos abans. Els vaig veure molt a prop, jo vaig somriure i vaig observar la situació amb una tranquil·litat que fins i tot a mi em va sorprendre.
+
+En el fons, havia estimat tant el Marcos que només volia que estigués bé. I si amb mi no era, doncs m'alegrava que ho pogués trobar amb algú altre.
+
+Ara bé, jo estava en plena etapa happy flowers i això també té els seus perills.
+
+Vaig coincidir amb una amiga seva i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d'aquella casa, perquè estava feta amb molt de carinyo.
+
+Molt bonic tot.
+
+Molt evolucionada.
+
+Molt «jo només vull que siguis feliç».
+
+Fins que l'Alex em va abraçar i em va preguntar:
+
+«Què li deies a aquella?»
+
+I jo la vaig abraçar.
+
+I em vaig posar a plorar com una magdalena.
+
+Perquè una cosa és estar evolucionada emocionalment i una altra és que algú et faci la pregunta correcta en el moment correcte.
+
+Aquella nit vaig dormir amb l'Alex.
+
+Gràcies, Alex. Això ho recordaré tota la vida.
+
+M'encanta fer-me la valenta. Quina necessitat tinc de ser Maria Teresa de Calcuta?
+
+I potser per això, quan va aparèixer el Max, hi havia alguna cosa que em va cridar especialment l'atenció.
+
+Perquè ell no funcionava com jo estava acostumada.
+
+El Max tenia iniciativa. Molta. En tots els sentits. Era d'aquelles persones que proposen, que organitzen, que fan coses, que tenen plans, que saben què volen fer i que, si alguna cosa els ve de gust, simplement la fan.
+
+I a mi allò em va flipar.
+
+No perquè necessités que algú portés el volant per mi. Precisament perquè, després d'haver passat tant de temps conduint jo, descobrir que podia seure al costat d'algú que també sabia agafar-lo em va resultar molt més atractiu del que m'hauria imaginat.
+
+Les primeres setmanes, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me'ls emportava a caminar. A vegades dues vegades al dia. Pobres.
+
+Amb la meva mare parlava de tot. Hi havia moments en què jo li donava tanta informació que arribava un punt que ja no sabia ni què dir-me. I llavors em començava a explicar les seves pròpies històries, especialment les d'aquella ruptura que havia viscut abans de conèixer el meu pare, feia més de trenta anys. I jo l'escoltava pensant que, al final, potser les ruptures canvien de decorat però tenen unes quantes coses que es repeteixen.
+
+El meu pare, en canvi, va trigar exactament dos dies a donar-me una solució.
+
+«Si fos tu, em descarregaria una app de cites i faria un supercribatge al principi.»
+
+Jo el vaig mirar pensant que s'havia tornat boig.
+
+Una app de cites? Jo? Després de sis anys de relació?
+
+Doncs bé.
+
+Al final vaig acabar fent exactament això.
+
+Em fa molta gràcia pensar com ens assemblem, perquè aquell home que jo considerava una mica boig aquell segon dia, en realitat m'havia entès bastant bé.
+
+I després hi havia les meves amigues, que van ser una altra peça fonamental d'aquells mesos.
+
+L'Ofèlia i l'Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
+
+L'Alex sempre estava disponible per una bona conversa. Tant si vivia a prop com si havia d'anar a veure-la quan vivia fora, sempre hi havia espai per mi. I, com si no fos prou, em presentava els seus amics i m'anava obrint portes a gent i llocs nous.
+
+Amb la Sofia també m'hi he sentit sempre molt a gust, tot i que vivia lluny. Aquell Sant Joan, poc després de la ruptura, vaig anar a Itàlia amb ella i em vaig sentir italiana en qüestió d'hores. Em va integrar perfectament a la seva vida i, a més, ella també estava passant per un moment complicat amb la seva parella. Ens enteníem força bé perquè, d'una manera o altra, totes dues estàvem intentant entendre què coi fèiem amb les nostres vides.
+
+I després hi havia la Juliana.
+
+Amb ella sempre hem estat molt properes, però en aquell moment la seva vida era pràcticament l'antítesi de la meva. Estava compromesa, embarassada i acabava de fer-se una casa amb el Nacho. I jo estava encantada per ella, perquè sabia que era exactament el que sempre havia volgut, i a més en aquell ordre. Em feia molta il·lusió veure-la complint el seu projecte de vida.
+
+Recordo un dia que, pobreta, m'explicava tota emocionada com de feliç estava i, enmig de la conversa, em va dir:
+
+«Jolin, ho sento per mostrar tanta felicitat.»
+
+Perdona?
+
+«Si m'estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofia.»
+
+Ella encara no sabia que estava embarassada.
+
+Poc després ens ho va explicar.
+
+I va ser brutal.
+
+I crec que això també explica una mica aquells cinc mesos. Jo estava trencada, sí, però no estava sola. Tenia gent al meu voltant que m'escoltava, que em feia riure, que m'obria portes, que em deixava plorar i que, sobretot, em recordava constantment que la vida continuava.
+
+I que podia tenir moltes formes.
+
+Algunes les volia.
+
+D'altres, encara no sabia ni que existien.
+`,
   },
   {
     reflection_id: "5",
     language: "fr",
-    title: "La solitude accompagnée",
-    content: `Quand la solitude brûle, nous cherchons désespérément une voie d’échappement.
-Une solution.
-Une sortie rapide.
+    title: "Qui tient le volant",
+    content: `Durant sis anys, a casa jo era una mica la manetes oficial. Lampista, jardinera, decoradora, organitzadora, logística, compres, idees… si hi havia alguna cosa per fer, probablement jo ja hi havia pensat abans que ningú. I no ho dic per carregar-li tot al Marcos. De fet, ell segurament estava encantat de tenir una persona que resolia coses abans que existís el problema. Jo també n'estava encantada. La meva iniciativa em sortia sola i, com que no em costava gaire, cada vegada en feia més.
 
-Parce qu’au début, quand nous observons nos propres pensées, tout est sombre et désordonné. Il nous est difficile d’y rester.
+Això sí: ell també es va acomodar. No perquè jo fos una tirana que no el deixava fer res —que també podria ser que una mica sí, no us mentiré—, sinó perquè quan una persona sempre s'avança, l'altra pot acabar pensant: «Perfecte, això ja ho té controlat la Violeta.»
 
-Et c’est précisément de cela que nous fuyons : non de la solitude en soi, mais de ce bruit intérieur si difficile à écouter.
+I així, sense adonar-nos-en gaire, vam anar construint una dinàmica.
 
-Mais à mesure que nous y revenons, avec présence, le désordre s’apaise.
+El nostre gran moment culinari, per exemple, era fer pizza casolana. I quan dic casolana vull dir que compràvem la massa, hi posàvem quatre coses a sobre i cap al forn. Ell sempre m'havia dit que li agradava molt cuinar i, de fet, té un restaurant familiar, però en sis anys tampoc vaig arribar a veure aquella passió culinària desbordada que jo m'esperava. Jo, en canvi, puc ser molt pràctica: amb un ou al microones i un tros d'enciam puc donar un sopar per resolt i anar-me'n a dormir tranquil·la.
 
-Trouver ce point est l’une des occupations les plus précieuses qui soient.
+La casa sí que era un altre tema. Aquella casa l'havíem dissenyat junts, però jo hi vaig posar moltíssima iniciativa. La vaig decorar al meu gust, vaig pensar espais, detalls, coses que hi volia… i m'hi vaig deixar molt de mi.
 
-Se sentir bien avec soi-même, dans la solitude, en observant ses propres pensées, c’est ce qui nous permet ensuite de nous sentir bien avec tout le monde.
+Per això, quan més endavant vaig saber que el Marcos tenia parella i vaig saber que encara conservava els nostres quadres, vaig pensar: «Ostres, però decora-la diferent…»
 
-Quand nous commençons à goûter cette solitude —une qui n’a plus besoin de se couvrir ni de se cacher derrière des distractions— d’un coup elle cesse de se sentir comme telle.`,
+Ell em va dir:
+
+«Ja saps que a mi això no se'm dona gens bé, Violeta.»
+
+I jo vaig riure per dins.
+
+Pobre noia.
+
+A mi m'agafaria alguna cosa.
+
+Però aquell moment també em va servir per entendre una mica més la meva antiga vida. Jo estava molt acostumada a portar el volant. I, en aquell moment, ni tan sols em semblava que pesés. Era simplement com funcionava jo.
+
+De fet, fins i tot després de separar-nos, vaig descobrir que encara em sortia aquesta necessitat de cuidar, entendre i posar-ho tot al seu lloc.
+
+Recordo una festa major de poble en què vam coincidir el Marcos, la seva nova parella, jo i tota la colla. Jo encara estava descobrint com em sentia en aquella nova vida i, sorprenentment, veure'ls junts no em va provocar aquella tragèdia grega que potser hauria imaginat mesos abans. Els vaig veure molt a prop, jo vaig somriure i vaig observar la situació amb una tranquil·litat que fins i tot a mi em va sorprendre.
+
+En el fons, havia estimat tant el Marcos que només volia que estigués bé. I si amb mi no era, doncs m'alegrava que ho pogués trobar amb algú altre.
+
+Ara bé, jo estava en plena etapa happy flowers i això també té els seus perills.
+
+Vaig coincidir amb una amiga seva i, amb els meus dos ovaris, li vaig dir que si la Martina se sentia incòmoda anant a casa del Marcos, ho entenia perfectament. Però que esperava que acabés gaudint molt d'aquella casa, perquè estava feta amb molt de carinyo.
+
+Molt bonic tot.
+
+Molt evolucionada.
+
+Molt «jo només vull que siguis feliç».
+
+Fins que l'Alex em va abraçar i em va preguntar:
+
+«Què li deies a aquella?»
+
+I jo la vaig abraçar.
+
+I em vaig posar a plorar com una magdalena.
+
+Perquè una cosa és estar evolucionada emocionalment i una altra és que algú et faci la pregunta correcta en el moment correcte.
+
+Aquella nit vaig dormir amb l'Alex.
+
+Gràcies, Alex. Això ho recordaré tota la vida.
+
+M'encanta fer-me la valenta. Quina necessitat tinc de ser Maria Teresa de Calcuta?
+
+I potser per això, quan va aparèixer el Max, hi havia alguna cosa que em va cridar especialment l'atenció.
+
+Perquè ell no funcionava com jo estava acostumada.
+
+El Max tenia iniciativa. Molta. En tots els sentits. Era d'aquelles persones que proposen, que organitzen, que fan coses, que tenen plans, que saben què volen fer i que, si alguna cosa els ve de gust, simplement la fan.
+
+I a mi allò em va flipar.
+
+No perquè necessités que algú portés el volant per mi. Precisament perquè, després d'haver passat tant de temps conduint jo, descobrir que podia seure al costat d'algú que també sabia agafar-lo em va resultar molt més atractiu del que m'hauria imaginat.
+
+Les primeres setmanes, els meus pares van ser clau. Jo necessitava parlar. Molt. Canalitzo pensant en veu alta; treure les coses de dins em posa ordre al cap. Així que els agafava i me'ls emportava a caminar. A vegades dues vegades al dia. Pobres.
+
+Amb la meva mare parlava de tot. Hi havia moments en què jo li donava tanta informació que arribava un punt que ja no sabia ni què dir-me. I llavors em començava a explicar les seves pròpies històries, especialment les d'aquella ruptura que havia viscut abans de conèixer el meu pare, feia més de trenta anys. I jo l'escoltava pensant que, al final, potser les ruptures canvien de decorat però tenen unes quantes coses que es repeteixen.
+
+El meu pare, en canvi, va trigar exactament dos dies a donar-me una solució.
+
+«Si fos tu, em descarregaria una app de cites i faria un supercribatge al principi.»
+
+Jo el vaig mirar pensant que s'havia tornat boig.
+
+Una app de cites? Jo? Després de sis anys de relació?
+
+Doncs bé.
+
+Al final vaig acabar fent exactament això.
+
+Em fa molta gràcia pensar com ens assemblem, perquè aquell home que jo considerava una mica boig aquell segon dia, en realitat m'havia entès bastant bé.
+
+I després hi havia les meves amigues, que van ser una altra peça fonamental d'aquells mesos.
+
+L'Ofèlia i l'Olívia formaven part del meu dia a dia gairebé constantment. Compartíem grup de WhatsApp, fèiem molts plans i, durant una temporada, pràcticament cada tarda ens vèiem, parlàvem, fèiem qualsevol cosa i jo tornava a casa una mica més lleugera.
+
+L'Alex sempre estava disponible per una bona conversa. Tant si vivia a prop com si havia d'anar a veure-la quan vivia fora, sempre hi havia espai per mi. I, com si no fos prou, em presentava els seus amics i m'anava obrint portes a gent i llocs nous.
+
+Amb la Sofia també m'hi he sentit sempre molt a gust, tot i que vivia lluny. Aquell Sant Joan, poc després de la ruptura, vaig anar a Itàlia amb ella i em vaig sentir italiana en qüestió d'hores. Em va integrar perfectament a la seva vida i, a més, ella també estava passant per un moment complicat amb la seva parella. Ens enteníem força bé perquè, d'una manera o altra, totes dues estàvem intentant entendre què coi fèiem amb les nostres vides.
+
+I després hi havia la Juliana.
+
+Amb ella sempre hem estat molt properes, però en aquell moment la seva vida era pràcticament l'antítesi de la meva. Estava compromesa, embarassada i acabava de fer-se una casa amb el Nacho. I jo estava encantada per ella, perquè sabia que era exactament el que sempre havia volgut, i a més en aquell ordre. Em feia molta il·lusió veure-la complint el seu projecte de vida.
+
+Recordo un dia que, pobreta, m'explicava tota emocionada com de feliç estava i, enmig de la conversa, em va dir:
+
+«Jolin, ho sento per mostrar tanta felicitat.»
+
+Perdona?
+
+«Si m'estàs inspirant! Si tu ho tens, jo també puc tenir-ho. Gaudeix, Sofia.»
+
+Ella encara no sabia que estava embarassada.
+
+Poc després ens ho va explicar.
+
+I va ser brutal.
+
+I crec que això també explica una mica aquells cinc mesos. Jo estava trencada, sí, però no estava sola. Tenia gent al meu voltant que m'escoltava, que em feia riure, que m'obria portes, que em deixava plorar i que, sobretot, em recordava constantment que la vida continuava.
+
+I que podia tenir moltes formes.
+
+Algunes les volia.
+
+D'altres, encara no sabia ni que existien.
+`,
   },
-
-  // ─── 06 ───
   {
     reflection_id: "6",
     language: "ca",
-    title: "Deixar anar",
-    content: `No pots viure com si ja tinguessis allò que encara no tens.
+    title: "Passar del mòbil",
+    content: `El Max se n'anava de pont. I jo, després de tota la confusió amb la bossa, la tos i la meva necessitat de marxar abans que em poguessin fer fora, havia perdut l'oportunitat de quedar-me més dies amb ell. Em va fer una mica de ràbia. No perquè hagués passat res, sinó perquè em vaig quedar amb aquella sensació de «potser podríem haver aprofitat més el moment».
 
-Però imagina que ho tinguessis. Probablement, per a tu, seria una normalitat.
+Li vaig preguntar què faria durant el pont. Em va explicar el seu pla: amics, furgos, escalar, kitesurf… Un planazo. I, al final, em va preguntar:
 
-Ja no hi pensaries constantment. No ho buscaries a tot arreu. No t'hi obsessionaries.
+«Em volies proposar un pla?»
 
-I potser aquí hi ha una cosa interessant: quan deixes de viure allò que vols com una carència i comences a imaginar com seria si això que anheles formés part de la teva vida, alguna cosa canvia.
+No li vaig contestar.
 
-No perquè de sobte l'Univers t'ho hagi de posar davant, sinó perquè tu també comences a actuar d'una altra manera i a observar detalls que abans no observaves.
+Però sí, evidentment que li volia proposar un pla.
 
-Potser deixes de perseguir-ho. Potser prens decisions diferents. Potser deixes espai perquè arribi.
+Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M'enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m'agradava aquella manera de viure.
 
-I, sense adonar-te'n, deixes d'estar tan pendent d'aconseguir-ho i, d'alguna manera, acaba presentant-se a la teva vida.`,
+Em veia fent aquelles coses.
+
+I això em sorprenia.
+
+No era només que m'agradés el Max. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure's, d'agafar una furgoneta, marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m'havia acostumat massa a una manera concreta de viure i ara estava descobrint que n'hi havia moltes més.
+
+El dissabte, però, vaig tenir una petita crisi existencial.
+
+No tenia plans.
+
+I em vaig trobar massa pendent del mòbil.
+
+Mirava si m'havia escrit, pensava què estaria fent, quan contestaria… i em vaig adonar que allò tampoc tenia gaire sentit. No podia pretendre que un home que havia vist dues vegades em resolgués la tranquil·litat que jo mateixa no sabia trobar.
+
+Però tampoc volia fer veure que no m'importava.
+
+Així que vaig pensar en l'Ofèlia.
+
+Regla número dos d'una dona empoderada: abans d'escriure a un tio alguna cosa que probablement t'arrepentiràs d'haver escrit, escriu a la teva amiga.
+
+Li vaig demanar ajuda.
+
+Ella, que en aquestes coses té bastant més seny que jo, em va dir que fes coses. Que omplís el dia. Que deixés de pensar.
+
+I ho vaig fer.
+
+L'endemà vaig acabar tenint un dia gairebé improvisat i perfecte. Vaig anar amb bici al matí, després amb barca, vaig anar a pescar, cosa que no havia fet mai a la vida, vaig continuar pintant la meva habitació i a la nit vaig quedar amb l'Alex per sopar.
+
+I vaig estar molt bé.
+
+Estava pintant la meva habitació de casa dels meus pares i, d'alguna manera, també sentia que estava pintant una mica la meva vida de nou. Canviant l'espai, fent-lo meu, movent coses. Em sentia renovada.
+
+I aquell dia vaig passar del mòbil.
+
+No del Max.
+
+Del mòbil.
+
+Sense proposar-m'ho gaire, vaig descobrir que era molt més fàcil deixar de pensar en si algú m'escrivia quan jo estava ocupada vivint.
+
+El Max havia tornat del pont i em va escriure. Em va donar bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
+
+I vaig continuar amb el meu dia.
+
+Al vespre em va tornar a escriure per preguntar-me com havia anat la pintura.
+
+Més tard, quan ja havia arribat a casa, em va tornar a escriure.
+
+I vaig somriure.
+
+No perquè hagués fet cap estratègia perfecta. Simplement havia deixat espai. I en aquell espai ell també havia aparegut.
+
+Potser era això el que havia d'aprendre: que estar interessada en algú no significava haver d'estar enganxada a ell. Que podia deixar-li espai per trobar-me a faltar, per preguntar-se què feia, per tenir ganes de saber de mi.
+
+I sobretot, que jo també necessitava aquest espai.
+
+Aquella nit vaig sopar amb l'Alex. Feia un parell de setmanes que no la veia i em va explicar que havia tornat amb el Miqui. Ells sempre havien tingut les seves anades i vingudes, i jo, que durant molt de temps havia pensat que les segones oportunitats no funcionaven, vaig començar a veure que potser les coses no eren tan senzilles.
+
+No sabia si allò els funcionaria.
+
+Però tampoc m'havia de funcionar a mi.
+
+Era la seva vida.
+
+I jo estava molt contenta per ella.
+
+Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… i sí, reconec que em vaig posar una mica coqueta.
+
+M'havia agradat que m'hagués buscat.
+
+Així que li vaig dir:
+
+«No em demanis tant perdó per no contestar-me i proposa'm més un pla.»
+
+Em va semblar una manera bastant elegant de dir-li: m'agrades, però mou fitxa tu també.
+
+Perquè jo ja havia fet la meva part.
+
+Jo ja havia decidit que m'agradava.
+
+I ara volia veure què feia ell.
+
+Vam estar parlant una estona del cap de setmana, de les nostres coses, de les anècdotes… fins que em va dir:
+
+«Demà et proposo un pla.»
+
+I em vaig quedar esperant.
+
+Mentrestant, jo continuava amb la meva vida i amb la pintura de la meva habitació. I per arribar a la part de dalt de les parets necessitava un pal llarg per al corró.
+
+I jo sabia perfectament on n'hi havia un.
+
+A casa del Marcos.
+
+Així que li vaig escriure.
+
+«Tinc aquest pal aquí, allà.»
+
+No sé què em feia més gràcia: recuperar el pal després de sis mesos o imaginar-me la cara del Marcos llegint aquell missatge.
+
+Perquè, sent una persona tan previsible com és, jo estava gairebé segura que no havia mogut absolutament res de lloc.
+
+Només volia veure si em contestava i em deia exactament on era.
+
+Després de sis mesos.
+
+Un pal.
+
+Així és com, de vegades, el passat torna a aparèixer.
+
+No amb una conversa transcendental.
+
+Amb un pal per pintar una paret.
+
+I jo, mentre esperava saber on era el pal, només podia pensar en una cosa:
+
+què em proposaria el Max l'endemà?
+`,
   },
   {
     reflection_id: "6",
     language: "es",
-    title: "Dejar ir",
-    content: `No puedes vivir como si ya tuvieras aquello que todavía no tienes.
+    title: "Pasar del móvil",
+    content: `El Max se n'anava de pont. I jo, després de tota la confusió amb la bossa, la tos i la meva necessitat de marxar abans que em poguessin fer fora, havia perdut l'oportunitat de quedar-me més dies amb ell. Em va fer una mica de ràbia. No perquè hagués passat res, sinó perquè em vaig quedar amb aquella sensació de «potser podríem haver aprofitat més el moment».
 
-Pero imagina que lo tuvieras. Probablemente, para ti, sería una normalidad.
+Li vaig preguntar què faria durant el pont. Em va explicar el seu pla: amics, furgos, escalar, kitesurf… Un planazo. I, al final, em va preguntar:
 
-Ya no pensarías en ello constantemente. No lo buscarías en todas partes. No te obsesionarías con ello.
+«Em volies proposar un pla?»
 
-Y quizá aquí hay algo interesante: cuando dejas de vivir lo que quieres como una carencia y empiezas a imaginar cómo sería si eso que anhelas formara parte de tu vida, algo cambia.
+No li vaig contestar.
 
-No porque de pronto el Universo te lo tenga que poner delante, sino porque tú también empiezas a actuar de otra manera y a observar detalles que antes no observabas.
+Però sí, evidentment que li volia proposar un pla.
 
-Quizá dejas de perseguirlo. Quizá tomas decisiones distintas. Quizá dejas espacio para que llegue.
+Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M'enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m'agradava aquella manera de viure.
 
-Y, sin darte cuenta, dejas de estar tan pendiente de conseguirlo y, de alguna manera, acaba presentándose en tu vida.`,
+Em veia fent aquelles coses.
+
+I això em sorprenia.
+
+No era només que m'agradés el Max. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure's, d'agafar una furgoneta, marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m'havia acostumat massa a una manera concreta de viure i ara estava descobrint que n'hi havia moltes més.
+
+El dissabte, però, vaig tenir una petita crisi existencial.
+
+No tenia plans.
+
+I em vaig trobar massa pendent del mòbil.
+
+Mirava si m'havia escrit, pensava què estaria fent, quan contestaria… i em vaig adonar que allò tampoc tenia gaire sentit. No podia pretendre que un home que havia vist dues vegades em resolgués la tranquil·litat que jo mateixa no sabia trobar.
+
+Però tampoc volia fer veure que no m'importava.
+
+Així que vaig pensar en l'Ofèlia.
+
+Regla número dos d'una dona empoderada: abans d'escriure a un tio alguna cosa que probablement t'arrepentiràs d'haver escrit, escriu a la teva amiga.
+
+Li vaig demanar ajuda.
+
+Ella, que en aquestes coses té bastant més seny que jo, em va dir que fes coses. Que omplís el dia. Que deixés de pensar.
+
+I ho vaig fer.
+
+L'endemà vaig acabar tenint un dia gairebé improvisat i perfecte. Vaig anar amb bici al matí, després amb barca, vaig anar a pescar, cosa que no havia fet mai a la vida, vaig continuar pintant la meva habitació i a la nit vaig quedar amb l'Alex per sopar.
+
+I vaig estar molt bé.
+
+Estava pintant la meva habitació de casa dels meus pares i, d'alguna manera, també sentia que estava pintant una mica la meva vida de nou. Canviant l'espai, fent-lo meu, movent coses. Em sentia renovada.
+
+I aquell dia vaig passar del mòbil.
+
+No del Max.
+
+Del mòbil.
+
+Sense proposar-m'ho gaire, vaig descobrir que era molt més fàcil deixar de pensar en si algú m'escrivia quan jo estava ocupada vivint.
+
+El Max havia tornat del pont i em va escriure. Em va donar bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
+
+I vaig continuar amb el meu dia.
+
+Al vespre em va tornar a escriure per preguntar-me com havia anat la pintura.
+
+Més tard, quan ja havia arribat a casa, em va tornar a escriure.
+
+I vaig somriure.
+
+No perquè hagués fet cap estratègia perfecta. Simplement havia deixat espai. I en aquell espai ell també havia aparegut.
+
+Potser era això el que havia d'aprendre: que estar interessada en algú no significava haver d'estar enganxada a ell. Que podia deixar-li espai per trobar-me a faltar, per preguntar-se què feia, per tenir ganes de saber de mi.
+
+I sobretot, que jo també necessitava aquest espai.
+
+Aquella nit vaig sopar amb l'Alex. Feia un parell de setmanes que no la veia i em va explicar que havia tornat amb el Miqui. Ells sempre havien tingut les seves anades i vingudes, i jo, que durant molt de temps havia pensat que les segones oportunitats no funcionaven, vaig començar a veure que potser les coses no eren tan senzilles.
+
+No sabia si allò els funcionaria.
+
+Però tampoc m'havia de funcionar a mi.
+
+Era la seva vida.
+
+I jo estava molt contenta per ella.
+
+Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… i sí, reconec que em vaig posar una mica coqueta.
+
+M'havia agradat que m'hagués buscat.
+
+Així que li vaig dir:
+
+«No em demanis tant perdó per no contestar-me i proposa'm més un pla.»
+
+Em va semblar una manera bastant elegant de dir-li: m'agrades, però mou fitxa tu també.
+
+Perquè jo ja havia fet la meva part.
+
+Jo ja havia decidit que m'agradava.
+
+I ara volia veure què feia ell.
+
+Vam estar parlant una estona del cap de setmana, de les nostres coses, de les anècdotes… fins que em va dir:
+
+«Demà et proposo un pla.»
+
+I em vaig quedar esperant.
+
+Mentrestant, jo continuava amb la meva vida i amb la pintura de la meva habitació. I per arribar a la part de dalt de les parets necessitava un pal llarg per al corró.
+
+I jo sabia perfectament on n'hi havia un.
+
+A casa del Marcos.
+
+Així que li vaig escriure.
+
+«Tinc aquest pal aquí, allà.»
+
+No sé què em feia més gràcia: recuperar el pal després de sis mesos o imaginar-me la cara del Marcos llegint aquell missatge.
+
+Perquè, sent una persona tan previsible com és, jo estava gairebé segura que no havia mogut absolutament res de lloc.
+
+Només volia veure si em contestava i em deia exactament on era.
+
+Després de sis mesos.
+
+Un pal.
+
+Així és com, de vegades, el passat torna a aparèixer.
+
+No amb una conversa transcendental.
+
+Amb un pal per pintar una paret.
+
+I jo, mentre esperava saber on era el pal, només podia pensar en una cosa:
+
+què em proposaria el Max l'endemà?
+`,
   },
   {
     reflection_id: "6",
     language: "en",
-    title: "Letting go",
-    content: `You cannot live as if you already had what you do not yet have.
+    title: "Putting the phone aside",
+    content: `El Max se n'anava de pont. I jo, després de tota la confusió amb la bossa, la tos i la meva necessitat de marxar abans que em poguessin fer fora, havia perdut l'oportunitat de quedar-me més dies amb ell. Em va fer una mica de ràbia. No perquè hagués passat res, sinó perquè em vaig quedar amb aquella sensació de «potser podríem haver aprofitat més el moment».
 
-But imagine that you did. For you, it would probably feel ordinary.
+Li vaig preguntar què faria durant el pont. Em va explicar el seu pla: amics, furgos, escalar, kitesurf… Un planazo. I, al final, em va preguntar:
 
-You would no longer think about it constantly. You would not look for it everywhere. You would not obsess over it.
+«Em volies proposar un pla?»
 
-And maybe there is something interesting here: when you stop living what you want as a lack and begin to imagine what it would be like if what you long for were part of your life, something changes.
+No li vaig contestar.
 
-Not because the Universe suddenly has to place it in front of you, but because you also start acting differently and noticing details you did not notice before.
+Però sí, evidentment que li volia proposar un pla.
 
-Maybe you stop chasing it. Maybe you make different decisions. Maybe you leave space for it to arrive.
+Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M'enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m'agradava aquella manera de viure.
 
-And without noticing, you stop watching so closely for it — and somehow, it ends up showing up in your life.`,
+Em veia fent aquelles coses.
+
+I això em sorprenia.
+
+No era només que m'agradés el Max. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure's, d'agafar una furgoneta, marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m'havia acostumat massa a una manera concreta de viure i ara estava descobrint que n'hi havia moltes més.
+
+El dissabte, però, vaig tenir una petita crisi existencial.
+
+No tenia plans.
+
+I em vaig trobar massa pendent del mòbil.
+
+Mirava si m'havia escrit, pensava què estaria fent, quan contestaria… i em vaig adonar que allò tampoc tenia gaire sentit. No podia pretendre que un home que havia vist dues vegades em resolgués la tranquil·litat que jo mateixa no sabia trobar.
+
+Però tampoc volia fer veure que no m'importava.
+
+Així que vaig pensar en l'Ofèlia.
+
+Regla número dos d'una dona empoderada: abans d'escriure a un tio alguna cosa que probablement t'arrepentiràs d'haver escrit, escriu a la teva amiga.
+
+Li vaig demanar ajuda.
+
+Ella, que en aquestes coses té bastant més seny que jo, em va dir que fes coses. Que omplís el dia. Que deixés de pensar.
+
+I ho vaig fer.
+
+L'endemà vaig acabar tenint un dia gairebé improvisat i perfecte. Vaig anar amb bici al matí, després amb barca, vaig anar a pescar, cosa que no havia fet mai a la vida, vaig continuar pintant la meva habitació i a la nit vaig quedar amb l'Alex per sopar.
+
+I vaig estar molt bé.
+
+Estava pintant la meva habitació de casa dels meus pares i, d'alguna manera, també sentia que estava pintant una mica la meva vida de nou. Canviant l'espai, fent-lo meu, movent coses. Em sentia renovada.
+
+I aquell dia vaig passar del mòbil.
+
+No del Max.
+
+Del mòbil.
+
+Sense proposar-m'ho gaire, vaig descobrir que era molt més fàcil deixar de pensar en si algú m'escrivia quan jo estava ocupada vivint.
+
+El Max havia tornat del pont i em va escriure. Em va donar bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
+
+I vaig continuar amb el meu dia.
+
+Al vespre em va tornar a escriure per preguntar-me com havia anat la pintura.
+
+Més tard, quan ja havia arribat a casa, em va tornar a escriure.
+
+I vaig somriure.
+
+No perquè hagués fet cap estratègia perfecta. Simplement havia deixat espai. I en aquell espai ell també havia aparegut.
+
+Potser era això el que havia d'aprendre: que estar interessada en algú no significava haver d'estar enganxada a ell. Que podia deixar-li espai per trobar-me a faltar, per preguntar-se què feia, per tenir ganes de saber de mi.
+
+I sobretot, que jo també necessitava aquest espai.
+
+Aquella nit vaig sopar amb l'Alex. Feia un parell de setmanes que no la veia i em va explicar que havia tornat amb el Miqui. Ells sempre havien tingut les seves anades i vingudes, i jo, que durant molt de temps havia pensat que les segones oportunitats no funcionaven, vaig començar a veure que potser les coses no eren tan senzilles.
+
+No sabia si allò els funcionaria.
+
+Però tampoc m'havia de funcionar a mi.
+
+Era la seva vida.
+
+I jo estava molt contenta per ella.
+
+Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… i sí, reconec que em vaig posar una mica coqueta.
+
+M'havia agradat que m'hagués buscat.
+
+Així que li vaig dir:
+
+«No em demanis tant perdó per no contestar-me i proposa'm més un pla.»
+
+Em va semblar una manera bastant elegant de dir-li: m'agrades, però mou fitxa tu també.
+
+Perquè jo ja havia fet la meva part.
+
+Jo ja havia decidit que m'agradava.
+
+I ara volia veure què feia ell.
+
+Vam estar parlant una estona del cap de setmana, de les nostres coses, de les anècdotes… fins que em va dir:
+
+«Demà et proposo un pla.»
+
+I em vaig quedar esperant.
+
+Mentrestant, jo continuava amb la meva vida i amb la pintura de la meva habitació. I per arribar a la part de dalt de les parets necessitava un pal llarg per al corró.
+
+I jo sabia perfectament on n'hi havia un.
+
+A casa del Marcos.
+
+Així que li vaig escriure.
+
+«Tinc aquest pal aquí, allà.»
+
+No sé què em feia més gràcia: recuperar el pal després de sis mesos o imaginar-me la cara del Marcos llegint aquell missatge.
+
+Perquè, sent una persona tan previsible com és, jo estava gairebé segura que no havia mogut absolutament res de lloc.
+
+Només volia veure si em contestava i em deia exactament on era.
+
+Després de sis mesos.
+
+Un pal.
+
+Així és com, de vegades, el passat torna a aparèixer.
+
+No amb una conversa transcendental.
+
+Amb un pal per pintar una paret.
+
+I jo, mentre esperava saber on era el pal, només podia pensar en una cosa:
+
+què em proposaria el Max l'endemà?
+`,
   },
   {
     reflection_id: "6",
     language: "fr",
-    title: "Lâcher prise",
-    content: `Tu ne peux pas vivre comme si tu avais déjà ce que tu n’as pas encore.
+    title: "Lâcher le téléphone",
+    content: `El Max se n'anava de pont. I jo, després de tota la confusió amb la bossa, la tos i la meva necessitat de marxar abans que em poguessin fer fora, havia perdut l'oportunitat de quedar-me més dies amb ell. Em va fer una mica de ràbia. No perquè hagués passat res, sinó perquè em vaig quedar amb aquella sensació de «potser podríem haver aprofitat més el moment».
 
-Mais imagine que tu l’aies. Pour toi, ce serait probablement une normalité.
+Li vaig preguntar què faria durant el pont. Em va explicar el seu pla: amics, furgos, escalar, kitesurf… Un planazo. I, al final, em va preguntar:
 
-Tu n’y penserais plus constamment. Tu ne le chercherais pas partout. Tu ne t’y obsessionnerais pas.
+«Em volies proposar un pla?»
 
-Et peut-être y a-t-il ici quelque chose d’intéressant : quand tu cesses de vivre ce que tu veux comme un manque et que tu commences à imaginer ce que ce serait si ce que tu désires faisait partie de ta vie, quelque chose change.
+No li vaig contestar.
 
-Non pas parce que l’Univers doive soudain te le mettre devant, mais parce que toi aussi tu commences à agir autrement et à observer des détails que tu n’observais pas avant.
+Però sí, evidentment que li volia proposar un pla.
 
-Peut-être que tu arrêtes de le poursuivre. Peut-être que tu prends des décisions différentes. Peut-être que tu laisses de l’espace pour que cela arrive.
+Durant aquells dies vam continuar parlant. El Max no contestava gaire ràpid, però era constant. I això començava a tranquil·litzar-me. M'enviava fotos del que feia, jo li enviava les meves, i jo no podia evitar pensar com m'agradava aquella manera de viure.
 
-Et, sans t’en rendre compte, tu cesses d’être aussi attaché à l’obtenir — et, d’une certaine manière, cela finit par se présenter dans ta vie.`,
+Em veia fent aquelles coses.
+
+I això em sorprenia.
+
+No era només que m'agradés el Max. Era que començava a agradar-me molt la vida que intuïa darrere seu. Aquella manera de tenir plans, de moure's, d'agafar una furgoneta, marxar amb amics i omplir un cap de setmana de coses. I em comparava amb la meva vida anterior i pensava que potser jo també volia això. Potser m'havia acostumat massa a una manera concreta de viure i ara estava descobrint que n'hi havia moltes més.
+
+El dissabte, però, vaig tenir una petita crisi existencial.
+
+No tenia plans.
+
+I em vaig trobar massa pendent del mòbil.
+
+Mirava si m'havia escrit, pensava què estaria fent, quan contestaria… i em vaig adonar que allò tampoc tenia gaire sentit. No podia pretendre que un home que havia vist dues vegades em resolgués la tranquil·litat que jo mateixa no sabia trobar.
+
+Però tampoc volia fer veure que no m'importava.
+
+Així que vaig pensar en l'Ofèlia.
+
+Regla número dos d'una dona empoderada: abans d'escriure a un tio alguna cosa que probablement t'arrepentiràs d'haver escrit, escriu a la teva amiga.
+
+Li vaig demanar ajuda.
+
+Ella, que en aquestes coses té bastant més seny que jo, em va dir que fes coses. Que omplís el dia. Que deixés de pensar.
+
+I ho vaig fer.
+
+L'endemà vaig acabar tenint un dia gairebé improvisat i perfecte. Vaig anar amb bici al matí, després amb barca, vaig anar a pescar, cosa que no havia fet mai a la vida, vaig continuar pintant la meva habitació i a la nit vaig quedar amb l'Alex per sopar.
+
+I vaig estar molt bé.
+
+Estava pintant la meva habitació de casa dels meus pares i, d'alguna manera, també sentia que estava pintant una mica la meva vida de nou. Canviant l'espai, fent-lo meu, movent coses. Em sentia renovada.
+
+I aquell dia vaig passar del mòbil.
+
+No del Max.
+
+Del mòbil.
+
+Sense proposar-m'ho gaire, vaig descobrir que era molt més fàcil deixar de pensar en si algú m'escrivia quan jo estava ocupada vivint.
+
+El Max havia tornat del pont i em va escriure. Em va donar bon dia, em va preguntar per la pintura i jo li vaig enviar alguna foto.
+
+I vaig continuar amb el meu dia.
+
+Al vespre em va tornar a escriure per preguntar-me com havia anat la pintura.
+
+Més tard, quan ja havia arribat a casa, em va tornar a escriure.
+
+I vaig somriure.
+
+No perquè hagués fet cap estratègia perfecta. Simplement havia deixat espai. I en aquell espai ell també havia aparegut.
+
+Potser era això el que havia d'aprendre: que estar interessada en algú no significava haver d'estar enganxada a ell. Que podia deixar-li espai per trobar-me a faltar, per preguntar-se què feia, per tenir ganes de saber de mi.
+
+I sobretot, que jo també necessitava aquest espai.
+
+Aquella nit vaig sopar amb l'Alex. Feia un parell de setmanes que no la veia i em va explicar que havia tornat amb el Miqui. Ells sempre havien tingut les seves anades i vingudes, i jo, que durant molt de temps havia pensat que les segones oportunitats no funcionaven, vaig començar a veure que potser les coses no eren tan senzilles.
+
+No sabia si allò els funcionaria.
+
+Però tampoc m'havia de funcionar a mi.
+
+Era la seva vida.
+
+I jo estava molt contenta per ella.
+
+Quan vaig sortir del sopar, vaig pujar al cotxe i vaig enviar un àudio al Max. Li vaig explicar una mica el meu cap de setmana, les coses que havia fet, les anècdotes… i sí, reconec que em vaig posar una mica coqueta.
+
+M'havia agradat que m'hagués buscat.
+
+Així que li vaig dir:
+
+«No em demanis tant perdó per no contestar-me i proposa'm més un pla.»
+
+Em va semblar una manera bastant elegant de dir-li: m'agrades, però mou fitxa tu també.
+
+Perquè jo ja havia fet la meva part.
+
+Jo ja havia decidit que m'agradava.
+
+I ara volia veure què feia ell.
+
+Vam estar parlant una estona del cap de setmana, de les nostres coses, de les anècdotes… fins que em va dir:
+
+«Demà et proposo un pla.»
+
+I em vaig quedar esperant.
+
+Mentrestant, jo continuava amb la meva vida i amb la pintura de la meva habitació. I per arribar a la part de dalt de les parets necessitava un pal llarg per al corró.
+
+I jo sabia perfectament on n'hi havia un.
+
+A casa del Marcos.
+
+Així que li vaig escriure.
+
+«Tinc aquest pal aquí, allà.»
+
+No sé què em feia més gràcia: recuperar el pal després de sis mesos o imaginar-me la cara del Marcos llegint aquell missatge.
+
+Perquè, sent una persona tan previsible com és, jo estava gairebé segura que no havia mogut absolutament res de lloc.
+
+Només volia veure si em contestava i em deia exactament on era.
+
+Després de sis mesos.
+
+Un pal.
+
+Així és com, de vegades, el passat torna a aparèixer.
+
+No amb una conversa transcendental.
+
+Amb un pal per pintar una paret.
+
+I jo, mentre esperava saber on era el pal, només podia pensar en una cosa:
+
+què em proposaria el Max l'endemà?
+`,
   },
-
-  // ─── 07 ───
   {
     reflection_id: "7",
     language: "ca",
-    title: "Les ulleres dels altres",
-    content: `Preocupar-te pel que pensen els altres és inútil.
+    title: "Bidireccionalitat",
+    content: `L'endemà no vam parlar en tot el dia.
 
-Cada persona mira el món a través d'unes ulleres tintades amb la seva pròpia realitat: les seves vivències, les seves creences, les seves pors i tot allò que ha viscut.
+I, curiosament, jo estava molt tranquil·la.
 
-Per això, la manera com algú et veu diu més d'ell que de tu.
+Molt tranquil·la. En pau.
 
-Tu no pots controlar les ulleres amb què et miren els altres.
+Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d'aquests missatges. La coherència. Que l'interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant ni contestava sempre ràpid, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
 
-Només pots decidir si vols passar la vida intentant canviar-les o començar a mirar-te amb les teves.`,
+I ja feia gairebé un mes que parlàvem.
+
+Un mes.
+
+Que, tenint en compte que ens havíem conegut en una aplicació i que jo al principi eliminava homes per coses bastant més petites, poca broma.
+
+Cap a les vuit del vespre del dilluns vaig escriure-li. Just sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l'escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
+
+I la veritat és que me n'alegrava.
+
+També havia acabat de pintar la meva habitació i estava molt contenta. I aquí hi havia una certa ironia que no podia ignorar: tenir trenta anys i estar il·lusionadíssima perquè havia deixat preciosa la meva habitació a casa dels meus pares.
+
+Però era real.
+
+Aquell espai em feia bé. Tornava a sentir que tenia un lloc que era meu.
+
+Vam seguir parlant una estona fins que, abans d'anar a dormir, vaig recordar una cosa.
+
+«Per cert, m'has de dir la proposta que em feies.»
+
+El pla que m'havia promès.
+
+Em va explicar que volia estrenar el pis nou, però que encara no hi tenia pràcticament res. Només un llit.
+
+I jo vaig pensar que tampoc necessitàvem gaire més.
+
+«Amb dues cadires, una pizza i el llit que ja tens, jo crec que en tenim més que de sobres.»
+
+I així va quedar.
+
+Però abans d'anar a dormir li vaig deixar anar una altra cosa.
+
+Aquesta vegada no era una broma.
+
+Les últimes trobades m'havia mogut bastant jo. Havia anat fins a casa seva, havia fet propostes, havia canviat plans… i no em molestava haver-ho fet. Jo tinc molta més flexibilitat que ell i no em costa moure'm.
+
+Però una cosa és adaptar-me i una altra és acostumar-me a fer-ho sempre.
+
+Així que li vaig dir, més o menys, que entenia perfectament que ara mateix tingués molta feina, el pis nou i tota la resta, i que jo tenia més flexibilitat i em podia adaptar. Però que volia que sabés que a mi m'agradava la bidireccionalitat. L'equilibri. Que les coses anessin en les dues direccions.
+
+Li ho vaig dir i me'n vaig anar a dormir.
+
+Tranquil·líssima.
+
+L'endemà em va contestar que tenia tota la raó. Que, en aquell moment, les coses estaven funcionant així per les circumstàncies que teníem, però que ho tenia molt en compte. I també em va dir que valorava els gestos que jo estava fent per acostar-me a ell.
+
+I em va agradar molt la resposta.
+
+No perquè m'hagués donat la raó.
+
+Perquè havia entès el que li estava dient sense posar-se a la defensiva.
+
+Un punt més per al Max.
+
+I jo, contenta.
+
+A partir d'aquí vam continuar parlant i vam arribar a aquella fase tan concreta de començar a compartir cançons, llistes de Spotify i totes aquelles petites coses que vas ensenyant a algú quan vols que entri una mica més en el teu món.
+
+I això em va fer pensar en una cosa curiosa.
+
+Una de les primeres converses que havia tingut amb el Marcos per WhatsApp també havia estat compartint-nos cançons. Em feia gràcia perquè, al principi, ens passàvem música que ens agradava molt en aquell moment, però després, durant la relació, em vaig adonar que allò no representava gaire els seus gustos del dia a dia.
+
+Sí, escoltava aquelles cançons.
+
+Però no eren exactament les que escoltava habitualment.
+
+Els nostres gustos musicals tampoc encaixaven gaire. El que per mi podia ser música per a una nit de festa, per ell podia formar part de la banda sonora d'un dimarts qualsevol.
+
+I no passa absolutament res. No crec que una relació depengui de compartir la mateixa playlist. Però em va fer pensar en com, quan coneixes algú, vas descobrint petites coses que potser semblen insignificants i que, de sobte, et fan preguntar-te si aquesta persona encaixa amb tu en més àmbits dels que havies imaginat.
+
+Amb el Max, de moment, la música també semblava prometedora.
+
+A veure si aquí també encaixàvem.
+
+Jo començava a tenir bastanta curiositat per descobrir-ho.
+`,
   },
   {
     reflection_id: "7",
     language: "es",
-    title: "Las gafas de los demás",
-    content: `Preocuparte por lo que piensan los demás es inútil.
+    title: "Bidireccionalidad",
+    content: `L'endemà no vam parlar en tot el dia.
 
-Cada persona mira el mundo a través de unas gafas teñidas con su propia realidad: sus vivencias, sus creencias, sus miedos y todo aquello que ha vivido.
+I, curiosament, jo estava molt tranquil·la.
 
-Por eso, la manera en que alguien te ve dice más de él que de ti.
+Molt tranquil·la. En pau.
 
-Tú no puedes controlar las gafas con las que te miran los demás.
+Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d'aquests missatges. La coherència. Que l'interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant ni contestava sempre ràpid, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
 
-Solo puedes decidir si quieres pasar la vida intentando cambiarlas o empezar a mirarte con las tuyas.`,
+I ja feia gairebé un mes que parlàvem.
+
+Un mes.
+
+Que, tenint en compte que ens havíem conegut en una aplicació i que jo al principi eliminava homes per coses bastant més petites, poca broma.
+
+Cap a les vuit del vespre del dilluns vaig escriure-li. Just sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l'escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
+
+I la veritat és que me n'alegrava.
+
+També havia acabat de pintar la meva habitació i estava molt contenta. I aquí hi havia una certa ironia que no podia ignorar: tenir trenta anys i estar il·lusionadíssima perquè havia deixat preciosa la meva habitació a casa dels meus pares.
+
+Però era real.
+
+Aquell espai em feia bé. Tornava a sentir que tenia un lloc que era meu.
+
+Vam seguir parlant una estona fins que, abans d'anar a dormir, vaig recordar una cosa.
+
+«Per cert, m'has de dir la proposta que em feies.»
+
+El pla que m'havia promès.
+
+Em va explicar que volia estrenar el pis nou, però que encara no hi tenia pràcticament res. Només un llit.
+
+I jo vaig pensar que tampoc necessitàvem gaire més.
+
+«Amb dues cadires, una pizza i el llit que ja tens, jo crec que en tenim més que de sobres.»
+
+I així va quedar.
+
+Però abans d'anar a dormir li vaig deixar anar una altra cosa.
+
+Aquesta vegada no era una broma.
+
+Les últimes trobades m'havia mogut bastant jo. Havia anat fins a casa seva, havia fet propostes, havia canviat plans… i no em molestava haver-ho fet. Jo tinc molta més flexibilitat que ell i no em costa moure'm.
+
+Però una cosa és adaptar-me i una altra és acostumar-me a fer-ho sempre.
+
+Així que li vaig dir, més o menys, que entenia perfectament que ara mateix tingués molta feina, el pis nou i tota la resta, i que jo tenia més flexibilitat i em podia adaptar. Però que volia que sabés que a mi m'agradava la bidireccionalitat. L'equilibri. Que les coses anessin en les dues direccions.
+
+Li ho vaig dir i me'n vaig anar a dormir.
+
+Tranquil·líssima.
+
+L'endemà em va contestar que tenia tota la raó. Que, en aquell moment, les coses estaven funcionant així per les circumstàncies que teníem, però que ho tenia molt en compte. I també em va dir que valorava els gestos que jo estava fent per acostar-me a ell.
+
+I em va agradar molt la resposta.
+
+No perquè m'hagués donat la raó.
+
+Perquè havia entès el que li estava dient sense posar-se a la defensiva.
+
+Un punt més per al Max.
+
+I jo, contenta.
+
+A partir d'aquí vam continuar parlant i vam arribar a aquella fase tan concreta de començar a compartir cançons, llistes de Spotify i totes aquelles petites coses que vas ensenyant a algú quan vols que entri una mica més en el teu món.
+
+I això em va fer pensar en una cosa curiosa.
+
+Una de les primeres converses que havia tingut amb el Marcos per WhatsApp també havia estat compartint-nos cançons. Em feia gràcia perquè, al principi, ens passàvem música que ens agradava molt en aquell moment, però després, durant la relació, em vaig adonar que allò no representava gaire els seus gustos del dia a dia.
+
+Sí, escoltava aquelles cançons.
+
+Però no eren exactament les que escoltava habitualment.
+
+Els nostres gustos musicals tampoc encaixaven gaire. El que per mi podia ser música per a una nit de festa, per ell podia formar part de la banda sonora d'un dimarts qualsevol.
+
+I no passa absolutament res. No crec que una relació depengui de compartir la mateixa playlist. Però em va fer pensar en com, quan coneixes algú, vas descobrint petites coses que potser semblen insignificants i que, de sobte, et fan preguntar-te si aquesta persona encaixa amb tu en més àmbits dels que havies imaginat.
+
+Amb el Max, de moment, la música també semblava prometedora.
+
+A veure si aquí també encaixàvem.
+
+Jo començava a tenir bastanta curiositat per descobrir-ho.
+`,
   },
   {
     reflection_id: "7",
     language: "en",
-    title: "Other people’s glasses",
-    content: `Worrying about what other people think is useless.
+    title: "Two-way streets",
+    content: `L'endemà no vam parlar en tot el dia.
 
-Every person looks at the world through glasses tinted with their own reality: their experiences, their beliefs, their fears, and everything they have lived.
+I, curiosament, jo estava molt tranquil·la.
 
-That is why the way someone sees you says more about them than about you.
+Molt tranquil·la. En pau.
 
-You cannot control the glasses others use to look at you.
+Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d'aquests missatges. La coherència. Que l'interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant ni contestava sempre ràpid, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
 
-You can only decide whether you want to spend your life trying to change them, or start looking at yourself through your own.`,
+I ja feia gairebé un mes que parlàvem.
+
+Un mes.
+
+Que, tenint en compte que ens havíem conegut en una aplicació i que jo al principi eliminava homes per coses bastant més petites, poca broma.
+
+Cap a les vuit del vespre del dilluns vaig escriure-li. Just sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l'escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
+
+I la veritat és que me n'alegrava.
+
+També havia acabat de pintar la meva habitació i estava molt contenta. I aquí hi havia una certa ironia que no podia ignorar: tenir trenta anys i estar il·lusionadíssima perquè havia deixat preciosa la meva habitació a casa dels meus pares.
+
+Però era real.
+
+Aquell espai em feia bé. Tornava a sentir que tenia un lloc que era meu.
+
+Vam seguir parlant una estona fins que, abans d'anar a dormir, vaig recordar una cosa.
+
+«Per cert, m'has de dir la proposta que em feies.»
+
+El pla que m'havia promès.
+
+Em va explicar que volia estrenar el pis nou, però que encara no hi tenia pràcticament res. Només un llit.
+
+I jo vaig pensar que tampoc necessitàvem gaire més.
+
+«Amb dues cadires, una pizza i el llit que ja tens, jo crec que en tenim més que de sobres.»
+
+I així va quedar.
+
+Però abans d'anar a dormir li vaig deixar anar una altra cosa.
+
+Aquesta vegada no era una broma.
+
+Les últimes trobades m'havia mogut bastant jo. Havia anat fins a casa seva, havia fet propostes, havia canviat plans… i no em molestava haver-ho fet. Jo tinc molta més flexibilitat que ell i no em costa moure'm.
+
+Però una cosa és adaptar-me i una altra és acostumar-me a fer-ho sempre.
+
+Així que li vaig dir, més o menys, que entenia perfectament que ara mateix tingués molta feina, el pis nou i tota la resta, i que jo tenia més flexibilitat i em podia adaptar. Però que volia que sabés que a mi m'agradava la bidireccionalitat. L'equilibri. Que les coses anessin en les dues direccions.
+
+Li ho vaig dir i me'n vaig anar a dormir.
+
+Tranquil·líssima.
+
+L'endemà em va contestar que tenia tota la raó. Que, en aquell moment, les coses estaven funcionant així per les circumstàncies que teníem, però que ho tenia molt en compte. I també em va dir que valorava els gestos que jo estava fent per acostar-me a ell.
+
+I em va agradar molt la resposta.
+
+No perquè m'hagués donat la raó.
+
+Perquè havia entès el que li estava dient sense posar-se a la defensiva.
+
+Un punt més per al Max.
+
+I jo, contenta.
+
+A partir d'aquí vam continuar parlant i vam arribar a aquella fase tan concreta de començar a compartir cançons, llistes de Spotify i totes aquelles petites coses que vas ensenyant a algú quan vols que entri una mica més en el teu món.
+
+I això em va fer pensar en una cosa curiosa.
+
+Una de les primeres converses que havia tingut amb el Marcos per WhatsApp també havia estat compartint-nos cançons. Em feia gràcia perquè, al principi, ens passàvem música que ens agradava molt en aquell moment, però després, durant la relació, em vaig adonar que allò no representava gaire els seus gustos del dia a dia.
+
+Sí, escoltava aquelles cançons.
+
+Però no eren exactament les que escoltava habitualment.
+
+Els nostres gustos musicals tampoc encaixaven gaire. El que per mi podia ser música per a una nit de festa, per ell podia formar part de la banda sonora d'un dimarts qualsevol.
+
+I no passa absolutament res. No crec que una relació depengui de compartir la mateixa playlist. Però em va fer pensar en com, quan coneixes algú, vas descobrint petites coses que potser semblen insignificants i que, de sobte, et fan preguntar-te si aquesta persona encaixa amb tu en més àmbits dels que havies imaginat.
+
+Amb el Max, de moment, la música també semblava prometedora.
+
+A veure si aquí també encaixàvem.
+
+Jo començava a tenir bastanta curiositat per descobrir-ho.
+`,
   },
   {
     reflection_id: "7",
     language: "fr",
-    title: "Les lunettes des autres",
-    content: `Te préoccuper de ce que pensent les autres est inutile.
+    title: "Bidirectionnalité",
+    content: `L'endemà no vam parlar en tot el dia.
 
-Chaque personne regarde le monde à travers des lunettes teintées de sa propre réalité : ses expériences, ses croyances, ses peurs et tout ce qu’elle a vécu.
+I, curiosament, jo estava molt tranquil·la.
 
-C’est pourquoi la façon dont quelqu’un te voit en dit plus sur lui que sur toi.
+Molt tranquil·la. En pau.
 
-Tu ne peux pas contrôler les lunettes avec lesquelles les autres te regardent.
+Suposo que començava a entendre que el que realment importa no és la quantitat de missatges que una persona et pot enviar en un període de temps determinat, sinó els fets que hi ha darrere d'aquests missatges. La coherència. Que l'interès que mostra tingui continuïtat. I amb el Max, des del principi, això hi era. Potser no era una conversa constant ni contestava sempre ràpid, però hi havia reciprocitat. Hi havia interès. I, sobretot, constància.
 
-Tu peux seulement décider si tu veux passer ta vie à essayer de les changer, ou commencer à te regarder avec les tiennes.`,
-  },
+I ja feia gairebé un mes que parlàvem.
 
-  // ─── 08 ───
-  {
-    reflection_id: "8",
-    language: "ca",
-    title: "Ser abans que fer",
-    content: `No tot requereix un esforç extrem.
+Un mes.
 
-Ens han ensenyat a associar l'esforç amb el valor: com més costa, més mèrit té. Com si arribar més lluny sempre impliqués fer més, aguantar més o exigir-nos més.
+Que, tenint en compte que ens havíem conegut en una aplicació i que jo al principi eliminava homes per coses bastant més petites, poca broma.
 
-Però no sempre és així.
+Cap a les vuit del vespre del dilluns vaig escriure-li. Just sortia de treballar i em va començar a explicar coses de la feina, a queixar-se una mica, a posar-me al dia. I jo l'escoltava pensant en la diferència amb la meva vida actual. Ell estava immers en la feina, el pis nou, responsabilitats i mil històries; jo, en canvi, tenia molta més flexibilitat.
 
-Hi ha coses que requereixen disciplina, constància i compromís, però no necessàriament patiment.
+I la veritat és que me n'alegrava.
 
-Quan actuem des de la por, la necessitat o la desesperació, sovint sentim que hem de fer més i més per aconseguir-ho.
+També havia acabat de pintar la meva habitació i estava molt contenta. I aquí hi havia una certa ironia que no podia ignorar: tenir trenta anys i estar il·lusionadíssima perquè havia deixat preciosa la meva habitació a casa dels meus pares.
 
-I potser no sempre cal fer més. Potser cal fer-ho d'una altra manera.
+Però era real.
 
-Quan primer ordenem el nostre interior, també canvia la manera com actuem a l'exterior.
+Aquell espai em feia bé. Tornava a sentir que tenia un lloc que era meu.
 
-No sempre cal fer més.
-A vegades cal ser més.
+Vam seguir parlant una estona fins que, abans d'anar a dormir, vaig recordar una cosa.
 
-I des d'aquest lloc, actuar.`,
-  },
-  {
-    reflection_id: "8",
-    language: "es",
-    title: "Ser antes que hacer",
-    content: `No todo requiere un esfuerzo extremo.
+«Per cert, m'has de dir la proposta que em feies.»
 
-Nos han enseñado a asociar el esfuerzo con el valor: cuanto más cuesta, más mérito tiene. Como si llegar más lejos siempre implicara hacer más, aguantar más o exigirnos más.
+El pla que m'havia promès.
 
-Pero no siempre es así.
+Em va explicar que volia estrenar el pis nou, però que encara no hi tenia pràcticament res. Només un llit.
 
-Hay cosas que requieren disciplina, constancia y compromiso, pero no necesariamente sufrimiento.
+I jo vaig pensar que tampoc necessitàvem gaire més.
 
-Cuando actuamos desde el miedo, la necesidad o la desesperación, a menudo sentimos que tenemos que hacer más y más para conseguirlo.
+«Amb dues cadires, una pizza i el llit que ja tens, jo crec que en tenim més que de sobres.»
 
-Y quizá no siempre hace falta hacer más. Quizá hace falta hacerlo de otra manera.
+I així va quedar.
 
-Cuando primero ordenamos nuestro interior, también cambia la manera en que actuamos en el exterior.
+Però abans d'anar a dormir li vaig deixar anar una altra cosa.
 
-No siempre hace falta hacer más.
-A veces hace falta ser más.
+Aquesta vegada no era una broma.
 
-Y desde ese lugar, actuar.`,
-  },
-  {
-    reflection_id: "8",
-    language: "en",
-    title: "Being before doing",
-    content: `Not everything requires extreme effort.
+Les últimes trobades m'havia mogut bastant jo. Havia anat fins a casa seva, havia fet propostes, havia canviat plans… i no em molestava haver-ho fet. Jo tinc molta més flexibilitat que ell i no em costa moure'm.
 
-We have been taught to associate effort with value: the harder it is, the more merit it has. As if going further always meant doing more, enduring more, or demanding more of ourselves.
+Però una cosa és adaptar-me i una altra és acostumar-me a fer-ho sempre.
 
-But it is not always like that.
+Així que li vaig dir, més o menys, que entenia perfectament que ara mateix tingués molta feina, el pis nou i tota la resta, i que jo tenia més flexibilitat i em podia adaptar. Però que volia que sabés que a mi m'agradava la bidireccionalitat. L'equilibri. Que les coses anessin en les dues direccions.
 
-There are things that require discipline, consistency and commitment, but not necessarily suffering.
+Li ho vaig dir i me'n vaig anar a dormir.
 
-When we act from fear, need or despair, we often feel we must do more and more to get there.
+Tranquil·líssima.
 
-And maybe it is not always necessary to do more. Maybe we need to do it differently.
+L'endemà em va contestar que tenia tota la raó. Que, en aquell moment, les coses estaven funcionant així per les circumstàncies que teníem, però que ho tenia molt en compte. I també em va dir que valorava els gestos que jo estava fent per acostar-me a ell.
 
-When we first put our inner world in order, the way we act outwardly also changes.
+I em va agradar molt la resposta.
 
-It is not always necessary to do more.
-Sometimes we need to be more.
+No perquè m'hagués donat la raó.
 
-And from that place, act.`,
-  },
-  {
-    reflection_id: "8",
-    language: "fr",
-    title: "Être avant de faire",
-    content: `Tout ne demande pas un effort extrême.
+Perquè havia entès el que li estava dient sense posar-se a la defensiva.
 
-On nous a appris à associer l’effort à la valeur : plus cela coûte, plus cela a du mérite. Comme si aller plus loin impliquait toujours d’en faire plus, de tenir plus ou de nous exiger davantage.
+Un punt més per al Max.
 
-Mais ce n’est pas toujours le cas.
+I jo, contenta.
 
-Il y a des choses qui demandent de la discipline, de la constance et de l’engagement, mais pas forcément de la souffrance.
+A partir d'aquí vam continuar parlant i vam arribar a aquella fase tan concreta de començar a compartir cançons, llistes de Spotify i totes aquelles petites coses que vas ensenyant a algú quan vols que entri una mica més en el teu món.
 
-Quand nous agissons depuis la peur, le besoin ou le désespoir, nous sentons souvent que nous devons en faire toujours plus pour y arriver.
+I això em va fer pensar en una cosa curiosa.
 
-Et peut-être qu’il n’est pas toujours nécessaire d’en faire plus. Peut-être faut-il le faire autrement.
+Una de les primeres converses que havia tingut amb el Marcos per WhatsApp també havia estat compartint-nos cançons. Em feia gràcia perquè, al principi, ens passàvem música que ens agradava molt en aquell moment, però després, durant la relació, em vaig adonar que allò no representava gaire els seus gustos del dia a dia.
 
-Quand nous mettons d’abord de l’ordre en nous, la façon dont nous agissons à l’extérieur change aussi.
+Sí, escoltava aquelles cançons.
 
-Il n’est pas toujours nécessaire d’en faire plus.
-Parfois, il faut être davantage.
+Però no eren exactament les que escoltava habitualment.
 
-Et depuis cet endroit, agir.`,
-  },
+Els nostres gustos musicals tampoc encaixaven gaire. El que per mi podia ser música per a una nit de festa, per ell podia formar part de la banda sonora d'un dimarts qualsevol.
 
-  // ─── 09 ───
-  {
-    reflection_id: "9",
-    language: "ca",
-    title: "La calma ho fa tot possible",
-    content: `Quan estem inspirats, tot flueix.
-Les idees arriben soles. Les decisions es prenen quasi sense esforç. El temps gairebé desapareix.
+I no passa absolutament res. No crec que una relació depengui de compartir la mateixa playlist. Però em va fer pensar en com, quan coneixes algú, vas descobrint petites coses que potser semblen insignificants i que, de sobte, et fan preguntar-te si aquesta persona encaixa amb tu en més àmbits dels que havies imaginat.
 
-Però el flux no apareix del no-res.
+Amb el Max, de moment, la música també semblava prometedora.
 
-Per fluir, primer cal calma mental. Un espai net, sense soroll, on els pensaments no es trepitgen els uns als altres. I és en aquest silenci on la intuïció també es pot escoltar.
+A veure si aquí també encaixàvem.
 
-Crec que tots portem la creativitat a dins. Però moltes vegades queda amagada, tapada pel soroll del dia a dia, per les presses, per l'exigència.
-
-No és que ens falti. És que no li hem fet lloc.
-
-Quan trobem aquesta calma, la creativitat torna a sortir sola. I amb ella, torna el flux.`,
-  },
-  {
-    reflection_id: "9",
-    language: "es",
-    title: "La calma lo hace todo posible",
-    content: `Cuando estamos inspirados, todo fluye.
-Las ideas llegan solas. Las decisiones se toman casi sin esfuerzo. El tiempo casi desaparece.
-
-Pero el flujo no aparece de la nada.
-
-Para fluir, primero hace falta calma mental. Un espacio limpio, sin ruido, donde los pensamientos no se pisan unos a otros. Y es en ese silencio donde la intuición también se puede escuchar.
-
-Creo que todos llevamos la creatividad dentro. Pero muchas veces queda escondida, tapada por el ruido del día a día, por las prisas, por la exigencia.
-
-No es que nos falte. Es que no le hemos hecho sitio.
-
-Cuando encontramos esa calma, la creatividad vuelve a salir sola. Y con ella, vuelve el flujo.`,
-  },
-  {
-    reflection_id: "9",
-    language: "en",
-    title: "Calm makes everything possible",
-    content: `When we are inspired, everything flows.
-Ideas arrive on their own. Decisions are made almost without effort. Time nearly disappears.
-
-But flow does not appear out of nowhere.
-
-To flow, you first need mental calm. A clear space, without noise, where thoughts do not tread on one another. And it is in that silence that intuition can also be heard.
-
-I believe we all carry creativity within. But often it stays hidden, covered by the noise of daily life, by hurry, by demand.
-
-It is not that we lack it. It is that we have not made room for it.
-
-When we find that calm, creativity comes out again on its own. And with it, flow returns.`,
-  },
-  {
-    reflection_id: "9",
-    language: "fr",
-    title: "Le calme rend tout possible",
-    content: `Quand nous sommes inspirés, tout coule.
-Les idées arrivent d’elles-mêmes. Les décisions se prennent presque sans effort. Le temps disparaît presque.
-
-Mais le flux n’apparaît pas de nulle part.
-
-Pour fluer, il faut d’abord un calme mental. Un espace net, sans bruit, où les pensées ne se marchent pas les unes sur les autres. Et c’est dans ce silence que l’intuition peut aussi s’écouter.
-
-Je crois que nous portons tous la créativité en nous. Mais bien souvent elle reste cachée, couverte par le bruit du quotidien, par la précipitation, par l’exigence.
-
-Ce n’est pas qu’il nous en manque. C’est que nous ne lui avons pas fait de place.
-
-Quand nous trouvons ce calme, la créativité ressort d’elle-même. Et avec elle, le flux revient.`,
-  },
-
-  // ─── 10 ───
-  {
-    reflection_id: "10",
-    language: "ca",
-    title: "L'art com a expressió intencionada",
-    content: `L'art és molt més que un quadre o una escultura. És una de les formes més pures que tenim per expressar-nos.
-
-I és profundament subjectiu: una mateixa obra pot semblar preciosa a algú i no dir res a algú altre.
-
-L'art que commou és el que aconsegueix fer sentir alguna cosa —una pintura, una música, algú que vesteix amb gust, o fins i tot una creació digital que aconsegueix plasmar una idea que abans només existia al cap.
-
-Perquè, en el fons, l'art és això: agafar alguna cosa de dins i convertir-la en alguna cosa que els altres puguin percebre.
-
-I això és molt potent.`,
-  },
-  {
-    reflection_id: "10",
-    language: "es",
-    title: "El arte como expresión intencionada",
-    content: `El arte es mucho más que un cuadro o una escultura. Es una de las formas más puras que tenemos para expresarnos.
-
-Y es profundamente subjetivo: una misma obra puede parecer preciosa a alguien y no decir nada a otra persona.
-
-El arte que conmueve es el que consigue hacer sentir algo —una pintura, una música, alguien que viste con gusto, o incluso una creación digital que consigue plasmar una idea que antes solo existía en la cabeza.
-
-Porque, en el fondo, el arte es eso: coger algo de dentro y convertirlo en algo que los demás puedan percibir.
-
-Y eso es muy potente.`,
-  },
-  {
-    reflection_id: "10",
-    language: "en",
-    title: "Art as intentional expression",
-    content: `Art is much more than a painting or a sculpture. It is one of the purest ways we have to express ourselves.
-
-And it is deeply subjective: the same work can seem beautiful to someone and mean nothing to someone else.
-
-Art that moves us is the art that manages to make us feel something — a painting, a piece of music, someone who dresses with taste, or even a digital creation that manages to capture an idea that before only existed in the mind.
-
-Because, at heart, art is this: taking something from within and turning it into something others can perceive.
-
-And that is very powerful.`,
-  },
-  {
-    reflection_id: "10",
-    language: "fr",
-    title: "L’art comme expression intentionnelle",
-    content: `L’art est bien plus qu’un tableau ou une sculpture. C’est l’une des formes les plus pures que nous ayons pour nous exprimer.
-
-Et il est profondément subjectif : une même œuvre peut sembler précieuse à quelqu’un et ne rien dire à quelqu’un d’autre.
-
-L’art qui émeut est celui qui parvient à faire ressentir quelque chose — une peinture, une musique, quelqu’un qui s’habille avec goût, ou même une création numérique qui réussit à donner forme à une idée qui n’existait auparavant que dans la tête.
-
-Parce que, au fond, l’art c’est cela : prendre quelque chose de l’intérieur et le transformer en quelque chose que les autres puissent percevoir.
-
-Et c’est très puissant.`,
-  },
-
-  // ─── 11 ───
-  {
-    reflection_id: "11",
-    language: "ca",
-    title: "La part de tu que ja no existeix",
-    content: `Quan perdem algú, tendim a pensar que el dolor prové únicament de la seva absència. Però una relació també construeix una versió de nosaltres.
-
-No som exactament els mateixos amb la nostra família, amb els amics, amb una parella o quan estem sols. Cada vincle desperta parts diferents de nosaltres: maneres de parlar, de pensar, de sentir, de cuidar, de riure, de mirar el món.
-
-Per això, quan una persona important desapareix de la nostra vida, no només deixem de tenir-la a ella. També deixem de tenir l'espai on existia aquella versió de nosaltres.
-
-I potser per això, després d'una pèrdua, podem sentir que no només trobem a faltar l'altra persona. També ens trobem a faltar a nosaltres mateixos.
-
-El dol, en certa manera, és aprendre a viure sense aquella relació i descobrir qui som ara que ja no hi és.
-
-No es tracta de tornar a ser qui érem abans. Es tracta de retrobar les parts de nosaltres que aquella relació havia despertat, conservar les que encara ens pertanyen i deixar espai perquè en neixin de noves.
-
-Perquè cada persona que passa per la nostra vida deixa una empremta en qui som.
-
-I quan marxa, potser una part de nosaltres marxa amb ella.`,
-  },
-  {
-    reflection_id: "11",
-    language: "es",
-    title: "La parte de ti que ya no existe",
-    content: `Cuando perdemos a alguien, tendemos a pensar que el dolor proviene únicamente de su ausencia. Pero una relación también construye una versión de nosotros.
-
-No somos exactamente los mismos con nuestra familia, con los amigos, con una pareja o cuando estamos solos. Cada vínculo despierta partes distintas de nosotros: maneras de hablar, de pensar, de sentir, de cuidar, de reír, de mirar el mundo.
-
-Por eso, cuando una persona importante desaparece de nuestra vida, no solo dejamos de tenerla a ella. También dejamos de tener el espacio donde existía aquella versión de nosotros.
-
-Y quizá por eso, después de una pérdida, podemos sentir que no solo echamos de menos a la otra persona. También nos echamos de menos a nosotros mismos.
-
-El duelo, en cierta manera, es aprender a vivir sin aquella relación y descubrir quiénes somos ahora que ya no está.
-
-No se trata de volver a ser quien éramos antes. Se trata de reencontrar las partes de nosotros que aquella relación había despertado, conservar las que aún nos pertenecen y dejar espacio para que nazcan otras nuevas.
-
-Porque cada persona que pasa por nuestra vida deja una huella en quiénes somos.
-
-Y cuando se marcha, quizá una parte de nosotros se va con ella.`,
-  },
-  {
-    reflection_id: "11",
-    language: "en",
-    title: "The part of you that no longer exists",
-    content: `When we lose someone, we tend to think the pain comes only from their absence. But a relationship also builds a version of us.
-
-We are not exactly the same with our family, with friends, with a partner, or when we are alone. Every bond awakens different parts of us: ways of speaking, thinking, feeling, caring, laughing, looking at the world.
-
-That is why, when an important person disappears from our life, we do not only lose them. We also lose the space where that version of ourselves existed.
-
-And maybe that is why, after a loss, we can feel that we do not only miss the other person. We also miss ourselves.
-
-Grief, in a way, is learning to live without that relationship and discovering who we are now that they are gone.
-
-It is not about becoming who we were before. It is about finding again the parts of ourselves that relationship had awakened, keeping those that still belong to us, and leaving space for new ones to grow.
-
-Because every person who passes through our life leaves a mark on who we are.
-
-And when they leave, maybe a part of us leaves with them.`,
-  },
-  {
-    reflection_id: "11",
-    language: "fr",
-    title: "La part de toi qui n’existe plus",
-    content: `Quand nous perdons quelqu’un, nous avons tendance à penser que la douleur vient uniquement de son absence. Mais une relation construit aussi une version de nous.
-
-Nous ne sommes pas exactement les mêmes avec notre famille, avec nos amis, avec un partenaire ou quand nous sommes seuls. Chaque lien éveille des parts différentes de nous : des façons de parler, de penser, de sentir, de prendre soin, de rire, de regarder le monde.
-
-C’est pourquoi, quand une personne importante disparaît de notre vie, nous ne cessons pas seulement de l’avoir. Nous cessons aussi d’avoir l’espace où existait cette version de nous.
-
-Et c’est peut-être pour cela qu’après une perte, nous pouvons sentir que nous ne manquons pas seulement l’autre personne. Nous nous manquons aussi à nous-mêmes.
-
-Le deuil, d’une certaine manière, c’est apprendre à vivre sans cette relation et découvrir qui nous sommes maintenant qu’elle n’est plus là.
-
-Il ne s’agit pas de redevenir qui nous étions avant. Il s’agit de retrouver les parts de nous que cette relation avait éveillées, conserver celles qui nous appartiennent encore et laisser de la place pour que d’autres naissent.
-
-Parce que chaque personne qui passe dans notre vie laisse une empreinte sur qui nous sommes.
-
-Et quand elle part, peut-être qu’une part de nous part avec elle.`,
-  },
-
-  // ─── 12 ───
-  {
-    reflection_id: "12",
-    language: "ca",
-    title: "L'èxit",
-    content: `Durant molt de temps hem associat l'èxit amb arribar més lluny, tenir més, aconseguir més.
-
-Però potser l'èxit no té tant a veure amb tot allò que aconseguim, sinó amb com ens sentim mentre vivim la nostra vida.
-
-Per mi, l'èxit és la benedicció de sentir-se en pau i feliç amb el que fem, sigui on sigui i amb qui sigui.
-
-Una pau que no depèn de tenir-ho tot resolt.
-Una felicitat que no necessita grans motius.
-
-La possibilitat de mirar la vida que tens i sentir que, malgrat tot el que encara pugui faltar, no voldries estar en un altre lloc ni ser una altra persona.
-
-Potser l'èxit més gran no és arribar a una vida extraordinària.
-
-És arribar a una vida que, per a tu, se senti bé.
-
-Una pau pura.
-Una felicitat senzilla.`,
-  },
-  {
-    reflection_id: "12",
-    language: "es",
-    title: "El éxito",
-    content: `Durante mucho tiempo hemos asociado el éxito con llegar más lejos, tener más, conseguir más.
-
-Pero quizá el éxito no tiene tanto que ver con todo aquello que conseguimos, sino con cómo nos sentimos mientras vivimos nuestra vida.
-
-Para mí, el éxito es la bendición de sentirse en paz y feliz con lo que hacemos, sea donde sea y con quien sea.
-
-Una paz que no depende de tenerlo todo resuelto.
-Una felicidad que no necesita grandes motivos.
-
-La posibilidad de mirar la vida que tienes y sentir que, a pesar de todo lo que aún pueda faltar, no querrías estar en otro lugar ni ser otra persona.
-
-Quizá el mayor éxito no es llegar a una vida extraordinaria.
-
-Es llegar a una vida que, para ti, se sienta bien.
-
-Una paz pura.
-Una felicidad sencilla.`,
-  },
-  {
-    reflection_id: "12",
-    language: "en",
-    title: "Success",
-    content: `For a long time we have associated success with going further, having more, achieving more.
-
-But maybe success has less to do with everything we achieve, and more with how we feel while we live our life.
-
-For me, success is the blessing of feeling at peace and happy with what we do, wherever we are and with whoever we are.
-
-A peace that does not depend on having everything sorted.
-A happiness that does not need grand reasons.
-
-The possibility of looking at the life you have and feeling that, despite everything that may still be missing, you would not want to be somewhere else or someone else.
-
-Maybe the greatest success is not reaching an extraordinary life.
-
-It is reaching a life that, for you, feels good.
-
-A pure peace.
-A simple happiness.`,
-  },
-  {
-    reflection_id: "12",
-    language: "fr",
-    title: "Le succès",
-    content: `Pendant longtemps, nous avons associé le succès à aller plus loin, avoir plus, obtenir plus.
-
-Mais peut-être que le succès n’a pas tant à voir avec tout ce que nous obtenons, qu’avec la façon dont nous nous sentons pendant que nous vivons notre vie.
-
-Pour moi, le succès est la bénédiction de se sentir en paix et heureux avec ce que l’on fait, où que l’on soit et avec qui que l’on soit.
-
-Une paix qui ne dépend pas d’avoir tout réglé.
-Un bonheur qui n’a pas besoin de grandes raisons.
-
-La possibilité de regarder la vie que l’on a et de sentir que, malgré tout ce qui peut encore manquer, on ne voudrait être nulle part ailleurs ni être quelqu’un d’autre.
-
-Peut-être que le plus grand succès n’est pas d’arriver à une vie extraordinaire.
-
-C’est d’arriver à une vie qui, pour toi, se sente bien.
-
-Une paix pure.
-Un bonheur simple.`,
-  },
-
-  // ─── 13 ───
-  {
-    reflection_id: "13",
-    language: "ca",
-    title: "Decisions",
-    content: `La nostra vida pot arribar a assemblar-se molt més al que imaginem del que sovint ens permetem creure.
-
-Cada decisió que prenem, fins i tot les més petites, ens condueix en una direcció. Algunes ens apropen a la vida que volem. D'altres ens mantenen exactament on som. I moltes vegades no ens n'adonem perquè esperem que el canvi arribi abans de començar a actuar d'una manera diferent.
-
-Vivim envoltats de possibilitats. Hi ha versions de la nostra vida que encara no coneixem i que podrien arribar a ser perfectament nostres. Però perquè una realitat canviï, alguna cosa dins nostre també ha de canviar.
-
-A vegades diem que volem una vida diferent, però encara no estem preparats per assumir tot el que implica arribar-hi. Perquè tota nova realitat té un preu: deixar enrere hàbits, persones, comoditats, maneres de pensar o decisions que ja no són coherents amb qui volem ser.
-
-No sempre ens falta capacitat. De vegades ens falta disposició.
-
-Canviar de vida no consisteix només a decidir què volem aconseguir. Consisteix a començar a prendre les decisions que prendria la persona que ja viu aquesta realitat.
-
-Per això, potser la pregunta no és:
-
-«Què vull que canviï a la meva vida?»
-
-Sinó:
-
-«Si ja visqués en la meva nova realitat, com actuaria? Com pensaria? Com viuria? Com parlaria? I, sobretot, quines decisions prendria?»
-
-Perquè, al final, cada decisió és una direcció.
-
-I potser canviar de realitat no consisteix a esperar que la nostra vida canviï, sinó a començar a comportar-nos com si ja haguéssim escollit cap a on volem anar.`,
-  },
-  {
-    reflection_id: "13",
-    language: "es",
-    title: "Decisiones",
-    content: `Nuestra vida puede llegar a parecerse mucho más a lo que imaginamos de lo que a menudo nos permitimos creer.
-
-Cada decisión que tomamos, incluso las más pequeñas, nos conduce en una dirección. Algunas nos acercan a la vida que queremos. Otras nos mantienen exactamente donde estamos. Y muchas veces no nos damos cuenta porque esperamos que el cambio llegue antes de empezar a actuar de una manera distinta.
-
-Vivimos rodeados de posibilidades. Hay versiones de nuestra vida que aún no conocemos y que podrían llegar a ser perfectamente nuestras. Pero para que una realidad cambie, algo dentro de nosotros también tiene que cambiar.
-
-A veces decimos que queremos una vida diferente, pero aún no estamos preparados para asumir todo lo que implica llegar ahí. Porque toda nueva realidad tiene un precio: dejar atrás hábitos, personas, comodidades, maneras de pensar o decisiones que ya no son coherentes con quien queremos ser.
-
-No siempre nos falta capacidad. A veces nos falta disposición.
-
-Cambiar de vida no consiste solo en decidir qué queremos conseguir. Consiste en empezar a tomar las decisiones que tomaría la persona que ya vive esa realidad.
-
-Por eso, quizá la pregunta no es:
-
-«¿Qué quiero que cambie en mi vida?»
-
-Sino:
-
-«Si ya viviera en mi nueva realidad, ¿cómo actuaría? ¿Cómo pensaría? ¿Cómo viviría? ¿Cómo hablaría? Y, sobre todo, ¿qué decisiones tomaría?»
-
-Porque, al final, cada decisión es una dirección.
-
-Y quizá cambiar de realidad no consiste en esperar a que nuestra vida cambie, sino en empezar a comportarnos como si ya hubiéramos elegido hacia dónde queremos ir.`,
-  },
-  {
-    reflection_id: "13",
-    language: "en",
-    title: "Decisions",
-    content: `Our life can come to look far more like what we imagine than we often allow ourselves to believe.
-
-Every decision we make, even the smallest ones, leads us in a direction. Some bring us closer to the life we want. Others keep us exactly where we are. And often we do not notice, because we wait for change to arrive before we start acting differently.
-
-We live surrounded by possibilities. There are versions of our life we do not yet know, and that could become perfectly ours. But for a reality to change, something inside us also has to change.
-
-Sometimes we say we want a different life, but we are not yet ready to take on everything it takes to get there. Because every new reality has a price: leaving behind habits, people, comforts, ways of thinking, or decisions that are no longer consistent with who we want to be.
-
-It is not always capacity we lack. Sometimes it is willingness.
-
-Changing your life is not only about deciding what you want to achieve. It is about starting to make the decisions the person who already lives that reality would make.
-
-That is why, maybe, the question is not:
-
-«What do I want to change in my life?»
-
-But:
-
-«If I already lived in my new reality, how would I act? How would I think? How would I live? How would I speak? And above all, what decisions would I make?»
-
-Because, in the end, every decision is a direction.
-
-And maybe changing reality is not about waiting for our life to change, but about starting to behave as if we had already chosen where we want to go.`,
-  },
-  {
-    reflection_id: "13",
-    language: "fr",
-    title: "Décisions",
-    content: `Notre vie peut finir par ressembler bien plus à ce que nous imaginons que ce que nous nous permettons souvent de croire.
-
-Chaque décision que nous prenons, même les plus petites, nous conduit dans une direction. Certaines nous rapprochent de la vie que nous voulons. D’autres nous maintiennent exactement là où nous sommes. Et bien souvent, nous ne nous en rendons pas compte parce que nous attendons que le changement arrive avant de commencer à agir autrement.
-
-Nous vivons entourés de possibilités. Il existe des versions de notre vie que nous ne connaissons pas encore et qui pourraient parfaitement devenir nôtres. Mais pour qu’une réalité change, quelque chose en nous doit aussi changer.
-
-Parfois, nous disons que nous voulons une vie différente, mais nous ne sommes pas encore prêts à assumer tout ce que cela implique d’y arriver. Parce que toute nouvelle réalité a un prix : laisser derrière soi des habitudes, des personnes, des confort, des façons de penser ou des décisions qui ne sont plus cohérentes avec qui nous voulons être.
-
-Ce n’est pas toujours la capacité qui nous manque. Parfois, c’est la disposition.
-
-Changer de vie ne consiste pas seulement à décider ce que l’on veut obtenir. Cela consiste à commencer à prendre les décisions que prendrait la personne qui vit déjà cette réalité.
-
-C’est pourquoi, peut-être, la question n’est pas :
-
-« Que veux-je qui change dans ma vie ? »
-
-Mais :
-
-« Si je vivais déjà dans ma nouvelle réalité, comment agirais-je ? Comment penserais-je ? Comment vivrais-je ? Comment parlerais-je ? Et surtout, quelles décisions prendrais-je ? »
-
-Parce qu’au fond, chaque décision est une direction.
-
-Et peut-être que changer de réalité ne consiste pas à attendre que notre vie change, mais à commencer à nous comporter comme si nous avions déjà choisi où nous voulons aller.`,
+Jo començava a tenir bastanta curiositat per descobrir-ho.
+`,
   },
 ];
 

@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "node scripts/dev-with-content.mjs",
+    "dev:next": "next dev --turbopack",
+    "build": "npm run content:sync && next build",
     "start": "next start",
     "lint": "eslint",
     "supabase:start": "npx supabase start",
@@ -12,7 +13,8 @@
     "supabase:status": "npx supabase status",
     "supabase:reset": "npx supabase db reset",
     "supabase:seed:generate": "npx tsx scripts/generate-supabase-seed.mjs",
-    "content:build": "node scripts/build-seed-translations.mjs"
+    "content:build": "node scripts/build-seed-translations.mjs",
+    "content:sync": "node scripts/sync-manuscript.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",

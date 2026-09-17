@@ -6,8 +6,10 @@ import { seedTranslations } from "./seedTranslations.generated";
 
 /**
  * Narrative chapters (Violeta Mayer).
- * Bodies live in src/content/chapters/{nn}.{ca,es,en,fr}.txt
- * Rebuild translations: npm run content:build
+ *
+ * Edit Catalan text in: src/content/manuscript/ca.md
+ * Then (with npm run dev) it syncs automatically to chapters + this seed.
+ * Manual sync: npm run content:sync
  */
 
 export const reflectionRecords: ReflectionRecord[] = [

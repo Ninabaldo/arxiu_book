@@ -91,17 +91,11 @@ export function chunkContentMeasured(
 
   const sample = renderParagraph("Mg");
   body.appendChild(sample);
-  const sampleStyles = window.getComputedStyle(sample);
-  const fontSize = parseFloat(sampleStyles.fontSize) || 10.5;
-  const lineHeightRaw = sampleStyles.lineHeight;
-  const lineHeight =
-    lineHeightRaw === "normal"
-      ? fontSize * 1.42
-      : parseFloat(lineHeightRaw) || fontSize * 1.42;
   body.removeChild(sample);
 
-  // Keep one line clear above the bottom margin
-  const maxHeight = Math.max(80, rawHeight - Math.ceil(lineHeight));
+  // Fill the measured body fully — folio overlays the page face below
+  // Allow 2px slack so we do not leave a visible empty band at the bottom
+  const maxHeight = Math.max(80, rawHeight + 2);
 
   const paragraphs = splitParagraphs(content);
   if (paragraphs.length === 0) return [""];

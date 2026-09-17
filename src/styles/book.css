@@ -849,7 +849,8 @@
   inset: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  transform-style: preserve-3d;
+  /* Flat when idle — avoid 3D bleed of verso numbers through the leaf */
+  transform-style: flat;
   box-shadow:
     0 22px 48px rgba(42, 38, 32, 0.14),
     0 2px 8px rgba(42, 38, 32, 0.06);
@@ -858,10 +859,12 @@
   transform: none;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .flipbook__spread.is-turning {
+  transform-style: preserve-3d;
+  overflow: visible;
   box-shadow:
     0 22px 48px rgba(42, 38, 32, 0.14),
     0 2px 8px rgba(42, 38, 32, 0.06);
@@ -869,8 +872,16 @@
 
 .flipbook__page {
   position: relative;
-  background:
-    linear-gradient(180deg, #fbf8f2 0%, var(--color-paper) 42%, #f2ebe0 100%);
+  /* Solid base so the stage never shows through the leaf */
+  background-color: #f7f3eb;
+  background-image: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #f7f3eb 42%,
+    #f3ede4 100%
+  );
+  opacity: 1;
+  isolation: isolate;
   overflow: hidden;
   transform-style: flat;
   transform: none;
@@ -886,6 +897,7 @@
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
+  background-color: #f7f3eb;
 }
 
 .flipbook__page--left {
@@ -963,8 +975,15 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform-style: flat;
-  background:
-    linear-gradient(180deg, #fbf8f2 0%, var(--color-paper) 42%, #f2ebe0 100%);
+  background-color: #f7f3eb;
+  background-image: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #f7f3eb 42%,
+    #f3ede4 100%
+  );
+  opacity: 1;
+  isolation: isolate;
   overflow: hidden;
   border-radius: 0;
   container-type: size;
@@ -990,6 +1009,13 @@
   box-shadow: inset -10px 0 18px rgba(42, 38, 32, 0.03);
 }
 
+/* Keep verso type readable (not mirrored through the front face) */
+.flipbook__sheet-face--back .flipbook__sheet-face-content,
+.flipbook__sheet-face--back > .page-folio {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 .flipbook__sheet--prev .flipbook__sheet-face--back {
   box-shadow: inset 10px 0 18px rgba(42, 38, 32, 0.03);
 }
@@ -1000,12 +1026,14 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
+  background-color: #f7f3eb;
 }
 
 .flipbook__sheet-face-content > .page-inner {
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
+  background-color: #f7f3eb;
 }
 
 .flipbook__hit {
@@ -1101,24 +1129,6 @@ button.flipbook__hit:disabled {
 .page-nav button:disabled {
   opacity: 0.3;
   cursor: url("/cursors/favicon-cursor.png") 7 7, default;
-}
-
-.page-nav__count {
-  font-variant-numeric: tabular-nums;
-  min-width: 3.75rem;
-  height: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 7px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  line-height: 1;
-  color: var(--color-muted);
-  opacity: 0.55;
-  pointer-events: none;
-  transform: translateY(0.5px);
 }
 
 .page-nav__index {
@@ -1361,29 +1371,29 @@ button.flipbook__hit:disabled {
   }
 }
 
-/* One A5 leaf at a time on phone — do not wait for .is-mobile JS */
+/* One A5 leaf at a time on phone */
 @media (max-width: 720px) {
-  .flipbook__spread {
+  .flipbook.is-single .flipbook__spread {
     grid-template-columns: 1fr;
   }
 
-  .flipbook__page--left.is-hidden,
-  .flipbook__page--right.is-hidden {
+  .flipbook.is-single .flipbook__page--left.is-hidden,
+  .flipbook.is-single .flipbook__page--right.is-hidden {
     display: none;
   }
 
   /* Before JS hydrates: show only the left leaf */
-  .flipbook:not(.is-mobile) .flipbook__page--right {
+  .flipbook:not(.is-single) .flipbook__page--right {
     display: none;
   }
 
-  .flipbook__page--left,
-  .flipbook__page--right {
+  .flipbook.is-single .flipbook__page--left,
+  .flipbook.is-single .flipbook__page--right {
     border-radius: 3px;
   }
 
-  .flipbook__gutter,
-  .flipbook__sheet {
+  .flipbook.is-single .flipbook__gutter,
+  .flipbook.is-single .flipbook__sheet {
     display: none;
   }
 

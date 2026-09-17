@@ -10,7 +10,6 @@ interface PageContentProps {
   reflection?: Reflection;
   reflections: Reflection[];
   locale: Locale;
-  pageLabel?: string;
   onSelectReflection: (id: string) => void;
 }
 
@@ -18,7 +17,6 @@ export function PageContent({
   page,
   reflection,
   locale,
-  pageLabel,
 }: PageContentProps) {
   const chunkMap = useChunkMap();
 
@@ -33,7 +31,10 @@ export function PageContent({
       <div className="page-inner page-beginning">
         <div className="page-beginning__text">
           {paragraphs.map((paragraph, i) => {
-            const isSignature = paragraph === "Violeta" || paragraph === "Nina";
+            const isSignature =
+              paragraph === "Violeta" ||
+              paragraph === "Nina" ||
+              paragraph === "Violeta Mayer";
             return (
               <p
                 key={i}
@@ -132,7 +133,6 @@ export function PageContent({
           <p className="page-body__text page-body__text--empty" aria-hidden="true" />
         )}
       </div>
-      {pageLabel && <p className="page-folio">{pageLabel}</p>}
     </div>
   );
 }

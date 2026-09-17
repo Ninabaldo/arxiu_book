@@ -69,7 +69,7 @@ a:focus-visible,
 }
 
 ::selection {
-  background: rgba(47, 79, 115, 0.14);
+  background: rgba(47, 36, 28, 0.14);
 }
 
 .visually-hidden {

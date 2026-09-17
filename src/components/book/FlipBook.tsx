@@ -38,7 +38,7 @@ export function FlipBook({
   onSelectReflection,
   onOpenIndex,
   active,
-  embedded = false,
+  embedded: _embedded = false,
 }: FlipBookProps) {
   const [flipAngle, setFlipAngle] = useState(0);
   const [flipping, setFlipping] = useState(false);
@@ -52,7 +52,8 @@ export function FlipBook({
     locked: false,
   });
   const flipTimer = useRef<number | null>(null);
-  const isMobile = useIsNarrow();
+  /** Phone: one A5 leaf. Desktop: open book (two leaves). */
+  const singlePage = useIsNarrow();
 
   const current = spreads[spreadIndex];
   const nextSpread = spreads[spreadIndex + 1];
@@ -62,7 +63,7 @@ export function FlipBook({
     [reflections],
   );
 
-  /** Non-blank A5 leaves in reading order (for mobile page numbers). */
+  /** Non-blank A5 leaves in reading order. */
   const leaves = useMemo(() => {
     const list: { spreadIndex: number; side: "left" | "right" }[] = [];
     spreads.forEach((spread, index) => {
@@ -76,6 +77,24 @@ export function FlipBook({
     return list;
   }, [spreads]);
 
+  const leafIndexOf = useCallback(
+    (sIndex: number, side: "left" | "right") => {
+      const i = leaves.findIndex(
+        (leaf) => leaf.spreadIndex === sIndex && leaf.side === side,
+      );
+      return i >= 0 ? i + 1 : null;
+    },
+    [leaves],
+  );
+
+  const formatFolio = useCallback(
+    (n: number | null) => {
+      if (n == null) return undefined;
+      return `${String(n).padStart(2, "0")} / ${String(Math.max(1, leaves.length)).padStart(2, "0")}`;
+    },
+    [leaves.length],
+  );
+
   const leafNumber = useMemo(() => {
     const i = leaves.findIndex(
       (leaf) => leaf.spreadIndex === spreadIndex && leaf.side === mobileSide,
@@ -83,9 +102,12 @@ export function FlipBook({
     return i >= 0 ? i + 1 : spreadIndex + 1;
   }, [leaves, mobileSide, spreadIndex]);
 
-  const navCurrent = isMobile ? leafNumber : spreadIndex + 1;
-  const navTotal = isMobile ? leaves.length : spreads.length;
-  const pageLabel = `${String(navCurrent).padStart(2, "0")} / ${String(navTotal).padStart(2, "0")}`;
+  const navCurrent = singlePage
+    ? leafNumber
+    : leafIndexOf(spreadIndex, "right") ??
+      leafIndexOf(spreadIndex, "left") ??
+      spreadIndex + 1;
+  const pageLabel = formatFolio(navCurrent);
 
   useEffect(() => {
     if (mobileSideIntent.current) {
@@ -149,7 +171,7 @@ export function FlipBook({
   const goNext = useCallback(() => {
     if (flipping) return;
 
-    if (isMobile && current) {
+    if (singlePage && current) {
       if (mobileSide === "left" && current.right.kind !== "blank") {
         setMobileSide("right");
         return;
@@ -168,7 +190,7 @@ export function FlipBook({
     animateNext,
     current,
     flipping,
-    isMobile,
+    singlePage,
     mobileSide,
     onSpreadChange,
     spreadIndex,
@@ -178,14 +200,13 @@ export function FlipBook({
   const goPrev = useCallback(() => {
     if (flipping) return;
 
-    if (isMobile && current) {
+    if (singlePage && current) {
       if (mobileSide === "right" && current.left.kind !== "blank") {
         setMobileSide("left");
         return;
       }
       if (spreadIndex <= 0) return;
       const prev = spreads[spreadIndex - 1];
-      // Land on the last leaf of the previous spread (right if present)
       mobileSideIntent.current =
         prev && prev.right.kind !== "blank" ? "right" : "left";
       onSpreadChange(spreadIndex - 1);
@@ -198,7 +219,7 @@ export function FlipBook({
     animatePrev,
     current,
     flipping,
-    isMobile,
+    singlePage,
     mobileSide,
     onSpreadChange,
     spreadIndex,
@@ -222,7 +243,7 @@ export function FlipBook({
   }, [active, goNext, goPrev]);
 
   useEffect(() => {
-    if (!active || !isMobile) return;
+    if (!active || !singlePage) return;
     let startX = 0;
     let startY = 0;
     const onStart = (e: TouchEvent) => {
@@ -244,10 +265,10 @@ export function FlipBook({
       window.removeEventListener("touchstart", onStart);
       window.removeEventListener("touchend", onEnd);
     };
-  }, [active, goNext, goPrev, isMobile]);
+  }, [active, goNext, goPrev, singlePage]);
 
   const onDragDown = (e: React.PointerEvent) => {
-    if (flipping || isMobile || spreadIndex >= spreads.length - 1) return;
+    if (flipping || singlePage || spreadIndex >= spreads.length - 1) return;
     drag.current = { active: true, startX: e.clientX, locked: false };
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
@@ -289,17 +310,17 @@ export function FlipBook({
 
   if (!current) return null;
 
-  const turningNext = !isMobile && flipping && direction === "next";
-  const turningPrev = !isMobile && flipping && direction === "prev";
+  const turningNext = !singlePage && flipping && direction === "next";
+  const turningPrev = !singlePage && flipping && direction === "prev";
   const showTurningSheet = turningNext || turningPrev;
   const atStart =
     spreadIndex <= 0 &&
-    (!isMobile ||
+    (!singlePage ||
       mobileSide === "left" ||
       current.left.kind === "blank");
   const atEnd =
     spreadIndex >= spreads.length - 1 &&
-    (!isMobile ||
+    (!singlePage ||
       mobileSide === "right" ||
       current.right.kind === "blank");
 
@@ -319,10 +340,59 @@ export function FlipBook({
   const rightPage =
     turningNext && nextSpread ? nextSpread.right : current.right;
 
+  /* Folios match the visible face — never show the under-leaf number through the turn */
+  const underLeftSpread = turningPrev ? spreadIndex - 1 : spreadIndex;
+  const underRightSpread = turningNext ? spreadIndex + 1 : spreadIndex;
+  const sheetFrontFolio = turningPrev
+    ? formatFolio(
+        current.left.kind !== "blank"
+          ? leafIndexOf(spreadIndex, "left")
+          : null,
+      )
+    : formatFolio(
+        current.right.kind !== "blank"
+          ? leafIndexOf(spreadIndex, "right")
+          : null,
+      );
+  const sheetBackFolio = turningNext
+    ? formatFolio(
+        nextSpread && nextSpread.left.kind !== "blank"
+          ? leafIndexOf(spreadIndex + 1, "left")
+          : null,
+      )
+    : formatFolio(
+        prevSpread && prevSpread.right.kind !== "blank"
+          ? leafIndexOf(spreadIndex - 1, "right")
+          : null,
+      );
+
+  const leftLabel = singlePage
+    ? mobileSide === "left"
+      ? pageLabel
+      : undefined
+    : turningPrev
+      ? undefined /* covered by turning sheet */
+      : formatFolio(
+          leftPage.kind !== "blank"
+            ? leafIndexOf(underLeftSpread, "left")
+            : null,
+        );
+  const rightLabel = singlePage
+    ? mobileSide === "right"
+      ? pageLabel
+      : undefined
+    : turningNext
+      ? undefined /* covered by turning sheet */
+      : formatFolio(
+          rightPage.kind !== "blank"
+            ? leafIndexOf(underRightSpread, "right")
+            : null,
+        );
+
   return (
     <>
       <div
-        className={`flipbook${isMobile ? " is-mobile" : ""}`}
+        className={`flipbook${singlePage ? " is-single" : ""}`}
         aria-label="Llibre obert"
       >
         <div
@@ -330,7 +400,7 @@ export function FlipBook({
         >
           <div
             className={`flipbook__page flipbook__page--left${
-              isMobile && mobileSide !== "left" ? " is-hidden" : ""
+              singlePage && mobileSide !== "left" ? " is-hidden" : ""
             }`}
           >
             <PageFace
@@ -338,15 +408,13 @@ export function FlipBook({
               reflections={reflectionById}
               allReflections={reflections}
               locale={locale}
-              pageLabel={
-                !isMobile || mobileSide === "left" ? pageLabel : undefined
-              }
               onSelectReflection={onSelectReflection}
             />
+            {leftLabel ? <p className="page-folio">{leftLabel}</p> : null}
           </div>
           <div
             className={`flipbook__page flipbook__page--right${
-              isMobile && mobileSide !== "right" ? " is-hidden" : ""
+              singlePage && mobileSide !== "right" ? " is-hidden" : ""
             }`}
           >
             <PageFace
@@ -354,11 +422,9 @@ export function FlipBook({
               reflections={reflectionById}
               allReflections={reflections}
               locale={locale}
-              pageLabel={
-                isMobile && mobileSide === "right" ? pageLabel : undefined
-              }
               onSelectReflection={onSelectReflection}
             />
+            {rightLabel ? <p className="page-folio">{rightLabel}</p> : null}
           </div>
 
           <div className="flipbook__gutter" aria-hidden="true" />
@@ -387,6 +453,9 @@ export function FlipBook({
                   locale={locale}
                   onSelectReflection={onSelectReflection}
                 />
+                {sheetFrontFolio ? (
+                  <p className="page-folio">{sheetFrontFolio}</p>
+                ) : null}
               </div>
               <div
                 className={`flipbook__sheet-face flipbook__sheet-face--back ${
@@ -416,6 +485,9 @@ export function FlipBook({
                     <div className="page-inner page-empty" />
                   )}
                 </div>
+                {sheetBackFolio ? (
+                  <p className="page-folio">{sheetBackFolio}</p>
+                ) : null}
               </div>
             </div>
           )}
@@ -441,11 +513,9 @@ export function FlipBook({
         </div>
       </div>
 
-      {embedded && typeof document !== "undefined"
+      {typeof document !== "undefined"
         ? createPortal(
             <PageNav
-              current={navCurrent}
-              total={navTotal}
               previousLabel={copy.previous}
               nextLabel={copy.next}
               openIndexLabel={copy.openIndex}
@@ -457,20 +527,7 @@ export function FlipBook({
             />,
             document.body,
           )
-        : (
-            <PageNav
-              current={navCurrent}
-              total={navTotal}
-              previousLabel={copy.previous}
-              nextLabel={copy.next}
-              openIndexLabel={copy.openIndex}
-              onPrev={goPrev}
-              onNext={goNext}
-              onOpenIndex={onOpenIndex}
-              disablePrev={atStart || flipping}
-              disableNext={atEnd || flipping}
-            />
-          )}
+        : null}
     </>
   );
 }
@@ -480,14 +537,12 @@ function PageFace({
   reflections,
   allReflections,
   locale,
-  pageLabel,
   onSelectReflection,
 }: {
   page: BookPageModel;
   reflections: Map<string, Reflection>;
   allReflections: Reflection[];
   locale: Locale;
-  pageLabel?: string;
   onSelectReflection: (id: string) => void;
 }) {
   return (
@@ -498,7 +553,6 @@ function PageFace({
       }
       reflections={allReflections}
       locale={locale}
-      pageLabel={pageLabel}
       onSelectReflection={onSelectReflection}
     />
   );

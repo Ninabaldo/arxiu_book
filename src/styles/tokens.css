@@ -6,14 +6,14 @@
   --color-paper-shadow: #e6e0d4;
   --color-beige: #d4cbb9;
   --color-warm-gray: #6e675c;
-  /* Editorial ink — same navy as favicon / chapter numbers (trial: one ink everywhere) */
-  --color-ink: #143158;
-  --color-ink-soft: #143158;
-  --color-muted: #3a5a82;
+  /* Editorial ink — warm brown from the cover title */
+  --color-ink: #2f241c;
+  --color-ink-soft: #3d3228;
+  --color-muted: #6b5e52;
 
-  /* Brand navy — same as favicon mark */
-  --color-ink-blue: #143158;
-  --color-ink-blue-soft: #3a5a82;
+  /* Brand ink (same brown family; kept names for existing CSS) */
+  --color-ink-blue: #2f241c;
+  --color-ink-blue-soft: #5c4e42;
 
   /* Book cover — natural cloth / ecru */
   --color-cloth: #e4dccf;
@@ -60,7 +60,7 @@
   --book-width: calc(var(--book-height) / 1.375);
   --book-depth: calc(var(--book-width) * 0.155);
 
-  /* Open spread — always fits the viewport with chrome margins */
+  /* Open spread — two A5 pages on desktop */
   --spread-width: min(920px, calc(100vw - 2.5rem));
   --spread-height: min(620px, calc(100dvh - 9.5rem));
 
@@ -87,7 +87,7 @@
 @media (max-width: 720px) {
   :root {
     --book-height: min(42vh, 340px);
-    /* Single-page mobile: one leaf, centered — leave clear room for page-nav */
+    /* Single-page mobile: one leaf */
     --spread-width: min(calc(100vw - 1.75rem), 400px);
     --spread-height: min(calc(100dvh - 11rem), 520px);
   }

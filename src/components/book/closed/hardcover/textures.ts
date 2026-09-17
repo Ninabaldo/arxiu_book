@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 /** Cover ink — same navy as favicon mark */
-const INK_BLUE = "#143158";
+const INK_BLUE = "#2f241c";
 /** Oatmeal / sandy beige from reference photo (~RGB 191,180,161) */
 const CLOTH = "#c8baa4";
 const CLOTH_MID = "#bfb19a";

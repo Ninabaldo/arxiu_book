@@ -2,8 +2,8 @@
   --page-pad-y: 3.25rem;
   --page-pad-outer: 3.1rem;
   --page-pad-inner: 3.15rem;
-  /* Same as top — text fills to this edge, never past it */
-  --page-pad-bottom: 3.25rem;
+  /* Folio near the page edge — page-nav is portaled below the book */
+  --page-pad-bottom: 1.75rem;
   --page-col-max: min(380px, 100%);
 
   box-sizing: border-box;
@@ -16,6 +16,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  background-color: #f7f3eb;
 }
 
 /* Left pages: outer edge on the left, spine gutter on the right */
@@ -98,8 +99,9 @@
 
 .page-body {
   margin-top: 0;
-  flex: 1 1 auto;
+  flex: 1 1 0;
   min-height: 0;
+  height: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -135,7 +137,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  /* Full spread size first — never calc(var(--spread-width) / 2) (can resolve to 0) */
+  /* Full open-book size; leaf is half on desktop, full on mobile */
   width: var(--spread-width);
   height: var(--spread-height);
   overflow: hidden;
@@ -157,9 +159,10 @@
 }
 
 .page-measure-probe .page-body {
-  flex: 1 1 auto;
+  /* Grow into leftover page-inner space (empty nodes can collapse with height:auto) */
+  flex: 1 1 0;
   min-height: 0;
-  height: auto;
+  height: 0;
   width: 100%;
   max-width: var(--page-col-max);
 }
@@ -199,28 +202,58 @@
 
 .page-folio {
   position: absolute;
-  top: auto;
+  z-index: 20;
   margin: 0;
-  padding: 0;
+  padding: 0.15rem 0.2rem;
   font-family: var(--font-sans);
   font-size: 8px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-ink);
   font-variant-numeric: tabular-nums;
-  opacity: 0.7;
+  opacity: 1;
   pointer-events: none;
-  bottom: 1rem;
-  left: 50%;
+  /* Sit near the outer bottom corner of each A5 leaf */
+  bottom: 0.85rem;
+  line-height: 1;
+  /* Opaque paper pad — blocks any ghost from the verso / under-leaf */
+  background-color: #f7f3eb;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Outer corners — each A5 keeps its own folio on the page face */
+.flipbook__page--left > .page-folio,
+.flipbook__sheet-face--left > .page-folio {
+  left: 1.5rem;
   right: auto;
+}
+
+.flipbook__page--right > .page-folio,
+.flipbook__sheet-face--right > .page-folio {
+  left: auto;
+  right: 1.5rem;
+}
+
+/* Legacy: folio inside page-inner (beginning etc.) */
+.page-inner > .page-folio {
+  left: 50%;
   transform: translateX(-50%);
 }
 
-.flipbook__page--left .page-folio {
-  left: 50%;
+.flipbook__page--left .page-inner > .page-folio {
+  left: var(--page-pad-outer);
   right: auto;
-  transform: translateX(-50%);
+  transform: none;
+}
+
+.flipbook__page--right .page-inner > .page-folio {
+  left: auto;
+  right: var(--page-pad-outer);
+  transform: none;
 }
 
 .page-quote {
@@ -312,7 +345,7 @@
     --page-pad-y: 2.5rem;
     --page-pad-outer: 2rem;
     --page-pad-inner: 2rem;
-    --page-pad-bottom: 2.5rem;
+    --page-pad-bottom: 1.75rem;
   }
 
   .page-title-block__num {
@@ -351,6 +384,7 @@
   }
 
   .page-folio {
-    bottom: 0.85rem;
+    bottom: 0.95rem;
+    font-size: 8px;
   }
 }

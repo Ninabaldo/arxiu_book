@@ -1,6 +1,4 @@
 interface PageNavProps {
-  current: number;
-  total: number;
   previousLabel: string;
   nextLabel: string;
   openIndexLabel: string;
@@ -12,8 +10,6 @@ interface PageNavProps {
 }
 
 export function PageNav({
-  current,
-  total,
   previousLabel,
   nextLabel,
   openIndexLabel,
@@ -47,9 +43,6 @@ export function PageNav({
         >
           ←
         </button>
-        <span className="page-nav__count" aria-live="polite">
-          {String(current).padStart(2, "0")} / {String(total).padStart(2, "0")}
-        </span>
         <button
           type="button"
           onClick={onNext}

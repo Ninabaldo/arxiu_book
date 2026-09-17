@@ -206,7 +206,7 @@
   margin: 0;
   padding: 0.15rem 0.2rem;
   font-family: var(--font-sans);
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -384,7 +384,7 @@
   }
 
   .page-folio {
-    bottom: 0.95rem;
-    font-size: 8px;
+    bottom: 0.85rem;
+    font-size: 7px;
   }
 }

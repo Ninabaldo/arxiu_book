@@ -93,9 +93,9 @@ export function chunkContentMeasured(
   body.appendChild(sample);
   body.removeChild(sample);
 
-  // Fill the measured body fully — folio overlays the page face below
-  // Allow 2px slack so we do not leave a visible empty band at the bottom
-  const maxHeight = Math.max(80, rawHeight + 2);
+  // Leave ~1 line of air above the folio / bottom margin
+  const linePx = 15;
+  const maxHeight = Math.max(80, rawHeight - linePx);
 
   const paragraphs = splitParagraphs(content);
   if (paragraphs.length === 0) return [""];

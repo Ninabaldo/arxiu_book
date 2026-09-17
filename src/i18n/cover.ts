@@ -32,7 +32,7 @@ export const coverCopy: Record<Locale, CoverCopy> = {
   ca: {
     wordmarkTitle: "ARXIU",
     wordmarkSubtitle: "reflexions escrites\nal llarg dels dies",
-    coverTitle: "No sé que estic fent, però estic bé.",
+    coverTitle: "No sé què estic fent, però estic bé.",
     coverSubtitle: "",
     coverDedication: "Violeta Mayer",
     coverYear: "2026",
@@ -46,7 +46,7 @@ export const coverCopy: Record<Locale, CoverCopy> = {
     ],
     intro: "Notes sobre la vida,\nescrites abans de saber\nqui les llegiria.",
     dragHint: "Toca el llibre per interaccionar amb ell i llegir el seu interior",
-    spine: "No sé que estic fent…",
+    spine: "No sé què estic fent…",
     spineAuthor: "Violeta Mayer",
     bookAria: "Llibre. Arrossega per girar en 3D. Fes clic per obrir.",
     closeCover: "Portada",
